@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/mauricerenck/pexels-image-field/compare/v1.0.5...v1.0.6) (2022-01-13)
+
+
+### Bug Fixes
+
+* do not start pageslug with a slash ([3252ad5](https://github.com/mauricerenck/pexels-image-field/commit/3252ad5648e5804f07b09f2b990cf57304cf53ef))
+
 ## [1.0.5](https://github.com/mauricerenck/pexels-image-field/compare/v1.0.4...v1.0.5) (2022-01-13)
 
 
