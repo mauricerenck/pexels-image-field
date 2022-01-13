@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/mauricerenck/pexels-image-field/compare/v1.0.3...v1.0.4) (2022-01-13)
+
+
+### Bug Fixes
+
+* page detection ([fba0c58](https://github.com/mauricerenck/pexels-image-field/commit/fba0c581a2c63b1e9b815e5a33e09e9b7e1ec45c))
+
 ## [1.0.3](https://github.com/mauricerenck/pexels-image-field/compare/v1.0.2...v1.0.3) (2022-01-13)
 
 
