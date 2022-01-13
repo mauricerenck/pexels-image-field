@@ -25,7 +25,7 @@ return [
                     return new Response('Invalid Image Url', 'text/plain', 500);
                 }
 
-                $page = page(str_replace(['/pages/', '+'], ['', ''], $formData['pageId']));
+                $page = page(str_replace(['/pages/', '+'], ['/', '/'], $formData['pageId']));
 
                 if (is_null($page)) {
                     return new Response('Page Not Found', 'text/plain', 404);
