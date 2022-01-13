@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/mauricerenck/pexels-image-field/compare/v1.0.4...v1.0.5) (2022-01-13)
+
+
+### Bug Fixes
+
+* support drafts ([8e07b5e](https://github.com/mauricerenck/pexels-image-field/commit/8e07b5ec9c3788ab13e31c34323c19d6de1b2368))
+
 ## [1.0.4](https://github.com/mauricerenck/pexels-image-field/compare/v1.0.3...v1.0.4) (2022-01-13)
 
 
