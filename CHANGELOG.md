@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/mauricerenck/pexels-image-field/compare/v1.0.2...v1.0.3) (2022-01-13)
+
+
+### Bug Fixes
+
+* subpage detection ([ab80e5a](https://github.com/mauricerenck/pexels-image-field/commit/ab80e5aec7d1f652a70d5585201e3e8839fb94e6))
+
 ## [1.0.2](https://github.com/mauricerenck/pexels-image-field/compare/v1.0.1...v1.0.2) (2022-01-13)
 
 
