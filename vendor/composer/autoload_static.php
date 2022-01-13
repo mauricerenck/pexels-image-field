@@ -17,7 +17,7 @@ class ComposerStaticInitd6dab7feb2c0432282fb013bfa43cbe9
     public static $prefixLengthsPsr4 = array (
         'm' => 
         array (
-            'mauricerenck\\IndieConnector\\' => 28,
+            'mauricerenck\\PexelsImageField\\' => 30,
         ),
         'W' => 
         array (
@@ -73,7 +73,7 @@ class ComposerStaticInitd6dab7feb2c0432282fb013bfa43cbe9
     );
 
     public static $prefixDirsPsr4 = array (
-        'mauricerenck\\IndieConnector\\' => 
+        'mauricerenck\\PexelsImageField\\' => 
         array (
             0 => __DIR__ . '/../..' . '/utils',
         ),

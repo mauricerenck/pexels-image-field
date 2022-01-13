@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'mauricerenck\\IndieConnector\\' => array($baseDir . '/utils'),
+    'mauricerenck\\PexelsImageField\\' => array($baseDir . '/utils'),
     'WBW\\Library\\Vehicle\\' => array($vendorDir . '/webeweb/core-library/src/vehicle'),
     'WBW\\Library\\Validator\\' => array($vendorDir . '/webeweb/core-library/src/validator'),
     'WBW\\Library\\Types\\' => array($vendorDir . '/webeweb/core-library/src/types'),

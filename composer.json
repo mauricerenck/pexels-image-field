@@ -12,7 +12,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "mauricerenck\\IndieConnector\\": "utils/"
+            "mauricerenck\\PexelsImageField\\": "utils/"
         },
         "classmap": [
             "utils"
