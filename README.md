@@ -13,7 +13,7 @@ Add this field to directly search for photos using Pexels.com. Get a preview of 
 
 Use one of these three methods to install the plugin:
 
-- `composer require mauricerenck/pexels-image-field`
+- `composer require mauricerenck/pexelsimagefield`
 - unzip [master.zip](https://github.com/mauricerenck/pexels-image-field/releases/latest) to `site/plugins/pexels-image-field`
 - `git submodule add https://github.com/mauricerenck/pexels-image-field.git site/plugins/pexels-image-field`
 
