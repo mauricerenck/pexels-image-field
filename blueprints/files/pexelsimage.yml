@@ -1,0 +1,8 @@
+accept:
+  extension: jpg, jpeg, png, webp
+
+fields:
+  photographer:
+    type: text
+  photographerUrl:
+    type: url

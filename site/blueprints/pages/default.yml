@@ -1,1 +1,14 @@
-fields:
+sections:
+  thefield:
+    type: fields
+    fields:
+      pexels:
+        type: pexels
+        label: Pexels
+  files:
+    headline: Dateien
+    type: files
+    layout: cards
+    info: "{{ file.dimensions }}"
+    image:
+      cover: true

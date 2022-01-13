@@ -1,5 +1,5 @@
 {
-    "name": "mauricerenck/starterkit",
+    "name": "mauricerenck/pexelsimagefield",
     "version": "0.0.0",
     "description": "A Kirby Plugin Starterkit",
     "type": "kirby-plugin",
@@ -20,7 +20,8 @@
     },
     "require": {
         "getkirby/composer-installer": "^1.1",
-        "php": ">=7.3.0"
+        "php": ">=7.3.0",
+        "webeweb/pexels-library": "^2.4"
     },
     "require-dev": {
         "getkirby/cms": "^3.6",

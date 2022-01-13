@@ -1,9 +1,7 @@
-import View from "./views/Sample.vue";
-import Version from './components/Version.vue'
+import Pexels from './components/Pexels.vue'
 
-panel.plugin("mauricerenck/STARTERKIT", {
-    components: {
-        'k-sample-view': View,
-        'Version': Version,
-    },
+panel.plugin("mauricerenck/PexelsImageField", {
+    fields: {
+        pexels: Pexels
+    }
 });

@@ -1,6 +1,6 @@
 <?php
 
-namespace mauricerenck\STARTERKIT;
+namespace mauricerenck\PexelsImageField;
 
 return [
     'debug' => false,
