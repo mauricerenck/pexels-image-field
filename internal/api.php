@@ -107,7 +107,9 @@ return [
                         'large' => $src->getLarge(),
                         'photographer' => $current->getPhotographer(),
                         'photographerUrl' => $current->getPhotographerUrl(),
-                        'downloadUrl' => $src->getOriginal()
+                        'downloadUrl' => $src->getOriginal(),
+                        'width' => $current->getWidth(),
+                        'height' => $current->getHeight(),
                     ];
 
                     // $current->getPhotographer();

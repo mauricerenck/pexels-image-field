@@ -11,15 +11,13 @@
 
 namespace WBW\Library\Vehicle\Serializer;
 
-use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
-
 /**
  * Serializer keys.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Vehicle\Serializer
  */
-interface SerializerKeys extends BaseSerializerKeys {
+interface SerializerKeys {
 
     /**
      * Serializer key "A".

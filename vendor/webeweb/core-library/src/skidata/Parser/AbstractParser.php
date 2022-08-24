@@ -20,7 +20,7 @@ use WBW\Library\Types\Helper\IntegerHelper;
 /**
  * Abstract parser.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SkiData\Parser
  * @abstract
  */
@@ -111,11 +111,14 @@ abstract class AbstractParser implements ParserInterface {
      * @throws TooLongDataException Throws a too long data exception if the value exceeds the length.
      */
     protected function encodeInteger(?int $value, int $length): string {
+
         $format = "%'.0{$length}d";
         $output = null === $value ? "" : sprintf($format, $value);
+
         if ($length < strlen($output)) {
             throw new TooLongDataException($value, $length);
         }
+
         return $output;
     }
 
@@ -128,9 +131,11 @@ abstract class AbstractParser implements ParserInterface {
      * @throws TooLongDataException Throws a too long data exception if the value exceeds the length.
      */
     protected function encodeString(string $value, int $length = -1): string {
+
         if (-1 !== $length && $length < strlen($value)) {
             throw new TooLongDataException($value, $length);
         }
+
         return '"' . substr($value, 0, (-1 === $length ? strlen($value) : $length)) . '"';
     }
 

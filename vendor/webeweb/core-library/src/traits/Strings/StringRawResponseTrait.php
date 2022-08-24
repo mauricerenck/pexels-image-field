@@ -14,7 +14,7 @@ namespace WBW\Library\Traits\Strings;
 /**
  * String raw response trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Traits\Strings
  */
 trait StringRawResponseTrait {

@@ -14,7 +14,7 @@ namespace WBW\Library\Sorter;
 /**
  * Quick sort.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Sorter
  */
 class QuickSort {
@@ -140,6 +140,7 @@ class QuickSort {
      * @return void
      */
     private function swap(int $a, int $b): void {
+
         $value = $this->getValues()[$a];
 
         $this->values[$a] = $this->getValues()[$b];

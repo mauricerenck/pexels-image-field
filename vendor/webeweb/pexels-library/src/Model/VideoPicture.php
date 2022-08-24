@@ -12,11 +12,12 @@
 namespace WBW\Library\Pexels\Model;
 
 use WBW\Library\Traits\Integers\IntegerIdTrait;
+use WBW\Library\Traits\Strings\StringRawDataTrait;
 
 /**
  * Video picture.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Model
  */
 class VideoPicture {
@@ -24,6 +25,7 @@ class VideoPicture {
     use IntegerIdTrait {
         setId as public;
     }
+    use StringRawDataTrait;
 
     /**
      * Number.

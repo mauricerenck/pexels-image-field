@@ -16,7 +16,7 @@ use WBW\Library\Types\Exception\ResourceArgumentException;
 /**
  * Resource helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Types\Helper
  */
 class ResourceHelper {

@@ -16,7 +16,7 @@ use WBW\Library\Validator\Api\RuleInterface;
 /**
  * Abstract rule.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Validator\Rule
  * @abstract
  */
@@ -39,7 +39,7 @@ abstract class AbstractRule implements RuleInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getName(): ?string {
         return $this->name;

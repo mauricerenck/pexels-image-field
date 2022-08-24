@@ -16,7 +16,7 @@ use WBW\Library\Types\Exception\IntegerArgumentException;
 /**
  * Integer helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Types\Helper
  */
 class IntegerHelper {
@@ -62,5 +62,31 @@ class IntegerHelper {
         }
 
         return intval($value);
+    }
+
+    /**
+     * Usort callback.
+     *
+     * @param bool $asc ASC ?
+     * @return callable Returns the usort callback.
+     */
+    public static function usortCallback(bool $asc = true): callable {
+
+        return function(?int $int1, ?int $int2) use ($asc): int {
+
+            $result = 0;
+
+            if ($int1 < $int2) {
+                $result = -1;
+            }
+            if ($int1 === $int2) {
+                $result = 0;
+            }
+            if ($int1 > $int2) {
+                $result = 1;
+            }
+
+            return true === $asc ? $result : -$result;
+        };
     }
 }

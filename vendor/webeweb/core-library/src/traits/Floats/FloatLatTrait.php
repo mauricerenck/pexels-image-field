@@ -14,7 +14,7 @@ namespace WBW\Library\Traits\Floats;
 /**
  * Float latitude trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Traits\Floats
  */
 trait FloatLatTrait {

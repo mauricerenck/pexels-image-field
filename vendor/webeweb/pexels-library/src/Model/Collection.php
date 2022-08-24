@@ -13,18 +13,20 @@ namespace WBW\Library\Pexels\Model;
 
 use WBW\Library\Traits\Strings\StringDescriptionTrait;
 use WBW\Library\Traits\Strings\StringIdTrait;
+use WBW\Library\Traits\Strings\StringRawDataTrait;
 use WBW\Library\Traits\Strings\StringTitleTrait;
 
 /**
  * Collection.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Model
  */
 class Collection {
 
     use StringDescriptionTrait;
     use StringIdTrait;
+    use StringRawDataTrait;
     use StringTitleTrait;
 
     /**

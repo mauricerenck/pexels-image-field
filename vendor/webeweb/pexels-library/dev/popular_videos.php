@@ -12,9 +12,10 @@ require_once __DIR__ . "/../vendor/autoload.php";
 
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\PopularVideosRequest;
+use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 // Create the API provider.
-$provider = new ApiProvider("YOUR_API_KEY");
+$provider = new ApiProvider(AbstractTestCase::getToken());
 
 // Create a Popular videos request.
 $request = new PopularVideosRequest();

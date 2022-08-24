@@ -20,7 +20,7 @@ use WBW\Library\Types\Helper\IntegerHelper;
 /**
  * Card parser.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SkiData\Parser
  */
 class CardParser extends AbstractParser {

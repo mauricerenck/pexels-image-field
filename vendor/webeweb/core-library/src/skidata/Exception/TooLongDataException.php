@@ -14,7 +14,7 @@ namespace WBW\Library\SkiData\Exception;
 /**
  * Too long data exception.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SkiData\Exception
  */
 class TooLongDataException extends AbstractException {

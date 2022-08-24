@@ -14,7 +14,7 @@ namespace WBW\Library\Traits\Strings;
 /**
  * String subject trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Traits\Strings
  */
 trait StringSubjectTrait {

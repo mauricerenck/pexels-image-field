@@ -14,7 +14,7 @@ namespace WBW\Library\Core\Model;
 /**
  * Abstract node.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Core\Model
  * @abstract
  */
@@ -78,9 +78,11 @@ abstract class AbstractNode {
      * @return AbstractNode Returns this node.
      */
     public function clearNodes(): AbstractNode {
+
         foreach ($this->nodes as $node) {
             $this->removeNode($node);
         }
+
         return $this;
     }
 
@@ -118,9 +120,11 @@ abstract class AbstractNode {
      * @return AbstractNode|null Returns the node in case of success, null otherwise.
      */
     public function getNodeAt(int $position): ?AbstractNode {
+
         if (0 <= $position && $position <= count($this->nodes) - 1) {
             return $this->nodes[$position];
         }
+
         return null;
     }
 
@@ -132,18 +136,24 @@ abstract class AbstractNode {
      * @return AbstractNode|null Returns a node in case of success, null otherwise.
      */
     public function getNodeById(string $id, bool $recursively = false): ?AbstractNode {
+
         $found = null;
+
         if (true === array_key_exists($id, $this->index)) {
             $found = $this->getNodeAt($this->index[$id]);
         }
+
         if (null === $found && true === $recursively) {
+
             foreach ($this->nodes as $current) {
+
                 $found = $current->getNodeById($id, true);
                 if (null !== $found) {
                     break;
                 }
             }
         }
+
         return $found;
     }
 
@@ -172,11 +182,13 @@ abstract class AbstractNode {
      * @return AbstractNode Returns this node.
      */
     public function removeNode(AbstractNode $node): AbstractNode {
+
         if (true === array_key_exists($node->id, $this->index)) {
             unset($this->nodes[$this->index[$node->id]]);
             unset($this->index[$node->id]);
             $node->parent = null;
         }
+
         return $this;
     }
 

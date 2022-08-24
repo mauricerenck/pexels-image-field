@@ -17,7 +17,7 @@ use WBW\Library\Traits\Booleans\BooleanVerboseTrait;
 /**
  * Configuration.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Curl\Configuration
  */
 class Configuration {

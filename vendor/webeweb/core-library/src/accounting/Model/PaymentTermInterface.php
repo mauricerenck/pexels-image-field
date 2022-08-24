@@ -11,13 +11,15 @@
 
 namespace WBW\Library\Accounting\Model;
 
+use JsonSerializable;
+
 /**
  * Payment term interface.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Accounting\Model
  */
-interface PaymentTermInterface {
+interface PaymentTermInterface extends JsonSerializable {
 
     /**
      * Get the code.

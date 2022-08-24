@@ -17,7 +17,7 @@ use WBW\Library\Curl\Configuration\Configuration;
 /**
  * GET request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Curl\Request
  */
 class GetRequest extends AbstractRequest {

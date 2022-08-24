@@ -11,7 +11,6 @@
 
 namespace WBW\Library\Accounting\Model;
 
-use JsonSerializable;
 use WBW\Library\Accounting\Serializer\JsonSerializer;
 use WBW\Library\Traits\Strings\StringLabelTrait;
 use WBW\Library\Traits\Strings\StringNumberTrait;
@@ -23,7 +22,7 @@ use WBW\Library\Traits\Strings\StringTypeTrait;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Accounting\Model
  */
-class AccountingAccount implements AccountingAccountInterface, JsonSerializable {
+class AccountingAccount implements AccountingAccountInterface {
 
     use StringLabelTrait;
     use StringNumberTrait;
@@ -37,7 +36,7 @@ class AccountingAccount implements AccountingAccountInterface, JsonSerializable 
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeAccountingAccount($this);

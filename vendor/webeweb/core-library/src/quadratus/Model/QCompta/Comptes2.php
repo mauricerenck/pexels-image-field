@@ -14,7 +14,7 @@ namespace WBW\Library\Quadratus\Model\QCompta;
 /**
  * Comptes2.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QCompta
  */
 class Comptes2 {

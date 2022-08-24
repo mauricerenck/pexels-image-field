@@ -21,7 +21,7 @@ use WBW\Library\Types\Exception\DateArgumentException;
 /**
  * Date/time helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Types\Helper
  */
 class DateTimeHelper {
@@ -463,9 +463,11 @@ class DateTimeHelper {
      * @return string|null Returns the converted date/time.
      */
     public static function toString(?DateTime $dateTime, string $format = self::DATETIME_FORMAT): ?string {
+
         if (null === $dateTime) {
             return null;
         }
+
         return $dateTime->format($format);
     }
 
@@ -492,5 +494,31 @@ class DateTimeHelper {
         $translations = Yaml::parse(file_get_contents(realpath($filename)));
 
         return str_ireplace(array_keys($translations["weekdays"]), array_values($translations["weekdays"]), $date);
+    }
+
+    /**
+     * Usort callback.
+     *
+     * @param bool $asc ASC ?
+     * @return callable Returns the usort callback.
+     */
+    public static function usortCallback(bool $asc = true): callable {
+
+        return function(?DateTime $dateTime1, ?DateTime $dateTime2) use ($asc): int {
+
+            $result = 0;
+
+            if ($dateTime1 < $dateTime2) {
+                $result = -1;
+            }
+            if ($dateTime1 === $dateTime2) {
+                $result = 0;
+            }
+            if ($dateTime1 > $dateTime2) {
+                $result = 1;
+            }
+
+            return true === $asc ? $result : -$result;
+        };
     }
 }

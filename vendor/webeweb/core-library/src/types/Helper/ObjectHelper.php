@@ -16,10 +16,27 @@ use WBW\Library\Types\Exception\ObjectArgumentException;
 /**
  * Object helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Types\Helper
  */
 class ObjectHelper {
+
+    /**
+     * Coalesce.
+     *
+     * @param array $values The values.
+     * @return mixed|null Returns the first non-null value.
+     */
+    public static function coalesce(...$values) {
+
+        foreach ($values as $current) {
+            if (null !== $current) {
+                return $current;
+            }
+        }
+
+        return null;
+    }
 
     /**
      * Compare two objects.
@@ -59,5 +76,95 @@ class ObjectHelper {
         if (false === is_object($value)) {
             throw new ObjectArgumentException($value);
         }
+    }
+
+    /**
+     * Usort callback by string.
+     *
+     * @param string $method The method.
+     * @param callable $callback The callback.
+     * @return callable Returns the usort callback.
+     */
+    protected static function usortCallback(string $method, callable $callback): callable {
+
+        /**
+         * Get the value.
+         *
+         * @param object $object The object.
+         * @param string $method The method.
+         * @return mixed|null Returns the value.
+         */
+        $getValue = function($object, string $method) {
+
+            if (true === is_object($object) && true === method_exists($object, $method)) {
+                return $object->$method();
+            }
+
+            return null;
+        };
+
+        return function($object1, $object2) use ($method, $getValue, $callback): int {
+
+            $value1 = $getValue($object1, $method);
+            $value2 = $getValue($object2, $method);
+
+            return $callback($value1, $value2);
+        };
+    }
+
+    /**
+     * Usort callback by boolean.
+     *
+     * @param string $method The method.
+     * @param bool $asc ASC ?
+     * @return callable Returns the usort callback.
+     */
+    public static function usortCallbackByBoolean(string $method, bool $asc = true): callable {
+
+        $callback = BooleanHelper::usortCallback($asc);
+
+        return static::usortCallback($method, $callback);
+    }
+
+    /**
+     * Usort callback by float.
+     *
+     * @param string $method The method.
+     * @param bool $asc ASC ?
+     * @return callable Returns the usort callback.
+     */
+    public static function usortCallbackByFloat(string $method, bool $asc = true): callable {
+
+        $callback = FloatHelper::usortCallback($asc);
+
+        return static::usortCallback($method, $callback);
+    }
+
+    /**
+     * Usort callback by integer.
+     *
+     * @param string $method The method.
+     * @param bool $asc ASC ?
+     * @return callable Returns the usort callback.
+     */
+    public static function usortCallbackByInteger(string $method, bool $asc = true): callable {
+
+        $callback = IntegerHelper::usortCallback($asc);
+
+        return static::usortCallback($method, $callback);
+    }
+
+    /**
+     * Usort callback by string.
+     *
+     * @param string $method The method.
+     * @param bool $asc ASC ?
+     * @return callable Returns the usort callback.
+     */
+    public static function usortCallbackByString(string $method, bool $asc = true): callable {
+
+        $callback = StringHelper::usortCallback($asc);
+
+        return static::usortCallback($method, $callback);
     }
 }

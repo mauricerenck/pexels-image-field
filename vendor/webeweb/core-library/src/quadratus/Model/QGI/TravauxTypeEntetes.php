@@ -14,7 +14,7 @@ namespace WBW\Library\Quadratus\Model\QGI;
 /**
  * Travaux type entetes.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QGI
  */
 class TravauxTypeEntetes {

@@ -19,7 +19,7 @@ use WBW\Library\Types\Helper\IntegerHelper;
 /**
  * Start record format parser.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SkiData\Parser
  */
 class StartRecordFormatParser extends AbstractParser {

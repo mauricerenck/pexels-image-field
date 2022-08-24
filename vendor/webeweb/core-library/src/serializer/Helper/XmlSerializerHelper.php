@@ -16,7 +16,7 @@ use WBW\Library\Serializer\Model\XmlSerializable;
 /**
  * XML serializer helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Serializer\Helper
  */
 class XmlSerializerHelper extends SerializerHelper {
@@ -34,11 +34,9 @@ class XmlSerializerHelper extends SerializerHelper {
         foreach ($models as $current) {
 
             $result = static::xmlSerializeModel($current);
-            if (null === $result) {
-                continue;
+            if (null !== $result) {
+                $output[] = $result;
             }
-
-            $output[] = $result;
         }
 
         return implode("", $output);
@@ -51,9 +49,11 @@ class XmlSerializerHelper extends SerializerHelper {
      * @return string|null Returns the serialized model.
      */
     public static function xmlSerializeModel(?XmlSerializable $model): ?string {
+
         if (null === $model) {
             return null;
         }
+
         return $model->xmlSerialize();
     }
 
@@ -64,9 +64,11 @@ class XmlSerializerHelper extends SerializerHelper {
      * @return string|null Returns the serialized value.
      */
     public static function xmlSerializeValue(?string $value): ?string {
+
         if (null === $value) {
             return null;
         }
+
         return htmlentities($value, ENT_XML1 | ENT_QUOTES, "UTF-8");
     }
 }

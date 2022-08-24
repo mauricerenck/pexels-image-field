@@ -17,7 +17,7 @@ use WBW\Library\Curl\Configuration\Configuration;
 /**
  * Request interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Curl\Api
  */
 interface RequestInterface {

@@ -14,7 +14,7 @@ namespace WBW\Library\Pexels\Api;
 /**
  * Paginate response interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\API
  */
 interface PaginateResponseInterface {

@@ -17,7 +17,7 @@ use WBW\Library\Types\Exception\FloatArgumentException;
 /**
  * Float helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Types\Helper
  */
 class FloatHelper {
@@ -70,5 +70,31 @@ class FloatHelper {
         }
 
         return floatval($value);
+    }
+
+    /**
+     * Usort callback.
+     *
+     * @param bool $asc ASC ?
+     * @return callable Returns the usort callback.
+     */
+    public static function usortCallback(bool $asc = true): callable {
+
+        return function(?float $float1, ?float $float2) use ($asc): int {
+
+            $result = 0;
+
+            if ($float1 < $float2) {
+                $result = -1;
+            }
+            if ($float1 === $float2) {
+                $result = 0;
+            }
+            if ($float1 > $float2) {
+                $result = 1;
+            }
+
+            return true === $asc ? $result : -$result;
+        };
     }
 }

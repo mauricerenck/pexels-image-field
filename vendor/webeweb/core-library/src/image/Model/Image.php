@@ -26,7 +26,7 @@ use WBW\Library\Traits\Strings\StringPathnameTrait;
 /**
  * Image.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Image\Model
  */
 class Image implements ImageInterface {
@@ -47,6 +47,15 @@ class Image implements ImageInterface {
      */
     public function __construct(string $pathname) {
         $this->setPathname($pathname);
+    }
+
+    /**
+     * Encodes into base 64.
+     *
+     * @return string Returns this image encoded into base 64.
+     */
+    public function base64Encode(): string {
+        return ImageHelper::base64Encode($this->getPathname());
     }
 
     /**
@@ -114,21 +123,7 @@ class Image implements ImageInterface {
      * @throws RuntimeException Throws a runtime exception if the re-sampled copy failed.
      */
     public function resize(int $newWidth, int $newHeight, string $pathname): bool {
-
-        [$w, $h] = ImageHelper::newDimensions($this, $newWidth, $newHeight);
-
-        $input  = ImageHelper::newInputStream($this);
-        $output = ImageHelper::newOutputStream($this, $w, $h);
-        if (null === $output) {
-            throw new RuntimeException("Failed to create true color image");
-        }
-
-        $result = imagecopyresampled($output, $input, 0, 0, 0, 0, $w, $h, $this->getWidth(), $this->getHeight());
-        if (false === $result) {
-            throw new RuntimeException("Failed to copy re-sampled image");
-        }
-
-        return ImageHelper::saveOutputStream($this, $output, $pathname);
+        return ImageHelper::resize($this, $newWidth, $newHeight, $pathname);
     }
 
     /**
@@ -139,9 +134,11 @@ class Image implements ImageInterface {
      * @throws InvalidArgumentException Throws an invalid argument exception if the pathname was not found.
      */
     protected function setPathname(string $pathname): Image {
+
         if (false === realpath($pathname)) {
             throw new InvalidArgumentException(sprintf('The image "%s" was not found', $pathname));
         }
+
         $this->pathname = realpath($pathname);
         return $this;
     }

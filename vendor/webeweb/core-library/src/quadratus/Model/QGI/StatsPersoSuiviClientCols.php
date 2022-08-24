@@ -14,7 +14,7 @@ namespace WBW\Library\Quadratus\Model\QGI;
 /**
  * Stats perso suivi client cols.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QGI
  */
 class StatsPersoSuiviClientCols {

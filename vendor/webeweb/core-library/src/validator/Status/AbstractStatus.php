@@ -11,17 +11,16 @@
 
 namespace WBW\Library\Validator\Status;
 
-use JsonSerializable;
 use WBW\Library\Validator\Api\StatusInterface;
 
 /**
  * Abstract status.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Validator\Status
  * @abstract
  */
-abstract class AbstractStatus implements StatusInterface, JsonSerializable {
+abstract class AbstractStatus implements StatusInterface {
 
     /**
      * Get the code.
@@ -56,28 +55,28 @@ abstract class AbstractStatus implements StatusInterface, JsonSerializable {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCode(): ?int {
         return $this->code;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMessage(): ?string {
         return $this->message;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getRuleName(): ?string {
         return $this->ruleName;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function jsonSerialize(): array {
         return [
@@ -110,7 +109,7 @@ abstract class AbstractStatus implements StatusInterface, JsonSerializable {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setRuleName(?string $ruleName): StatusInterface {
         $this->ruleName = $ruleName;

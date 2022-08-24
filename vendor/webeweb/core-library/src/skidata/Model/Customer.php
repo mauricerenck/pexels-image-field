@@ -18,7 +18,7 @@ use WBW\Library\SkiData\Traits\CustomerTrait;
 /**
  * Customer.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SkiData\Model
  */
 class Customer {

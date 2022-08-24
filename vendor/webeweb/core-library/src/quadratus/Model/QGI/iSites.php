@@ -14,7 +14,7 @@ namespace WBW\Library\Quadratus\Model\QGI;
 /**
  * i sites.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QGI
  */
 class iSites {

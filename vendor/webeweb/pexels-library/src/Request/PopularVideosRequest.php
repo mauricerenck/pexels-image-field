@@ -21,7 +21,7 @@ use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 /**
  * Popular videos request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Request
  */
 class PopularVideosRequest extends AbstractRequest {
@@ -51,7 +51,7 @@ class PopularVideosRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return self::POPULAR_VIDEOS_RESOURCE_PATH;

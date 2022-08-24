@@ -17,7 +17,7 @@ use InvalidArgumentException;
 /**
  * Float argument exception.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Types\Exception
  */
 class FloatArgumentException extends InvalidArgumentException {

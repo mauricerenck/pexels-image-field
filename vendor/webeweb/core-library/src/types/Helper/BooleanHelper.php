@@ -16,7 +16,7 @@ use WBW\Library\Types\Exception\BooleanArgumentException;
 /**
  * Boolean helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Types\Helper
  */
 class BooleanHelper {
@@ -41,9 +41,11 @@ class BooleanHelper {
      * @return bool Returns true in case of success, false otherwise.
      */
     public static function parseInteger(?int $value): bool {
+
         if (1 === $value) {
             return true;
         }
+
         return false;
     }
 
@@ -71,5 +73,31 @@ class BooleanHelper {
         }
 
         return false;
+    }
+
+    /**
+     * Usort callback.
+     *
+     * @param bool $asc ASC ?
+     * @return callable Returns the usort callback.
+     */
+    public static function usortCallback(bool $asc = true): callable {
+
+        return function(?bool $bool1, ?bool $bool2) use ($asc): int {
+
+            $result = 0;
+
+            if ($bool1 < $bool2) {
+                $result = -1;
+            }
+            if ($bool1 === $bool2) {
+                $result = 0;
+            }
+            if ($bool1 > $bool2) {
+                $result = 1;
+            }
+
+            return true === $asc ? $result : -$result;
+        };
     }
 }

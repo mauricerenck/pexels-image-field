@@ -16,7 +16,7 @@ use WBW\Library\Types\Exception\TimestampArgumentException;
 /**
  * Timestamp helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Types\Helper
  */
 class TimestampHelper {

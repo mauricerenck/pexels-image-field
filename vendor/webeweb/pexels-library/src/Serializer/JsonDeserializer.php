@@ -23,114 +23,120 @@ use WBW\Library\Types\Helper\ArrayHelper;
 /**
  * JSON deserializer.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Serializer
  */
 class JsonDeserializer {
 
     /**
-     * Deserialize a collection.
+     * Deserializes a collection.
      *
-     * @param array $response The response.
+     * @param array $data The data.
      * @return Collection Returns a collection.
      */
-    public static function deserializeCollection(array $response): Collection {
+    public static function deserializeCollection(array $data): Collection {
 
         $model = new Collection();
-        $model->setId(ArrayHelper::get($response, "id"));
-        $model->setTitle(ArrayHelper::get($response, "title"));
-        $model->setDescription(ArrayHelper::get($response, "description"));
-        $model->setPrivate(ArrayHelper::get($response, "private"));
-        $model->setMediaCount(ArrayHelper::get($response, "media_count"));
-        $model->setPhotosCount(ArrayHelper::get($response, "photos_count"));
-        $model->setVideosCount(ArrayHelper::get($response, "videos_count"));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
+        $model->setId(ArrayHelper::get($data, "id"));
+        $model->setTitle(ArrayHelper::get($data, "title"));
+        $model->setDescription(ArrayHelper::get($data, "description"));
+        $model->setPrivate(ArrayHelper::get($data, "private"));
+        $model->setMediaCount(ArrayHelper::get($data, "media_count"));
+        $model->setPhotosCount(ArrayHelper::get($data, "photos_count"));
+        $model->setVideosCount(ArrayHelper::get($data, "videos_count"));
 
         return $model;
     }
 
     /**
-     * Deserialize a photo.
+     * Deserializes a photo.
      *
-     * @param array $response The response.
+     * @param array $data The data.
      * @return Photo Returns a photo.
      */
-    public static function deserializePhoto(array $response): Photo {
+    public static function deserializePhoto(array $data): Photo {
 
         $model = new Photo();
-        $model->setId(ArrayHelper::get($response, "id"));
-        $model->setWidth(ArrayHelper::get($response, "width"));
-        $model->setHeight(ArrayHelper::get($response, "height"));
-        $model->setUrl(ArrayHelper::get($response, "url"));
-        $model->setPhotographer(ArrayHelper::get($response, "photographer"));
-        $model->setPhotographerUrl(ArrayHelper::get($response, "photographer_url"));
-        $model->setPhotographerId(ArrayHelper::get($response, "photographer_id"));
-        $model->setAvgColor(ArrayHelper::get($response, "avg_color"));
-        $model->setSrc(static::deserializeSource(ArrayHelper::get($response, "src", [])));
-        $model->setLiked(ArrayHelper::get($response, "liked"));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
+        $model->setId(ArrayHelper::get($data, "id"));
+        $model->setWidth(ArrayHelper::get($data, "width"));
+        $model->setHeight(ArrayHelper::get($data, "height"));
+        $model->setUrl(ArrayHelper::get($data, "url"));
+        $model->setPhotographer(ArrayHelper::get($data, "photographer"));
+        $model->setPhotographerUrl(ArrayHelper::get($data, "photographer_url"));
+        $model->setPhotographerId(ArrayHelper::get($data, "photographer_id"));
+        $model->setAvgColor(ArrayHelper::get($data, "avg_color"));
+        $model->setSrc(static::deserializeSource(ArrayHelper::get($data, "src", [])));
+        $model->setLiked(ArrayHelper::get($data, "liked"));
+        $model->setAlt(ArrayHelper::get($data, "alt"));
 
         return $model;
     }
 
     /**
-     * Deserialize a source.
+     * Deserializes a source.
      *
-     * @param array $response The response.
+     * @param array $data The data.
      * @return Source Returns a source.
      */
-    public static function deserializeSource(array $response): Source {
+    public static function deserializeSource(array $data): Source {
 
         $model = new Source();
-        $model->setOriginal(ArrayHelper::get($response, "original"));
-        $model->setLarge(ArrayHelper::get($response, "large"));
-        $model->setLarge2x(ArrayHelper::get($response, "large2x"));
-        $model->setMedium(ArrayHelper::get($response, "medium"));
-        $model->setSmall(ArrayHelper::get($response, "small"));
-        $model->setPortrait(ArrayHelper::get($response, "portrait"));
-        $model->setLandscape(ArrayHelper::get($response, "landscape"));
-        $model->setTiny(ArrayHelper::get($response, "tiny"));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
+        $model->setOriginal(ArrayHelper::get($data, "original"));
+        $model->setLarge(ArrayHelper::get($data, "large"));
+        $model->setLarge2x(ArrayHelper::get($data, "large2x"));
+        $model->setMedium(ArrayHelper::get($data, "medium"));
+        $model->setSmall(ArrayHelper::get($data, "small"));
+        $model->setPortrait(ArrayHelper::get($data, "portrait"));
+        $model->setLandscape(ArrayHelper::get($data, "landscape"));
+        $model->setTiny(ArrayHelper::get($data, "tiny"));
 
         return $model;
     }
 
     /**
-     * Deserialize an user.
+     * Deserializes an user.
      *
-     * @param array $response The response.
+     * @param array $data The data.
      * @return User Returns an user.
      */
-    public static function deserializeUser(array $response): User {
+    public static function deserializeUser(array $data): User {
 
         $model = new User();
-        $model->setId(ArrayHelper::get($response, "id"));
-        $model->setName(ArrayHelper::get($response, "name"));
-        $model->setUrl(ArrayHelper::get($response, "url"));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
+        $model->setId(ArrayHelper::get($data, "id"));
+        $model->setName(ArrayHelper::get($data, "name"));
+        $model->setUrl(ArrayHelper::get($data, "url"));
 
         return $model;
     }
 
     /**
-     * Deserialize a video.
+     * Deserializes a video.
      *
-     * @param array $response The response.
+     * @param array $data The data.
      * @return Video Returns a video.
      */
-    public static function deserializeVideo(array $response): Video {
+    public static function deserializeVideo(array $data): Video {
 
         $model = new Video();
-        $model->setId(ArrayHelper::get($response, "id"));
-        $model->setWidth(ArrayHelper::get($response, "width"));
-        $model->setHeight(ArrayHelper::get($response, "height"));
-        $model->setUrl(ArrayHelper::get($response, "url"));
-        $model->setImage(ArrayHelper::get($response, "image"));
-        $model->setFullRes(ArrayHelper::get($response, "full_res"));
-        $model->setDuration(ArrayHelper::get($response, "duration"));
-        $model->setUser(static::deserializeUser(ArrayHelper::get($response, "user", [])));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
+        $model->setId(ArrayHelper::get($data, "id"));
+        $model->setWidth(ArrayHelper::get($data, "width"));
+        $model->setHeight(ArrayHelper::get($data, "height"));
+        $model->setUrl(ArrayHelper::get($data, "url"));
+        $model->setImage(ArrayHelper::get($data, "image"));
+        $model->setFullRes(ArrayHelper::get($data, "full_res"));
+        $model->setDuration(ArrayHelper::get($data, "duration"));
+        $model->setUser(static::deserializeUser(ArrayHelper::get($data, "user", [])));
 
-        foreach (ArrayHelper::get($response, "video_files", []) as $current) {
+        foreach (ArrayHelper::get($data, "video_files", []) as $current) {
             $model->addVideoFile(static::deserializeVideoFile($current));
         }
 
-        foreach (ArrayHelper::get($response, "video_pictures", []) as $current) {
+        foreach (ArrayHelper::get($data, "video_pictures", []) as $current) {
             $model->addVideoPicture(static::deserializeVideoPicture($current));
         }
 
@@ -138,36 +144,38 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserialize a video file.
+     * Deserializes a video file.
      *
-     * @param array $response The response.
+     * @param array $data The data.
      * @return VideoFile Returns a video file.
      */
-    public static function deserializeVideoFile(array $response): VideoFile {
+    public static function deserializeVideoFile(array $data): VideoFile {
 
         $model = new VideoFile();
-        $model->setId(ArrayHelper::get($response, "id"));
-        $model->setQuality(ArrayHelper::get($response, "quality"));
-        $model->setFileType(ArrayHelper::get($response, "file_type"));
-        $model->setWidth(ArrayHelper::get($response, "width"));
-        $model->setHeight(ArrayHelper::get($response, "height"));
-        $model->setLink(ArrayHelper::get($response, "link"));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
+        $model->setId(ArrayHelper::get($data, "id"));
+        $model->setQuality(ArrayHelper::get($data, "quality"));
+        $model->setFileType(ArrayHelper::get($data, "file_type"));
+        $model->setWidth(ArrayHelper::get($data, "width"));
+        $model->setHeight(ArrayHelper::get($data, "height"));
+        $model->setLink(ArrayHelper::get($data, "link"));
 
         return $model;
     }
 
     /**
-     * Deserialize a video picture.
+     * Deserializes a video picture.
      *
-     * @param array $response The response.
+     * @param array $data The data.
      * @return VideoPicture Returns a video picture.
      */
-    public static function deserializeVideoPicture(array $response): VideoPicture {
+    public static function deserializeVideoPicture(array $data): VideoPicture {
 
         $model = new VideoPicture();
-        $model->setId(ArrayHelper::get($response, "id"));
-        $model->setPicture(ArrayHelper::get($response, "picture"));
-        $model->setNr(ArrayHelper::get($response, "nr"));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
+        $model->setId(ArrayHelper::get($data, "id"));
+        $model->setPicture(ArrayHelper::get($data, "picture"));
+        $model->setNr(ArrayHelper::get($data, "nr"));
 
         return $model;
     }

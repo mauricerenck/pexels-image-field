@@ -17,7 +17,7 @@ use WBW\Library\Traits\Integers\IntegerIdTrait;
 /**
  * Get photo request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Request
  */
 class GetPhotoRequest extends AbstractRequest implements SubstituableRequestInterface {
@@ -34,7 +34,7 @@ class GetPhotoRequest extends AbstractRequest implements SubstituableRequestInte
     const GET_PHOTO_RESOURCE_PATH = "/v1/photos/:id";
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return self::GET_PHOTO_RESOURCE_PATH;

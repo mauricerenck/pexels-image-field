@@ -12,6 +12,7 @@
 namespace WBW\Library\Vehicle\Model;
 
 use DateTime;
+use JsonSerializable;
 
 /**
  * Registration certificate interface.
@@ -19,7 +20,7 @@ use DateTime;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Vehicle\Model
  */
-interface RegistrationCertificateInterface {
+interface RegistrationCertificateInterface extends JsonSerializable {
 
     /**
      * Get the A.

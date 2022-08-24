@@ -17,6 +17,7 @@ use WBW\Library\Accounting\Model\PaymentChoiceInterface;
 use WBW\Library\Accounting\Model\PaymentTermInterface;
 use WBW\Library\Accounting\Model\VatRateInterface;
 use WBW\Library\Serializer\Helper\JsonSerializerHelper;
+use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**
  * JSON serializer.
@@ -34,9 +35,9 @@ class JsonSerializer {
      */
     public static function serializeAccountingAccount(AccountingAccountInterface $model): array {
         return [
-            SerializerKeys::LABEL  => $model->getLabel(),
-            SerializerKeys::NUMBER => $model->getNumber(),
-            SerializerKeys::TYPE   => $model->getType(),
+            BaseSerializerKeys::LABEL  => $model->getLabel(),
+            BaseSerializerKeys::NUMBER => $model->getNumber(),
+            BaseSerializerKeys::TYPE   => $model->getType(),
         ];
     }
 
@@ -68,7 +69,7 @@ class JsonSerializer {
      */
     public static function serializePaymentChoice(PaymentChoiceInterface $model): array {
         return [
-            SerializerKeys::LABEL => $model->getLabel(),
+            BaseSerializerKeys::LABEL => $model->getLabel(),
         ];
     }
 
@@ -80,8 +81,8 @@ class JsonSerializer {
      */
     public static function serializePaymentTerm(PaymentTermInterface $model): array {
         return [
-            SerializerKeys::CODE  => $model->getCode(),
-            SerializerKeys::LABEL => $model->getLabel(),
+            BaseSerializerKeys::CODE  => $model->getCode(),
+            BaseSerializerKeys::LABEL => $model->getLabel(),
         ];
     }
 
@@ -93,9 +94,9 @@ class JsonSerializer {
      */
     public static function serializeVatRate(VatRateInterface $model): array {
         return [
-            SerializerKeys::LABEL                        => $model->getLabel(),
+            BaseSerializerKeys::LABEL                    => $model->getLabel(),
             SerializerKeys::PURCHASES_ACCOUNTING_ACCOUNT => JsonSerializerHelper::jsonSerializeModel($model->getPurchasesAccountingAccount()),
-            SerializerKeys::RATE                         => $model->getRate(),
+            BaseSerializerKeys::RATE                     => $model->getRate(),
             SerializerKeys::SALES_ACCOUNTING_ACCOUNT     => JsonSerializerHelper::jsonSerializeModel($model->getSalesAccountingAccount()),
         ];
     }

@@ -14,7 +14,7 @@ namespace WBW\Library\Quadratus\Model\QCompta;
 /**
  * Etebac lib auto.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QCompta
  */
 class EtebacLibAuto {

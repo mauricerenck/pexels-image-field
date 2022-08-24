@@ -16,7 +16,7 @@ use DateTime;
 /**
  * Cde type insp lignes.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\Proprete
  */
 class CdeTypeInspLignes {

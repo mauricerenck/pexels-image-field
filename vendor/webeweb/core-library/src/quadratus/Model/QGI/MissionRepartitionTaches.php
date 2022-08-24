@@ -14,7 +14,7 @@ namespace WBW\Library\Quadratus\Model\QGI;
 /**
  * Mission repartition taches.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QGI
  */
 class MissionRepartitionTaches {

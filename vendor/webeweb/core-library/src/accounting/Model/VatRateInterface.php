@@ -11,13 +11,15 @@
 
 namespace WBW\Library\Accounting\Model;
 
+use JsonSerializable;
+
 /**
  * VAT rate interface.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Accounting\Model
  */
-interface VatRateInterface {
+interface VatRateInterface extends JsonSerializable {
 
     /**
      * Get the label.

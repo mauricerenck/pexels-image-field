@@ -17,7 +17,7 @@ use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 /**
  * Curated photos request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Request
  */
 class CuratedPhotosRequest extends AbstractRequest {
@@ -43,7 +43,7 @@ class CuratedPhotosRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return self::CURATED_PHOTO_RESOURCE_PATH;

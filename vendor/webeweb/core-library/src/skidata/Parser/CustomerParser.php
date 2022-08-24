@@ -20,7 +20,7 @@ use WBW\Library\Types\Helper\IntegerHelper;
 /**
  * Customer parser.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SkiData\Parser
  */
 class CustomerParser extends AbstractParser {

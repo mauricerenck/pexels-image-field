@@ -16,7 +16,7 @@ use Exception;
 /**
  * Abstract exception.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Core\Exception
  * @abstract
  */

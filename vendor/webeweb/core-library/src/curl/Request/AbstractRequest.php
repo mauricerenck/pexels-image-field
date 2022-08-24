@@ -23,7 +23,7 @@ use WBW\Library\Curl\Helper\CurlHelper;
 /**
  * Abstract request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Curl\Request
  * @abstract
  */
@@ -89,7 +89,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addHeader(string $name, string $value): RequestInterface {
         $this->headers[$name] = $value;
@@ -97,7 +97,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addPostData(string $name, string $value): RequestInterface {
         $this->postData[$name] = $value;
@@ -105,7 +105,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addQueryData(string $name, string $value): RequestInterface {
         $this->queryData[$name] = $value;
@@ -113,7 +113,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function call(): ResponseInterface {
 
@@ -172,63 +172,63 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function clearHeaders(): RequestInterface {
         return $this->setHeaders([]);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function clearPostData(): RequestInterface {
         return $this->setPostData([]);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function clearQueryData(): RequestInterface {
         return $this->setQueryData([]);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getConfiguration(): Configuration {
         return $this->configuration;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getHeaders(): array {
         return $this->headers;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMethod(): string {
         return $this->method;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getPostData(): array {
         return $this->postData;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getQueryData(): array {
         return $this->queryData;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return $this->resourcePath;
@@ -327,32 +327,38 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function removeHeader(string $name): RequestInterface {
+
         if (true === array_key_exists($name, $this->headers)) {
             unset($this->headers[$name]);
         }
+
         return $this;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function removePostData(string $name): RequestInterface {
+
         if (true === array_key_exists($name, $this->postData)) {
             unset($this->postData[$name]);
         }
+
         return $this;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function removeQueryData(string $name): RequestInterface {
+
         if (true === array_key_exists($name, $this->queryData)) {
             unset($this->queryData[$name]);
         }
+
         return $this;
     }
 
@@ -427,7 +433,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setResourcePath(?string $resourcePath): RequestInterface {
         $this->resourcePath = preg_replace("/^\//", "", trim($resourcePath));

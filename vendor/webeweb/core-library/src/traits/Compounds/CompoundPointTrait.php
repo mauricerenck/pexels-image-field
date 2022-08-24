@@ -17,7 +17,7 @@ use WBW\Library\Traits\Floats\FloatYTrait;
 /**
  * Compound point trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Traits\Compounds
  */
 trait CompoundPointTrait {

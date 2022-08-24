@@ -23,7 +23,7 @@ use WBW\Library\Traits\Strings\StringUrlTrait;
 /**
  * Photos response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Response
  */
 class PhotosResponse extends AbstractMediaResponse implements PaginateResponseInterface {

@@ -17,7 +17,7 @@ use WBW\Library\Validator\Api\ValidatorInterface;
 /**
  * Abstract validator.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Validator
  * @abstract
  */
@@ -40,7 +40,7 @@ abstract class AbstractValidator implements ValidatorInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getRuleSet(): RuleSetInterface {
         return $this->ruleSet;
@@ -58,7 +58,7 @@ abstract class AbstractValidator implements ValidatorInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function validate($object): array {
         return $this->ruleSet->validate($object);

@@ -17,7 +17,7 @@ use WBW\Library\Types\Exception\StringArgumentException;
 /**
  * String helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Types\Helper
  */
 class StringHelper {
@@ -149,6 +149,26 @@ class StringHelper {
     }
 
     /**
+     * More than.
+     *
+     * @param float|null $value The value.
+     * @return string|null Returns the more than.
+     */
+    public static function moreThan(?float $value): ?string {
+
+        if (null === $value) {
+            return null;
+        }
+
+        $output = sprintf("%d", $value);
+        if ($value < 10) {
+            return $output;
+        }
+
+        return preg_replace("/\d$/", "0", $output);
+    }
+
+    /**
      * Parse an array.
      *
      * @param array $values The array.
@@ -195,9 +215,11 @@ class StringHelper {
      * @return string|null Returns the string without accents.
      */
     public static function removeAccents(?string $string): ?string {
+
         if (null === $string) {
             return null;
         }
+
         return Transliterator::create("NFD; [:Nonspacing Mark:] Remove; NFC;")->transliterate($string);
     }
 
@@ -213,7 +235,7 @@ class StringHelper {
             return null;
         }
 
-        $callback = function($m) {
+        $callback = function($m): string {
             $join = implode("", [" ", $m[1], $m[2]]);
             return strtolower($join);
         };
@@ -238,7 +260,7 @@ class StringHelper {
             return null;
         }
 
-        $callback = function($m) {
+        $callback = function($m): string {
             return count($m) < 5 ? strtolower($m[2]) . $m[3] : strtolower($m[5]) . $m[6];
         };
 
@@ -303,5 +325,64 @@ class StringHelper {
      */
     public static function ucwords(?string $string, string $separators = " \t\r\n\f\v-"): ?string {
         return ucwords(strtolower($string), $separators);
+    }
+
+    /**
+     * Usort callback.
+     *
+     * @param bool $asc ASC ?
+     * @return callable Returns the usort callback.
+     */
+    public static function usortCallback(bool $asc = true): callable {
+
+        return function(?string $string1, ?string $string2) use ($asc): int {
+
+            $result = strcmp($string1, $string2);
+
+            return true === $asc ? $result : -$result;
+        };
+    }
+
+    /**
+     * Word wrap.
+     *
+     * @param string|null $string The string.
+     * @param int $length The length.
+     * @param int $precision The precision.
+     * @param string $separator The separator.
+     * @return string|null Returns the word wrapped string.
+     */
+    public static function wordWrap(?string $string, int $length = -1, int $precision = 3, string $separator = "\n"): ?string {
+
+        if (null === $string) {
+            return null;
+        }
+
+        $needle = " ";
+        $words  = explode($needle, $string);
+        $count  = count($words);
+
+        if (-1 === $length || strlen($string) < $length || 0 === $count) {
+            return $string;
+        }
+
+        $output = [
+            $words[0],
+        ];
+
+        for ($i = 1; $i < $count; ++$i) {
+
+            $word = $words[$i];
+            $last = count($output) - 1;
+
+            $buffer = implode($needle, array_merge([$output[$last]], [$word]));
+            if (strlen($buffer) < $length + $precision) {
+                $output[$last] .= "$needle$word";
+            } else {
+                $output[] = $word;
+            }
+        }
+
+        return implode($separator, $output);
     }
 }

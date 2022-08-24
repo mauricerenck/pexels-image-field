@@ -16,7 +16,7 @@ use DateTime;
 /**
  * Start record format .
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SkiData\Model
  */
 class StartRecordFormat {

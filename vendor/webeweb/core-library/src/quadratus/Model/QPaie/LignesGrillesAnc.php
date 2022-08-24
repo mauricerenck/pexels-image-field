@@ -14,7 +14,7 @@ namespace WBW\Library\Quadratus\Model\QPaie;
 /**
  * Lignes grilles anc.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QPaie
  */
 class LignesGrillesAnc {

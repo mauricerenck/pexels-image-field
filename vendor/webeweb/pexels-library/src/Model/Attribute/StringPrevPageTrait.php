@@ -14,7 +14,7 @@ namespace WBW\Library\Pexels\Model\Attribute;
 /**
  * String prev page trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Model\Attribute
  */
 trait StringPrevPageTrait {

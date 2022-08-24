@@ -16,7 +16,7 @@ use WBW\Library\Serializer\Model\CsvSerializable;
 /**
  * CSV serializer helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Serializer\Helper
  */
 class CsvSerializerHelper extends SerializerHelper {
@@ -34,11 +34,9 @@ class CsvSerializerHelper extends SerializerHelper {
         foreach ($models as $current) {
 
             $result = static::csvSerializeModel($current);
-            if (null === $result) {
-                continue;
+            if (null !== $result) {
+                $output[] = $result;
             }
-
-            $output[] = $result;
         }
 
         return implode("\n", $output);
@@ -51,9 +49,11 @@ class CsvSerializerHelper extends SerializerHelper {
      * @return string|null Returns the serialized model.
      */
     public static function csvSerializeModel(?CsvSerializable $model): ?string {
+
         if (null === $model) {
             return null;
         }
+
         return $model->csvSerialize();
     }
 }

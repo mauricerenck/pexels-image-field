@@ -11,7 +11,6 @@
 
 namespace WBW\Library\Vehicle\Model;
 
-use JsonSerializable;
 use WBW\Library\Traits\Strings\StringLabelTrait;
 use WBW\Library\Vehicle\Serializer\JsonSerializer;
 
@@ -21,7 +20,7 @@ use WBW\Library\Vehicle\Serializer\JsonSerializer;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Vehicle\Model
  */
-class VehicleBrand implements VehicleBrandInterface, JsonSerializable {
+class VehicleBrand implements VehicleBrandInterface {
 
     use StringLabelTrait;
 
@@ -33,7 +32,7 @@ class VehicleBrand implements VehicleBrandInterface, JsonSerializable {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeVehicleBrand($this);

@@ -27,7 +27,7 @@ use WBW\Library\Curl\Response\Response;
 /**
  * cURL factory.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Curl\Factory
  */
 class CurlFactory {

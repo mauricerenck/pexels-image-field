@@ -11,13 +11,15 @@
 
 namespace WBW\Library\Accounting\Model;
 
+use JsonSerializable;
+
 /**
  * Bank details interface.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Accounting\Model
  */
-interface BankDetailsInterface {
+interface BankDetailsInterface extends JsonSerializable {
 
     /**
      * Get the account number.

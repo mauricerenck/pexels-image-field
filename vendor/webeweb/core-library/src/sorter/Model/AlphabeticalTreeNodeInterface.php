@@ -14,7 +14,7 @@ namespace WBW\Library\Sorter\Model;
 /**
  * Alphabetical tree node interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Sorter\Model
  */
 interface AlphabeticalTreeNodeInterface {

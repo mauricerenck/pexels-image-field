@@ -14,7 +14,7 @@ namespace WBW\Library\Sorter;
 /**
  * Functor interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Sorter
  */
 interface FunctorInterface {

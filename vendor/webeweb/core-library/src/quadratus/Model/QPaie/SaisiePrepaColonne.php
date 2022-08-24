@@ -14,7 +14,7 @@ namespace WBW\Library\Quadratus\Model\QPaie;
 /**
  * Saisie prepa colonne.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QPaie
  */
 class SaisiePrepaColonne {

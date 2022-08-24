@@ -12,6 +12,7 @@
 namespace WBW\Library\Dropdown\Serializer;
 
 use WBW\Library\Dropdown\Model\DropdownItemInterface;
+use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**
  * JSON serializer.
@@ -29,9 +30,9 @@ class JsonSerializer {
      */
     public static function serializeDropdownItem(DropdownItemInterface $model): array {
         return [
-            SerializerKeys::BY_DEFAULT => $model->getByDefault(),
-            SerializerKeys::LABEL      => $model->getLabel(),
-            SerializerKeys::POSITION   => $model->getPosition(),
+            SerializerKeys::BY_DEFAULT   => $model->getByDefault(),
+            BaseSerializerKeys::LABEL    => $model->getLabel(),
+            BaseSerializerKeys::POSITION => $model->getPosition(),
         ];
     }
 }

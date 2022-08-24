@@ -17,13 +17,13 @@ use WBW\Library\Sorter\Model\AlphabeticalTreeNodeInterface;
 /**
  * Alphabetical tree node helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Sorter\Helper
  */
 class AlphabeticalTreeNodeHelper {
 
     /**
-     * Create a choices.
+     * Creates the choices.
      *
      * @param AlphabeticalTreeNodeInterface[] $choices The choices.
      * @return array Returns the choices.
@@ -38,14 +38,14 @@ class AlphabeticalTreeNodeHelper {
         foreach ($sorter->getNodes() as $current) {
 
             $path = static::getPath($current);
+
             if (false === array_key_exists($path[0]->getAlphabeticalTreeNodeLabel(), $output)) {
                 $output[$current->getAlphabeticalTreeNodeLabel()] = [];
             }
-            if (1 === count($path)) {
-                continue;
-            }
 
-            $output[$path[0]->getAlphabeticalTreeNodeLabel()][] = $current;
+            if (1 !== count($path)) {
+                $output[$path[0]->getAlphabeticalTreeNodeLabel()][] = $current;
+            }
         }
 
         return $output;
@@ -88,15 +88,32 @@ class AlphabeticalTreeNodeHelper {
      * @return void
      */
     public static function removeOrphan(array &$nodes = []): void {
+
         do {
+
             $found = false;
+
             foreach ($nodes as $k => $v) {
-                if (false === ($v instanceof AlphabeticalTreeNodeInterface) || null === $v->getAlphabeticalTreeNodeParent() || true === in_array($v->getAlphabeticalTreeNodeParent(), $nodes)) {
-                    continue;
+
+                if (true === ($v instanceof AlphabeticalTreeNodeInterface) && null !== $v->getAlphabeticalTreeNodeParent() && false === in_array($v->getAlphabeticalTreeNodeParent(), $nodes)) {
+                    unset($nodes[$k]);
+                    $found = true;
                 }
-                unset($nodes[$k]);
-                $found = true;
             }
         } while (true === $found);
+    }
+
+    /**
+     * Sort.
+     *
+     * @param array $nodes The nodes.
+     * @return array Returns the sorted nodes.
+     */
+    public static function sort(array $nodes): array {
+
+        $sorter = new AlphabeticalTreeSort($nodes);
+        $sorter->sort();
+
+        return $sorter->getNodes();
     }
 }

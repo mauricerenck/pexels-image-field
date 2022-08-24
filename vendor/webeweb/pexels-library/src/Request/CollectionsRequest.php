@@ -17,7 +17,7 @@ use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 /**
  * Collections request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Request
  */
 class CollectionsRequest extends AbstractRequest {
@@ -43,7 +43,7 @@ class CollectionsRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return self::COLLECTIONS_RESOURCE_PATH;

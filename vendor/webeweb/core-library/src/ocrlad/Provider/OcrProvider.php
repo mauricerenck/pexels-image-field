@@ -11,7 +11,6 @@
 
 namespace WBW\Library\OcrLad\Provider;
 
-use Closure;
 use Psr\Log\LoggerInterface;
 use WBW\Library\Ftp\Client\FtpClient;
 use WBW\Library\Ftp\Exception\FtpException;
@@ -152,10 +151,10 @@ class OcrProvider extends AbstractProvider {
          *
          * @param string $directory The directory.
          * @return void
-         * @throws FtpException Throws a FTP exception if an error occurs.
-         * @var Closure $deleteClosure
+         * @throws FtpException Throws an FTP exception if an error occurs.
+         * @var callable $deleteCallback
          */
-        $deleteClosure = function(string $directory) use ($provider, $file): void {
+        $deleteCallback = function(string $directory) use ($provider, $file): void {
 
             $paths = $provider->buildFilePaths($file);
 
@@ -172,9 +171,9 @@ class OcrProvider extends AbstractProvider {
             }
         };
 
-        $deleteClosure($this->getRemoteDirectoryBefore());
-        $deleteClosure($this->getRemoteDirectoryAfter());
-        //$deleteClosure($this->getRemoteDirectoryError());
+        $deleteCallback($this->getRemoteDirectoryBefore());
+        $deleteCallback($this->getRemoteDirectoryAfter());
+        //$deleteCallback($this->getRemoteDirectoryError());
     }
 
     /**
@@ -202,17 +201,17 @@ class OcrProvider extends AbstractProvider {
          * @param string $remote The remote file.
          * @return void
          * @throws FtpException Throws a FTP exception if an error occurs.
-         * @var Closure $downloadClosure
+         * @var callable $downloadCallback
          */
-        $downloadClosure = function(string $local, string $remote) use ($provider) {
+        $downloadCallback = function(string $local, string $remote) use ($provider): void {
             $provider->getLogger()->info("OCR provider downloads a file  from the FTP server", ["_local" => $local, "_remote" => $remote]);
             $provider->getFtpClient()->get($local, $remote);
         };
 
-        $downloadClosure($paths["local"][0], $paths["remote"][0]);
-        $downloadClosure($paths["local"][1], $paths["remote"][1]);
-        $downloadClosure($paths["local"][2], $paths["remote"][2]);
-        $downloadClosure($paths["local"][3], $paths["remote"][3]);
+        $downloadCallback($paths["local"][0], $paths["remote"][0]);
+        $downloadCallback($paths["local"][1], $paths["remote"][1]);
+        $downloadCallback($paths["local"][2], $paths["remote"][2]);
+        $downloadCallback($paths["local"][3], $paths["remote"][3]);
 
         return true;
     }

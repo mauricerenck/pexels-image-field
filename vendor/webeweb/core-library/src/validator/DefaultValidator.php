@@ -16,7 +16,7 @@ use WBW\Library\Validator\Api\RuleSetInterface;
 /**
  * Default validator.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Validator
  */
 class DefaultValidator extends AbstractValidator {

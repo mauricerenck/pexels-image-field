@@ -17,7 +17,7 @@ use InvalidArgumentException;
 /**
  * Integer argument exception.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Types\Exception
  */
 class IntegerArgumentException extends InvalidArgumentException {

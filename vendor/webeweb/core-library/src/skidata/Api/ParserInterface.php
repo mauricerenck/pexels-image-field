@@ -14,7 +14,7 @@ namespace WBW\Library\SkiData\Api;
 /**
  * Parser interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SkiData\Api
  */
 interface ParserInterface {

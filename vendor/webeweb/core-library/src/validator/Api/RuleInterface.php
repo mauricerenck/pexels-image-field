@@ -14,7 +14,7 @@ namespace WBW\Library\Validator\Api;
 /**
  * Rule interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Validator\Api
  */
 interface RuleInterface {

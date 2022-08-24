@@ -14,7 +14,7 @@ namespace WBW\Library\Validator\Status;
 /**
  * Default status.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Validator\Status
  */
 class DefaultStatus extends AbstractStatus {

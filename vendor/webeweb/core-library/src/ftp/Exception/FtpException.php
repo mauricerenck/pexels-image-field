@@ -16,7 +16,7 @@ use WBW\Library\Core\Exception\AbstractException as BaseException;
 /**
  * FTP exception.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Ftp\Exception
  */
 class FtpException extends BaseException {

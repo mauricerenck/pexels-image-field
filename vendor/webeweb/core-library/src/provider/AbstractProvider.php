@@ -13,6 +13,7 @@ namespace WBW\Library\Provider;
 
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use WBW\Library\Logger\LoggerTrait;
 use WBW\Library\Provider\Api\SubstituableRequestInterface;
 use WBW\Library\Provider\Request\AbstractRequest;
 use WBW\Library\Traits\Booleans\BooleanDebugTrait;
@@ -27,13 +28,7 @@ use WBW\Library\Traits\Booleans\BooleanDebugTrait;
 abstract class AbstractProvider {
 
     use BooleanDebugTrait;
-
-    /**
-     * Logger.
-     *
-     * @var LoggerInterface|null
-     */
-    private $logger;
+    use LoggerTrait;
 
     /**
      * Constructor.
@@ -68,15 +63,6 @@ abstract class AbstractProvider {
     }
 
     /**
-     * Get the logger.
-     *
-     * @return LoggerInterface|null Returns the logger.
-     */
-    public function getLogger(): ?LoggerInterface {
-        return $this->logger;
-    }
-
-    /**
      * Log an info.
      *
      * @param string $message The message.
@@ -89,17 +75,6 @@ abstract class AbstractProvider {
             $this->getLogger()->info($message, $context);
         }
 
-        return $this;
-    }
-
-    /**
-     * Set the logger.
-     *
-     * @param LoggerInterface|null $logger The logger.
-     * @return AbstractProvider Returns this provider.
-     */
-    protected function setLogger(LoggerInterface $logger = null): AbstractProvider {
-        $this->logger = $logger;
         return $this;
     }
 }

@@ -11,13 +11,17 @@
 
 namespace WBW\Library\Pexels\Model;
 
+use WBW\Library\Traits\Strings\StringRawDataTrait;
+
 /**
  * Video.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Model
  */
 class Video extends AbstractMedia {
+
+    use StringRawDataTrait;
 
     /**
      * Duration.

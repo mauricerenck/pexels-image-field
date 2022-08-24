@@ -14,7 +14,7 @@ namespace WBW\Library\Traits\Integers;
 /**
  * Integer per page trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Traits\Integers
  */
 trait IntegerPerPageTrait {

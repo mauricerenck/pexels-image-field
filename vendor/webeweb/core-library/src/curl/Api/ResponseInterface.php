@@ -14,7 +14,7 @@ namespace WBW\Library\Curl\Api;
 /**
  * Response interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Curl\Api
  */
 interface ResponseInterface {

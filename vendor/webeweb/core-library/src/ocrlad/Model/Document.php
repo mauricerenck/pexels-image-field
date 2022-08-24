@@ -84,9 +84,11 @@ class Document {
      * @return Page|null Returns the page in case of success, null otherwise.
      */
     public function getPage(?int $p): ?Page {
+
         if (false === is_int($p) || $p < 0 || $this->getNumberPages() <= $p) {
             return null;
         }
+
         return $this->getPages()[$p];
     }
 

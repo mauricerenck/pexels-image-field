@@ -21,7 +21,7 @@ use WBW\Library\Traits\Strings\StringStreetNameTrait;
 /**
  * Compound address trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Traits\Compounds
  */
 trait CompoundAddressTrait {

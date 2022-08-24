@@ -11,28 +11,30 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
+use WBW\Library\Pexels\Api\RequestInterface;
 use WBW\Library\Pexels\Model\User;
 use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Model\VideoFile;
 use WBW\Library\Pexels\Model\VideoPicture;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\SearchVideosRequest;
+use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 // Create the API provider.
-$provider = new ApiProvider("YOUR_API_KEY");
+$provider = new ApiProvider(AbstractTestCase::getToken());
 
 // Create a Search videos request.
 $request = new SearchVideosRequest();
 $request->setQuery("YOUR QUERY");
-$request->setOrientation("landscape"); // Optional
-$request->setSize("large"); // Optional
-$request->setLocale("en-US"); // Optional
+$request->setOrientation(RequestInterface::ORIENTATION_LANDSCAPE); // Optional
+$request->setSize(RequestInterface::SIZE_LARGE); // Optional
+$request->setLocale(RequestInterface::LOCALE_EN_US); // Optional
 
 // Call the API and get the response.
 $response = $provider->searchVideos($request);
 
 // Handle the response.
-$format = "%20s: %s\n";
+$format = "%-20s: %s\n";
 
 echo sprintf($format, "Limit", $response->getLimit());
 echo sprintf($format, "Remaining", $response->getRemaining());

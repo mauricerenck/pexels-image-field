@@ -14,9 +14,10 @@ use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Model\Source;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\GetPhotoRequest;
+use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 // Create the API provider.
-$provider = new ApiProvider("YOUR_API_KEY");
+$provider = new ApiProvider(AbstractTestCase::getToken());
 
 // Create a Get photo request.
 $request = new GetPhotoRequest();
@@ -26,7 +27,7 @@ $request->setId(1234);
 $response = $provider->getPhoto($request);
 
 // Handle the response.
-$format = "%20s: %s\n";
+$format = "%-20s: %s\n";
 
 echo sprintf($format, "Limit", $response->getLimit());
 echo sprintf($format, "Remaining", $response->getRemaining());

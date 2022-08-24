@@ -17,13 +17,13 @@ use WBW\Library\Security\Authenticator;
 /**
  * Oracle MySQL database connector.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Database\Connector
  */
 class OracleMySQLDatabaseConnector extends AbstractDatabaseConnector {
 
     /**
-     * Microsoft SQL Server DSN.
+     * Oracle MySQL DSN.
      *
      * @var string
      */
@@ -46,7 +46,7 @@ class OracleMySQLDatabaseConnector extends AbstractDatabaseConnector {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function connect(): PDO {
 

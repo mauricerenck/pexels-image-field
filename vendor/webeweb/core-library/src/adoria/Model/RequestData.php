@@ -16,7 +16,7 @@ use DateTime;
 /**
  * Request data.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Adoria\Model
  */
 class RequestData {

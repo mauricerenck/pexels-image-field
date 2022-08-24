@@ -17,7 +17,7 @@ use WBW\Library\Sorter\Model\AlphabeticalTreeNodeInterface;
 /**
  * Alphabetical tree sort.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Sorter
  */
 class AlphabeticalTreeSort {
@@ -44,9 +44,9 @@ class AlphabeticalTreeSort {
      * @param AlphabeticalTreeNodeInterface $a The node A.
      * @param AlphabeticalTreeNodeInterface $b The node B.
      * @return int Returns
-     *  < O: if the node A is lesser than node B
-     *  > 0: if the node A is gerater than node B
-     *  = 0: if the two nodes are equals
+     *  < O if the node A is lesser than node B
+     *  > 0 if the node A is greater than node B
+     *  = 0 if the two nodes are equals
      */
     protected function compare(AlphabeticalTreeNodeInterface $a, AlphabeticalTreeNodeInterface $b): int {
 

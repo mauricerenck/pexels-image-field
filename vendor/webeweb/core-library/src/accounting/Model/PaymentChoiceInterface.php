@@ -11,13 +11,15 @@
 
 namespace WBW\Library\Accounting\Model;
 
+use JsonSerializable;
+
 /**
  * Payment choice interface.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Accounting\Model
  */
-interface PaymentChoiceInterface {
+interface PaymentChoiceInterface extends JsonSerializable {
 
     /**
      * Get the label.

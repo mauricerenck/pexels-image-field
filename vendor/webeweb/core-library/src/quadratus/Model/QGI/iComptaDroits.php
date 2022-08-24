@@ -16,7 +16,7 @@ use DateTime;
 /**
  * i compta droits.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QGI
  */
 class iComptaDroits {

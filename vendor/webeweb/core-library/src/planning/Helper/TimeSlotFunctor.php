@@ -17,13 +17,13 @@ use WBW\Library\Types\Helper\DateTimeHelper;
 /**
  * Time slot functor.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Planning\Helper
  */
 class TimeSlotFunctor implements FunctorInterface {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function compare($a, $b): bool {
         return DateTimeHelper::isLessThan($a->getStartDate(), $b->getStartDate());

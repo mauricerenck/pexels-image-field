@@ -18,7 +18,7 @@ use WBW\Library\Security\Authenticator;
 /**
  * Microsoft Access database connector.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Database\Connector
  */
 class MicrosoftAccessDatabaseConnector extends AbstractDatabaseConnector {
@@ -43,7 +43,7 @@ class MicrosoftAccessDatabaseConnector extends AbstractDatabaseConnector {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function connect(): PDO {
 

@@ -23,7 +23,7 @@ use WBW\Library\Traits\Strings\StringUrlTrait;
 /**
  * Videos response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Response
  */
 class VideosResponse extends AbstractMediaResponse implements PaginateResponseInterface {

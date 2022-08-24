@@ -16,7 +16,7 @@ use DateTime;
 /**
  * Customer trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SkiData\Traits
  */
 trait CustomerTrait {

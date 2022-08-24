@@ -16,7 +16,7 @@ use JsonSerializable;
 /**
  * JSON serializer helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Serializer\Helper
  */
 class JsonSerializerHelper {
@@ -34,11 +34,9 @@ class JsonSerializerHelper {
         foreach ($models as $current) {
 
             $array = static::jsonSerializeModel($current);
-            if (null === $array) {
-                continue;
+            if (null !== $array) {
+                $output[] = $array;
             }
-
-            $output[] = $array;
         }
 
         return $output;
@@ -51,9 +49,11 @@ class JsonSerializerHelper {
      * @return array|null Returns the serialized model.
      */
     public static function jsonSerializeModel(?JsonSerializable $model): ?array {
+
         if (null === $model) {
             return null;
         }
+
         return $model->jsonSerialize();
     }
 }

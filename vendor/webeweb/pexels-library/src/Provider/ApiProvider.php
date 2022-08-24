@@ -36,7 +36,7 @@ use WBW\Library\Provider\Exception\ApiException;
 /**
  * API provider.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Provider
  */
 class ApiProvider extends AbstractProvider {

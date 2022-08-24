@@ -17,7 +17,7 @@ use WBW\Library\Provider\Request\AbstractRequest as BaseRequest;
 /**
  * Abstract request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Request
  * @abstract
  */

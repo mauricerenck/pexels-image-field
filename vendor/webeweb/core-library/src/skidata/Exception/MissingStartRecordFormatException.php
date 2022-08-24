@@ -14,7 +14,7 @@ namespace WBW\Library\SkiData\Exception;
 /**
  * Missing start record format exception.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SkiData\Exception
  */
 class MissingStartRecordFormatException extends AbstractException {

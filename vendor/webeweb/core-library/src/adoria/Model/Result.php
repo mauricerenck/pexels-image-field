@@ -14,7 +14,7 @@ namespace WBW\Library\Adoria\Model;
 /**
  * Result.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Adoria\Model
  */
 class Result {

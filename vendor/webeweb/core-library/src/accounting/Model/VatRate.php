@@ -11,7 +11,6 @@
 
 namespace WBW\Library\Accounting\Model;
 
-use JsonSerializable;
 use WBW\Library\Accounting\Serializer\JsonSerializer;
 use WBW\Library\Traits\Floats\FloatRateTrait;
 use WBW\Library\Traits\Strings\StringLabelTrait;
@@ -22,7 +21,7 @@ use WBW\Library\Traits\Strings\StringLabelTrait;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Accounting\Model
  */
-class VatRate implements VatRateInterface, JsonSerializable {
+class VatRate implements VatRateInterface {
 
     use FloatRateTrait;
     use StringLabelTrait;
@@ -49,28 +48,28 @@ class VatRate implements VatRateInterface, JsonSerializable {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getPurchasesAccountingAccount(): ?AccountingAccountInterface {
         return $this->purchasesAccountingAccount;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getSalesAccountingAccount(): ?AccountingAccountInterface {
         return $this->salesAccountingAccount;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeVatRate($this);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setPurchasesAccountingAccount(?AccountingAccountInterface $purchasesAccountingAccount): VatRateInterface {
         $this->purchasesAccountingAccount = $purchasesAccountingAccount;
@@ -78,7 +77,7 @@ class VatRate implements VatRateInterface, JsonSerializable {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setSalesAccountingAccount(?AccountingAccountInterface $salesAccountingAccount): VatRateInterface {
         $this->salesAccountingAccount = $salesAccountingAccount;

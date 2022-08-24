@@ -16,7 +16,7 @@ use DateTime;
 /**
  * Agenda collab const.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QGI
  */
 class AgendaCollabConst {

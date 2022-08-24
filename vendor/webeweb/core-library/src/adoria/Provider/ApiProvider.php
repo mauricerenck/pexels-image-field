@@ -26,7 +26,7 @@ use WBW\Library\Provider\Exception\ApiException;
 /**
  * API provider.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Adoria\Provider
  */
 class ApiProvider extends AbstractProvider implements ApiProviderInterface {
@@ -46,27 +46,27 @@ class ApiProvider extends AbstractProvider implements ApiProviderInterface {
      * @param string $resourcePath The resource path.
      * @param array $postData The post data.
      * @return string Returns the response.
-     * @throws ApiException Throws an API exception exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     protected function callApi(string $resourcePath, array $postData): string {
 
         try {
 
-            $cURLRequest = new PostRequest(new Configuration(), $resourcePath);
-            $cURLRequest->getConfiguration()->addHeader("Accept", "application/json");
-            $cURLRequest->getConfiguration()->addHeader("Content-Type", "application/json");
-            $cURLRequest->getConfiguration()->setDebug($this->getDebug());
-            $cURLRequest->getConfiguration()->setHost(self::ENDPOINT_PATH);
-            $cURLRequest->getConfiguration()->setUserAgent("webeweb/adoria-library");
+            $request = new PostRequest(new Configuration(), $resourcePath);
+            $request->getConfiguration()->addHeader("Accept", "application/json");
+            $request->getConfiguration()->addHeader("Content-Type", "application/json");
+            $request->getConfiguration()->setDebug($this->getDebug());
+            $request->getConfiguration()->setHost(self::ENDPOINT_PATH);
+            $request->getConfiguration()->setUserAgent("webeweb/adoria-library");
 
             // Handle each parameter.
             foreach ($postData as $name => $value) {
-                $cURLRequest->addPostData($name, $value);
+                $request->addPostData($name, $value);
             }
 
-            $cURLResponse = $cURLRequest->call();
+            $response = $request->call();
 
-            return $cURLResponse->getResponseBody();
+            return $response->getResponseBody();
         } catch (Exception $ex) {
 
             throw new ApiException("Failed to call Adoria API", 500, $ex);
@@ -78,7 +78,7 @@ class ApiProvider extends AbstractProvider implements ApiProviderInterface {
      *
      * @param RequestData $requestData The request data.
      * @return Result Returns the result.
-     * @throws ApiException Throws an API exception exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function requestData(RequestData $requestData): Result {
 

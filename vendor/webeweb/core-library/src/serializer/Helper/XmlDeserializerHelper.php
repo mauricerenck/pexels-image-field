@@ -17,7 +17,7 @@ use DOMNodeList;
 /**
  * XML deserializer helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Serializer\Helper
  */
 class XmlDeserializerHelper extends SerializerHelper {
@@ -92,11 +92,9 @@ class XmlDeserializerHelper extends SerializerHelper {
         /** @var DOMNode $current */
         foreach ($domNodeList as $current) {
 
-            if ($nodeName !== $current->nodeName) {
-                continue;
+            if ($nodeName === $current->nodeName) {
+                $domNodes[] = $current;
             }
-
-            $domNodes[] = $current;
         }
 
         return $domNodes;
@@ -123,7 +121,7 @@ class XmlDeserializerHelper extends SerializerHelper {
 
         /** @var DOMNode $current */
         foreach ($domNode->childNodes as $current) {
-            $context["_chilNodes"][] = $current->nodeName;
+            $context["_childNodes"][] = $current->nodeName;
         }
 
         static::$logger->debug(sprintf('Deserialize a DOM node with name "%s"', $domNode->nodeName), $context);
@@ -140,7 +138,7 @@ class XmlDeserializerHelper extends SerializerHelper {
 
         $pattern  = "/(<[A-Za-z_]*>)(.*)(<\/[A-Za-z_]*>)/";
         $content  = file_get_contents($filename);
-        $callback = function($matches) use ($encoding) {
+        $callback = function($matches) use ($encoding): string {
 
             $output = [
                 $matches[1],

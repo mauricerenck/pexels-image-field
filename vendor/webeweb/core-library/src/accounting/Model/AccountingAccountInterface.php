@@ -11,13 +11,15 @@
 
 namespace WBW\Library\Accounting\Model;
 
+use JsonSerializable;
+
 /**
  * Accounting account interface.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Accounting\Model
  */
-interface AccountingAccountInterface {
+interface AccountingAccountInterface extends JsonSerializable {
 
     /**
      * Type "general".

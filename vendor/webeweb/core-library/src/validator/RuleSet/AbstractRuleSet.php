@@ -17,7 +17,7 @@ use WBW\Library\Validator\Api\RuleSetInterface;
 /**
  * Abstract rule set.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Validator\RuleSet
  * @abstract
  */
@@ -38,7 +38,7 @@ abstract class AbstractRuleSet implements RuleSetInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addRule(RuleInterface $rule): RuleSetInterface {
         $this->rules[] = $rule;
@@ -46,24 +46,22 @@ abstract class AbstractRuleSet implements RuleSetInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getRules(): array {
         return $this->rules;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function removeRule(RuleInterface $rule): RuleSetInterface {
 
         for ($i = count($this->rules) - 1; 0 <= $i; --$i) {
 
-            if ($rule !== $this->rules[$i]) {
-                continue;
+            if ($rule === $this->rules[$i]) {
+                unset($this->rules[$i]);
             }
-
-            unset($this->rules[$i]);
         }
 
         return $this;
@@ -81,7 +79,7 @@ abstract class AbstractRuleSet implements RuleSetInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function validate($object): array {
 

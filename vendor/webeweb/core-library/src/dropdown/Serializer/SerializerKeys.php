@@ -11,15 +11,13 @@
 
 namespace WBW\Library\Dropdown\Serializer;
 
-use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
-
 /**
  * Serializer keys interface.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Dropdown\Serializer
  */
-interface SerializerKeys extends BaseSerializerKeys {
+interface SerializerKeys {
 
     /**
      * Serializer key "by default".

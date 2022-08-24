@@ -16,7 +16,7 @@ use DateTime;
 /**
  * Constantes2.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QGI
  */
 class Constantes2 {

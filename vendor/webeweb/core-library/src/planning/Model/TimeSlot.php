@@ -19,7 +19,7 @@ use WBW\Library\Types\Helper\DateTimeHelper;
 /**
  * Time slot.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Planning\Model
  */
 class TimeSlot {
@@ -158,11 +158,9 @@ class TimeSlot {
 
         for ($i = count($this->timeSlots) - 1; 0 <= $i; --$i) {
 
-            if (true !== TimeSlotHelper::equals($timeSlot, $this->timeSlots[$i])) {
-                continue;
+            if (true === TimeSlotHelper::equals($timeSlot, $this->timeSlots[$i])) {
+                unset($this->timeSlots[$i]);
             }
-
-            unset($this->timeSlots[$i]);
         }
 
         return $this;

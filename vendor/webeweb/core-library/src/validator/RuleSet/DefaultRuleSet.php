@@ -14,7 +14,7 @@ namespace WBW\Library\Validator\RuleSet;
 /**
  * Default rule set.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Validator\RuleSet
  */
 class DefaultRuleSet extends AbstractRuleSet {

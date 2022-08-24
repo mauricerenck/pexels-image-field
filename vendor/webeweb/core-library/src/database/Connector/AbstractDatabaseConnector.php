@@ -18,7 +18,7 @@ use WBW\Library\Security\Authenticator;
 /**
  * Abstract database connector.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Database\Connector
  */
 abstract class AbstractDatabaseConnector {
@@ -77,9 +77,11 @@ abstract class AbstractDatabaseConnector {
      * @throws Exception Throws an exception if the connection failed.
      */
     public function getConnection(): PDO {
+
         if (null === $this->connection) {
             $this->connection = $this->connect();
         }
+
         return $this->connection;
     }
 
@@ -99,10 +101,13 @@ abstract class AbstractDatabaseConnector {
      * @return array Returns the binding as key => :key.
      */
     public function prepareBinding(array $fields): array {
+
         $output = [];
+
         foreach ($fields as $current) {
             $output[$current] = ":" . $current;
         }
+
         return $output;
     }
 

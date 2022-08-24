@@ -17,7 +17,7 @@ use WBW\Library\Core\Exception\AbstractException as BaseException;
 /**
  * Abstract exception.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Curl\Exception
  * @abstract
  */

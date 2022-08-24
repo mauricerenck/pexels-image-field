@@ -14,7 +14,7 @@ namespace WBW\Library\Quadratus\Model\Proprete;
 /**
  * Bons travaux employes.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\Proprete
  */
 class BonsTravauxEmployes {

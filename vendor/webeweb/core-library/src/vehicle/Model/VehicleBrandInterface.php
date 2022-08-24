@@ -11,13 +11,15 @@
 
 namespace WBW\Library\Vehicle\Model;
 
+use JsonSerializable;
+
 /**
  * Vehicle brand interface.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Vehicle\Model
  */
-interface VehicleBrandInterface {
+interface VehicleBrandInterface extends JsonSerializable {
 
     /**
      * Get the label.

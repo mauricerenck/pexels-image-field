@@ -14,7 +14,7 @@ namespace WBW\Library\Database\Helper;
 /**
  * Paginate helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Database\Helper
  */
 class PaginateHelper {

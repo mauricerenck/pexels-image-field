@@ -16,7 +16,7 @@ use DateTime;
 /**
  * Charges a repartir.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QCompta
  */
 class ChargesARepartir {

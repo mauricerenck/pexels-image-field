@@ -17,7 +17,7 @@ use WBW\Library\Curl\Configuration\Configuration;
 /**
  * PATCH request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Curl\Request
  */
 class PatchRequest extends AbstractRequest {

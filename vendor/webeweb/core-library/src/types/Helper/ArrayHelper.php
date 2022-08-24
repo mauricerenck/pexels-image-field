@@ -16,10 +16,42 @@ use WBW\Library\Types\Exception\ArrayArgumentException;
 /**
  * Array helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Types\Helper
  */
 class ArrayHelper {
+
+    /**
+     * Filter by.
+     *
+     * @param array $array The array.
+     * @param callable[] $filters The filters.
+     * @return array Returns the filtered array.
+     */
+    public static function filterBy(array $array, array $filters): array {
+
+        $matches = [];
+
+        foreach ($array as $current) {
+
+            $include = true;
+
+            foreach ($filters as $callback) {
+
+                if (true === is_callable($callback) && false === $callback($current)) {
+
+                    $include = false;
+                    break;
+                }
+            }
+
+            if (true === $include) {
+                $matches[] = $current;
+            }
+        }
+
+        return $matches;
+    }
 
     /**
      * Get a value.
@@ -31,6 +63,30 @@ class ArrayHelper {
      */
     public static function get(array $array, $key, $default = null) {
         return true === array_key_exists($key, $array) ? $array[$key] : $default;
+    }
+
+    /**
+     * Insert a value.
+     *
+     * @param array $array The array.
+     * @param int $offset The offset.
+     * @param mixed $value The value.
+     * @return array Returns the array.
+     */
+    public static function insert(array $array, int $offset, $value): array {
+
+        if ($offset <= 0) {
+            return array_merge([$value], $array);
+        }
+
+        if (count($array) <= $offset) {
+            return array_merge($array, [$value]);
+        }
+
+        $slice1 = array_slice($array, 0, $offset);
+        $slice2 = array_slice($array, $offset);
+
+        return array_merge($slice1, [$value], $slice2);
     }
 
     /**
@@ -66,12 +122,14 @@ class ArrayHelper {
      * @return void
      */
     public static function set(array &$array, string $key, $value, array $tests = []): void {
+
         foreach ($tests as $current) {
-            if ($current !== $value) {
-                continue;
+
+            if ($current === $value) {
+                return;
             }
-            return;
         }
+
         $array[$key] = $value;
     }
 }

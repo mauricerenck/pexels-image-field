@@ -17,9 +17,10 @@ use WBW\Library\Pexels\Model\VideoFile;
 use WBW\Library\Pexels\Model\VideoPicture;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\GetVideoRequest;
+use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 // Create the API provider.
-$provider = new ApiProvider("YOUR_API_KEY");
+$provider = new ApiProvider(AbstractTestCase::getToken());
 
 // Create a Get video request.
 $request = new GetVideoRequest();
@@ -29,7 +30,7 @@ $request->setId(1234);
 $response = $provider->getVideo($request);
 
 // Handle the response.
-$format = "%20s: %s\n";
+$format = "%-20s: %s\n";
 
 echo sprintf($format, "Limit", $response->getLimit());
 echo sprintf($format, "Remaining", $response->getRemaining());

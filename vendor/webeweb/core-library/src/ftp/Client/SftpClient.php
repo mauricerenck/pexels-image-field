@@ -17,7 +17,7 @@ use WBW\Library\Security\Authenticator;
 /**
  * SFTP client.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Ftp\Client
  */
 class SftpClient extends AbstractClient {

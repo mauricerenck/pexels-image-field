@@ -16,7 +16,7 @@ use WBW\Library\Curl\Api\ResponseInterface;
 /**
  * Response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Curl\Response
  */
 class Response implements ResponseInterface {
@@ -73,42 +73,42 @@ class Response implements ResponseInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getRequestBody(): ?string {
         return $this->requestBody;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getRequestHeader(): array {
         return $this->requestHeader;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getRequestUrl(): ?string {
         return $this->requestUrl;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResponseBody(): ?string {
         return $this->responseBody;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResponseHeader(): array {
         return $this->responseHeader;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResponseInfo(): array {
         return $this->responseInfo;

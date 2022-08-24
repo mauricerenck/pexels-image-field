@@ -16,7 +16,7 @@ use DateTime;
 /**
  * Date/time ended on trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Traits\DateTimes
  */
 trait DateTimeEndedOnTrait {

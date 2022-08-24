@@ -22,7 +22,7 @@ use WBW\Library\Traits\Strings\StringIdTrait;
 /**
  * Collection response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Response
  */
 class CollectionResponse extends AbstractMediaResponse {
@@ -42,14 +42,14 @@ class CollectionResponse extends AbstractMediaResponse {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addMedia(AbstractMedia $media): AbstractMediaResponse {
         return parent::addMedia($media);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMedias(): array {
         return parent::getMedias();

@@ -22,13 +22,13 @@ use WBW\Library\Types\Helper\ArrayHelper;
 /**
  * Response deserializer.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Serializer
  */
 class ResponseDeserializer {
 
     /**
-     * Deserialize a collection response.
+     * Deserializes a collection response.
      *
      * @param string $rawResponse The raw response.
      * @return CollectionResponse Returns the collection response.
@@ -65,7 +65,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a collections response.
+     * Deserializes a collections response.
      *
      * @param string $rawResponse The raw response.
      * @return CollectionsResponse Returns the collections response.
@@ -95,7 +95,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a photo response.
+     * Deserializes a photo response.
      *
      * @param string $rawResponse The raw response.
      * @return PhotoResponse Returns the photo response.
@@ -117,7 +117,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a photos response.
+     * Deserializes a photos response.
      *
      * @param string $rawResponse The raw response.
      * @return PhotosResponse Returns the photos response.
@@ -148,7 +148,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a video response.
+     * Deserializes a video response.
      *
      * @param string $rawResponse The raw response.
      * @return VideoResponse Returns the video response.
@@ -170,7 +170,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a videos response.
+     * Deserializes a videos response.
      *
      * @param string $rawResponse The raw response.
      * @return VideosResponse Returns the photos response.

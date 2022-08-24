@@ -14,7 +14,7 @@ namespace WBW\Library\Curl\Exception;
 /**
  * Method not allowed exception.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Curl\Exception
  */
 class MethodNotAllowedException extends AbstractException {

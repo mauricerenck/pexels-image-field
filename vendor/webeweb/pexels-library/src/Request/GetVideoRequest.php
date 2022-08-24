@@ -17,7 +17,7 @@ use WBW\Library\Traits\Integers\IntegerIdTrait;
 /**
  * Get video request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Request
  */
 class GetVideoRequest extends AbstractRequest implements SubstituableRequestInterface {
@@ -34,7 +34,7 @@ class GetVideoRequest extends AbstractRequest implements SubstituableRequestInte
     const GET_VIDEO_RESOURCE_PATH = "/v1/videos/videos/:id";
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return self::GET_VIDEO_RESOURCE_PATH;

@@ -17,7 +17,7 @@ use WBW\Library\Traits\Strings\StringHostnameTrait;
 /**
  * Authenticator.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Security
  */
 class Authenticator {

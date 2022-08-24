@@ -14,7 +14,7 @@ namespace WBW\Library\Quadratus\Model\QCompta;
 /**
  * Charges a repartir lignes.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Quadratus\Model\QCompta
  */
 class ChargesARepartirLignes {
