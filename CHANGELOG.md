@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/mauricerenck/pexels-image-field/compare/v1.0.6...v1.1.0) (2022-08-24)
+
+
+### Features
+
+* kirby 3.7 adaption, download indicator ([48be161](https://github.com/mauricerenck/pexels-image-field/commit/48be161e65d6c57475c4a1cde1d13a108e889009))
+
 ## [1.0.6](https://github.com/mauricerenck/pexels-image-field/compare/v1.0.5...v1.0.6) (2022-01-13)
 
 
