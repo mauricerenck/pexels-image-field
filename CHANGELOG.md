@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/mauricerenck/pexels-image-field/compare/v1.1.0...v1.2.0) (2022-12-06)
+
+
+### Features
+
+* dep updates for k3.8 ([55ba187](https://github.com/mauricerenck/pexels-image-field/commit/55ba187350b818f67b2e8933d28d28b4512efe2f))
+
 # [1.1.0](https://github.com/mauricerenck/pexels-image-field/compare/v1.0.6...v1.1.0) (2022-08-24)
 
 
