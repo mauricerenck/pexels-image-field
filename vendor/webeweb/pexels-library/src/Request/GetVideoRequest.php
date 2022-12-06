@@ -44,6 +44,7 @@ class GetVideoRequest extends AbstractRequest implements SubstituableRequestInte
      * {@inheritdoc}
      */
     public function getSubstituables(): array {
+
         return [
             ":id" => $this->getId(),
         ];

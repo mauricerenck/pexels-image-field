@@ -44,6 +44,7 @@ class GetPhotoRequest extends AbstractRequest implements SubstituableRequestInte
      * {@inheritdoc}
      */
     public function getSubstituables(): array {
+
         return [
             ":id" => $this->getId(),
         ];

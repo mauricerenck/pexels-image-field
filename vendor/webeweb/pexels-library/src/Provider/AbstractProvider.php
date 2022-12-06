@@ -65,6 +65,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @return array Returns the configuration.
      */
     private function buildConfiguration(): array {
+
         return [
             "debug"       => $this->getDebug(),
             "headers"     => [

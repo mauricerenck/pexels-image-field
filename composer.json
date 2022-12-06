@@ -21,16 +21,19 @@
     "require": {
         "getkirby/composer-installer": "^1.1",
         "php": ">=7.3.0",
-        "webeweb/pexels-library": "^2.4"
+        "webeweb/pexels-library": "^2.9"
     },
     "require-dev": {
-        "getkirby/cms": "^3.7",
+        "getkirby/cms": "^3.8",
         "phpunit/phpunit": "9.5"
     },
     "replace": {},
     "suggests": {},
     "config": {
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "getkirby/composer-installer": true
+        }
     },
     "scripts": {
         "test": "vendor/bin/phpunit --testdox tests",
