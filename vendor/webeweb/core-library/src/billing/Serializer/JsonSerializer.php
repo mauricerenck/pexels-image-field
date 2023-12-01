@@ -34,12 +34,13 @@ use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 class JsonSerializer {
 
     /**
-     * Serializes a billable.
+     * Serialize a billable.
      *
      * @param BillableInterface $model The model.
      * @return array Returns the serialized billable.
      */
     public static function serializeBillable(BillableInterface $model): array {
+
         return [
             BaseSerializerKeys::COMMENT             => $model->getComment(),
             BaseSerializerKeys::CREATED_AT          => $model->getCreatedAt(),
@@ -58,7 +59,7 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a billable detail.
+     * Serialize a billable detail.
      *
      * @param BillableDetailInterface $model The model.
      * @return array Returns the serialized billable detail.
@@ -80,12 +81,13 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a billing address.
+     * Serialize a billing address.
      *
      * @param BillingAddressInterface $model The model.
      * @return array Returns the serialized billing address.
      */
     public static function serializeBillingAddress(BillingAddressInterface $model): array {
+
         return [
             SerializerKeys::BILLING_ADDRESS_ADDRESSEE    => $model->getBillingAddressAddressee(),
             SerializerKeys::BILLING_ADDRESS_HOUSE_NUMBER => $model->getBillingAddressHouseNumber(),
@@ -97,12 +99,13 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a delivery address.
+     * Serialize a delivery address.
      *
      * @param DeliveryAddressInterface $model The model.
      * @return array Returns the serialized sending address.
      */
     public static function serializeDeliveryAddress(DeliveryAddressInterface $model): array {
+
         return [
             SerializerKeys::DELIVERY_ADDRESS_ADDRESSEE    => $model->getDeliveryAddressAddressee(),
             SerializerKeys::DELIVERY_ADDRESS_HOUSE_NUMBER => $model->getDeliveryAddressHouseNumber(),
@@ -114,7 +117,7 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a delivery note.
+     * Serialize a delivery note.
      *
      * @param DeliveryNoteInterface $model The model.
      * @return array Returns the serialized delivery note.
@@ -124,7 +127,7 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a purchase bill.
+     * Serialize a purchase bill.
      *
      * @param PurchaseBillInterface $model The model.
      * @return array Returns the serialized purchase bill.
@@ -139,7 +142,7 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a purchase order.
+     * Serialize a purchase order.
      *
      * @param PurchaseOrderInterface $model The model.
      * @return array Returns the serialized purchase order.
@@ -149,7 +152,7 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a quotation.
+     * Serialize a quotation.
      *
      * @param QuotationInterface $model The model.
      * @return array Returns the serialized quotation.
@@ -164,7 +167,7 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a sales bill.
+     * Serialize a sales bill.
      *
      * @param SalesBillInterface $model The model.
      * @return array Returns the serialized sales bill.
@@ -174,12 +177,13 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a sending address.
+     * Serialize a sending address.
      *
      * @param SendingAddressInterface $model The model.
      * @return array Returns the serialized sending address.
      */
     public static function serializeSendingAddress(SendingAddressInterface $model): array {
+
         return [
             SerializerKeys::SENDING_ADDRESS_ADDRESSEE    => $model->getSendingAddressAddressee(),
             SerializerKeys::SENDING_ADDRESS_HOUSE_NUMBER => $model->getSendingAddressHouseNumber(),
@@ -191,12 +195,13 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a taxable.
+     * Serialize a taxable.
      *
      * @param TaxableInterface $model The model.
      * @return array Returns the serialized taxable.
      */
     public static function serializeTaxable(TaxableInterface $model): array {
+
         return [
             BaseSerializerKeys::DISCOUNT_AMOUNT     => $model->getDiscountAmount(),
             BaseSerializerKeys::DISCOUNT_RATE       => $model->getDiscountRate(),

@@ -29,7 +29,7 @@ class DeliveryNote extends Billable implements DeliveryNoteInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeDeliveryNote($this);

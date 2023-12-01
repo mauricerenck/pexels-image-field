@@ -92,77 +92,77 @@ class BankDetails implements BankDetailsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getAccountNumber(): ?string {
         return $this->accountNumber;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getBankCode(): ?string {
         return $this->bankCode;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getBankDomiciliation(): ?string {
         return $this->bankDomiciliation;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getBankName(): ?string {
         return $this->bankName;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getBic(): ?string {
         return $this->bic;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getBranchCode(): ?string {
         return $this->branchCode;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getIban(): ?string {
         return $this->iban;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getOwner(): ?string {
         return $this->owner;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRibKey(): ?string {
         return $this->ribKey;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeBankDetails($this);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setAccountNumber(?string $accountNumber): BankDetailsInterface {
         $this->accountNumber = $accountNumber;
@@ -170,7 +170,7 @@ class BankDetails implements BankDetailsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setBankCode(?string $bankCode): BankDetailsInterface {
         $this->bankCode = $bankCode;
@@ -178,7 +178,7 @@ class BankDetails implements BankDetailsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setBankDomiciliation(?string $bankDomiciliation): BankDetailsInterface {
         $this->bankDomiciliation = $bankDomiciliation;
@@ -186,7 +186,7 @@ class BankDetails implements BankDetailsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setBankName(?string $bankName): BankDetailsInterface {
         $this->bankName = $bankName;
@@ -194,7 +194,7 @@ class BankDetails implements BankDetailsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setBic(?string $bic): BankDetailsInterface {
         $this->bic = $bic;
@@ -202,7 +202,7 @@ class BankDetails implements BankDetailsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setBranchCode(?string $branchCode): BankDetailsInterface {
         $this->branchCode = $branchCode;
@@ -210,7 +210,7 @@ class BankDetails implements BankDetailsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setIban(?string $iban): BankDetailsInterface {
         $this->iban = $iban;
@@ -218,7 +218,7 @@ class BankDetails implements BankDetailsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setOwner(?string $owner): BankDetailsInterface {
         $this->owner = $owner;
@@ -226,7 +226,7 @@ class BankDetails implements BankDetailsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setRibKey(?string $ribKey): BankDetailsInterface {
         $this->ribKey = $ribKey;

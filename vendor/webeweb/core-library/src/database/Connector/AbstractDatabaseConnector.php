@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Database\Connector;
 
-use Exception;
 use PDO;
+use Throwable;
 use WBW\Library\Security\Authenticator;
 
 /**
@@ -57,7 +57,7 @@ abstract class AbstractDatabaseConnector {
      * Connect.
      *
      * @return PDO Returns the connection.
-     * @throws Exception Throws an exception if the connection failed.
+     * @throws Throwable Throws an exception if the connection failed.
      */
     abstract protected function connect(): PDO;
 
@@ -74,7 +74,7 @@ abstract class AbstractDatabaseConnector {
      * Get the connection.
      *
      * @return PDO Returns the connection.
-     * @throws Exception Throws an exception if the connection failed.
+     * @throws Throwable Throws an exception if the connection failed.
      */
     public function getConnection(): PDO {
 

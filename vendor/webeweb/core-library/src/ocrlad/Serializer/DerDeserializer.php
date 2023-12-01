@@ -117,7 +117,7 @@ class DerDeserializer {
     }
 
     /**
-     * Process the document.
+     * Proces the document.
      *
      * @param Document $document The document.
      * @return Document Returns the document.
@@ -136,7 +136,7 @@ class DerDeserializer {
     }
 
     /**
-     * Process the headers.
+     * Proces the headers.
      *
      * @param string $rawData The raw data.
      * @return string[] Returns the headers.

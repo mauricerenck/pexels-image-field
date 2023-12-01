@@ -22,7 +22,7 @@ use WBW\Library\Symfony\Provider\QuoteProviderInterface;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Symfony\Manager
  */
-class QuoteManager extends AbstractManager {
+class QuoteManager extends AbstractManager implements QuoteManagerInterface {
 
     /**
      * Service name.
@@ -32,11 +32,11 @@ class QuoteManager extends AbstractManager {
     const SERVICE_NAME = "wbw.core.manager.quote";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addProvider(ProviderInterface $provider): ManagerInterface {
 
-        if (true === $this->contains($provider)) {
+        if (true === $this->containsProvider($provider)) {
             throw new AlreadyRegisteredProviderException($provider);
         }
 
@@ -44,14 +44,15 @@ class QuoteManager extends AbstractManager {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
-    public function contains(ProviderInterface $provider): bool {
+    public function containsProvider(ProviderInterface $provider): bool {
 
         if (false === ($provider instanceof QuoteProviderInterface)) {
-            throw new InvalidArgumentException("The provider must implements QuoteProviderInterface");
+            throw new InvalidArgumentException("The provider must implements " . QuoteProviderInterface::class);
         }
 
+        /** @var QuoteProviderInterface $current */
         foreach ($this->getProviders() as $current) {
 
             if ($provider->getDomain() === $current->getDomain()) {
@@ -70,6 +71,7 @@ class QuoteManager extends AbstractManager {
      */
     public function getProvider(string $domain): ?ProviderInterface {
 
+        /** @var QuoteProviderInterface $current */
         foreach ($this->getProviders() as $current) {
 
             if ($domain === $current->getDomain()) {

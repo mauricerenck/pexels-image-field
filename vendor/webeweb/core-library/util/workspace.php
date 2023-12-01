@@ -61,7 +61,7 @@ EOT;
      * @param string $command The command.
      * @param bool $passThru Pass thru ?
      * @return string[] Returns the output.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     private function executeCommand(string $command, bool $passThru = false): array {
 
@@ -83,7 +83,7 @@ EOT;
      *
      * @param string $arguments The arguments.
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     private function executeCommandComposer(string $arguments): void {
 
@@ -109,7 +109,7 @@ EOT;
      *
      * @param string $arguments The arguments.
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     private function executeCommandGit(string $arguments): void {
 
@@ -129,8 +129,10 @@ EOT;
      * @return string[] Returns the available methods.
      */
     public static function getAvailableMethods(): array {
+
         return [
             "--composer-update"     => "runComposerUpdate",
+            "--git-branch"          => "runGitBranch",
             "--git-config-usermail" => "runGitConfigUserEmail",
             "--git-config-username" => "runGitConfigUserName",
             "--git-fetch"           => "runGitFetch",
@@ -153,8 +155,10 @@ EOT;
      * @return string[] Returns the available options.
      */
     public static function getAvailableOptions(): array {
+
         return [
             "--composer-update"     => "Execute 'composer update'",
+            "--git-branch"          => "Execute 'git branch'",
             "--git-config-usermail" => "Execute 'git config user.email <usermail>'",
             "--git-config-username" => "Execute 'git config user.name <username>'",
             "--git-fetch"           => "Execute 'git fetch --prune --prune-tag'",
@@ -254,7 +258,7 @@ EOT;
      * Determines if this directory has a PHPUnit configuration.
      *
      * @return bool Returns true in case of success, false otherwise.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     private function hasPhpUnitConfiguration(): bool {
 
@@ -277,7 +281,7 @@ EOT;
      * Determines if this directory is a composer project.
      *
      * @return bool Returns true in case of success, false otherwise.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     private function isComposerProject(): bool {
         return file_exists(implode(DIRECTORY_SEPARATOR, [
@@ -290,7 +294,7 @@ EOT;
      * Determines if this directory is a git repository.
      *
      * @return bool Returns true in case of success, false otherwise.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     private function isGitRepository(): bool {
         return file_exists(implode(DIRECTORY_SEPARATOR, [
@@ -304,7 +308,7 @@ EOT;
      *
      * @param string $command The command.
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     private function logCommand(string $command): void {
 
@@ -397,10 +401,20 @@ EOT;
      * Executes a command "composer update".
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runComposerUpdate(): void {
         $this->executeCommandComposer("update");
+    }
+
+    /**
+     * Executes a command "git branch".
+     *
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    public function runGitBranch(): void {
+        $this->executeCommandGit("branch");
     }
 
     /**
@@ -408,7 +422,7 @@ EOT;
      *
      * @param string $value The value.
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runGitConfigUserEmail(string $value): void {
         $this->executeCommandGit(sprintf("config user.email '%s'", $value));
@@ -419,7 +433,7 @@ EOT;
      *
      * @param string $value The value.
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runGitConfigUserName(string $value): void {
         $this->executeCommandGit(sprintf("config user.name '%s'", $value));
@@ -429,7 +443,7 @@ EOT;
      * Executes a command "git fetch --prune --prune-tag".
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runGitFetch(): void {
         $this->executeCommandGit("fetch --prune --prune-tag");
@@ -439,7 +453,7 @@ EOT;
      * Executes a command "git pull origin".
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runGitPullOrigin(): void {
         $this->executeCommandGit("pull --ff-only origin");
@@ -449,7 +463,7 @@ EOT;
      * Executes a command "git push origin".
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runGitPushOrigin(): void {
         $this->executeCommandGit("push origin");
@@ -459,7 +473,7 @@ EOT;
      * Executes a command "git push upstream".
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runGitPushUpstream(): void {
         $this->executeCommandGit("push upstream --all --tag");
@@ -469,7 +483,7 @@ EOT;
      * Executes a command "git status".
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runGitStatus(): void {
         $this->executeCommandGit("status");
@@ -479,7 +493,7 @@ EOT;
      * Executes a command "hostname".
      *
      * @return string Returns the hostname.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     private function runHostname(): string {
         return $this->executeCommand("hostname")[0];
@@ -489,7 +503,7 @@ EOT;
      * Updates a LICENSE.
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runLicenseUpdate(): void {
 
@@ -511,7 +525,7 @@ EOT;
      * @param string $phar The PHP archive.
      * @param string $version The version.
      * @param string $filename The filename.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     private function runPharUpdate(string $phar, string $version, string $filename): void {
 
@@ -529,7 +543,7 @@ EOT;
      * Updates the PhpCoveralls version.
      *
      * @param string $version The version.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runPhpCoverallsUpdate(string $version): void {
         $this->runPharUpdate("php-coveralls", $version, "build");
@@ -539,7 +553,7 @@ EOT;
      * Updates the PhpMetrics version.
      *
      * @param string $version The version.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runPhpMetricsUpdate(string $version): void {
         $this->runPharUpdate("phpmetrics", $version, "metrics");
@@ -549,7 +563,7 @@ EOT;
      * Updates the PhpStan version.
      *
      * @param string $version The version.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runPhpStanUpdate(string $version): void {
         $this->runPharUpdate("phpstan", $version, "analysis");
@@ -559,7 +573,7 @@ EOT;
      * Executes a command "phpunit".
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runPhpunit(): void {
 
@@ -582,7 +596,7 @@ EOT;
      * Executes a command "sanitize".
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function runSanitize(): void {
 
@@ -602,7 +616,7 @@ EOT;
      * Executes a command "whoami".
      *
      * @return string Returns the command "whoami" result.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     private function runWhoami(): string {
         return $this->executeCommand("whoami")[0];
@@ -613,17 +627,17 @@ try {
 
     $arguments = Workspace::parseArguments($argv);
     $instances = Workspace::getInstances($arguments["directory"]);
-
-    $methods = Workspace::getAvailableMethods();
+    $methods   = Workspace::getAvailableMethods();
 
     unset($arguments["directory"]);
 
     foreach ($arguments as $k => $v) {
+
         foreach ($instances as $d) {
             call_user_func([$d, $methods[$k]], $v);
         }
     }
-} catch (Exception $ex) {
+} catch (Throwable $ex) {
 
     echo sprintf("%s\n\n", $ex->getMessage());
     Workspace::printHelp($argv[0]);

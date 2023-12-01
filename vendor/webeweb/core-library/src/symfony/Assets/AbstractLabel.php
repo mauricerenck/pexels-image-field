@@ -39,7 +39,7 @@ abstract class AbstractLabel implements LabelInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeLabel($this);

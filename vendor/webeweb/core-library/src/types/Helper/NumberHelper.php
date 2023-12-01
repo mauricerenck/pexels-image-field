@@ -22,13 +22,14 @@ use WBW\Library\Types\Exception\NumberArgumentException;
 class NumberHelper {
 
     /**
-     * Determines if a value is a number.
+     * Determine if a value is a number.
      *
      * @param mixed $value The value.
      * @return void
-     * @throws NumberArgumentException Throws a Number argument exception if the value is not of expected type.
+     * @throws NumberArgumentException Throws a number argument exception if the value is not of expected type.
      */
     public static function isNumber($value): void {
+
         if (false === is_numeric($value)) {
             throw new NumberArgumentException($value);
         }

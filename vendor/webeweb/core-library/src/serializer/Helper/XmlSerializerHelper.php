@@ -22,7 +22,7 @@ use WBW\Library\Serializer\Model\XmlSerializable;
 class XmlSerializerHelper extends SerializerHelper {
 
     /**
-     * Serializes an array.
+     * Serialize an array.
      *
      * @param XmlSerializable[] $models The models.
      * @return string Returns the serialized array.
@@ -43,7 +43,7 @@ class XmlSerializerHelper extends SerializerHelper {
     }
 
     /**
-     * Serializes a model.
+     * Serialize a model.
      *
      * @param XmlSerializable|null $model The model.
      * @return string|null Returns the serialized model.
@@ -58,7 +58,7 @@ class XmlSerializerHelper extends SerializerHelper {
     }
 
     /**
-     * Serializes a value.
+     * Serialize a value.
      *
      * @param string|null $value The value.
      * @return string|null Returns the serialized value.

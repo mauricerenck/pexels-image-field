@@ -124,7 +124,7 @@ class XmlDeserializerHelper extends SerializerHelper {
             $context["_childNodes"][] = $current->nodeName;
         }
 
-        static::$logger->debug(sprintf('Deserialize a DOM node with name "%s"', $domNode->nodeName), $context);
+        static::$logger->debug(sprintf('Deserializes a DOM node with name "%s"', $domNode->nodeName), $context);
     }
 
     /**

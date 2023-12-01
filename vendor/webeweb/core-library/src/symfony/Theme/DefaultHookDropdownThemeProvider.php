@@ -29,7 +29,7 @@ class DefaultHookDropdownThemeProvider implements HookDropdownThemeProviderInter
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getItems(): array {
         return [];

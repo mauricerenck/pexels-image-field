@@ -28,12 +28,13 @@ use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 class JsonSerializer {
 
     /**
-     * Serializes an accounting account.
+     * Serialize an accounting account.
      *
      * @param AccountingAccountInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializeAccountingAccount(AccountingAccountInterface $model): array {
+
         return [
             BaseSerializerKeys::LABEL  => $model->getLabel(),
             BaseSerializerKeys::NUMBER => $model->getNumber(),
@@ -42,12 +43,13 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a bank details.
+     * Serialize a bank details.
      *
      * @param BankDetailsInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializeBankDetails(BankDetailsInterface $model): array {
+
         return [
             SerializerKeys::ACCOUNT_NUMBER     => $model->getAccountNumber(),
             SerializerKeys::BANK_CODE          => $model->getBankCode(),
@@ -62,24 +64,26 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a payment choice.
+     * Serialize a payment choice.
      *
      * @param PaymentChoiceInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializePaymentChoice(PaymentChoiceInterface $model): array {
+
         return [
             BaseSerializerKeys::LABEL => $model->getLabel(),
         ];
     }
 
     /**
-     * Serializes a payment term.
+     * Serialize a payment term.
      *
      * @param PaymentTermInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializePaymentTerm(PaymentTermInterface $model): array {
+
         return [
             BaseSerializerKeys::CODE  => $model->getCode(),
             BaseSerializerKeys::LABEL => $model->getLabel(),
@@ -87,12 +91,13 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a VAT rate.
+     * Serialize a VAT rate.
      *
      * @param VatRateInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializeVatRate(VatRateInterface $model): array {
+
         return [
             BaseSerializerKeys::LABEL                    => $model->getLabel(),
             SerializerKeys::PURCHASES_ACCOUNTING_ACCOUNT => JsonSerializerHelper::jsonSerializeModel($model->getPurchasesAccountingAccount()),

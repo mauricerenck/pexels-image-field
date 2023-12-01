@@ -22,7 +22,7 @@ use DateTimeZone;
 class DateTimeZoneHelper {
 
     /**
-     * Determines if two date/time zone are equals.
+     * Determine if two date/time zone are equals.
      *
      * @param DateTimeZone $a The date/time zone A.
      * @param DateTimeZone $b The date/time zone B.

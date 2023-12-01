@@ -22,7 +22,7 @@ use WBW\Library\Billing\Model\TaxableInterface;
 class TaxableHelper {
 
     /**
-     * Calculates a discount amount.
+     * Calculate a discount amount.
      *
      * @param TaxableInterface $taxable The taxable.
      * @return float Returns the discount amount.
@@ -37,7 +37,7 @@ class TaxableHelper {
     }
 
     /**
-     * Calculates an excluding VAT price.
+     * Calculate an excluding VAT price.
      *
      * @param TaxableInterface $taxable The taxable.
      * @return float Returns the excluding VAT price.
@@ -55,7 +55,7 @@ class TaxableHelper {
     }
 
     /**
-     * Calculates an including VAT price.
+     * Calculate an including VAT price.
      *
      * @param TaxableInterface $taxable The taxable.
      * @return float Returns the including VAT price.
@@ -73,7 +73,7 @@ class TaxableHelper {
     }
 
     /**
-     * Calculates a VAT amount.
+     * Calculate a VAT amount.
      *
      * @param TaxableInterface $taxable The taxable.
      * @return float Returns the VAT amount.

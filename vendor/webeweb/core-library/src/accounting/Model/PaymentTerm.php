@@ -34,7 +34,7 @@ class PaymentTerm implements PaymentTermInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializePaymentTerm($this);

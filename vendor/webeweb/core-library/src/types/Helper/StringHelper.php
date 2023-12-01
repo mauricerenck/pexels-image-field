@@ -53,7 +53,7 @@ class StringHelper {
         $template = "<%name%%attributes%>%text%</%name%>";
 
         $attr = trim(static::parseArray($attributes));
-        if (0 < strlen($attr)) {
+        if (0 < mb_strlen($attr)) {
             $attr = " " . $attr;
         }
 
@@ -136,13 +136,14 @@ class StringHelper {
     }
 
     /**
-     * Determines if a value is a string.
+     * Determine if a value is a string.
      *
      * @param mixed $value The value.
      * @return void
-     * @throws StringArgumentException Throws a String argument exception if the value is not of expected type.
+     * @throws StringArgumentException Throws a string argument exception if the value is not of expected type.
      */
     public static function isString($value): void {
+
         if (false === is_string($value)) {
             throw new StringArgumentException($value);
         }
@@ -362,7 +363,7 @@ class StringHelper {
         $words  = explode($needle, $string);
         $count  = count($words);
 
-        if (-1 === $length || strlen($string) < $length || 0 === $count) {
+        if (-1 === $length || mb_strlen($string) < $length || 0 === $count) {
             return $string;
         }
 
@@ -376,7 +377,7 @@ class StringHelper {
             $last = count($output) - 1;
 
             $buffer = implode($needle, array_merge([$output[$last]], [$word]));
-            if (strlen($buffer) < $length + $precision) {
+            if (mb_strlen($buffer) < $length + $precision) {
                 $output[$last] .= "$needle$word";
             } else {
                 $output[] = $word;

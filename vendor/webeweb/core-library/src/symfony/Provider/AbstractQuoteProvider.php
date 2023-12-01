@@ -37,7 +37,7 @@ abstract class AbstractQuoteProvider implements QuoteProviderInterface {
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function getAuthors(): array {
 

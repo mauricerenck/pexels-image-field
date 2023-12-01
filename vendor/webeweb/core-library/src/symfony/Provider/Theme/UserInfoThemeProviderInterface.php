@@ -29,14 +29,14 @@ interface UserInfoThemeProviderInterface extends ThemeProviderInterface {
     const SERVICE_NAME = "wbw.core.provider.theme.user_info";
 
     /**
-     * Provides a register link.
+     * Provide a register link.
      *
      * @return bool|null Returns true in case of success, false otherwise.
      */
     public function provideRegisterLink(): ?bool;
 
     /**
-     * Provides a resetting link.
+     * Provide a resetting link.
      *
      * @return bool|null Returns true in case of success, false otherwise.
      */

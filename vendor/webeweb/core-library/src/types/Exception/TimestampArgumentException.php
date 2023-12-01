@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Types\Exception;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 
 /**
  * Timestamp argument exception.
@@ -26,9 +26,9 @@ class TimestampArgumentException extends InvalidArgumentException {
      * Constructor.
      *
      * @param mixed $argument The argument.
-     * @param Exception|null $previous The previous exception.
+     * @param Throwable|null $previous The previous exception.
      */
-    public function __construct($argument, Exception $previous = null) {
+    public function __construct($argument, Throwable $previous = null) {
         parent::__construct(sprintf('The argument "%s" is not a timestamp', print_r($argument, true)), 500, $previous);
     }
 }

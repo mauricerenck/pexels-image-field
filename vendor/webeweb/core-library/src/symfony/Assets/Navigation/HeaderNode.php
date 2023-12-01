@@ -35,7 +35,7 @@ class HeaderNode extends AbstractNavigationNode {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addNode(NavigationNodeInterface $node): NavigationNodeInterface {
         return $this;

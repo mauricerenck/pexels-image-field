@@ -22,7 +22,7 @@ use Psr\Log\AbstractLogger;
 class NullLogger extends AbstractLogger {
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function log($level, $message, array $context = []): void {
         // NOTHING TO DO

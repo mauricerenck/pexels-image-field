@@ -20,25 +20,12 @@ namespace WBW\Library\Symfony\Model;
 interface RepositoryReportInterface {
 
     /**
-     * Get the available.
+     * Add a detail.
      *
-     * @return int|null Returns the available.
+     * @param RepositoryDetailInterface $detail The detail.
+     * @return RepositoryReportInterface Returns this repository report.
      */
-    public function getAvailable(): ?int;
-
-    /**
-     * Get the average.
-     *
-     * @return float|null Returns the average.
-     */
-    public function getAverage(): ?float;
-
-    /**
-     * Get the column.
-     *
-     * @return string|null Returns the column.
-     */
-    public function getColumn(): ?string;
+    public function addDetail(RepositoryDetailInterface $detail): RepositoryReportInterface;
 
     /**
      * Get the count.
@@ -48,32 +35,18 @@ interface RepositoryReportInterface {
     public function getCount(): ?int;
 
     /**
+     * Get the details.
+     *
+     * @return RepositoryDetailInterface[] Returns the repository details.
+     */
+    public function getDetails(): array;
+
+    /**
      * Get the entity.
      *
      * @return string|null Returns the entity.
      */
     public function getEntity(): ?string;
-
-    /**
-     * Get the field.
-     *
-     * @return string|null Returns the field.
-     */
-    public function getField(): ?string;
-
-    /**
-     * Get the maximum.
-     *
-     * @return int|null Returns the maximum.
-     */
-    public function getMaximum(): ?int;
-
-    /**
-     * Get the minimum.
-     *
-     * @return int|null Returns the minimum.
-     */
-    public function getMinimum(): ?int;
 
     /**
      * Get the table.

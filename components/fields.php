@@ -5,8 +5,8 @@ namespace mauricerenck\PexelsImageField;
 return [
     'pexels' => [
         'props' => [
-            'apiKey' => function () {
-                return option('mauricerenck.PexelsImageField.apiKey', '');
+            'downloadSize' => function () {
+                return option('mauricerenck.PexelsImageField.downloadSize', 'large');
             },
         ]
     ]

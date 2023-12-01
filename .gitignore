@@ -37,3 +37,4 @@
 /kirby
 /.sqlite
 /site/config/config.pexels.test.php
+/site/cache

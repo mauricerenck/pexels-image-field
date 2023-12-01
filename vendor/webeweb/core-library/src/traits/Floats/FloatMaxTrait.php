@@ -22,26 +22,26 @@ trait FloatMaxTrait {
     /**
      * Max.
      *
-     * @var string|null
+     * @var float|null
      */
     protected $max;
 
     /**
      * Get the max.
      *
-     * @return string|null Returns the max.
+     * @return float|null Returns the max.
      */
-    public function getMax(): ?string {
+    public function getMax(): ?float {
         return $this->max;
     }
 
     /**
      * Set the max.
      *
-     * @param string|null $max The max.
+     * @param float|null $max The max.
      * @return self Returns this instance.
      */
-    public function setMax(?string $max): self {
+    public function setMax(?float $max): self {
         $this->max = $max;
         return $this;
     }

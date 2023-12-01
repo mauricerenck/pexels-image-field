@@ -29,7 +29,7 @@ class DefaultTasksDropdownThemeProvider implements TasksDropdownThemeProviderInt
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getTasks(): array {
         return [];

@@ -50,7 +50,7 @@ class Image implements ImageInterface {
     }
 
     /**
-     * Encodes into base 64.
+     * Encode into base 64.
      *
      * @return string Returns this image encoded into base 64.
      */
@@ -64,7 +64,11 @@ class Image implements ImageInterface {
      * @return int[] Returns the dimensions.
      */
     public function getDimensions(): array {
-        return [$this->getWidth(), $this->getHeight()];
+
+        return [
+            $this->getWidth(),
+            $this->getHeight(),
+        ];
     }
 
     /**

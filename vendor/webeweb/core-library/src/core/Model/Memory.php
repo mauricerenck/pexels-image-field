@@ -125,9 +125,10 @@ class Memory implements JsonSerializable {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
+
         return [
             "total"     => $this->getTotal(),
             "used"      => $this->getUsed(),

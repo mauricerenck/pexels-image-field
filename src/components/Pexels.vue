@@ -13,72 +13,18 @@
         </k-field>
 
         <div>
-            <div class="loader" v-if="loading"><k-loader /></div>
-            <div class="imagegrid" v-if="!loading && photos.length > 0">
-                <k-grid>
-                    <k-column width="1/6" v-for="photo in this.photos" :key="photo.id">
-                        <div class="k-items k-cards-items" data-layout="cards" data-size="auto">
-                            <article
-                                data-has-figure="true"
-                                data-has-info="true"
-                                data-has-options="true"
-                                tabindex="-1"
-                                data-id="note/pexels-photo.jpg"
-                                class="k-item k-cards-item"
-                                v-on:click="
-                                    onSelect(
-                                        photo.id,
-                                        photo.large,
-                                        photo.photographer,
-                                        photo.photographerUrl,
-                                        photo.downloadUrl
-                                    )
-                                "
-                                @click="$refs.dialog.open()"
-                            >
-                                <div class="k-item-figure" style="background: var(--color-gray-800) var(--bg-pattern)">
-                                    <span data-ratio="3/2" data-cover="true" class="k-image k-item-image">
-                                        <span style="padding-bottom: 66.67%">
-                                            <img alt="pexels photo" :src="photo.small" />
-                                        </span>
-                                    </span>
-                                </div>
-                                <header class="k-item-content">
-                                    <h3 class="k-item-title">
-                                        <span>
-                                            {{ photo.photographer }}
-                                        </span>
-                                    </h3>
-                                    <p class="k-item-info">{{ photo.width }} × {{ photo.height }}</p>
-                                </header>
-                            </article>
-                        </div>
-                    </k-column>
-                </k-grid>
+            <div class="loader" v-if="loading">
+                <div><k-icon type="loader" /></div>
+            </div>
+            <div class="imagegrid" v-else>
+                <k-collection layout="cards" :items="items" />
 
-                <div class="prev-next">
+                <div class="prev-next" v-if="pages > 0">
                     <button class="k-link k-button" v-on:click="showPrev"><k-icon type="angle-left" /></button>
                     <span>{{ pexelPage }} of {{ pages }}</span>
                     <button class="k-link k-button" v-on:click="showNext"><k-icon type="angle-right" /></button>
                 </div>
             </div>
-        </div>
-
-        <div>
-            <k-dialog
-                ref="dialog"
-                submitButton="Download"
-                theme="positive"
-                icon="download"
-                size="large"
-                @submit="downloadImage"
-            >
-                A photo by <strong>{{ selectedPhoto.photographer }}</strong>
-                <k-image :src="selectedPhoto.photo" />
-
-                <k-info-field text="Downloading file" v-if="this.downloading" />
-                <k-info-field theme="positive" text="Downloaded file, refresh page to see it" v-if="this.downloaded" />
-            </k-dialog>
         </div>
     </div>
 </template>
@@ -88,20 +34,19 @@ export default {
     props: {
         label: String,
         value: String,
-        apiKey: String,
+        downloadSize: String,
     },
 
     data: function () {
         return {
-            photos: [],
+            items: [],
             selectedPhoto: { id: '', photo: '', photographer: '', photographerUrl: '', downloadUrl: '' },
             keyword: '',
             pexelPage: 1,
+            perPage: 1,
             remaining: 0,
             totalResults: 0,
             loading: false,
-            timer: null,
-            downloading: false,
             downloaded: false,
         }
     },
@@ -110,7 +55,7 @@ export default {
             return this.$store.getters['content/id']()
         },
         pages() {
-            return Math.round(this.totalResults / this.photos.length, 10)
+            return Math.round(this.totalResults / this.perPage, 10)
         },
     },
     methods: {
@@ -130,16 +75,6 @@ export default {
             this.timer = setTimeout(() => {
                 this.search(this.keyword)
             }, 250)
-        },
-
-        onSelect(id, photo, photographer, photographerUrl, downloadUrl) {
-            this.selectedPhoto = {
-                id: id,
-                photo: photo,
-                photographer: photographer,
-                photographerUrl: photographerUrl,
-                downloadUrl: downloadUrl,
-            }
         },
 
         showNext() {
@@ -162,34 +97,70 @@ export default {
 
         search(query) {
             this.loading = true
-            this.$api.get(`pexels/search/${query}/${this.pexelPage}`).then((result) => {
-                this.photos = result.photos
+            this.$api.get(`pexels/search/${query}/${this.pexelPage}/${this.downloadSize}`).then((result) => {
                 this.page = result.page
                 this.perPage = result.perPage
                 this.remaining = result.remaining
                 this.totalResults = result.totalResults
                 this.loading = false
+
+                this.items = result.photos.map((photo) => {
+                    return {
+                        id: photo.id,
+                        downloadUrl: photo.downloadUrl,
+                        link: photo.downloadUrl,
+                        photographer: photo.photographer,
+                        photographerUrl: photo.photographerUrl,
+                        text: `${photo.photographer} <br /> ${photo.width} × ${photo.height}`,
+                        options: [
+                            {
+                                icon: 'open',
+                                text: 'View',
+                                link: photo.downloadUrl,
+                                target: '_blank',
+                            },
+                            {
+                                icon: 'download',
+                                text: 'Download',
+                                click: () => {
+                                    this.downloadImage(photo.id)
+                                },
+                            },
+                        ],
+                        image: {
+                            src: photo.small,
+                            width: photo.width,
+                        },
+                    }
+                })
             })
         },
 
         downloadImage(id) {
-            this.downloading = true
             this.downloaded = false
-            this.$api
+
+            const selectedPhoto = this.items.find((item) => item.id === id)
+            const currentText = selectedPhoto.text
+            selectedPhoto.text = 'Downloading…'
+
+            panel.api
                 .post('pexels/download', {
-                    downloadUrl: this.selectedPhoto.downloadUrl,
+                    imageId: id,
                     pageId: this.pageId.split('?')[0],
-                    imageId: this.selectedPhoto.id,
-                    photographer: this.selectedPhoto.photographer,
-                    photographerUrl: this.selectedPhoto.photographerUrl,
+                    downloadUrl: selectedPhoto.downloadUrl,
+                    photographer: selectedPhoto.photographer,
+                    photographerUrl: selectedPhoto.photographerUrl,
                 })
                 .then(() => {
-                    this.downloading = false
-                    this.downloaded = true
-                    setTimeout(() => {
-                        this.$refs.dialog.close()
-                        this.downloaded = false
-                    }, 2000)
+                    this.downloaded = false
+                    panel.view.reload()
+                    window.panel.notification.success('Image downloaded');
+                    selectedPhoto.text = currentText
+                })
+                .catch(() => {
+                    this.downloaded = false
+                    window.panel.notification.error('Image download failed');
+                    selectedPhoto.text = currentText
                 })
         },
     },
@@ -198,25 +169,24 @@ export default {
 
 <style lang="scss">
 .k-pexels-field {
-    .k-image {
-        cursor: pointer;
-    }
-
     .loader {
-        text-align: center;
-    }
+        display: flex;
+        justify-content: center;
 
-    .k-loader {
-        padding: 50px;
-        margin: 25px;
-        background: lightgray;
-        border-radius: 7px;
-        display: inline-block;
+        div {
+            margin-top: var(--spacing-4);
+            width: 100px;
+            height: 100px;
+            background-color: var(--color-gray-300);
+            border-radius: var(--rounded);
+            display: flex;
+            place-items: center;
+            justify-content: center;
+        }
     }
 
     .imagegrid {
-        margin-top: 25px;
-        margin-bottom: 25px;
+        margin: var(--spacing-4) 0;
     }
 
     .prev-next {

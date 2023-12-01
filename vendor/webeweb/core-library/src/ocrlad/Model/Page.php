@@ -11,7 +11,7 @@
 
 namespace WBW\Library\OcrLad\Model;
 
-use WBW\Library\OcrLad\Model\Attribute\ArrayWordsTrait;
+use WBW\Library\OcrLad\Traits\Arrays\ArrayWordsTrait;
 use WBW\Library\Traits\Integers\IntegerHeightTrait;
 use WBW\Library\Traits\Integers\IntegerWidthTrait;
 

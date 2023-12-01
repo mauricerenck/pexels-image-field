@@ -22,7 +22,7 @@ use JsonSerializable;
 class JsonSerializerHelper {
 
     /**
-     * Serializes an array.
+     * Serialize an array.
      *
      * @param JsonSerializable[] $models The models.
      * @return array Returns the serialized array.
@@ -43,7 +43,7 @@ class JsonSerializerHelper {
     }
 
     /**
-     * Serializes a model.
+     * Serialize a model.
      *
      * @param JsonSerializable|null $model The model.
      * @return array|null Returns the serialized model.

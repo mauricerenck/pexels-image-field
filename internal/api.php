@@ -3,14 +3,14 @@
 namespace mauricerenck\PexelsImageField;
 
 use WBW\Library\Pexels\Model\Photo;
-use WBW\Library\Pexels\Model\Source;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\SearchPhotosRequest;
-use WBW\Library\Pexels\Request\GetPhotoRequest;
 use Kirby\Toolkit\V;
-use File;
-use \Response;
+use Kirby\Filesystem\F;
+use Kirby\Http\Response;
+use Kirby\Http\Remote;
 use \Exception;
+use Kirby\Cms\File;
 
 return [
     'routes' => [
@@ -31,37 +31,39 @@ return [
                     return new Response('Page Not Found', 'text/plain', 404);
                 }
 
-                $urlParts = explode('/', $formData['downloadUrl']);
+                $cleanedDownloadUrl = explode('?', $formData['downloadUrl'])[0];
+                $urlParts = explode('/', $cleanedDownloadUrl);
                 $filename = array_pop($urlParts);
 
                 try {
-                    $ch = curl_init($formData['downloadUrl']);
-                    $fp = fopen($page->contentFileDirectory() . '/' . $filename, 'wb');
-                    curl_setopt($ch, CURLOPT_FILE, $fp);
-                    curl_setopt($ch, CURLOPT_HEADER, 0);
-                    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-                    curl_exec($ch);
-                    curl_close($ch);
+                    $imageFile = Remote::get($formData['downloadUrl']);
+
+                    $temporaryFilename = $page->root() . '/temp_' . $filename;
+                    F::write($temporaryFilename, $imageFile->content());
+
+                    $file = File::create([
+                        'source'     => $temporaryFilename,
+                        'parent'     => $page,
+                        'filename'   => $filename,
+                        'template' => 'pexelsimage',
+                        'blueprint' => ['pexelsimage'],
+                        'content'   => [
+                            'photographer' => $formData['photographer'],
+                            'photographerUrl' => $formData['photographerUrl'],
+                        ]
+                    ], true);
+
+                    return new Response(json_encode($file), 'application/json');
                 } catch (Exception $e) {
                     return new Response($e, 'text/plain', 500);
                 }
 
-                try {
-                    $file = $page->file($filename);
-                    $file->update([
-                        'photographer' => $formData['photographer'],
-                        'photographerUrl' => $formData['photographerUrl'],
-                    ]);
-                } catch (Exception $e) {
-                    return new Response($e, 'text/plain', 500);
-                }
-
-                return new Response(json_encode('ok'), 'application/json');
+                return new Response(json_encode('unknown error'), 'application/json', 500);
             },
         ],
         [
-            'pattern' => 'pexels/search/(:any)/(:any)',
-            'action' => function (string $query, string $page) {
+            'pattern' => 'pexels/search/(:any)/(:any)/(:any)',
+            'action' => function (string $query, string $page, string $downloadSize) {
                 // Create the API provider.
                 $provider = new ApiProvider(option('mauricerenck.PexelsImageField.apiKey', ''));
 
@@ -100,6 +102,33 @@ return [
 
                     $src = $current->getSrc();
 
+                    switch($downloadSize) {
+                        case 'large':
+                            $downloadUrl = $src->getLarge();
+                            break;
+                        case 'medium':
+                            $downloadUrl = $src->getMedium();
+                            break;
+                        case 'small':
+                            $downloadUrl = $src->getSmall();
+                            break;
+                        case 'portrait':
+                            $downloadUrl = $src->getPortrait();
+                            break;
+                        case 'landscape':
+                            $downloadUrl = $src->getLandscape();
+                            break;
+                        case 'tiny':
+                            $downloadUrl = $src->getTiny();
+                            break;
+                        case 'original':
+                            $downloadUrl = $src->getOriginal();
+                            break;
+                        default:
+                            $downloadUrl = $src->getLarge();
+                            break;
+                    }
+
                     $photos[] = [
                         // 'src' => $current->getUrl(),
                         'id' => $current->getId(),
@@ -107,7 +136,7 @@ return [
                         'large' => $src->getLarge(),
                         'photographer' => $current->getPhotographer(),
                         'photographerUrl' => $current->getPhotographerUrl(),
-                        'downloadUrl' => $src->getOriginal(),
+                        'downloadUrl' => $downloadUrl,
                         'width' => $current->getWidth(),
                         'height' => $current->getHeight(),
                     ];
@@ -122,13 +151,13 @@ return [
                     // $src->getLarge2x();
                     // $src->getLarge();
                     // $src->getMedium();
-                    $src->getSmall();
+                    // $src->getSmall();
                     // $src->getPortrait();
                     // $src->getLandscape();
                     // $src->getTiny();
                 }
 
-                return \json_encode([
+                $data = json_encode([
                     'page' => $response->getPage(),
                     'perPage' => $response->getPerPage(),
                     'remaining' => $response->getRemaining(),
@@ -137,6 +166,8 @@ return [
                     'next' => $response->getPrevPage(),
                     'prev' => $response->getNextPage()
                 ]);
+
+                return new Response($data, 'application/json');
             }
         ],
     ]

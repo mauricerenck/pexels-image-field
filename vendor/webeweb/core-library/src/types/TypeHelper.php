@@ -36,7 +36,7 @@ use WBW\Library\Types\Helper\TimestampHelper;
 class TypeHelper implements TypeInterface {
 
     /**
-     * Determines if the $value is of type $type.
+     * Determine if the $value is of type $type.
      *
      * @param mixed $value The value.
      * @param int $type The type.
@@ -96,7 +96,7 @@ class TypeHelper implements TypeInterface {
     }
 
     /**
-     * Transforms a string value into type $type.
+     * Transform a string value into type $type.
      *
      * @param string|null $value The string value.
      * @param int $type The type.

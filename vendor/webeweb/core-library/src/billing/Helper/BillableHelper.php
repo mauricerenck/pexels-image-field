@@ -22,7 +22,7 @@ use WBW\Library\Billing\Model\BillableInterface;
 class BillableHelper {
 
     /**
-     * Calculates a discount total.
+     * Calculate a discount total.
      *
      * @param BillableInterface $billable The billable.
      * @return float Returns the discount total.
@@ -32,7 +32,7 @@ class BillableHelper {
     }
 
     /**
-     * Calculates an excluding VAT total.
+     * Calculate an excluding VAT total.
      *
      * @param BillableInterface $billable The billable.
      * @return float Returns the excluding VAT total.
@@ -42,7 +42,7 @@ class BillableHelper {
     }
 
     /**
-     * Calculates an including VAT total.
+     * Calculate an including VAT total.
      *
      * @param BillableInterface $billable The billable.
      * @return float Returns the including VAT total.
@@ -52,7 +52,7 @@ class BillableHelper {
     }
 
     /**
-     * Calculates a total.
+     * Calculate a total.
      *
      * @param BillableInterface $billable The billable.
      * @param string $method The method.
@@ -75,12 +75,22 @@ class BillableHelper {
     }
 
     /**
-     * Calculates a VAT total.
+     * Calculate a VAT total.
      *
      * @param BillableInterface $billable The billable.
      * @return float Returns the VAT total.
      */
     public static function calcVatTotal(BillableInterface $billable): float {
         return static::calcTotal($billable, "getVatTotal");
+    }
+
+    /**
+     * Determine if a billable has details.
+     *
+     * @param BillableInterface $billable The billable.
+     * @return bool Returns true in case of success, false otherwise.
+     */
+    public static function hasDetails(BillableInterface $billable): bool {
+        return 0 < count($billable->getDetails());
     }
 }

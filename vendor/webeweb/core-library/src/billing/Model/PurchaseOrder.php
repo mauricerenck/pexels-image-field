@@ -29,7 +29,7 @@ class PurchaseOrder extends Billable implements PurchaseOrderInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializePurchaseOrder($this);

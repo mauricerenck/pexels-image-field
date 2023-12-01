@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Symfony\Service;
 
-use WBW\Library\Core\Helper\OSHelper;
+use WBW\Library\System\System;
 
 /**
  * PhantomJS service.
@@ -79,7 +79,7 @@ class PhantomJSService {
     public function getCommand(): ?string {
 
         $command = $this->getBinaryPath();
-        $command .= true === OSHelper::isWindows() ? ".exe" : "";
+        $command .= true === System::isWindows() ? ".exe" : "";
 
         return realpath($command);
     }

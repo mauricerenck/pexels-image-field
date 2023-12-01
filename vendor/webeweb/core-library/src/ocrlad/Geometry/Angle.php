@@ -79,7 +79,7 @@ class Angle {
     }
 
     /**
-     * Determines if this angle is in degree.
+     * Determine if this angle is in degree.
      *
      * @return bool Returns true in case of success, false otherwise.
      */
@@ -88,7 +88,7 @@ class Angle {
     }
 
     /**
-     * Determines if this angle is in radian.
+     * Determine if this angle is in radian.
      *
      * @return bool Returns true in case of success, false otherwise.
      */

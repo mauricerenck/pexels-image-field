@@ -23,7 +23,7 @@ use WBW\Library\Types\Helper\DateTimeHelper;
 class TimeSlotFunctor implements FunctorInterface {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function compare($a, $b): bool {
         return DateTimeHelper::isLessThan($a->getStartDate(), $b->getStartDate());

@@ -24,12 +24,13 @@ use WBW\Library\Vehicle\Model\VehicleBrandInterface;
 class JsonSerializer {
 
     /**
-     * Serializes a registration certificate.
+     * Serialize a registration certificate.
      *
      * @param RegistrationCertificateInterface $model The model.
      * @return array Returns the serialized registration certificate.
      */
     public static function serializeRegistrationCertificate(RegistrationCertificateInterface $model): array {
+
         return [
             SerializerKeys::A     => $model->getA(),
             SerializerKeys::A1    => $model->getA1(),
@@ -82,12 +83,13 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a vehicle brand.
+     * Serialize a vehicle brand.
      *
      * @param VehicleBrandInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializeVehicleBrand(VehicleBrandInterface $model): array {
+
         return [
             BaseSerializerKeys::LABEL => $model->getLabel(),
         ];

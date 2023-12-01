@@ -42,7 +42,7 @@ class FtpsClient extends FtpClient {
      *
      * @param int $timeout The timeout.
      * @return FtpClient Returns this FTPs client.
-     * @throws FtpException Throws a FTP exception if an error occurs.
+     * @throws FtpException Throws an FTP exception if an error occurs.
      */
     public function connect(int $timeout = 90): FtpClient {
 

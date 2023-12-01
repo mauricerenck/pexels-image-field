@@ -11,11 +11,11 @@
 
 namespace WBW\Library\Pexels\Provider;
 
-use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use Throwable;
 use WBW\Library\Pexels\Api\PaginateResponseInterface;
 use WBW\Library\Pexels\Request\AbstractRequest;
 use WBW\Library\Provider\AbstractProvider as BaseProvider;
@@ -110,7 +110,7 @@ abstract class AbstractProvider extends BaseProvider {
             $this->setRemaining(intval($response->getHeaderLine("X-Ratelimit-Remaining")));
 
             return $response->getBody()->getContents();
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             throw new ApiException("Call Pexels API failed", 500, $ex);
         }

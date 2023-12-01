@@ -307,6 +307,13 @@ interface SerializerKeys {
     const ENDED_ON = "endedOn";
 
     /**
+     * Serializer key "entity".
+     *
+     * @var string
+     */
+    const ENTITY = "entity";
+
+    /**
      * Serializer key "environment".
      *
      * @var string
@@ -454,11 +461,18 @@ interface SerializerKeys {
     const ID = "id";
 
     /**
-     * Serializer key "enable".
+     * Serializer key "identifier".
      *
      * @var string
      */
     const IDENTIFIER = "identifier";
+
+    /**
+     * Serializer key "image".
+     *
+     * @var string
+     */
+    const IMAGE = "image";
 
     /**
      * Serializer key "including VAT price".
@@ -641,6 +655,13 @@ interface SerializerKeys {
      * @var string
      */
     const MESSAGE = "message";
+
+    /**
+     * Serializer key "method".
+     *
+     * @var string
+     */
+    const METHOD = "method";
 
     /**
      * Serializer key "mime type".
@@ -888,6 +909,13 @@ interface SerializerKeys {
     const REMAINING = "remaining";
 
     /**
+     * Serializer key "request".
+     *
+     * @var string
+     */
+    const REQUEST = "request";
+
+    /**
      * Serializer key "reset".
      *
      * @var string
@@ -907,6 +935,13 @@ interface SerializerKeys {
      * @var string
      */
     const ROLES = "roles";
+
+    /**
+     * Serializer key "route".
+     *
+     * @var string
+     */
+    const ROUTE = "route";
 
     /**
      * Serializer key "salt".
@@ -970,6 +1005,13 @@ interface SerializerKeys {
      * @var string
      */
     const STATE = "state";
+
+    /**
+     * Serializer key "status".
+     *
+     * @var string
+     */
+    const STATUS = "status";
 
     /**
      * Serializer key "street name".
@@ -1112,6 +1154,13 @@ interface SerializerKeys {
     const USERNAME = "username";
 
     /**
+     * Serializer key "user agent".
+     *
+     * @var string
+     */
+    const USER_AGENT = "userAgent";
+
+    /**
      * Serializer key "value".
      *
      * @var string
@@ -1154,6 +1203,13 @@ interface SerializerKeys {
     const VERBOSE = "verbose";
 
     /**
+     * Serializer key "version".
+     *
+     * @var string
+     */
+    const VERSION = "version";
+
+    /**
      * Serializer key "visible".
      *
      * @var string
@@ -1180,4 +1236,11 @@ interface SerializerKeys {
      * @var string
      */
     const Y = "y";
+
+    /**
+     * Serializer key "year".
+     *
+     * @var string
+     */
+    const YEAR = "year";
 }

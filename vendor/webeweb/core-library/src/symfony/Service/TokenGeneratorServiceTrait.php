@@ -22,26 +22,26 @@ trait TokenGeneratorServiceTrait {
     /**
      * Token generator service.
      *
-     * @var TokenGeneratorService|null
+     * @var TokenGeneratorServiceInterface|null
      */
     private $tokenGeneratorService;
 
     /**
      * Get the token generator service.
      *
-     * @return TokenGeneratorService|null Returns the token generator service.
+     * @return TokenGeneratorServiceInterface|null Returns the token generator service.
      */
-    public function getTokenGeneratorService(): ?TokenGeneratorService {
+    public function getTokenGeneratorService(): ?TokenGeneratorServiceInterface {
         return $this->tokenGeneratorService;
     }
 
     /**
      * Set the token generator service.
      *
-     * @param TokenGeneratorService|null $tokenGeneratorService The token generator service.
+     * @param TokenGeneratorServiceInterface|null $tokenGeneratorService The token generator service.
      * @return self Returns this instance.
      */
-    protected function setTokenGeneratorService(?TokenGeneratorService $tokenGeneratorService): self {
+    protected function setTokenGeneratorService(?TokenGeneratorServiceInterface $tokenGeneratorService): self {
         $this->tokenGeneratorService = $tokenGeneratorService;
         return $this;
     }

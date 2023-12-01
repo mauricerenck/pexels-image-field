@@ -89,7 +89,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addHeader(string $name, string $value): RequestInterface {
         $this->headers[$name] = $value;
@@ -97,7 +97,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addPostData(string $name, string $value): RequestInterface {
         $this->postData[$name] = $value;
@@ -105,7 +105,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addQueryData(string $name, string $value): RequestInterface {
         $this->queryData[$name] = $value;
@@ -113,7 +113,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function call(): ResponseInterface {
 
@@ -172,63 +172,63 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function clearHeaders(): RequestInterface {
         return $this->setHeaders([]);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function clearPostData(): RequestInterface {
         return $this->setPostData([]);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function clearQueryData(): RequestInterface {
         return $this->setQueryData([]);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getConfiguration(): Configuration {
         return $this->configuration;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getHeaders(): array {
         return $this->headers;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMethod(): string {
         return $this->method;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getPostData(): array {
         return $this->postData;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getQueryData(): array {
         return $this->queryData;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return $this->resourcePath;
@@ -327,7 +327,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function removeHeader(string $name): RequestInterface {
 
@@ -339,7 +339,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function removePostData(string $name): RequestInterface {
 
@@ -351,7 +351,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function removeQueryData(string $name): RequestInterface {
 
@@ -433,7 +433,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setResourcePath(?string $resourcePath): RequestInterface {
         $this->resourcePath = preg_replace("/^\//", "", trim($resourcePath));

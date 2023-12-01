@@ -46,7 +46,7 @@ class OracleMySQLDatabaseConnector extends AbstractDatabaseConnector {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function connect(): PDO {
 

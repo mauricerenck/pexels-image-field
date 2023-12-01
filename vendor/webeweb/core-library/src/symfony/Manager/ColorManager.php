@@ -23,7 +23,7 @@ use WBW\Library\Symfony\Provider\ProviderInterface;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Symfony\Manager
  */
-class ColorManager extends AbstractManager {
+class ColorManager extends AbstractManager implements ColorManagerInterface {
 
     /**
      * Service name.
@@ -33,11 +33,11 @@ class ColorManager extends AbstractManager {
     const SERVICE_NAME = "wbw.core.manager.color";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addProvider(ProviderInterface $provider): ManagerInterface {
 
-        if (true === $this->contains($provider)) {
+        if (true === $this->containsProvider($provider)) {
             throw new AlreadyRegisteredProviderException($provider);
         }
 
@@ -45,12 +45,12 @@ class ColorManager extends AbstractManager {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
-    public function contains(ProviderInterface $provider): bool {
+    public function containsProvider(ProviderInterface $provider): bool {
 
         if (false === ($provider instanceof ColorProviderInterface)) {
-            throw new InvalidArgumentException("The provider must implements ColorProviderInterface");
+            throw new InvalidArgumentException("The provider must implements " . ColorProviderInterface::class);
         }
 
         $identifier = ColorHelper::getIdentifier($provider);

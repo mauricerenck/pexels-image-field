@@ -23,7 +23,7 @@ use Psr\Log\AbstractLogger;
 class TerminalLogger extends AbstractLogger {
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function log($level, $message, array $context = []): void {
         echo vsprintf("[%s] %s: %s, %s\n", [

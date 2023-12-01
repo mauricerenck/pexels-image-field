@@ -41,7 +41,7 @@ abstract class AbstractProvider {
     }
 
     /**
-     * Build the resource path.
+     * Build a resource path.
      *
      * @param AbstractRequest $request The request.
      * @return string Returns the resource path.
@@ -54,12 +54,16 @@ abstract class AbstractProvider {
 
         $values = $request->getSubstituables();
         foreach ($values as $k => $v) {
+
             if (null === $v) {
                 throw new InvalidArgumentException(sprintf('The substituable value "%s" is missing', $k));
             }
         }
 
-        return str_replace(array_keys($values), array_values($values), $request->getResourcePath());
+        $searches = array_keys($values);
+        $replaces = array_values($values);
+
+        return str_replace($searches, $replaces, $request->getResourcePath());
     }
 
     /**
@@ -76,5 +80,15 @@ abstract class AbstractProvider {
         }
 
         return $this;
+    }
+
+    /**
+     * Create a mandatory parameter exception.
+     *
+     * @param string $parameter The parameter.
+     * @return InvalidArgumentException Returns the mandatory parameter exception.
+     */
+    protected function newMandatoryParameterException(string $parameter): InvalidArgumentException {
+        return new InvalidArgumentException(sprintf('The mandatory parameter "%s" is missing', $parameter));
     }
 }

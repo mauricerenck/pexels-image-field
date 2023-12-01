@@ -24,7 +24,7 @@ use WBW\Library\Image\Utility\ImageUtility;
 class ImageFactory {
 
     /**
-     * Creates new dimensions.
+     * Create new dimensions.
      *
      * @param Image $image The image.
      * @param int $maxWidth The maximum width.

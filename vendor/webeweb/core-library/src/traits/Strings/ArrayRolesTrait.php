@@ -51,7 +51,7 @@ trait ArrayRolesTrait {
     }
 
     /**
-     * Determines if the roles contains a role.
+     * Determine if the roles contains a role.
      *
      * @param string $role The role.
      * @return bool Returns true in case of success, false otherwise.
@@ -61,7 +61,7 @@ trait ArrayRolesTrait {
     }
 
     /**
-     * Determines if the roles contains a role containing.
+     * Determine if the roles contains a role containing.
      *
      * @param string $role The role.
      * @return bool Returns true in case of success, false otherwise.
@@ -72,7 +72,7 @@ trait ArrayRolesTrait {
     }
 
     /**
-     * Determines if the roles contains a role starts with.
+     * Determine if the roles contains a role starts with.
      *
      * @param string $role The role.
      * @return bool Returns true in case of success, false otherwise.
@@ -83,7 +83,7 @@ trait ArrayRolesTrait {
     }
 
     /**
-     * Determines if the roles matches a pattern.
+     * Determine if the roles matches a pattern.
      *
      * @param string $pattern The pattern.
      * @return bool Returns true in case of success, false otherwise.
@@ -101,7 +101,7 @@ trait ArrayRolesTrait {
     }
 
     /**
-     * Determines if the roles contains a role starts with.
+     * Determine if the roles contains a role starts with.
      *
      * @param string $role The role.
      * @return bool Returns true in case of success, false otherwise.

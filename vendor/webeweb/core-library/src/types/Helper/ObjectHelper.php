@@ -30,6 +30,7 @@ class ObjectHelper {
     public static function coalesce(...$values) {
 
         foreach ($values as $current) {
+
             if (null !== $current) {
                 return $current;
             }
@@ -66,13 +67,14 @@ class ObjectHelper {
     }
 
     /**
-     * Determines if a value is an object.
+     * Determine if a value is an object.
      *
      * @param mixed $value The value.
      * @return void
-     * @throws ObjectArgumentException Throws an Object argument exception if the value is not of expected type.
+     * @throws ObjectArgumentException Throws an object argument exception if the value is not of expected type.
      */
     public static function isObject($value): void {
+
         if (false === is_object($value)) {
             throw new ObjectArgumentException($value);
         }

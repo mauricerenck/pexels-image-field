@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Symfony\Service;
 
-use Exception;
 use SplFileInfo;
+use Throwable;
 use WBW\Library\Traits\Strings\StringDirectoryTrait;
 use WBW\Library\Types\Helper\StringHelper;
 
@@ -22,7 +22,7 @@ use WBW\Library\Types\Helper\StringHelper;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Symfony\Service
  */
-class UploadedFileService {
+class UploadedFileService implements UploadedFileServiceInterface {
 
     use StringDirectoryTrait {
         setDirectory as protected;
@@ -52,7 +52,7 @@ class UploadedFileService {
     }
 
     /**
-     * Determines if a filename exists.
+     * Determine if a filename exists.
      *
      * @param string $filename The filename.
      * @return bool Returns true in case of success, false otherwise.
@@ -62,7 +62,7 @@ class UploadedFileService {
     }
 
     /**
-     * Creates a directory.
+     * Create a directory.
      *
      * @param string $directory The directory.
      * @return bool Returns true in case of success, false otherwise.
@@ -95,9 +95,10 @@ class UploadedFileService {
      * @param SplFileInfo $uploadedFile The uploaded file.
      * @param string $subdirectory The subdirectory.
      * @param string|null $filename The filename.
+     * @param int|null $permissions The permissions.
      * @return string|null Returns the uploaded file path.
      */
-    public function save(SplFileInfo $uploadedFile, string $subdirectory, string $filename = null): ?string {
+    public function save(SplFileInfo $uploadedFile, string $subdirectory, string $filename = null, int $permissions = 0600): ?string {
 
         // Directory
         $dir = implode("", [
@@ -116,6 +117,8 @@ class UploadedFileService {
             return null;
         }
 
+        chmod($dst, $permissions);
+
         return str_replace($this->getDirectory(), "", $dst);
     }
 
@@ -123,7 +126,7 @@ class UploadedFileService {
      * Unique id.
      *
      * @return string Returns the unique id.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function uniqid(): string {
 

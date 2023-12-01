@@ -22,26 +22,26 @@ trait ColorManagerTrait {
     /**
      * Color manager.
      *
-     * @var ColorManager|null
+     * @var ColorManagerInterface|null
      */
     private $colorManager;
 
     /**
      * Get the color manager.
      *
-     * @return ColorManager|null Returns the color manager.
+     * @return ColorManagerInterface|null Returns the color manager.
      */
-    public function getColorManager(): ?ColorManager {
+    public function getColorManager(): ?ColorManagerInterface {
         return $this->colorManager;
     }
 
     /**
      * Set the color manager.
      *
-     * @param ColorManager|null $colorManager The color manager.
+     * @param ColorManagerInterface|null $colorManager The color manager.
      * @return self Returns this instance.
      */
-    protected function setColorManager(?ColorManager $colorManager): self {
+    protected function setColorManager(?ColorManagerInterface $colorManager): self {
         $this->colorManager = $colorManager;
         return $this;
     }

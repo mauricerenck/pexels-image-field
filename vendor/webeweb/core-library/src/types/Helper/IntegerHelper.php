@@ -22,11 +22,11 @@ use WBW\Library\Types\Exception\IntegerArgumentException;
 class IntegerHelper {
 
     /**
-     * Determines if a value is an integer.
+     * Determine if a value is an integer.
      *
      * @param mixed $value The value.
      * @return void
-     * @throws IntegerArgumentException Throws a Integer argument exception if the value is not of expected type.
+     * @throws IntegerArgumentException Throws an integer argument exception if the value is not of expected type.
      */
     public static function isInteger($value): void {
         if (false === is_integer($value)) {
@@ -74,7 +74,7 @@ class IntegerHelper {
 
         return function(?int $int1, ?int $int2) use ($asc): int {
 
-            $result = 0;
+            $result = null;
 
             if ($int1 < $int2) {
                 $result = -1;

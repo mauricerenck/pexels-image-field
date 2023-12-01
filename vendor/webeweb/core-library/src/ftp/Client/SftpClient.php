@@ -47,7 +47,7 @@ class SftpClient extends AbstractClient {
      * Close.
      *
      * @return SftpClient Returns this SFTP client.
-     * @throws FtpException Throws a FTP exception if an I/O error occurs.
+     * @throws FtpException Throws an FTP exception if an I/O error occurs.
      */
     public function close(): SftpClient {
 
@@ -66,7 +66,7 @@ class SftpClient extends AbstractClient {
      * Connect.
      *
      * @return SftpClient Returns this SFTP client.
-     * @throws FtpException Throws a FTP exception if an I/O error occurs.
+     * @throws FtpException Throws an FTP exception if an I/O error occurs.
      */
     public function connect(): SftpClient {
 
@@ -86,7 +86,7 @@ class SftpClient extends AbstractClient {
      *
      * @param string $path The path.
      * @return SftpClient Returns this SFTP client.
-     * @throws FtpException Throws a FTP exception if an I/O error occurs.
+     * @throws FtpException Throws an FTP exception if an I/O error occurs.
      */
     public function delete(string $path): SftpClient {
 
@@ -135,7 +135,7 @@ class SftpClient extends AbstractClient {
      * Login.
      *
      * @return SftpClient Returns this SFTP client.
-     * @throws FtpException Throws a FTP exception if an I/O error occurs.
+     * @throws FtpException Throws an FTP exception if an I/O error occurs.
      */
     public function login(): SftpClient {
 
@@ -154,9 +154,9 @@ class SftpClient extends AbstractClient {
      *
      * @param string $directory The directory.
      * @param int $mode The mode.
-     * @param bool $recursive Recursively ?.
+     * @param bool $recursive Recursively ?
      * @return SftpClient Returns this SFTP client.
-     * @throws FtpException Throws a FTP exception if an I/O error occurs.
+     * @throws FtpException Throws an FTP exception if an I/O error occurs.
      */
     public function mkdir(string $directory, int $mode = 0777, bool $recursive = false): SftpClient {
 
@@ -173,7 +173,7 @@ class SftpClient extends AbstractClient {
      * @param string $localFile The local file.
      * @param string $remoteFile The remote file.
      * @return SftpClient Returns this SFTP client.
-     * @throws FtpException Throws a FTP exception if an I/O error occurs.
+     * @throws FtpException Throws an FTP exception if an I/O error occurs.
      */
     public function put(string $localFile, string $remoteFile): SftpClient {
 
@@ -204,7 +204,7 @@ class SftpClient extends AbstractClient {
      * @param string $oldName The old name.
      * @param string $newName The new name.
      * @return SftpClient Returns this SFTP client.
-     * @throws FtpException Throws a FTP exception if an I/O error occurs.
+     * @throws FtpException Throws an FTP exception if an I/O error occurs.
      */
     public function rename(string $oldName, string $newName): SftpClient {
 

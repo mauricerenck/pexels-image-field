@@ -76,7 +76,7 @@ class Result {
     }
 
     /**
-     * Determines if this result has a data.
+     * Determine if this result has a data.
      *
      * @return bool Returns true in case of success, false otherwise.
      */
@@ -85,7 +85,7 @@ class Result {
     }
 
     /**
-     * Determines if this result has an error.
+     * Determine if this result has an error.
      *
      * @return bool Returns true in case of success, false otherwise.
      */

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\OcrLad\Model\Attribute;
+namespace WBW\Library\OcrLad\Traits\Arrays;
 
 use WBW\Library\OcrLad\Model\Word;
 
@@ -17,7 +17,7 @@ use WBW\Library\OcrLad\Model\Word;
  * Array words trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\OcrLad\Model\Attribute
+ * @package WBW\Library\OcrLad\Traits\Arrays
  */
 trait ArrayWordsTrait {
 
@@ -58,7 +58,7 @@ trait ArrayWordsTrait {
     }
 
     /**
-     * Determines if this instance has words.
+     * Determine if this instance has words.
      *
      * @return bool Returns true in case of success, false otherwise.
      */

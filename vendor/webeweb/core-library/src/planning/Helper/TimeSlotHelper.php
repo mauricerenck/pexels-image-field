@@ -24,7 +24,7 @@ use WBW\Library\Types\Helper\DateTimeHelper;
 class TimeSlotHelper {
 
     /**
-     * Determines if a time slot A contains a time slot b.
+     * Determine if a time slot A contains a time slot b.
      *
      * @param TimeSlot $a The time slot A.
      * @param TimeSlot $b The time slot B.
@@ -37,7 +37,7 @@ class TimeSlotHelper {
     }
 
     /**
-     * Determines if two time slots are equals.
+     * Determine if two time slots are equals.
      *
      * @param TimeSlot $a The time slot A.
      * @param TimeSlot $b The time slot B.
@@ -128,7 +128,7 @@ class TimeSlotHelper {
     }
 
     /**
-     * Determines if a time slot A has full join with time slot B.
+     * Determine if a time slot A has full join with time slot B.
      *
      * @param TimeSlot $a The time slot A.
      * @param TimeSlot $b The time slot B.
@@ -139,7 +139,7 @@ class TimeSlotHelper {
     }
 
     /**
-     * Determines if a time slot A has an inner join with time slot B.
+     * Determine if a time slot A has an inner join with time slot B.
      *
      * @param TimeSlot $a The time slot A.
      * @param TimeSlot $b The time slot B.

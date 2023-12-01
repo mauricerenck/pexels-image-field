@@ -23,7 +23,7 @@ use WBW\Library\Sorter\Model\AlphabeticalTreeNodeInterface;
 class AlphabeticalTreeNodeHelper {
 
     /**
-     * Creates the choices.
+     * Create the choices.
      *
      * @param AlphabeticalTreeNodeInterface[] $choices The choices.
      * @return array Returns the choices.

@@ -27,7 +27,7 @@ use WBW\Library\Symfony\Assets\NotificationInterface;
 class NotificationFactory {
 
     /**
-     * Creates a danger notification.
+     * Create a danger notification.
      *
      * @param string $content The content.
      * @return NotificationInterface Returns the danger notification.
@@ -37,7 +37,7 @@ class NotificationFactory {
     }
 
     /**
-     * Creates a default notification.
+     * Create a default notification.
      *
      * @param string $content The content.
      * @param string $type The type.
@@ -48,7 +48,7 @@ class NotificationFactory {
     }
 
     /**
-     * Creates an info notification.
+     * Create an info notification.
      *
      * @param string $content The content.
      * @return NotificationInterface Returns the info notification.
@@ -58,7 +58,7 @@ class NotificationFactory {
     }
 
     /**
-     * Creates a success notification.
+     * Create a success notification.
      *
      * @param string $content The content.
      * @return NotificationInterface Returns the success notification.
@@ -68,7 +68,7 @@ class NotificationFactory {
     }
 
     /**
-     * Creates a warning notification.
+     * Create a warning notification.
      *
      * @param string $content The content.
      * @return NotificationInterface Returns the warning notification.

@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Curl\Exception;
 
-use Exception;
+use Throwable;
 use WBW\Library\Core\Exception\AbstractException as BaseException;
 
 /**
@@ -28,9 +28,9 @@ abstract class AbstractException extends BaseException {
      *
      * @param string $message The message.
      * @param int $code The code.
-     * @param Exception|null $previous The previous exception.
+     * @param Throwable|null $previous The previous exception.
      */
-    public function __construct(string $message, int $code = 500, Exception $previous = null) {
+    public function __construct(string $message, int $code = 500, Throwable $previous = null) {
         parent::__construct($message, $code, $previous);
     }
 }

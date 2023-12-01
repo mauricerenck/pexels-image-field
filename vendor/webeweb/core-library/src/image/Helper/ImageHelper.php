@@ -106,7 +106,7 @@ class ImageHelper {
      * @param int|null $width The width.
      * @param int|null $height The height.
      * @return string|null Returns the SVG converted into PNG.
-     * @throws ImagickException Throws an Imagick exception if an error occurs.
+     * @throws ImagickException Throws an imagick exception if an error occurs.
      */
     public static function svg2png(string $filename, int $width = null, int $height = null): ?string {
 

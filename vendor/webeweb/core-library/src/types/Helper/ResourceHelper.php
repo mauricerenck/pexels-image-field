@@ -22,13 +22,14 @@ use WBW\Library\Types\Exception\ResourceArgumentException;
 class ResourceHelper {
 
     /**
-     * Determines if a value is a resource.
+     * Determine if a value is a resource.
      *
      * @param mixed $value The value.
      * @return void
-     * @throws ResourceArgumentException Throws a Resource argument exception if the value is not of expected type.
+     * @throws ResourceArgumentException Throws a resource argument exception if the value is not of expected type.
      */
     public static function isResource($value): void {
+
         if (false === is_resource($value)) {
             throw new ResourceArgumentException($value);
         }

@@ -27,7 +27,7 @@ use WBW\Library\Symfony\Assets\ToastInterface;
 class ToastFactory {
 
     /**
-     * Creates a danger toast.
+     * Create a danger toast.
      *
      * @param string $content The content.
      * @return ToastInterface Returns the danger toast.
@@ -37,7 +37,7 @@ class ToastFactory {
     }
 
     /**
-     * Creates a default toast.
+     * Create a default toast.
      *
      * @param string $content The content.
      * @param string $type The type.
@@ -48,7 +48,7 @@ class ToastFactory {
     }
 
     /**
-     * Creates an info toast.
+     * Create an info toast.
      *
      * @param string $content The content.
      * @return ToastInterface Returns the info toast.
@@ -58,7 +58,7 @@ class ToastFactory {
     }
 
     /**
-     * Creates a success toast.
+     * Create a success toast.
      *
      * @param string $content The content.
      * @return ToastInterface Returns the success toast.
@@ -68,7 +68,7 @@ class ToastFactory {
     }
 
     /**
-     * Creates a warning toast.
+     * Create a warning toast.
      *
      * @param string $content The content.
      * @return ToastInterface Returns the warning toast.

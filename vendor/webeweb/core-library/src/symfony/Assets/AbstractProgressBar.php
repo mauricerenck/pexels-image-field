@@ -39,7 +39,7 @@ abstract class AbstractProgressBar implements ProgressBarInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeProgressBar($this);

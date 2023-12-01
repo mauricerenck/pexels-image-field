@@ -38,9 +38,10 @@ class BlueGreyColorProvider extends AbstractColorProvider implements BlueGreyCol
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getColors(): array {
+
         return [
             self::COLOR_50  => self::BLUE_GREY_COLOR_50,
             self::COLOR_100 => self::BLUE_GREY_COLOR_100,
@@ -54,7 +55,7 @@ class BlueGreyColorProvider extends AbstractColorProvider implements BlueGreyCol
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function getName(): string {
         return self::BLUE_GREY_COLOR_NAME;

@@ -22,7 +22,7 @@ use WBW\Library\Serializer\Model\CsvSerializable;
 class CsvSerializerHelper extends SerializerHelper {
 
     /**
-     * Serializes an array.
+     * Serialize an array.
      *
      * @param CsvSerializable[] $models The models.
      * @return string Returns the serialized array.
@@ -43,7 +43,7 @@ class CsvSerializerHelper extends SerializerHelper {
     }
 
     /**
-     * Serializes a model.
+     * Serialize a model.
      *
      * @param CsvSerializable|null $model The model.
      * @return string|null Returns the serialized model.

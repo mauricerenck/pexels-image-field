@@ -150,119 +150,119 @@ class FullCalendarEvent implements FullCalendarEventInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getAllDay(): ?bool {
         return $this->allDay;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getBackgroundColor(): ?string {
         return $this->backgroundColor;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getBorderColor(): ?string {
         return $this->borderColor;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getClassNames(): array {
         return $this->classNames;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getDisplay(): ?string {
         return $this->display;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getDurationEditable(): ?bool {
         return $this->durationEditable;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEditable(): ?bool {
         return $this->editable;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEnd(): ?DateTime {
         return $this->end;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEndStr(): ?string {
         return $this->endStr;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getExtraParams(): array {
         return $this->extraParams;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getGroupId(): ?string {
         return $this->groupId;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourceEditable(): ?bool {
         return $this->resourceEditable;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getStart(): ?DateTime {
         return $this->start;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getStartEditable(): ?bool {
         return $this->startEditable;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getStartStr(): ?string {
         return $this->startStr;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getTextColor(): ?string {
         return $this->textColor;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeFullCalendarEvent($this);

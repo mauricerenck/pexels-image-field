@@ -118,6 +118,7 @@ class OcrProvider extends AbstractProvider {
      * @return array Returns the file paths.
      */
     protected function buildFilePaths(IOFile $file): array {
+
         return [
             "upload" => implode("/", [$this->getRemoteDirectoryBefore(), $file->getUniqFilenamePdf()]),
             "remote" => [

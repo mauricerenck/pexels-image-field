@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Curl\Api;
 
-use Exception;
+use Throwable;
 use WBW\Library\Curl\Configuration\Configuration;
 
 /**
@@ -102,7 +102,7 @@ interface RequestInterface {
      * Call the request.
      *
      * @return ResponseInterface Returns the response.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function call(): ResponseInterface;
 

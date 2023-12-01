@@ -22,26 +22,26 @@ trait QuoteManagerTrait {
     /**
      * Quote manager.
      *
-     * @var QuoteManager|null
+     * @var QuoteManagerInterface|null
      */
     private $quoteManager;
 
     /**
      * Get the quote manager.
      *
-     * @return QuoteManager|null Returns the quote manager.
+     * @return QuoteManagerInterface|null Returns the quote manager.
      */
-    public function getQuoteManager(): ?QuoteManager {
+    public function getQuoteManager(): ?QuoteManagerInterface {
         return $this->quoteManager;
     }
 
     /**
      * Set the quote manager.
      *
-     * @param QuoteManager|null $quoteManager The quote manager.
+     * @param QuoteManagerInterface|null $quoteManager The quote manager.
      * @return self Returns this instance.
      */
-    protected function setQuoteManager(?QuoteManager $quoteManager): self {
+    protected function setQuoteManager(?QuoteManagerInterface $quoteManager): self {
         $this->quoteManager = $quoteManager;
         return $this;
     }

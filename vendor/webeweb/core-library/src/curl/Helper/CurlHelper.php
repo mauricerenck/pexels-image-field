@@ -12,7 +12,7 @@
 namespace WBW\Library\Curl\Helper;
 
 use DateTime;
-use Exception;
+use Throwable;
 use WBW\Library\Curl\Api\RequestInterface;
 use WBW\Library\Curl\Api\ResponseInterface;
 use WBW\Library\Curl\Configuration\Configuration;
@@ -26,11 +26,12 @@ use WBW\Library\Curl\Configuration\Configuration;
 class CurlHelper {
 
     /**
-     * Enumerates the codes.
+     * Enumerate the codes.
      *
      * @return int[] Returns the codes enumeration.
      */
     public static function enumCodes(): array {
+
         return [
             ResponseInterface::CODE_CONTINUE,
             ResponseInterface::CODE_SWITCHING_PROTOCOLS,
@@ -93,11 +94,12 @@ class CurlHelper {
     }
 
     /**
-     * Enumerates the methods.
+     * Enumerate the methods.
      *
      * @return string[] Returns the methods enumeration.
      */
     public static function enumMethods(): array {
+
         return [
             RequestInterface::METHOD_DELETE,
             RequestInterface::METHOD_GET,
@@ -258,7 +260,7 @@ class CurlHelper {
      * @param string $url The URL.
      * @param string $postData The POST data.
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public static function setVerbose($stream, Configuration $config, string $url, string $postData): void {
 

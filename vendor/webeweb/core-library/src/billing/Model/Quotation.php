@@ -37,21 +37,21 @@ class Quotation extends Billable implements QuotationInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getExpirationDate(): ?DateTime {
         return $this->expirationDate;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeQuotation($this);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setExpirationDate(?DateTime $expirationDate): QuotationInterface {
         $this->expirationDate = $expirationDate;

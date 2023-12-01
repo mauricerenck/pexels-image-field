@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Adoria\Provider;
 
-use Exception;
 use Psr\Log\LoggerInterface;
+use Throwable;
 use WBW\Library\Adoria\Api\ApiProviderInterface;
 use WBW\Library\Adoria\Model\RequestData;
 use WBW\Library\Adoria\Model\Result;
@@ -67,7 +67,7 @@ class ApiProvider extends AbstractProvider implements ApiProviderInterface {
             $response = $request->call();
 
             return $response->getResponseBody();
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             throw new ApiException("Failed to call Adoria API", 500, $ex);
         }

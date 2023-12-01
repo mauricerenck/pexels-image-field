@@ -22,26 +22,26 @@ trait FloatMinimumTrait {
     /**
      * Minimum.
      *
-     * @var string|null
+     * @var float|null
      */
     protected $minimum;
 
     /**
      * Get the minimum.
      *
-     * @return string|null Returns the minimum.
+     * @return float|null Returns the minimum.
      */
-    public function getMinimum(): ?string {
+    public function getMinimum(): ?float {
         return $this->minimum;
     }
 
     /**
      * Set the minimum.
      *
-     * @param string|null $minimum The minimum.
+     * @param float|null $minimum The minimum.
      * @return self Returns this instance.
      */
-    public function setMinimum(?string $minimum): self {
+    public function setMinimum(?float $minimum): self {
         $this->minimum = $minimum;
         return $this;
     }

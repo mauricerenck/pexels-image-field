@@ -73,42 +73,42 @@ class Response implements ResponseInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRequestBody(): ?string {
         return $this->requestBody;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRequestHeader(): array {
         return $this->requestHeader;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRequestUrl(): ?string {
         return $this->requestUrl;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResponseBody(): ?string {
         return $this->responseBody;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResponseHeader(): array {
         return $this->responseHeader;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResponseInfo(): array {
         return $this->responseInfo;

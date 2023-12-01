@@ -41,21 +41,21 @@ class DropdownItem implements DropdownItemInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getByDefault(): ?bool {
         return $this->byDefault;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeDropdownItem($this);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setByDefault(?bool $byDefault): DropdownItemInterface {
         $this->byDefault = $byDefault;

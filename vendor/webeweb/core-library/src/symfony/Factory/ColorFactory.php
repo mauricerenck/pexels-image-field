@@ -43,11 +43,12 @@ use WBW\Library\Symfony\Provider\ColorProviderInterface;
 class ColorFactory {
 
     /**
-     * Creates a Material Design Color Palette.
+     * Create a Material Design Color Palette.
      *
      * @return ColorProviderInterface[] Returns the Material Design Color Palette.
      */
     public static function newMaterialDesignColorPalette(): array {
+
         return [
             new RedColorProvider(),
             new PinkColorProvider(),

@@ -20,11 +20,11 @@
     },
     "require": {
         "getkirby/composer-installer": "^1.1",
-        "php": ">=7.3.0",
+        "php": ">=8.2.0",
         "webeweb/pexels-library": "^2.9"
     },
     "require-dev": {
-        "getkirby/cms": "^3.8",
+        "getkirby/cms": "^4",
         "phpunit/phpunit": "9.5"
     },
     "replace": {},
@@ -38,6 +38,10 @@
     "scripts": {
         "test": "vendor/bin/phpunit --testdox tests",
         "build-test-package": "git archive HEAD -o plugin.zip --worktree-attributes",
-        "build-composer": "composer install --no-dev --optimize-autoloader"
+        "build-composer": "composer install --no-dev --optimize-autoloader",
+        "build-release": [
+            "composer install --no-dev --optimize-autoloader",
+            "npm run build"
+        ]
     }
 }

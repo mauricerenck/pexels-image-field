@@ -11,7 +11,7 @@
 
 namespace WBW\Library\OcrLad\Model;
 
-use WBW\Library\OcrLad\Model\Attribute\ArrayWordsTrait;
+use WBW\Library\OcrLad\Traits\Arrays\ArrayWordsTrait;
 use WBW\Library\Traits\Strings\StringFilenameTrait;
 
 /**
@@ -102,7 +102,7 @@ class Document {
     }
 
     /**
-     * Determines if this instance has pages.
+     * Determine if this instance has pages.
      *
      * @return bool Returns true in case of success, false otherwise.
      */

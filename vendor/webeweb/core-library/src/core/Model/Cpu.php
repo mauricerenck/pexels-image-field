@@ -157,9 +157,10 @@ class Cpu implements JsonSerializable {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
+
         return [
             "us" => $this->getUs(),
             "sy" => $this->getSy(),

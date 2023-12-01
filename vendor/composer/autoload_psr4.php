@@ -11,6 +11,7 @@ return array(
     'WBW\\Library\\Validator\\' => array($vendorDir . '/webeweb/core-library/src/validator'),
     'WBW\\Library\\Types\\' => array($vendorDir . '/webeweb/core-library/src/types'),
     'WBW\\Library\\Traits\\' => array($vendorDir . '/webeweb/core-library/src/traits'),
+    'WBW\\Library\\System\\' => array($vendorDir . '/webeweb/core-library/src/system'),
     'WBW\\Library\\Symfony\\' => array($vendorDir . '/webeweb/core-library/src/symfony'),
     'WBW\\Library\\Sorter\\' => array($vendorDir . '/webeweb/core-library/src/sorter'),
     'WBW\\Library\\SkiData\\' => array($vendorDir . '/webeweb/core-library/src/skidata'),

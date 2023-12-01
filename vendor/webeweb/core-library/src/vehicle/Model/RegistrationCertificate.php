@@ -359,343 +359,343 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getA(): ?string {
         return $this->a;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getA1(): ?string {
         return $this->a1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getB(): ?DateTime {
         return $this->b;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getC1(): ?string {
         return $this->c1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getC3(): ?string {
         return $this->c3;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getC41(): ?string {
         return $this->c41;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getC4a(): ?string {
         return $this->c4a;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getD1(): ?string {
         return $this->d1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getD2(): ?string {
         return $this->d2;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getD21(): ?string {
         return $this->d21;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getD3(): ?string {
         return $this->d3;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getE(): ?string {
         return $this->e;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getF1(): ?int {
         return $this->f1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getF2(): ?int {
         return $this->f2;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getF3(): ?int {
         return $this->f3;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getG(): ?int {
         return $this->g;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getG1(): ?int {
         return $this->g1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getH(): ?string {
         return $this->h;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getI(): ?DateTime {
         return $this->i;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getI1(): ?DateTime {
         return $this->i1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getJ(): ?string {
         return $this->j;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getJ1(): ?string {
         return $this->j1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getJ2(): ?string {
         return $this->j2;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getJ3(): ?string {
         return $this->j3;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getK(): ?string {
         return $this->k;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getP1(): ?int {
         return $this->p1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getP2(): ?int {
         return $this->p2;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getP3(): ?string {
         return $this->p3;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getP6(): ?int {
         return $this->p6;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getQ(): ?float {
         return $this->q;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getS1(): ?int {
         return $this->s1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getS2(): ?int {
         return $this->s2;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getU1(): ?int {
         return $this->u1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getU2(): ?int {
         return $this->u2;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getV7(): ?int {
         return $this->v7;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getV9(): ?string {
         return $this->v9;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getX1(): ?DateTime {
         return $this->x1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getY1(): ?float {
         return $this->y1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getY2(): ?float {
         return $this->y2;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getY3(): ?float {
         return $this->y3;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getY4(): ?float {
         return $this->y4;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getY5(): ?float {
         return $this->y5;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getY6(): ?float {
         return $this->y6;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getZ1(): ?string {
         return $this->z1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getZ2(): ?string {
         return $this->z2;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getZ3(): ?string {
         return $this->z3;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getZ4(): ?string {
         return $this->z4;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeRegistrationCertificate($this);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setA(?string $a): RegistrationCertificateInterface {
         $this->a = $a;
@@ -708,7 +708,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setB(?DateTime $b): RegistrationCertificateInterface {
         $this->b = $b;
@@ -716,7 +716,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setC1(?string $c1): RegistrationCertificateInterface {
         $this->c1 = $c1;
@@ -724,7 +724,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setC3(?string $c3): RegistrationCertificateInterface {
         $this->c3 = $c3;
@@ -732,7 +732,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setC41(?string $c41): RegistrationCertificateInterface {
         $this->c41 = $c41;
@@ -740,7 +740,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setC4a(?string $c4a): RegistrationCertificateInterface {
         $this->c4a = $c4a;
@@ -748,7 +748,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setD1(?string $d1): RegistrationCertificateInterface {
         $this->d1 = $d1;
@@ -756,7 +756,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setD2(?string $d2): RegistrationCertificateInterface {
         $this->d2 = $d2;
@@ -764,7 +764,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setD21(?string $d21): RegistrationCertificateInterface {
         $this->d21 = $d21;
@@ -772,7 +772,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setD3(?string $d3): RegistrationCertificateInterface {
         $this->d3 = $d3;
@@ -780,7 +780,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setE(?string $e): RegistrationCertificateInterface {
         $this->e = $e;
@@ -788,7 +788,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setF1(?int $f1): RegistrationCertificateInterface {
         $this->f1 = $f1;
@@ -796,7 +796,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setF2(?int $f2): RegistrationCertificateInterface {
         $this->f2 = $f2;
@@ -804,7 +804,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setF3(?int $f3): RegistrationCertificateInterface {
         $this->f3 = $f3;
@@ -812,7 +812,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setG(?int $g): RegistrationCertificateInterface {
         $this->g = $g;
@@ -820,7 +820,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setG1(?int $g1): RegistrationCertificateInterface {
         $this->g1 = $g1;
@@ -828,7 +828,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setH(?string $h): RegistrationCertificateInterface {
         $this->h = $h;
@@ -836,7 +836,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setI(?DateTime $i): RegistrationCertificateInterface {
         $this->i = $i;
@@ -844,7 +844,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setI1(?DateTime $i1): RegistrationCertificateInterface {
         $this->i1 = $i1;
@@ -852,7 +852,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setJ(?string $j): RegistrationCertificateInterface {
         $this->j = $j;
@@ -860,7 +860,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setJ1(?string $j1): RegistrationCertificateInterface {
         $this->j1 = $j1;
@@ -868,7 +868,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setJ2(?string $j2): RegistrationCertificateInterface {
         $this->j2 = $j2;
@@ -876,7 +876,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setJ3(?string $j3): RegistrationCertificateInterface {
         $this->j3 = $j3;
@@ -884,7 +884,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setK(?string $k): RegistrationCertificateInterface {
         $this->k = $k;
@@ -892,7 +892,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setP1(?int $p1): RegistrationCertificateInterface {
         $this->p1 = $p1;
@@ -900,7 +900,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setP2(?int $p2): RegistrationCertificateInterface {
         $this->p2 = $p2;
@@ -908,7 +908,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setP3(?string $p3): RegistrationCertificateInterface {
         $this->p3 = $p3;
@@ -916,7 +916,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setP6(?int $p6): RegistrationCertificateInterface {
         $this->p6 = $p6;
@@ -924,7 +924,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setQ(?float $q): RegistrationCertificateInterface {
         $this->q = $q;
@@ -932,7 +932,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setS1(?int $s1): RegistrationCertificateInterface {
         $this->s1 = $s1;
@@ -940,7 +940,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setS2(?int $s2): RegistrationCertificateInterface {
         $this->s2 = $s2;
@@ -948,7 +948,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setU1(?int $u1): RegistrationCertificateInterface {
         $this->u1 = $u1;
@@ -956,7 +956,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setU2(?int $u2): RegistrationCertificateInterface {
         $this->u2 = $u2;
@@ -964,7 +964,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setV7(?int $v7): RegistrationCertificateInterface {
         $this->v7 = $v7;
@@ -972,7 +972,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setV9(?string $v9): RegistrationCertificateInterface {
         $this->v9 = $v9;
@@ -980,7 +980,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setX1(?DateTime $x1): RegistrationCertificateInterface {
         $this->x1 = $x1;
@@ -988,7 +988,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setY1(?float $y1): RegistrationCertificateInterface {
         $this->y1 = $y1;
@@ -996,7 +996,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setY2(?float $y2): RegistrationCertificateInterface {
         $this->y2 = $y2;
@@ -1004,7 +1004,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setY3(?float $y3): RegistrationCertificateInterface {
         $this->y3 = $y3;
@@ -1012,7 +1012,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setY4(?float $y4): RegistrationCertificateInterface {
         $this->y4 = $y4;
@@ -1020,7 +1020,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setY5(?float $y5): RegistrationCertificateInterface {
         $this->y5 = $y5;
@@ -1028,7 +1028,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setY6(?float $y6): RegistrationCertificateInterface {
         $this->y6 = $y6;
@@ -1036,7 +1036,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setZ1(?string $z1): RegistrationCertificateInterface {
         $this->z1 = $z1;
@@ -1044,7 +1044,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setZ2(?string $z2): RegistrationCertificateInterface {
         $this->z2 = $z2;
@@ -1052,7 +1052,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setZ3(?string $z3): RegistrationCertificateInterface {
         $this->z3 = $z3;
@@ -1060,7 +1060,7 @@ class RegistrationCertificate implements RegistrationCertificateInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setZ4(?string $z4): RegistrationCertificateInterface {
         $this->z4 = $z4;

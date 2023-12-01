@@ -29,7 +29,7 @@ class DefaultNotificationsDropdownThemeProvider implements NotificationsDropdown
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getNotifications(): array {
         return [];

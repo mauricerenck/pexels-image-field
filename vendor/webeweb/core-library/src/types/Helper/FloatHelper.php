@@ -23,7 +23,7 @@ use WBW\Library\Types\Exception\FloatArgumentException;
 class FloatHelper {
 
     /**
-     * Calculates a percent.
+     * Calculate a percent.
      *
      * @param float $quotient The quotient.
      * @param float $divider The divider.
@@ -40,13 +40,14 @@ class FloatHelper {
     }
 
     /**
-     * Determines if a value is a float.
+     * Determine if a value is a float.
      *
      * @param mixed $value The value.
      * @return void
-     * @throws FloatArgumentException Throws a Float argument exception if the value is not of expected type.
+     * @throws FloatArgumentException Throws a float argument exception if the value is not of expected type.
      */
     public static function isFloat($value): void {
+
         if (false === is_float($value)) {
             throw new FloatArgumentException($value);
         }

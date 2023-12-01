@@ -22,13 +22,14 @@ use WBW\Library\Types\Exception\TimestampArgumentException;
 class TimestampHelper {
 
     /**
-     * Determines if a value is a timestamp.
+     * Determine if a value is a timestamp.
      *
      * @param mixed $value The value.
      * @return void
-     * @throws TimestampArgumentException Throws a Timestamp argument exception if the value is not of expected type.
+     * @throws TimestampArgumentException Throws a timestamp argument exception if the value is not of expected type.
      */
     public static function isTimestamp($value): void {
+
         if (false === strtotime($value)) {
             throw new TimestampArgumentException($value);
         }

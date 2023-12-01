@@ -22,7 +22,7 @@ use WBW\Library\Billing\Model\BillableDetailInterface;
 class BillableDetailHelper extends TaxableHelper {
 
     /**
-     * Calculates a discount total.
+     * Calculate a discount total.
      *
      * @param BillableDetailInterface $billableDetail The billable detail.
      * @return float Returns the discount total.
@@ -32,7 +32,7 @@ class BillableDetailHelper extends TaxableHelper {
     }
 
     /**
-     * Calculates an excluding VAT total.
+     * Calculate an excluding VAT total.
      *
      * @param BillableDetailInterface $billableDetail The billable detail.
      * @return float Returns the excluding VAT total.
@@ -49,7 +49,7 @@ class BillableDetailHelper extends TaxableHelper {
     }
 
     /**
-     * Calculates an including VAT total.
+     * Calculate an including VAT total.
      *
      * @param BillableDetailInterface $billableDetail The billable detail.
      * @return float Returns the including VAT total.
@@ -59,7 +59,7 @@ class BillableDetailHelper extends TaxableHelper {
     }
 
     /**
-     * Calculates a VAT total.
+     * Calculate a VAT total.
      *
      * @param BillableDetailInterface $billableDetail The billable detail.
      * @return float Returns the VAT total.

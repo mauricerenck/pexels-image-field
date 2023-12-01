@@ -22,13 +22,14 @@ use WBW\Library\Types\Exception\BooleanArgumentException;
 class BooleanHelper {
 
     /**
-     * Determines if a value is a boolean.
+     * Determine if a value is a boolean.
      *
      * @param mixed $value The value.
      * @return void
-     * @throws BooleanArgumentException Throws a Boolean argument exception if the value is not of expected type.
+     * @throws BooleanArgumentException Throws a boolean argument exception if the value is not of expected type.
      */
     public static function isBoolean($value): void {
+
         if (false === is_bool($value)) {
             throw new BooleanArgumentException($value);
         }

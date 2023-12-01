@@ -13,7 +13,7 @@ namespace WBW\Library\Symfony\Serializer;
 
 use InvalidArgumentException;
 use WBW\Library\Serializer\Helper\JsonSerializerHelper;
-use WBW\Library\Serializer\SerializerKeys;
+use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 use WBW\Library\Symfony\Assets\AlertInterface;
 use WBW\Library\Symfony\Assets\BadgeInterface;
 use WBW\Library\Symfony\Assets\ButtonInterface;
@@ -25,6 +25,8 @@ use WBW\Library\Symfony\Assets\NotificationInterface;
 use WBW\Library\Symfony\Assets\ProgressBarInterface;
 use WBW\Library\Symfony\Assets\Select2OptionInterface;
 use WBW\Library\Symfony\Assets\ToastInterface;
+use WBW\Library\Symfony\Model\RepositoryEventInterface;
+use WBW\Library\Symfony\Model\RequestDetailInterface;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
@@ -36,46 +38,49 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class JsonSerializer {
 
     /**
-     * Serializes an alert.
+     * Serialize an alert.
      *
      * @param AlertInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializeAlert(AlertInterface $model): array {
+
         return [
-            SerializerKeys::CONTENT => $model->getContent(),
-            SerializerKeys::TYPE    => $model->getType(),
+            BaseSerializerKeys::CONTENT => $model->getContent(),
+            BaseSerializerKeys::TYPE    => $model->getType(),
         ];
     }
 
     /**
-     * Serializes an badge.
+     * Serialize an badge.
      *
      * @param BadgeInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializeBadge(BadgeInterface $model): array {
+
         return [
-            SerializerKeys::CONTENT => $model->getContent(),
-            SerializerKeys::TYPE    => $model->getType(),
+            BaseSerializerKeys::CONTENT => $model->getContent(),
+            BaseSerializerKeys::TYPE    => $model->getType(),
         ];
     }
 
     /**
-     * Serializes a button.
+     * Serialize a button.
      *
      * @param ButtonInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializeButton(ButtonInterface $model): array {
+
         return [
-            SerializerKeys::CONTENT => $model->getContent(),
-            SerializerKeys::TYPE    => $model->getType(),
+            BaseSerializerKeys::CONTENT => $model->getContent(),
+            BaseSerializerKeys::TYPE    => $model->getType(),
         ];
     }
 
     /**
-     * Serializes a Full Calendar event.
+     * Serialize a Full Calendar event.
      *
      * @param FullCalendarEventInterface $model The model.
      * @return array Returns the serialized model.
@@ -115,33 +120,35 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes an icon.
+     * Serialize an icon.
      *
      * @param IconInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializeIcon(IconInterface $model): array {
+
         return [
-            SerializerKeys::NAME  => $model->getName(),
-            SerializerKeys::STYLE => $model->getStyle(),
+            BaseSerializerKeys::NAME  => $model->getName(),
+            BaseSerializerKeys::STYLE => $model->getStyle(),
         ];
     }
 
     /**
-     * Serializes a label.
+     * Serialize a label.
      *
      * @param LabelInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializeLabel(LabelInterface $model): array {
+
         return [
-            SerializerKeys::CONTENT => $model->getContent(),
-            SerializerKeys::TYPE    => $model->getType(),
+            BaseSerializerKeys::CONTENT => $model->getContent(),
+            BaseSerializerKeys::TYPE    => $model->getType(),
         ];
     }
 
     /**
-     * Serializes a navigation node.
+     * Serialize a navigation node.
      *
      * @param NavigationNodeInterface $model The model.
      * @return array Returns the serialized model.
@@ -149,42 +156,90 @@ class JsonSerializer {
     public static function serializeNavigationNode(NavigationNodeInterface $model): array {
 
         return [
-            SerializerKeys::ID      => $model->getId(),
-            SerializerKeys::ACTIVE  => $model->getActive(),
-            SerializerKeys::ENABLE  => $model->getEnable(),
-            SerializerKeys::ICON    => $model->getIcon(),
-            SerializerKeys::LABEL   => $model->getLabel(),
-            "matcher"               => $model->getMatcher(),
-            SerializerKeys::PARENT  => JsonSerializerHelper::jsonSerializeModel($model->getParent()),
-            SerializerKeys::TARGET  => $model->getTarget(),
-            SerializerKeys::URI     => $model->getUri(),
-            SerializerKeys::VISIBLE => $model->getVisible(),
+            BaseSerializerKeys::ID      => $model->getId(),
+            BaseSerializerKeys::ACTIVE  => $model->getActive(),
+            BaseSerializerKeys::ENABLE  => $model->getEnable(),
+            BaseSerializerKeys::ICON    => $model->getIcon(),
+            BaseSerializerKeys::LABEL   => $model->getLabel(),
+            SerializerKeys::MATCHER     => $model->getMatcher(),
+            BaseSerializerKeys::PARENT  => JsonSerializerHelper::jsonSerializeModel($model->getParent()),
+            BaseSerializerKeys::TARGET  => $model->getTarget(),
+            BaseSerializerKeys::URI     => $model->getUri(),
+            BaseSerializerKeys::VISIBLE => $model->getVisible(),
         ];
     }
 
     /**
-     * Serializes a notification.
+     * Serialize a notification.
      *
      * @param NotificationInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializeNotification(NotificationInterface $model): array {
+
         return [
-            SerializerKeys::CONTENT => $model->getContent(),
-            SerializerKeys::TYPE    => $model->getType(),
+            BaseSerializerKeys::CONTENT => $model->getContent(),
+            BaseSerializerKeys::TYPE    => $model->getType(),
         ];
     }
 
     /**
-     * Serializes a progress bar.
+     * Serialize a progress bar.
      *
      * @param ProgressBarInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializeProgressBar(ProgressBarInterface $model): array {
+
         return [
-            SerializerKeys::CONTENT => $model->getContent(),
-            SerializerKeys::TYPE    => $model->getType(),
+            BaseSerializerKeys::CONTENT => $model->getContent(),
+            BaseSerializerKeys::TYPE    => $model->getType(),
+        ];
+    }
+
+    /**
+     * Serialize a repository event.
+     *
+     * @param RepositoryEventInterface $model The model.
+     * @return array Returns the serialized model.
+     */
+    public static function serializeRepositoryEvent(RepositoryEventInterface $model): array {
+
+        return [
+            BaseSerializerKeys::ID            => $model->getId(),
+            BaseSerializerKeys::DATE          => $model->getDate(),
+            SerializerKeys::ENTITY            => $model->getEntity(),
+            SerializerKeys::ENTITY_DATA       => $model->getEntityData(),
+            SerializerKeys::ENTITY_ID         => $model->getEntityId(),
+            BaseSerializerKeys::IP_ADDRESS    => $model->getIpAddress(),
+            SerializerKeys::REQUEST_DATA_GET  => $model->getRequestDataGet(),
+            SerializerKeys::REQUEST_DATA_POST => $model->getRequestDataPost(),
+            SerializerKeys::REQUEST_METHOD    => $model->getRequestMethod(),
+            SerializerKeys::REQUEST_ROUTE     => $model->getRequestRoute(),
+            SerializerKeys::REQUEST_URL       => $model->getRequestUrl(),
+            BaseSerializerKeys::TYPE          => $model->getType(),
+        ];
+    }
+
+    /**
+     * Serialize a request detail.
+     *
+     * @param RequestDetailInterface $model The model.
+     * @return array Returns the serialized model.
+     */
+    public static function serializeRequestDetail(RequestDetailInterface $model): array {
+
+        return [
+            BaseSerializerKeys::ID         => $model->getId(),
+            SerializerKeys::DATA_GET       => $model->getDataGet(),
+            SerializerKeys::DATA_POST      => $model->getDataPost(),
+            BaseSerializerKeys::DATE       => $model->getDate(),
+            BaseSerializerKeys::IP_ADDRESS => $model->getIpAddress(),
+            BaseSerializerKeys::METHOD     => $model->getMethod(),
+            BaseSerializerKeys::ROUTE      => $model->getRoute(),
+            BaseSerializerKeys::URL        => $model->getUrl(),
+            BaseSerializerKeys::USER_AGENT => $model->getUserAgent(),
+            SerializerKeys::XML_HTTP       => $model->getXmlHttp(),
         ];
     }
 
@@ -195,9 +250,10 @@ class JsonSerializer {
      * @return array Returns the serialized model.
      */
     public static function serializeSelect2Option(Select2OptionInterface $model): array {
+
         return [
-            SerializerKeys::ID   => $model->getSelect2OptionId(),
-            SerializerKeys::TEXT => $model->getSelect2OptionText(),
+            BaseSerializerKeys::ID   => $model->getSelect2OptionId(),
+            BaseSerializerKeys::TEXT => $model->getSelect2OptionText(),
         ];
     }
 
@@ -220,15 +276,16 @@ class JsonSerializer {
     }
 
     /**
-     * Serializes a toast.
+     * Serialize a toast.
      *
      * @param ToastInterface $model The model.
      * @return array Returns the serialized model.
      */
     public static function serializeToast(ToastInterface $model): array {
+
         return [
-            SerializerKeys::CONTENT => $model->getContent(),
-            SerializerKeys::TYPE    => $model->getType(),
+            BaseSerializerKeys::CONTENT => $model->getContent(),
+            BaseSerializerKeys::TYPE    => $model->getType(),
         ];
     }
 }

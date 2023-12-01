@@ -11,12 +11,12 @@
 
 namespace WBW\Library\Types\Helper;
 
-use DateInterval;
 use DateTime;
-use Exception;
 use InvalidArgumentException;
 use Symfony\Component\Yaml\Yaml;
+use Throwable;
 use WBW\Library\Types\Exception\DateArgumentException;
+use WBW\Library\Types\Factory\DateTimeFactory;
 
 /**
  * Date/time helper.
@@ -24,7 +24,7 @@ use WBW\Library\Types\Exception\DateArgumentException;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Types\Helper
  */
-class DateTimeHelper {
+class DateTimeHelper extends DateTimeMethod {
 
     /**
      * Date/time format.
@@ -34,71 +34,7 @@ class DateTimeHelper {
     const DATETIME_FORMAT = "Y-m-d H:i";
 
     /**
-     * Add day.
-     *
-     * @param DateTime|null $dateTime The date/time.
-     * @param int $number The number.
-     * @return DateTime Returns the date/time.
-     * @throws InvalidArgumentException Throws an invalid argument exception if number is less than zero.
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public static function addDay(DateTime $dateTime, int $number): DateTime {
-        static::isPositiveOrZero($number);
-        return static::applyDuration($dateTime, "P", $number, "D");
-    }
-
-    /**
-     * Add month.
-     *
-     * @param DateTime|null $dateTime The date/time.
-     * @param int $number The number.
-     * @return DateTime Returns the date/time.
-     * @throws InvalidArgumentException Throws an invalid argument exception if number is less than zero.
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public static function addMonth(DateTime $dateTime, int $number): DateTime {
-        static::isPositiveOrZero($number);
-        return static::applyDuration($dateTime, "P", $number, "M");
-    }
-
-    /**
-     * Add year.
-     *
-     * @param DateTime|null $dateTime The date/time.
-     * @param int $number The number.
-     * @return DateTime Returns the date/time.
-     * @throws InvalidArgumentException Throws an invalid argument exception if number is less than zero.
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public static function addYear(DateTime $dateTime, int $number): DateTime {
-        static::isPositiveOrZero($number);
-        return static::applyDuration($dateTime, "P", $number, "Y");
-    }
-
-    /**
-     * Apply a duration.
-     *
-     * @param DateTime $dateTime The date/time.
-     * @param string $prefix The duration prefix.
-     * @param int $number The duration number.
-     * @param string $unit The duration number.
-     * @return DateTime Returns the date/time.
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    protected static function applyDuration(DateTime $dateTime, string $prefix, int $number, string $unit): DateTime {
-
-        $duration = sprintf("$prefix%d$unit", abs($number));
-        $interval = new DateInterval($duration);
-
-        if ($number < 0) {
-            return $dateTime->sub($interval);
-        }
-
-        return $dateTime->add($interval);
-    }
-
-    /**
-     * Compares two date/times.
+     * Compare two date/times.
      *
      * @param DateTime $a The date/time A.
      * @param DateTime $b The date/time B.
@@ -122,21 +58,22 @@ class DateTimeHelper {
     }
 
     /**
-     * Compares two date/time zones.
+     * Compare two date/time zones.
      *
      * @param DateTime $a The date/time A.
      * @param DateTime $b The date/time B.
      * @return void
      * @throws InvalidArgumentException Throws an illegal argument exception if the two date/time does not have the same time zone.
      */
-    protected static function compareZone(DateTime $a, DateTime $b): void {
+    protected static function compareTimezone(DateTime $a, DateTime $b): void {
+
         if (false === DateTimeZoneHelper::equals($a->getTimezone(), $b->getTimezone())) {
             throw new InvalidArgumentException("The two date/times does not have the same time zone");
         }
     }
 
     /**
-     * Determines if two date/time are equals.
+     * Determine if two date/time are equals.
      *
      * @param DateTime $a The date/time A.
      * @param DateTime $b The date/time B.
@@ -151,18 +88,17 @@ class DateTimeHelper {
      * Get an age.
      *
      * @param DateTime $birthdate The birthdate.
-     * @param DateTime|null $refDate The reference date.
+     * @param DateTime|null $date The reference date.
      * @return int Returns the age.
-     * @throws Exception Throws an exception if an errors occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
-    public static function getAge(DateTime $birthdate, DateTime $refDate = null): int {
+    public static function getAge(DateTime $birthdate, DateTime $date = null): int {
 
-        // Use the current date/time.
-        if (null === $refDate) {
-            $refDate = new DateTime();
+        if (null === $date) {
+            $date = new DateTime();
         }
 
-        $diff  = $refDate->getTimestamp() - $birthdate->getTimestamp();
+        $diff  = $date->getTimestamp() - $birthdate->getTimestamp();
         $years = new DateTime("@$diff");
 
         return intval($years->format("Y")) - 1970;
@@ -189,8 +125,19 @@ class DateTimeHelper {
      * @throws InvalidArgumentException Throws an illegal argument exception if the two date/time does not have the same time zone.
      */
     public static function getDuration(DateTime $a, DateTime $b): int {
-        static::compareZone($a, $b);
+        static::compareTimezone($a, $b);
         return $b->getTimestamp() - $a->getTimestamp();
+    }
+
+    /**
+     * Get the first and last date of month.
+     *
+     * @param DateTime $date The date.
+     * @return DateTime[] Returns the dates.
+     * @deprecated since 8.78.0 use {@see WBW\Library\Types\Factory\DateTimeFactory::firstLastDateMonth()} instead.
+     */
+    public static function getFirstLastDateMonth(DateTime $date): array {
+        return DateTimeFactory::firstLastDateMonth($date);
     }
 
     /**
@@ -267,6 +214,7 @@ class DateTimeHelper {
         $result = intval($date->diff($startDate)->d / 7);
         $result %= $weekCount;
         $result += $weekOffset;
+
         if ($weekCount < $result) {
             $result -= $weekCount;
         }
@@ -280,7 +228,7 @@ class DateTimeHelper {
      * @param DateTime|null $date The date.
      * @param bool $iso8601 ISO 8601 ?
      * @return DateTime[] Returns the week period.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public static function getWeekPeriod(?DateTime $date, bool $iso8601 = true): array {
 
@@ -297,8 +245,8 @@ class DateTimeHelper {
         $min = true === $iso8601 ? 1 : 0;
         $max = true === $iso8601 ? 7 : 6;
 
-        static::subDay($dates[0], $day - $min);
-        static::addDay($dates[1], $max - $day);
+        DateTimeMethod::subDay($dates[0], $day - $min);
+        DateTimeMethod::addDay($dates[1], $max - $day);
 
         return $dates;
     }
@@ -314,7 +262,7 @@ class DateTimeHelper {
     }
 
     /**
-     * Determines if a date/time is between date/time A and date/time B.
+     * Determine if a date/time is between date/time A and date/time B.
      *
      * @param DateTime $dateTime The date/time.
      * @param DateTime $a The date/time A.
@@ -324,7 +272,7 @@ class DateTimeHelper {
      */
     public static function isBetween(DateTime $dateTime, DateTime $a, DateTime $b): bool {
 
-        static::compareZone($a, $b);
+        static::compareTimezone($a, $b);
 
         $c1 = $a->getTimestamp() <= $dateTime->getTimestamp();
         $c2 = $dateTime->getTimestamp() <= $b->getTimestamp();
@@ -333,20 +281,21 @@ class DateTimeHelper {
     }
 
     /**
-     * Determines if a value is a date.
+     * Determine if a value is a date.
      *
      * @param mixed $value The value.
      * @return void
-     * @throws DateArgumentException Throws a Date argument exception if the value is not of expected type.
+     * @throws DateArgumentException Throws a date argument exception if the value is not of expected type.
      */
     public static function isDate($value): void {
+
         if (false === strtotime($value)) {
             throw new DateArgumentException($value);
         }
     }
 
     /**
-     * Determines if date/time A is greater than date/time B.
+     * Determine if date/time A is greater than date/time B.
      *
      * @param DateTime $a The date/time A.
      * @param DateTime $b The date/time B.
@@ -354,12 +303,12 @@ class DateTimeHelper {
      * @throws InvalidArgumentException Throws an illegal argument exception if the two date/time does not have the same time zone.
      */
     public static function isGreaterThan(DateTime $a, DateTime $b): bool {
-        static::compareZone($a, $b);
+        static::compareTimezone($a, $b);
         return $a->getTimestamp() > $b->getTimestamp();
     }
 
     /**
-     * Determines if date/time A is less than date/time B.
+     * Determine if date/time A is less than date/time B.
      *
      * @param DateTime $a The date/time A.
      * @param DateTime $b The date/time B.
@@ -367,96 +316,88 @@ class DateTimeHelper {
      * @throws InvalidArgumentException Throws an illegal argument exception if the two date/time does not have the same time zone.
      */
     public static function isLessThan(DateTime $a, DateTime $b): bool {
-        static::compareZone($a, $b);
+        static::compareTimezone($a, $b);
         return $a->getTimestamp() < $b->getTimestamp();
     }
 
     /**
-     * Determines if an offset is positive or zero.
+     * Number of business days.
      *
-     * @param int $offset The offset.
-     * @return void
-     * @throws InvalidArgumentException Throws an invalid argument exception if number is less than zero.
+     * @param DateTime $from From date/time (include).
+     * @param DateTime $to To date/time (include).
+     * @param int $workingDays The working days (between 1 and 7).
+     * @param int $workingDay1 The first working day.
+     * @return int|null Returns the number of business days.
+     * @throws Throwable Throws an exception if an error occurs.
      */
-    protected static function isPositiveOrZero(int $offset): void {
-        if ($offset < 0) {
-            throw new InvalidArgumentException("Number must be positive or equal to zero");
-        }
-    }
+    public static function numberBusinessDays(DateTime $from, DateTime $to, int $workingDays = 5, int $workingDay1 = 1): ?int {
 
-    /**
-     * Range from $a to $b.
-     *
-     * @param DateTime $a The date/time A.
-     * @param DateTime $b The date/time B.
-     * @return DateTime[]|null Returns the date/time range.
-     * @throws InvalidArgumentException Throws an illegal argument exception if the two date/time does not have the same time zone.
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public static function range(DateTime $a, DateTime $b): ?array {
+        $min = min($workingDays, $workingDay1);
+        $max = max($workingDays, $workingDay1);
+        $out = $workingDay1 + $workingDays; // Last work day of week
 
-        if (false === static::isLessThan($a, $b)) {
+        if ($min < 1 || 7 < $max || 8 < $out) {
             return null;
         }
 
-        $range = [];
+        $dateA = clone $from;
+        $dateA->setTime(0, 0);
 
-        $current = clone $a;
+        $dateB = clone $to;
+        $dateB->setTime(0, 0);
+        $dateB->modify("+1 day");
 
-        while (false === static::isGreaterThan($current, $b)) {
-
-            $range[] = clone $current;
-
-            static::addDay($current, 1);
+        if (false === static::isLessThan($dateA, $dateB)) {
+            return null;
         }
 
-        return $range;
+        if (7 === $workingDays) {
+            return $dateB->diff($dateA)->days;
+        }
+
+        $dayNumberA = static::getDayNumber($dateA);
+        $dayNumberB = static::getDayNumber($dateB);
+
+        // Two dates in the same week
+        if (static::getWeekNumber($dateA) === static::getWeekNumber($dateB)) {
+            return min($dayNumberB, $out) - min($dayNumberA, $out);
+        }
+
+        $daysA = 0; // Number of days before first full week
+        $daysB = 0; // Number of days after last full week
+
+        if (1 !== $dayNumberA) {
+            $daysA = min($workingDays, $out - $dayNumberA);
+            DateTimeMethod::addDay($dateA, 7 - $dayNumberA + 1); // First monday of full week
+        }
+
+        if (7 !== $dayNumberB) {
+            $daysB = min($workingDays, $dayNumberB - $workingDay1);
+            DateTimeMethod::subDay($dateB, $dayNumberB - 1); // Current monday of week
+        }
+
+        $weeks = $dateB->diff($dateA)->days / 7; // Number of weeks
+        $daysW = $workingDays * $weeks; // Number of days during the full weeks
+
+        return $daysA + $daysW + max($daysB, 0);
     }
 
     /**
-     * Sub day.
+     * Range from a date/time to another date/time.
      *
-     * @param DateTime|null $dateTime The date/time.
-     * @param int $number The number.
-     * @return DateTime Returns the date/time.
-     * @throws InvalidArgumentException Throws an invalid argument exception if number is less than zero.
-     * @throws Exception Throws an exception if an error occurs.
+     * @param DateTime $from From date/time.
+     * @param DateTime $to To date/time.
+     * @return DateTime[]|null Returns the date/time range.
+     * @throws InvalidArgumentException Throws an illegal argument exception if the two date/time does not have the same time zone.
+     * @throws Throwable Throws an exception if an error occurs.
+     * @deprecated since 8.78.0 use {@see WBW\Library\Types\Factory\DateTimeFactory::range()} instead.
      */
-    public static function subDay(DateTime $dateTime, int $number): DateTime {
-        static::isPositiveOrZero($number);
-        return static::applyDuration($dateTime, "P", -$number, "D");
+    public static function range(DateTime $from, DateTime $to): ?array {
+        return DateTimeFactory::range($from, $to);
     }
 
     /**
-     * Sub month.
-     *
-     * @param DateTime|null $dateTime The date/time.
-     * @param int $number The number.
-     * @return DateTime Returns the date/time.
-     * @throws InvalidArgumentException Throws an invalid argument exception if number is less than zero.
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public static function subMonth(DateTime $dateTime, int $number): DateTime {
-        static::isPositiveOrZero($number);
-        return static::applyDuration($dateTime, "P", -$number, "M");
-    }
-
-    /**
-     * Sub year.
-     *
-     * @param DateTime|null $dateTime The date/time.
-     * @param int $number The number.
-     * @return DateTime Returns the date/time.
-     * @throws InvalidArgumentException Throws an invalid argument exception if number is less than zero.
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public static function subYear(DateTime $dateTime, int $number): DateTime {
-        static::isPositiveOrZero($number);
-        return static::applyDuration($dateTime, "P", -$number, "Y");
-    }
-
-    /**
-     * Converts a date/time.
+     * Convert a date/time.
      *
      * @param DateTime|null $dateTime The date/time.
      * @param string $format The format.
@@ -472,11 +413,11 @@ class DateTimeHelper {
     }
 
     /**
-     * Translates a weekday part.
+     * Translate a weekday.
      *
      * @param string|null $date The date.
      * @param string $locale The locale.
-     * @return string|null Returns the translated weekday part.
+     * @return string|null Returns the translated weekday.
      */
     public static function translateWeekday(?string $date, string $locale = "en"): ?string {
 

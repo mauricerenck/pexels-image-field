@@ -30,7 +30,7 @@ class DefaultNavigationThemeProvider implements NavigationThemeProviderInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getTree(): NavigationTree {
         return new NavigationTree("");

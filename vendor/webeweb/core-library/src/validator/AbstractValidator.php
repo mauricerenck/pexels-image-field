@@ -40,7 +40,7 @@ abstract class AbstractValidator implements ValidatorInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRuleSet(): RuleSetInterface {
         return $this->ruleSet;
@@ -58,7 +58,7 @@ abstract class AbstractValidator implements ValidatorInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function validate($object): array {
         return $this->ruleSet->validate($object);

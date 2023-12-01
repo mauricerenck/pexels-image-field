@@ -175,7 +175,7 @@ interface NavigationNodeInterface extends AlphabeticalTreeNodeInterface, JsonSer
     public function getVisible(): ?bool;
 
     /**
-     * Determines if this node is displayable.
+     * Determine if this node is displayable.
      *
      * @return bool Returns true in case of success, false otherwise.
      */

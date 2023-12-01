@@ -39,7 +39,7 @@ abstract class AbstractAlert implements AlertInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeAlert($this);

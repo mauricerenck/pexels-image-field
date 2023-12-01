@@ -42,16 +42,17 @@ class DefaultJsonResponseData implements DefaultJsonResponseDataInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getSuccess(): ?bool {
         return $this->success;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
+
         return [
             "success" => $this->getSuccess(),
             "data"    => $this->getData(),
@@ -61,7 +62,7 @@ class DefaultJsonResponseData implements DefaultJsonResponseDataInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setSuccess(?bool $success): DefaultJsonResponseDataInterface {
         $this->success = $success;

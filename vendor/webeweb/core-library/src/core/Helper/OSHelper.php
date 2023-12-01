@@ -15,10 +15,11 @@ use WBW\Library\Core\Model\Cpu;
 use WBW\Library\Core\Model\Memory;
 
 /**
- * Operating System helper.
+ * Operating system helper.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Core\Helper
+ * @deprecated since 8.61.0 use {@see WBW\Library\System\System} instead
  */
 class OSHelper {
 
@@ -33,7 +34,7 @@ class OSHelper {
             return null;
         }
 
-        exec("top -b -n 1 |grep '%Cpu(s):'", $output);
+        exec("top -b -n 1 | grep '%Cpu(s):'", $output);
 
         preg_match_all("/[\d.]+/", $output[0], $values);
 
@@ -82,7 +83,7 @@ class OSHelper {
     }
 
     /**
-     * Determines if the operating system is Linux.
+     * Determine if the operating system is Linux.
      *
      * @return bool Returns true in case of success, false otherwise.
      */
@@ -91,7 +92,7 @@ class OSHelper {
     }
 
     /**
-     * Determines if the operating system is Windows.
+     * Determine if the operating system is Windows.
      *
      * @return bool Returns true in case of success, false otherwise.
      */
