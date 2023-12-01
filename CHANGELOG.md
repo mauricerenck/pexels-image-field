@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/mauricerenck/pexels-image-field/compare/v1.2.0...v2.0.0) (2023-12-01)
+
+
+### Features
+
+* kirby 4 release ([68a1c08](https://github.com/mauricerenck/pexels-image-field/commit/68a1c08233e0f12d42dc05425cad0de2d91d6d1b))
+
+
+### BREAKING CHANGES
+
+* kirby 4 release
+
 # [1.2.0](https://github.com/mauricerenck/pexels-image-field/compare/v1.1.0...v1.2.0) (2022-12-06)
 
 
