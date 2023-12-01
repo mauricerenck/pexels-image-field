@@ -12,3 +12,4 @@ fields:
 ```
 
 You can modify the number of images shown using `'mauricerenck.PexelsImageField.images' => '12'`
+You can modify the size of the downloaded image using `'mauricerenck.PexelsImageField.downloadSize' => 'medium'` (see options for all sizes)

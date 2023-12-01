@@ -15,7 +15,6 @@ Use one of these three methods to install the plugin:
 
 - `composer require mauricerenck/pexelsimagefield`
 - unzip [master.zip](https://github.com/mauricerenck/pexels-image-field/releases/latest) to `site/plugins/pexels-image-field`
-- `git submodule add https://github.com/mauricerenck/pexels-image-field.git site/plugins/pexels-image-field`
 
 * [Setup the plugin](docs/setup.md)
 * [See all options](docs/options.md)
