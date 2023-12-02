@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/mauricerenck/pexels-image-field/compare/v2.0.0...v2.0.1) (2023-12-02)
+
+
+### Bug Fixes
+
+* php version requirement ([3ca51c0](https://github.com/mauricerenck/pexels-image-field/commit/3ca51c0a8497999e9914ffec7579a87f03971581))
+
 # [2.0.0](https://github.com/mauricerenck/pexels-image-field/compare/v1.2.0...v2.0.0) (2023-12-01)
 
 
