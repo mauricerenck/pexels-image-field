@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -27,7 +29,7 @@ interface NavigationThemeProviderInterface extends ThemeProviderInterface {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.provider.theme.navigation";
+    public const SERVICE_NAME = "wbw.core.provider.theme.navigation";
 
     /**
      * Get the tree.

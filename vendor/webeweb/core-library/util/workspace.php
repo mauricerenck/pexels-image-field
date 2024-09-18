@@ -28,7 +28,7 @@ class Workspace {
      *
      * @var string
      */
-    const LOG_COMMAND_FORMAT = <<< 'EOT'
+    public const LOG_COMMAND_FORMAT = <<< 'EOT'
 \033[1;30m+------------------------------------------------------------------------------
 | %s
 +------------------------------------------------------------------------------
@@ -140,7 +140,8 @@ EOT;
             "--git-push-origin"     => "runGitPushOrigin",
             "--git-push-upstream"   => "runGitPushUpstream",
             "--git-status"          => "runGitStatus",
-            "--phpunit"             => "runPhpunit",
+            "--phpstan"             => "runPhpStan",
+            "--phpunit"             => "runPhpUnit",
             "--license-update"      => "runLicenseUpdate",
             "--phpcoveralls-update" => "runPhpCoverallsUpdate",
             "--phpmetrics-update"   => "runPhpMetricsUpdate",
@@ -166,6 +167,7 @@ EOT;
             "--git-push-origin"     => "Execute 'git push origin'",
             "--git-push-upstream"   => "Execute 'git push upstream --all --tag'",
             "--git-status"          => "Execute 'git status'",
+            "--phpstan"             => "Execute 'vendor/bin/phpstan",
             "--phpunit"             => "Execute 'vendor/bin/phpunit",
             "--license-update"      => "Update LICENSE",
             "--phpcoveralls-update" => "Update PhpCoveralls <version>",
@@ -255,6 +257,29 @@ EOT;
     }
 
     /**
+     * Determines if this directory has a PHPStan configuration.
+     *
+     * @return bool Returns true in case of success, false otherwise.
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    private function hasPhpStanConfiguration(): bool {
+
+        $cfg = file_exists(implode(DIRECTORY_SEPARATOR, [
+            $this->getDirectory(),
+            "phpstan.neon.dist",
+        ]));
+
+        $php = file_exists(implode(DIRECTORY_SEPARATOR, [
+            $this->getDirectory(),
+            "vendor",
+            "bin",
+            "phpstan",
+        ]));
+
+        return $cfg && $php;
+    }
+
+    /**
      * Determines if this directory has a PHPUnit configuration.
      *
      * @return bool Returns true in case of success, false otherwise.
@@ -262,7 +287,7 @@ EOT;
      */
     private function hasPhpUnitConfiguration(): bool {
 
-        $xml = file_exists(implode(DIRECTORY_SEPARATOR, [
+        $cfg = file_exists(implode(DIRECTORY_SEPARATOR, [
             $this->getDirectory(),
             "phpunit.xml.dist",
         ]));
@@ -274,7 +299,7 @@ EOT;
             "phpunit",
         ]));
 
-        return $xml && $php;
+        return $cfg && $php;
     }
 
     /**
@@ -560,6 +585,29 @@ EOT;
     }
 
     /**
+     * Executes a command "phpstan".
+     *
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    public function runPhpStan(): void {
+
+        if (false === $this->hasPhpStanConfiguration()) {
+            return;
+        }
+
+        $php = $this->getPhpBinary();
+        $cmd = implode(DIRECTORY_SEPARATOR, [
+            "$php vendor",
+            "bin",
+            "phpstan",
+        ]);
+
+        $this->logCommand($cmd);
+        $this->executeCommand($this->chainCommand($cmd), true);
+    }
+
+    /**
      * Updates the PhpStan version.
      *
      * @param string $version The version.
@@ -575,7 +623,7 @@ EOT;
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
      */
-    public function runPhpunit(): void {
+    public function runPhpUnit(): void {
 
         if (false === $this->hasPhpUnitConfiguration()) {
             return;

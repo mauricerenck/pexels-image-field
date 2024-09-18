@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,12 +26,12 @@ interface ParserInterface {
      *
      * @var string
      */
-    const DATETIME_FORMAT = "Ymd His";
+    public const DATETIME_FORMAT = "Ymd His";
 
     /**
      * Date format.
      *
      * @var string
      */
-    const DATE_FORMAT = "Ymd";
+    public const DATE_FORMAT = "Ymd";
 }

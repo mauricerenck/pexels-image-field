@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,6 +28,7 @@ class TerminalLogger extends AbstractLogger {
      *{@inheritDoc}
      */
     public function log($level, $message, array $context = []): void {
+
         echo vsprintf("[%s] %s: %s, %s\n", [
             (new DateTime())->format("Y-m-d h:i:s"),
             $level,

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -52,7 +54,7 @@ class ArchiveHelper {
         $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($srcPath), RecursiveIteratorIterator::SELF_FIRST);
         foreach ($files as $current) {
 
-            $curPath = str_replace("\\\\", "/", realpath($current));
+            $curPath = str_replace("\\\\", "/", realpath((string) $current));
             $zipPath = preg_replace("/^" . str_replace("/", "\/", $srcPath . "/") . "/", "", $curPath);
 
             if (true === is_file($curPath)) {

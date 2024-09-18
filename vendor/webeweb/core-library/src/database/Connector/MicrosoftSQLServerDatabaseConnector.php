@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -27,7 +29,7 @@ class MicrosoftSQLServerDatabaseConnector extends AbstractDatabaseConnector {
      *
      * @var string
      */
-    const DEFAULT_DSN = "sqlsrv:server=%HOST%,%PORT%;database=%DATABASE%;";
+    public const DEFAULT_DSN = "sqlsrv:server=%HOST%,%PORT%;database=%DATABASE%;";
 
     /**
      * Constructor.

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -40,7 +42,7 @@ class IntegerHelper {
             $result *= $n;
         }
 
-        return $result;
+        return (float) $result;
     }
 
     /**

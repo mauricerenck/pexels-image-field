@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -29,14 +31,14 @@ class QuickSort {
     /**
      * Values.
      *
-     * @var array
+     * @var mixed[]
      */
     private $values;
 
     /**
      * Constructor.
      *
-     * @param array $values The values.
+     * @param mixed[] $values The values.
      * @param FunctorInterface $functor The functor.
      */
     public function __construct(array $values, FunctorInterface $functor) {
@@ -56,7 +58,7 @@ class QuickSort {
     /**
      * Get the values.
      *
-     * @return array Returns the values.
+     * @return mixed[] Returns the values.
      */
     public function getValues(): array {
         return $this->values;
@@ -115,7 +117,7 @@ class QuickSort {
     /**
      * Set the values.
      *
-     * @param array $values The values.
+     * @param mixed[] $values The values.
      * @return QuickSort Returns this quick sort.
      */
     protected function setValues(array $values): QuickSort {

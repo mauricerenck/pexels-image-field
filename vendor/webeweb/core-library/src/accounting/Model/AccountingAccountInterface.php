@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,14 +28,14 @@ interface AccountingAccountInterface extends JsonSerializable {
      *
      * @var string
      */
-    const TYPE_GENERAL = "G";
+    public const TYPE_GENERAL = "G";
 
     /**
      * Type "third".
      *
      * @var string
      */
-    const TYPE_THIRD = "T";
+    public const TYPE_THIRD = "T";
 
     /**
      * Get the label.

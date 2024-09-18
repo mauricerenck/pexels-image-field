@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,28 +28,28 @@ interface ButtonInterface extends JsonSerializable {
      *
      * @var string
      */
-    const BUTTON_TYPE_DANGER = "danger";
+    public const BUTTON_TYPE_DANGER = "danger";
 
     /**
      * Button type "info".
      *
      * @var string
      */
-    const BUTTON_TYPE_INFO = "info";
+    public const BUTTON_TYPE_INFO = "info";
 
     /**
      * Button type "success".
      *
      * @var string
      */
-    const BUTTON_TYPE_SUCCESS = "success";
+    public const BUTTON_TYPE_SUCCESS = "success";
 
     /**
      * Button type "warning".
      *
      * @var string
      */
-    const BUTTON_TYPE_WARNING = "warning";
+    public const BUTTON_TYPE_WARNING = "warning";
 
     /**
      * Get the content.

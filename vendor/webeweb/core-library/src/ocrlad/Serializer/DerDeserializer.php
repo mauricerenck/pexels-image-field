@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -28,7 +30,7 @@ class DerDeserializer {
      *
      * @var string
      */
-    const DER_DELIMITER = ";";
+    public const DER_DELIMITER = ";";
 
     /**
      * Deserialize a document.
@@ -54,7 +56,12 @@ class DerDeserializer {
 
         while (true !== feof($stream)) {
 
-            $word = static::deserializeWord(fgets($stream));
+            $data = fgets($stream);
+            if (false === $data) {
+                continue;
+            }
+
+            $word = static::deserializeWord($data);
             if (null !== $word) {
                 $model->addWord($word);
             }

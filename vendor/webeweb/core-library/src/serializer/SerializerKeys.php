@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,1223 +26,1223 @@ interface SerializerKeys {
      *
      * @var string
      */
-    const ACCESS_TOKEN = "accessToken";
+    public const ACCESS_TOKEN = "accessToken";
 
     /**
      * Serializer key "account".
      *
      * @var string
      */
-    const ACCOUNT = "account";
+    public const ACCOUNT = "account";
 
     /**
      * Serializer key "accounting code".
      *
      * @var string
      */
-    const ACCOUNTING_CODE = "accountingCode";
+    public const ACCOUNTING_CODE = "accountingCode";
 
     /**
      * Serializer key "active".
      *
      * @var string
      */
-    const ACTIVE = "active";
+    public const ACTIVE = "active";
 
     /**
      * Serializer key "addressee".
      *
      * @var string
      */
-    const ADDRESSEE = "addressee";
+    public const ADDRESSEE = "addressee";
 
     /**
      * Serializer key "addressee description".
      *
      * @var string
      */
-    const ADDRESSEE_DESCRIPTION = "addresseeDescription";
+    public const ADDRESSEE_DESCRIPTION = "addresseeDescription";
 
     /**
      * Serializer key "api token".
      *
      * @var string
      */
-    const API_TOKEN = "apiToken";
+    public const API_TOKEN = "apiToken";
 
     /**
      * Serializer key "avatar".
      *
      * @var string
      */
-    const AVATAR = "avatar";
+    public const AVATAR = "avatar";
 
     /**
      * Serializer key "average".
      *
      * @var string
      */
-    const AVERAGE = "average";
+    public const AVERAGE = "average";
 
     /**
      * Serializer key "begins at".
      *
      * @var string
      */
-    const BEGINS_AT = "beginsAt";
+    public const BEGINS_AT = "beginsAt";
 
     /**
      * Serializer key "begins on".
      *
      * @var string
      */
-    const BEGINS_ON = "beginsOn";
+    public const BEGINS_ON = "beginsOn";
 
     /**
      * Serializer key "birth date".
      *
      * @var string
      */
-    const BIRTH_DATE = "birthDate";
+    public const BIRTH_DATE = "birthDate";
 
     /**
      * Serializer key "category".
      *
      * @var string
      */
-    const CATEGORY = "category";
+    public const CATEGORY = "category";
 
     /**
      * Serializer key "civility".
      *
      * @var string
      */
-    const CIVILITY = "civility";
+    public const CIVILITY = "civility";
 
     /**
      * Serializer key "code".
      *
      * @var string
      */
-    const CODE = "code";
+    public const CODE = "code";
 
     /**
      * Serializer key "color".
      *
      * @var string
      */
-    const COLOR = "color";
+    public const COLOR = "color";
 
     /**
      * Serializer key "column".
      *
      * @var string
      */
-    const COLUMN = "column";
+    public const COLUMN = "column";
 
     /**
      * Serializer key "comment".
      *
      * @var string
      */
-    const COMMENT = "comment";
+    public const COMMENT = "comment";
 
     /**
      * Serializer key "content".
      *
      * @var string
      */
-    const CONTENT = "content";
+    public const CONTENT = "content";
 
     /**
      * Serializer key "count".
      *
      * @var string
      */
-    const COUNT = "count";
+    public const COUNT = "count";
 
     /**
      * Serializer key "country".
      *
      * @var string
      */
-    const COUNTRY = "country";
+    public const COUNTRY = "country";
 
     /**
      * Serializer key "created".
      *
      * @var string
      */
-    const CREATED = "created";
+    public const CREATED = "created";
 
     /**
      * Serializer key "created at".
      *
      * @var string
      */
-    const CREATED_AT = "createdAt";
+    public const CREATED_AT = "createdAt";
 
     /**
      * Serializer key "customer".
      *
      * @var string
      */
-    const CUSTOMER = "customer";
+    public const CUSTOMER = "customer";
 
     /**
      * Serializer key "data".
      *
      * @var string
      */
-    const DATA = "data";
+    public const DATA = "data";
 
     /**
      * Serializer key "date".
      *
      * @var string
      */
-    const DATE = "date";
+    public const DATE = "date";
 
     /**
      * Serializer key "debug".
      *
      * @var string
      */
-    const DEBUG = "debug";
+    public const DEBUG = "debug";
 
     /**
      * Serializer key "deleted".
      *
      * @var string
      */
-    const DELETED = "deleted";
+    public const DELETED = "deleted";
 
     /**
      * Serializer key "description".
      *
      * @var string
      */
-    const DESCRIPTION = "description";
+    public const DESCRIPTION = "description";
 
     /**
      * Serializer key "directory".
      *
      * @var string
      */
-    const DIRECTORY = "directory";
+    public const DIRECTORY = "directory";
 
     /**
      * Serializer key "disabled".
      *
      * @var string
      */
-    const DISABLED = "disabled";
+    public const DISABLED = "disabled";
 
     /**
      * Serializer key "discount amount".
      *
      * @var string
      */
-    const DISCOUNT_AMOUNT = "discountAmount";
+    public const DISCOUNT_AMOUNT = "discountAmount";
 
     /**
      * Serializer key "discount rate".
      *
      * @var string
      */
-    const DISCOUNT_RATE = "discountRate";
+    public const DISCOUNT_RATE = "discountRate";
 
     /**
      * Serializer key "discount total".
      *
      * @var string
      */
-    const DISCOUNT_TOTAL = "discountTotal";
+    public const DISCOUNT_TOTAL = "discountTotal";
 
     /**
      * Serializer key "domain".
      *
      * @var string
      */
-    const DOMAIN = "domain";
+    public const DOMAIN = "domain";
 
     /**
      * Serializer key "duration".
      *
      * @var string
      */
-    const DURATION = "duration";
+    public const DURATION = "duration";
 
     /**
      * Serializer key "email".
      *
      * @var string
      */
-    const EMAIL = "email";
+    public const EMAIL = "email";
 
     /**
      * Serializer key "enable".
      *
      * @var string
      */
-    const ENABLE = "enable";
+    public const ENABLE = "enable";
 
     /**
      * Serializer key "enabled".
      *
      * @var string
      */
-    const ENABLED = "enabled";
+    public const ENABLED = "enabled";
 
     /**
      * Serializer key "ended at".
      *
      * @var string
      */
-    const ENDED_AT = "endedAt";
+    public const ENDED_AT = "endedAt";
 
     /**
      * Serializer key "ended on".
      *
      * @var string
      */
-    const ENDED_ON = "endedOn";
+    public const ENDED_ON = "endedOn";
 
     /**
      * Serializer key "entity".
      *
      * @var string
      */
-    const ENTITY = "entity";
+    public const ENTITY = "entity";
 
     /**
      * Serializer key "environment".
      *
      * @var string
      */
-    const ENVIRONMENT = "environment";
+    public const ENVIRONMENT = "environment";
 
     /**
      * Serializer key "error".
      *
      * @var string
      */
-    const ERROR = "error";
+    public const ERROR = "error";
 
     /**
      * Serializer key "excluding VAT price".
      *
      * @var string
      */
-    const EXCLUDING_VAT_PRICE = "excludingVatPrice";
+    public const EXCLUDING_VAT_PRICE = "excludingVatPrice";
 
     /**
      * Serializer key "excluding VAT total".
      *
      * @var string
      */
-    const EXCLUDING_VAT_TOTAL = "excludingVatTotal";
+    public const EXCLUDING_VAT_TOTAL = "excludingVatTotal";
 
     /**
      * Serializer key "extension".
      *
      * @var string
      */
-    const EXTENSION = "extension";
+    public const EXTENSION = "extension";
 
     /**
      * Serializer key "filename".
      *
      * @var string
      */
-    const FILENAME = "filename";
+    public const FILENAME = "filename";
 
     /**
      * Serializer key "finishes at".
      *
      * @var string
      */
-    const FINISHES_AT = "finishesAt";
+    public const FINISHES_AT = "finishesAt";
 
     /**
      * Serializer key "finishes on".
      *
      * @var string
      */
-    const FINISHES_ON = "finishesOn";
+    public const FINISHES_ON = "finishesOn";
 
     /**
      * Serializer key "first name".
      *
      * @var string
      */
-    const FIRST_NAME = "firstName";
+    public const FIRST_NAME = "firstName";
 
     /**
      * Serializer key "format".
      *
      * @var string
      */
-    const FORMAT = "format";
+    public const FORMAT = "format";
 
     /**
      * Serializer key "from".
      *
      * @var string
      */
-    const FROM = "from";
+    public const FROM = "from";
 
     /**
      * Serializer key "GID".
      *
      * @var string
      */
-    const GID = "gid";
+    public const GID = "gid";
 
     /**
      * Serializer key "hash".
      *
      * @var string
      */
-    const HASH = "hash";
+    public const HASH = "hash";
 
     /**
      * Serializer key "hash MD5".
      *
      * @var string
      */
-    const HASH_MD5 = "hashMD5";
+    public const HASH_MD5 = "hashMD5";
 
     /**
      * Serializer key "hash SHA1".
      *
      * @var string
      */
-    const HASH_SHA1 = "hashSHA1";
+    public const HASH_SHA1 = "hashSHA1";
 
     /**
      * Serializer key "hash SHA256".
      *
      * @var string
      */
-    const HASH_SHA256 = "hashSHA256";
+    public const HASH_SHA256 = "hashSHA256";
 
     /**
      * Serializer key "height".
      *
      * @var string
      */
-    const HEIGHT = "height";
+    public const HEIGHT = "height";
 
     /**
      * Serializer key "hostname".
      *
      * @var string
      */
-    const HOSTNAME = "hostname";
+    public const HOSTNAME = "hostname";
 
     /**
      * Serializer key "house number".
      *
      * @var string
      */
-    const HOUSE_NUMBER = "houseNumber";
+    public const HOUSE_NUMBER = "houseNumber";
 
     /**
      * Serializer key "icon".
      *
      * @var string
      */
-    const ICON = "icon";
+    public const ICON = "icon";
 
     /**
      * Serializer key "id".
      *
      * @var string
      */
-    const ID = "id";
+    public const ID = "id";
 
     /**
      * Serializer key "identifier".
      *
      * @var string
      */
-    const IDENTIFIER = "identifier";
+    public const IDENTIFIER = "identifier";
 
     /**
      * Serializer key "image".
      *
      * @var string
      */
-    const IMAGE = "image";
+    public const IMAGE = "image";
 
     /**
      * Serializer key "including VAT price".
      *
      * @var string
      */
-    const INCLUDING_VAT_PRICE = "includingVatPrice";
+    public const INCLUDING_VAT_PRICE = "includingVatPrice";
 
     /**
      * Serializer key "including VAT total".
      *
      * @var string
      */
-    const INCLUDING_VAT_TOTAL = "includingVatTotal";
+    public const INCLUDING_VAT_TOTAL = "includingVatTotal";
 
     /**
      * Serializer key "income".
      *
      * @var string
      */
-    const INCOME = "income";
+    public const INCOME = "income";
 
     /**
      * Serializer key "ipAddress".
      *
      * @var string
      */
-    const IP_ADDRESS = "ipAddress";
+    public const IP_ADDRESS = "ipAddress";
 
     /**
      * Serializer key "key".
      *
      * @var string
      */
-    const KEY = "key";
+    public const KEY = "key";
 
     /**
      * Serializer key "label".
      *
      * @var string
      */
-    const LABEL = "label";
+    public const LABEL = "label";
 
     /**
      * Serializer key "lang".
      *
      * @var string
      */
-    const LANG = "lang";
+    public const LANG = "lang";
 
     /**
      * Serializer key "last name".
      *
      * @var string
      */
-    const LAST_NAME = "lastName";
+    public const LAST_NAME = "lastName";
 
     /**
      * Serializer key "last update".
      *
      * @var string
      */
-    const LAST_UPDATE = "lastUpdate";
+    public const LAST_UPDATE = "lastUpdate";
 
     /**
      * Serializer key "lat".
      *
      * @var string
      */
-    const LAT = "lat";
+    public const LAT = "lat";
 
     /**
      * Serializer key "latitude".
      *
      * @var string
      */
-    const LATITUDE = "latitude";
+    public const LATITUDE = "latitude";
 
     /**
      * Serializer key "limit".
      *
      * @var string
      */
-    const LIMIT = "limit";
+    public const LIMIT = "limit";
 
     /**
      * Serializer key "link".
      *
      * @var string
      */
-    const LINK = "link";
+    public const LINK = "link";
 
     /**
      * Serializer key "locate".
      *
      * @var string
      */
-    const LOCATE = "locate";
+    public const LOCATE = "locate";
 
     /**
      * Serializer key "location".
      *
      * @var string
      */
-    const LOCATION = "location";
+    public const LOCATION = "location";
 
     /**
      * Serializer key "logo".
      *
      * @var string
      */
-    const LOGO = "logo";
+    public const LOGO = "logo";
 
     /**
      * Serializer key "lon".
      *
      * @var string
      */
-    const LON = "lon";
+    public const LON = "lon";
 
     /**
      * Serializer key "longitude".
      *
      * @var string
      */
-    const LONGITUDE = "longitude";
+    public const LONGITUDE = "longitude";
 
     /**
      * Serializer key "macAddress".
      *
      * @var string
      */
-    const MAC_ADDRESS = "macAddress";
+    public const MAC_ADDRESS = "macAddress";
 
     /**
      * Serializer key "marital status".
      *
      * @var string
      */
-    const MARITAL_STATUS = "maritalStatus";
+    public const MARITAL_STATUS = "maritalStatus";
 
     /**
      * Serializer key "max".
      *
      * @var string
      */
-    const MAX = "max";
+    public const MAX = "max";
 
     /**
      * Serializer key "maximum".
      *
      * @var string
      */
-    const MAXIMUM = "maximum";
+    public const MAXIMUM = "maximum";
 
     /**
      * Serializer key "max duration".
      *
      * @var string
      */
-    const MAX_DURATION = "maxDuration";
+    public const MAX_DURATION = "maxDuration";
 
     /**
      * Serializer key "max width".
      *
      * @var string
      */
-    const MAX_WIDTH = "maxWidth";
+    public const MAX_WIDTH = "maxWidth";
 
     /**
      * Serializer key "mention".
      *
      * @var string
      */
-    const MENTION = "mention";
+    public const MENTION = "mention";
 
     /**
      * Serializer key "message".
      *
      * @var string
      */
-    const MESSAGE = "message";
+    public const MESSAGE = "message";
 
     /**
      * Serializer key "method".
      *
      * @var string
      */
-    const METHOD = "method";
+    public const METHOD = "method";
 
     /**
      * Serializer key "mime type".
      *
      * @var string
      */
-    const MIME_TYPE = "mimeType";
+    public const MIME_TYPE = "mimeType";
 
     /**
      * Serializer key "min".
      *
      * @var string
      */
-    const MIN = "min";
+    public const MIN = "min";
 
     /**
      * Serializer key "minimum".
      *
      * @var string
      */
-    const MINIMUM = "minimum";
+    public const MINIMUM = "minimum";
 
     /**
      * Serializer key "min duration".
      *
      * @var string
      */
-    const MIN_DURATION = "minDuration";
+    public const MIN_DURATION = "minDuration";
 
     /**
      * Serializer key "min height".
      *
      * @var string
      */
-    const MIN_HEIGHT = "minHeight";
+    public const MIN_HEIGHT = "minHeight";
 
     /**
      * Serializer key "min width".
      *
      * @var string
      */
-    const MIN_WIDTH = "minWidth";
+    public const MIN_WIDTH = "minWidth";
 
     /**
      * Serializer key "mobile".
      *
      * @var string
      */
-    const MOBILE = "mobile";
+    public const MOBILE = "mobile";
 
     /**
      * Serializer key "motif".
      *
      * @var string
      */
-    const MOTIF = "motif";
+    public const MOTIF = "motif";
 
     /**
      * Serializer key "NAF code".
      *
      * @var string
      */
-    const NAF_CODE = "nafCode";
+    public const NAF_CODE = "nafCode";
 
     /**
      * Serializer key "name".
      *
      * @var string
      */
-    const NAME = "name";
+    public const NAME = "name";
 
     /**
      * Serializer key "number".
      *
      * @var string
      */
-    const NUMBER = "number";
+    public const NUMBER = "number";
 
     /**
      * Serializer key "object".
      *
      * @var string
      */
-    const OBJECT = "object";
+    public const OBJECT = "object";
 
     /**
      * Serializer key "orientation".
      *
      * @var string
      */
-    const ORIENTATION = "orientation";
+    public const ORIENTATION = "orientation";
 
     /**
      * Serializer key "origin URL".
      *
      * @var string
      */
-    const ORIGIN_URL = "originUrl";
+    public const ORIGIN_URL = "originUrl";
 
     /**
      * Serializer key "page".
      *
      * @var string
      */
-    const PAGE = "page";
+    public const PAGE = "page";
 
     /**
      * Serializer key "parent".
      *
      * @var string
      */
-    const PARENT = "parent";
+    public const PARENT = "parent";
 
     /**
      * Serializer key "password".
      *
      * @var string
      */
-    const PASSWORD = "password";
+    public const PASSWORD = "password";
 
     /**
      * Serializer key "pathname".
      *
      * @var string
      */
-    const PATHNAME = "pathname";
+    public const PATHNAME = "pathname";
 
     /**
      * Serializer key "payment date".
      *
      * @var string
      */
-    const PAYMENT_DATE = "paymentDate";
+    public const PAYMENT_DATE = "paymentDate";
 
     /**
      * Serializer key "per page".
      *
      * @var string
      */
-    const PER_PAGE = "perPage";
+    public const PER_PAGE = "perPage";
 
     /**
      * Serializer key "phone".
      *
      * @var string
      */
-    const PHONE = "phone";
+    public const PHONE = "phone";
 
     /**
      * Serializer key "picture".
      *
      * @var string
      */
-    const PICTURE = "picture";
+    public const PICTURE = "picture";
 
     /**
      * Serializer key "port".
      *
      * @var string
      */
-    const PORT = "port";
+    public const PORT = "port";
 
     /**
      * Serializer key "position".
      *
      * @var string
      */
-    const POSITION = "position";
+    public const POSITION = "position";
 
     /**
      * Serializer key "postal code".
      *
      * @var string
      */
-    const POSTAL_CODE = "postalCode";
+    public const POSTAL_CODE = "postalCode";
 
     /**
      * Serializer key "q".
      *
      * @var string
      */
-    const Q = "q";
+    public const Q = "q";
 
     /**
      * Serializer key "quantity".
      *
      * @var string
      */
-    const QUANTITY = "quantity";
+    public const QUANTITY = "quantity";
 
     /**
      * Serializer key "query".
      *
      * @var string
      */
-    const QUERY = "query";
+    public const QUERY = "query";
 
     /**
      * Serializer key "rate".
      *
      * @var string
      */
-    const RATE = "rate";
+    public const RATE = "rate";
 
     /**
      * Serializer key "raw data".
      *
      * @var string
      */
-    const RAW_DATA = "rawData";
+    public const RAW_DATA = "rawData";
 
     /**
      * Serializer key "raw response".
      *
      * @var string
      */
-    const RAW_RESPONSE = "rawResponse";
+    public const RAW_RESPONSE = "rawResponse";
 
     /**
      * Serializer key "ready".
      *
      * @var string
      */
-    const READY = "ready";
+    public const READY = "ready";
 
     /**
      * Serializer key "redirect URL".
      *
      * @var string
      */
-    const REDIRECT_URL = "redirectUrl";
+    public const REDIRECT_URL = "redirectUrl";
 
     /**
      * Serializer key "reference".
      *
      * @var string
      */
-    const REFERENCE = "reference";
+    public const REFERENCE = "reference";
 
     /**
      * Serializer key "remaining".
      *
      * @var string
      */
-    const REMAINING = "remaining";
+    public const REMAINING = "remaining";
 
     /**
      * Serializer key "request".
      *
      * @var string
      */
-    const REQUEST = "request";
+    public const REQUEST = "request";
 
     /**
      * Serializer key "reset".
      *
      * @var string
      */
-    const RESET = "reset";
+    public const RESET = "reset";
 
     /**
      * Serializer key "role".
      *
      * @var string
      */
-    const ROLE = "role";
+    public const ROLE = "role";
 
     /**
      * Serializer key "roles".
      *
      * @var string
      */
-    const ROLES = "roles";
+    public const ROLES = "roles";
 
     /**
      * Serializer key "route".
      *
      * @var string
      */
-    const ROUTE = "route";
+    public const ROUTE = "route";
 
     /**
      * Serializer key "salt".
      *
      * @var string
      */
-    const SALT = "salt";
+    public const SALT = "salt";
 
     /**
      * Serializer key "schema".
      *
      * @var string
      */
-    const SCHEMA = "schema";
+    public const SCHEMA = "schema";
 
     /**
      * Serializer key "score".
      *
      * @var string
      */
-    const SCORE = "score";
+    public const SCORE = "score";
 
     /**
      * Serializer key "SIRET number".
      *
      * @var string
      */
-    const SIRET_NUMBER = "siretNumber";
+    public const SIRET_NUMBER = "siretNumber";
 
     /**
      * Serializer key "size".
      *
      * @var string
      */
-    const SIZE = "size";
+    public const SIZE = "size";
 
     /**
      * Serializer key "source".
      *
      * @var string
      */
-    const SOURCE = "source";
+    public const SOURCE = "source";
 
     /**
      * Serializer key "started at".
      *
      * @var string
      */
-    const STARTED_AT = "startedAt";
+    public const STARTED_AT = "startedAt";
 
     /**
      * Serializer key "started on".
      *
      * @var string
      */
-    const STARTED_ON = "startedOn";
+    public const STARTED_ON = "startedOn";
 
     /**
      * Serializer key "state".
      *
      * @var string
      */
-    const STATE = "state";
+    public const STATE = "state";
 
     /**
      * Serializer key "status".
      *
      * @var string
      */
-    const STATUS = "status";
+    public const STATUS = "status";
 
     /**
      * Serializer key "street name".
      *
      * @var string
      */
-    const STREET_NAME = "streetName";
+    public const STREET_NAME = "streetName";
 
     /**
      * Serializer key "style".
      *
      * @var string
      */
-    const STYLE = "style";
+    public const STYLE = "style";
 
     /**
      * Serializer key "subject".
      *
      * @var string
      */
-    const SUBJECT = "subject";
+    public const SUBJECT = "subject";
 
     /**
      * Serializer key "table".
      *
      * @var string
      */
-    const TABLE = "table";
+    public const TABLE = "table";
 
     /**
      * Serializer key "target".
      *
      * @var string
      */
-    const TARGET = "target";
+    public const TARGET = "target";
 
     /**
      * Serializer key "text".
      *
      * @var string
      */
-    const TEXT = "text";
+    public const TEXT = "text";
 
     /**
      * Serializer key "title".
      *
      * @var string
      */
-    const TITLE = "title";
+    public const TITLE = "title";
 
     /**
      * Serializer key "to".
      *
      * @var string
      */
-    const TO = "to";
+    public const TO = "to";
 
     /**
      * Serializer key "token".
      *
      * @var string
      */
-    const TOKEN = "token";
+    public const TOKEN = "token";
 
     /**
      * Serializer key "tooltip".
      *
      * @var string
      */
-    const TOOLTIP = "tooltip";
+    public const TOOLTIP = "tooltip";
 
     /**
      * Serializer key "total".
      *
      * @var string
      */
-    const TOTAL = "total";
+    public const TOTAL = "total";
 
     /**
      * Serializer key "total amount".
      *
      * @var string
      */
-    const TOTAL_AMOUNT = "totalAmount";
+    public const TOTAL_AMOUNT = "totalAmount";
 
     /**
      * Serializer key "type".
      *
      * @var string
      */
-    const TYPE = "type";
+    public const TYPE = "type";
 
     /**
      * Serializer key "UID".
      *
      * @var string
      */
-    const UID = "uid";
+    public const UID = "uid";
 
     /**
      * Serializer key "unit price".
      *
      * @var string
      */
-    const UNIT_PRICE = "unitPrice";
+    public const UNIT_PRICE = "unitPrice";
 
     /**
      * Serializer key "unit value".
      *
      * @var string
      */
-    const UNIT_VALUE = "unitValue";
+    public const UNIT_VALUE = "unitValue";
 
     /**
      * Serializer key "updated at".
      *
      * @var string
      */
-    const UPDATED_AT = "updatedAt";
+    public const UPDATED_AT = "updatedAt";
 
     /**
      * Serializer key "URI".
      *
      * @var string
      */
-    const URI = "uri";
+    public const URI = "uri";
 
     /**
      * Serializer key "URL".
      *
      * @var string
      */
-    const URL = "url";
+    public const URL = "url";
 
     /**
      * Serializer key "username".
      *
      * @var string
      */
-    const USERNAME = "username";
+    public const USERNAME = "username";
 
     /**
      * Serializer key "user agent".
      *
      * @var string
      */
-    const USER_AGENT = "userAgent";
+    public const USER_AGENT = "userAgent";
 
     /**
      * Serializer key "value".
      *
      * @var string
      */
-    const VALUE = "value";
+    public const VALUE = "value";
 
     /**
      * Serializer key "VAT amount".
      *
      * @var string
      */
-    const VAT_AMOUNT = "vatAmount";
+    public const VAT_AMOUNT = "vatAmount";
 
     /**
      * Serializer key "VAT number".
      *
      * @var string
      */
-    const VAT_NUMBER = "vatNumber";
+    public const VAT_NUMBER = "vatNumber";
 
     /**
      * Serializer key "VAT rate".
      *
      * @var string
      */
-    const VAT_RATE = "vatRate";
+    public const VAT_RATE = "vatRate";
 
     /**
      * Serializer key "VAT total".
      *
      * @var string
      */
-    const VAT_TOTAL = "vatTotal";
+    public const VAT_TOTAL = "vatTotal";
 
     /**
      * Serializer key "verbose".
      *
      * @var string
      */
-    const VERBOSE = "verbose";
+    public const VERBOSE = "verbose";
 
     /**
      * Serializer key "version".
      *
      * @var string
      */
-    const VERSION = "version";
+    public const VERSION = "version";
 
     /**
      * Serializer key "visible".
      *
      * @var string
      */
-    const VISIBLE = "visible";
+    public const VISIBLE = "visible";
 
     /**
      * Serializer key "width".
      *
      * @var string
      */
-    const WIDTH = "width";
+    public const WIDTH = "width";
 
     /**
      * Serializer key "x".
      *
      * @var string
      */
-    const X = "x";
+    public const X = "x";
 
     /**
      * Serializer key "y".
      *
      * @var string
      */
-    const Y = "y";
+    public const Y = "y";
 
     /**
      * Serializer key "year".
      *
      * @var string
      */
-    const YEAR = "year";
+    public const YEAR = "year";
 }

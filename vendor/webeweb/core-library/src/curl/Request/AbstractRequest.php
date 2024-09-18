@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -19,6 +21,7 @@ use WBW\Library\Curl\Configuration\Configuration;
 use WBW\Library\Curl\Exception\RequestCallException;
 use WBW\Library\Curl\Factory\CurlFactory;
 use WBW\Library\Curl\Helper\CurlHelper;
+use WBW\Library\Curl\Response\Response;
 
 /**
  * Abstract request.
@@ -39,7 +42,7 @@ abstract class AbstractRequest implements RequestInterface {
     /**
      * Headers.
      *
-     * @var array
+     * @var array<string,string>
      */
     private $headers;
 
@@ -53,14 +56,14 @@ abstract class AbstractRequest implements RequestInterface {
     /**
      * POST data.
      *
-     * @var array
+     * @var array<string,string>
      */
     private $postData;
 
     /**
      * Query data.
      *
-     * @var array
+     * @var array<string,string>
      */
     private $queryData;
 
@@ -143,11 +146,12 @@ abstract class AbstractRequest implements RequestInterface {
         $curlExec    = curl_exec($stream);
         $curlGetInfo = curl_getinfo($stream, CURLINFO_HEADER_SIZE);
 
-        $responseHeader = $this->parseheader(substr($curlExec, 0, $curlGetInfo));
-        $responseBody   = substr($curlExec, $curlGetInfo);
+        $responseHeader = false === is_bool($curlExec) ? $this->parseheader(substr($curlExec, 0, $curlGetInfo)) : [];
+        $responseBody   = false === is_bool($curlExec) ? substr($curlExec, $curlGetInfo) : "";
         $responseInfo   = curl_getinfo($stream);
 
         if (true === $this->getConfiguration()->getDebug()) {
+
             $msg = (new DateTime())->format("c") . " [DEBUG] $requestUrl" . PHP_EOL . "HTTP response body ~BEGIN~" . PHP_EOL . print_r($responseBody, true) . PHP_EOL . "~END~" . PHP_EOL;
             error_log($msg, 3, $this->getConfiguration()->getDebugFile());
         }
@@ -161,6 +165,7 @@ abstract class AbstractRequest implements RequestInterface {
 
         $msg = curl_errno($stream);
         if (0 === $curlHttpCode) {
+
             if (false === empty(curl_error($stream))) {
                 $msg = "Call to $requestUrl failed : " . curl_error($stream);
             } else {
@@ -168,7 +173,7 @@ abstract class AbstractRequest implements RequestInterface {
             }
         }
 
-        throw new RequestCallException($msg, $curlHttpCode, $response);
+        throw new RequestCallException((string) $msg, $curlHttpCode, $response);
     }
 
     /**
@@ -237,7 +242,7 @@ abstract class AbstractRequest implements RequestInterface {
     /**
      * Merge the headers.
      *
-     * @return array Returns the merged headers.
+     * @return string[] Returns the merged headers.
      */
     private function mergeHeaders(): array {
 
@@ -271,7 +276,7 @@ abstract class AbstractRequest implements RequestInterface {
      * Parse the raw header.
      *
      * @param string $rawHeader The raw header.
-     * @return array Returns the headers.
+     * @return array<string,string> Returns the headers.
      */
     private function parseHeader(string $rawHeader): array {
 
@@ -279,8 +284,11 @@ abstract class AbstractRequest implements RequestInterface {
         $key     = "";
 
         foreach (explode("\n", $rawHeader) as $h) {
+
             $h = explode(":", $h, 2);
+
             if (true === isset($h[1])) {
+
                 if (false === isset($headers[$h[0]])) {
                     $headers[$h[0]] = trim($h[1]);
                 } else if (true === is_array($headers[$h[0]])) {
@@ -288,14 +296,15 @@ abstract class AbstractRequest implements RequestInterface {
                 } else {
                     $headers[$h[0]] = array_merge([$headers[$h[0]]], [trim($h[1])]);
                 }
+
                 $key = $h[0];
             } else {
+
                 if ("\t" === substr($h[0], 0, 1)) {
                     $headers[$key] .= "\r\n\t" . trim($h[0]);
                 } else if (!$key) {
                     $headers[0] = trim($h[0]);
                 }
-                trim($h[0]);
             }
         }
 
@@ -306,15 +315,16 @@ abstract class AbstractRequest implements RequestInterface {
      * Prepare a response.
      *
      * @param string $requestBody The request body.
-     * @param array $requestHeader The request header.
+     * @param array<string,string> $requestHeader The request header.
      * @param string $requestUri The request URI.
      * @param string $responseBody The response body.
-     * @param array $responseHeader The response header.
-     * @param array $responseInfo The response info.
+     * @param array<string,string> $responseHeader The response header.
+     * @param array<string,string> $responseInfo The response info.
      * @return ResponseInterface Returns the response.
      */
     private function prepareResponse(string $requestBody, array $requestHeader, string $requestUri, string $responseBody, array $responseHeader, array $responseInfo): ResponseInterface {
 
+        /** @var Response $response */
         $response = CurlFactory::newCURLResponse();
         $response->setRequestBody($requestBody);
         $response->setRequestHeader($requestHeader);
@@ -376,7 +386,7 @@ abstract class AbstractRequest implements RequestInterface {
     /**
      * Set the headers.
      *
-     * @param array $headers The headers.
+     * @param array<string,string> $headers The headers.
      * @return RequestInterface Returns this request.
      */
     protected function setHeaders(array $headers): RequestInterface {
@@ -413,7 +423,7 @@ abstract class AbstractRequest implements RequestInterface {
     /**
      * Set the POST data.
      *
-     * @param array $postData The POST data.
+     * @param array<string,string> $postData The POST data.
      * @return RequestInterface Returns this request.
      */
     protected function setPostData(array $postData): RequestInterface {
@@ -424,7 +434,7 @@ abstract class AbstractRequest implements RequestInterface {
     /**
      * Set the query data.
      *
-     * @param array $queryData The query data.
+     * @param array<string,string> $queryData The query data.
      * @return RequestInterface Returns this request.
      */
     protected function setQueryData(array $queryData): RequestInterface {
@@ -436,7 +446,11 @@ abstract class AbstractRequest implements RequestInterface {
      * {@inheritDoc}
      */
     public function setResourcePath(?string $resourcePath): RequestInterface {
-        $this->resourcePath = preg_replace("/^\//", "", trim($resourcePath));
+
+        if (null !== $resourcePath) {
+            $this->resourcePath = preg_replace("/^\//", "", trim($resourcePath));
+        }
+
         return $this;
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -27,21 +29,21 @@ interface RepositoryEventInterface extends JsonSerializable {
      *
      * @var string
      */
-    const TYPE_DELETE = "delete";
+    public const TYPE_DELETE = "delete";
 
     /**
      * Type "insert".
      *
      * @var string
      */
-    const TYPE_INSERT = "insert";
+    public const TYPE_INSERT = "insert";
 
     /**
      * Type "update".
      *
      * @var string
      */
-    const TYPE_UPDATE = "update";
+    public const TYPE_UPDATE = "update";
 
     /**
      * Get the date.

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -29,7 +31,7 @@ class ResponseDeserializer {
      *
      * @var string
      */
-    const RESPONSE_DATE_FORMAT = RequestSerializer::REQUEST_DATE_FORMAT;
+    public const RESPONSE_DATE_FORMAT = RequestSerializer::REQUEST_DATE_FORMAT;
 
     /**
      * Deserialize a line.

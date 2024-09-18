@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -27,7 +29,7 @@ class DateTimeMethod {
     /**
      * Add a day interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many days ? (positive or zero only)
      * @return DateTime Returns the date/time.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than zero.
@@ -41,7 +43,7 @@ class DateTimeMethod {
     /**
      * Add an hour interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many hours ? (positive or zero only)
      * @return DateTime Returns the date/time.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than zero.
@@ -74,7 +76,7 @@ class DateTimeMethod {
     /**
      * Add a minute interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many minutes ? (positive or zero only)
      * @return DateTime Returns the date/time.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than zero.
@@ -88,7 +90,7 @@ class DateTimeMethod {
     /**
      * Add a month interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many months ? (positive or zero only)
      * @return DateTime Returns the date/time.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than zero.
@@ -102,7 +104,7 @@ class DateTimeMethod {
     /**
      * Add a second interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many seconds ? (positive or zero only)
      * @return DateTime Returns the date/time.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than zero.
@@ -116,7 +118,7 @@ class DateTimeMethod {
     /**
      * Add a year interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many years ? (positive or zero only)
      * @return DateTime Returns the date/time.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than zero.
@@ -130,7 +132,7 @@ class DateTimeMethod {
     /**
      * Add/sub a day interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many days ?
      * @return DateTime Returns the date/time.
      * @throws Throwable Throws an exception if an error occurs.
@@ -142,7 +144,7 @@ class DateTimeMethod {
     /**
      * Add/sub an hour interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many hours ?
      * @return DateTime Returns the date/time.
      * @throws Throwable Throws an exception if an error occurs.
@@ -178,7 +180,7 @@ class DateTimeMethod {
     /**
      * Add/sub a minute interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many minutes ?
      * @return DateTime Returns the date/time.
      * @throws Throwable Throws an exception if an error occurs.
@@ -190,7 +192,7 @@ class DateTimeMethod {
     /**
      * Add/sub a month interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many months ?
      * @return DateTime Returns the date/time.
      * @throws Throwable Throws an exception if an error occurs.
@@ -202,7 +204,7 @@ class DateTimeMethod {
     /**
      * Add/sub a second interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many seconds ?
      * @return DateTime Returns the date/time.
      * @throws Throwable Throws an exception if an error occurs.
@@ -214,7 +216,7 @@ class DateTimeMethod {
     /**
      * Add/sub a year interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many years ?
      * @return DateTime Returns the date/time.
      * @throws Throwable Throws an exception if an error occurs.
@@ -259,7 +261,7 @@ class DateTimeMethod {
     /**
      * Sub a day interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many days ? (positive or zero only)
      * @return DateTime Returns the date/time.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than zero.
@@ -273,7 +275,7 @@ class DateTimeMethod {
     /**
      * Sub an hour interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many hours ? (positive or zero only)
      * @return DateTime Returns the date/time.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than zero.
@@ -306,7 +308,7 @@ class DateTimeMethod {
     /**
      * Sub a minute interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many minutes ? (positive or zero only)
      * @return DateTime Returns the date/time.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than zero.
@@ -320,7 +322,7 @@ class DateTimeMethod {
     /**
      * Sub a month interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many months ? (positive or zero only)
      * @return DateTime Returns the date/time.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than zero.
@@ -334,7 +336,7 @@ class DateTimeMethod {
     /**
      * Sub a second interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many seconds ? (positive or zero only)
      * @return DateTime Returns the date/time.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than zero.
@@ -348,7 +350,7 @@ class DateTimeMethod {
     /**
      * Sub a year interval.
      *
-     * @param DateTime|null $dateTime The date/time.
+     * @param DateTime $dateTime The date/time.
      * @param int $offset How many years ? (positive or zero only)
      * @return DateTime Returns the date/time.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than zero.
@@ -389,8 +391,8 @@ class DateTimeMethod {
             return null;
         }
 
-        $min = min($values);
-        $max = max($values);
+        $min = (int) min($values);
+        $max = (int) max($values);
 
         // All negatives ?
         if ($min < 0 && $max <= 0) {

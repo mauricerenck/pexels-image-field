@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -27,13 +29,13 @@ class RequestSerializer {
      *
      * @var string
      */
-    const REQUEST_DATE_FORMAT = "Y-m-d";
+    public const REQUEST_DATE_FORMAT = "Y-m-d";
 
     /**
      * Serialize a request data.
      *
      * @param RequestData $request The request data.
-     * @return array Returns the serialized request data.
+     * @return array<string,mixed> Returns the serialized request data.
      */
     public static function serializeRequestData(RequestData $request): array {
 

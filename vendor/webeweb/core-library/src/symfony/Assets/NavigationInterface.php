@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,26 +26,26 @@ interface NavigationInterface {
      *
      * @var string
      */
-    const NAVIGATION_HREF_DEFAULT = "javascript: void(0);";
+    public const NAVIGATION_HREF_DEFAULT = "javascript: void(0);";
 
     /**
      * Navigation matcher "regular expression".
      *
      * @var string
      */
-    const NAVIGATION_MATCHER_REGEXP = "regexp";
+    public const NAVIGATION_MATCHER_REGEXP = "regexp";
 
     /**
      * Navigation matcher "router".
      *
      * @var string
      */
-    const NAVIGATION_MATCHER_ROUTER = "router";
+    public const NAVIGATION_MATCHER_ROUTER = "router";
 
     /**
      * Navigation matcher "URL".
      *
      * @var string
      */
-    const NAVIGATION_MATCHER_URL = "url";
+    public const NAVIGATION_MATCHER_URL = "url";
 }

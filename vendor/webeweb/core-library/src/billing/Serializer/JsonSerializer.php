@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -37,7 +39,7 @@ class JsonSerializer {
      * Serialize a billable.
      *
      * @param BillableInterface $model The model.
-     * @return array Returns the serialized billable.
+     * @return array<string,mixed> Returns the serialized billable.
      */
     public static function serializeBillable(BillableInterface $model): array {
 
@@ -62,7 +64,7 @@ class JsonSerializer {
      * Serialize a billable detail.
      *
      * @param BillableDetailInterface $model The model.
-     * @return array Returns the serialized billable detail.
+     * @return array<string,mixed> Returns the serialized billable detail.
      */
     public static function serializeBillableDetail(BillableDetailInterface $model): array {
 
@@ -84,7 +86,7 @@ class JsonSerializer {
      * Serialize a billing address.
      *
      * @param BillingAddressInterface $model The model.
-     * @return array Returns the serialized billing address.
+     * @return array<string,mixed> Returns the serialized billing address.
      */
     public static function serializeBillingAddress(BillingAddressInterface $model): array {
 
@@ -102,7 +104,7 @@ class JsonSerializer {
      * Serialize a delivery address.
      *
      * @param DeliveryAddressInterface $model The model.
-     * @return array Returns the serialized sending address.
+     * @return array<string,mixed> Returns the serialized sending address.
      */
     public static function serializeDeliveryAddress(DeliveryAddressInterface $model): array {
 
@@ -120,7 +122,7 @@ class JsonSerializer {
      * Serialize a delivery note.
      *
      * @param DeliveryNoteInterface $model The model.
-     * @return array Returns the serialized delivery note.
+     * @return array<string,mixed> Returns the serialized delivery note.
      */
     public static function serializeDeliveryNote(DeliveryNoteInterface $model): array {
         return static::serializeBillable($model);
@@ -130,7 +132,7 @@ class JsonSerializer {
      * Serialize a purchase bill.
      *
      * @param PurchaseBillInterface $model The model.
-     * @return array Returns the serialized purchase bill.
+     * @return array<string,mixed> Returns the serialized purchase bill.
      */
     public static function serializePurchaseBill(PurchaseBillInterface $model): array {
 
@@ -145,7 +147,7 @@ class JsonSerializer {
      * Serialize a purchase order.
      *
      * @param PurchaseOrderInterface $model The model.
-     * @return array Returns the serialized purchase order.
+     * @return array<string,mixed> Returns the serialized purchase order.
      */
     public static function serializePurchaseOrder(PurchaseOrderInterface $model): array {
         return static::serializeBillable($model);
@@ -155,7 +157,7 @@ class JsonSerializer {
      * Serialize a quotation.
      *
      * @param QuotationInterface $model The model.
-     * @return array Returns the serialized quotation.
+     * @return array<string,mixed> Returns the serialized quotation.
      */
     public static function serializeQuotation(QuotationInterface $model): array {
 
@@ -170,7 +172,7 @@ class JsonSerializer {
      * Serialize a sales bill.
      *
      * @param SalesBillInterface $model The model.
-     * @return array Returns the serialized sales bill.
+     * @return array<string,mixed> Returns the serialized sales bill.
      */
     public static function serializeSalesBill(SalesBillInterface $model): array {
         return static::serializeBillable($model);
@@ -180,7 +182,7 @@ class JsonSerializer {
      * Serialize a sending address.
      *
      * @param SendingAddressInterface $model The model.
-     * @return array Returns the serialized sending address.
+     * @return array<string,mixed> Returns the serialized sending address.
      */
     public static function serializeSendingAddress(SendingAddressInterface $model): array {
 
@@ -198,7 +200,7 @@ class JsonSerializer {
      * Serialize a taxable.
      *
      * @param TaxableInterface $model The model.
-     * @return array Returns the serialized taxable.
+     * @return array<string,mixed> Returns the serialized taxable.
      */
     public static function serializeTaxable(TaxableInterface $model): array {
 

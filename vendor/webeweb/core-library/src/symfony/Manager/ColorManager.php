@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -30,7 +32,7 @@ class ColorManager extends AbstractManager implements ColorManagerInterface {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.manager.color";
+    public const SERVICE_NAME = "wbw.core.manager.color";
 
     /**
      * {@inheritDoc}
@@ -54,6 +56,8 @@ class ColorManager extends AbstractManager implements ColorManagerInterface {
         }
 
         $identifier = ColorHelper::getIdentifier($provider);
+
+        /** @var ColorProviderInterface $current */
         foreach ($this->getProviders() as $current) {
 
             if ($identifier === ColorHelper::getIdentifier($current)) {

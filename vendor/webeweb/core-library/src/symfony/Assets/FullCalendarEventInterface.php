@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -46,7 +48,7 @@ interface FullCalendarEventInterface extends JsonSerializable {
     /**
      * Get the class names.
      *
-     * @return array Returns the class names.
+     * @return string[] Returns the class names.
      */
     public function getClassNames(): array;
 
@@ -88,7 +90,7 @@ interface FullCalendarEventInterface extends JsonSerializable {
     /**
      * Get the extra params.
      *
-     * @return array Returns the extra params.
+     * @return mixed[] Returns the extra params.
      */
     public function getExtraParams(): array;
 

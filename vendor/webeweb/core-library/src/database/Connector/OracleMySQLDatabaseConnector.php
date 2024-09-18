@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -27,7 +29,7 @@ class OracleMySQLDatabaseConnector extends AbstractDatabaseConnector {
      *
      * @var string
      */
-    const DEFAULT_DSN = "mysql:host=%HOST%;port=%PORT%;dbname=%DATABASE%;";
+    public const DEFAULT_DSN = "mysql:host=%HOST%;port=%PORT%;dbname=%DATABASE%;";
 
     /**
      * Constructor.

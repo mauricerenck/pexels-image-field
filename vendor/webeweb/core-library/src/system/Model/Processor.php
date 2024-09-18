@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -25,14 +27,14 @@ class Processor implements ProcessorInterface {
     /**
      * Values.
      *
-     * @var string[]
+     * @var array<string,string>
      */
     protected $values;
 
     /**
      * Constructor.
      *
-     * @param string[] $values The values.
+     * @param array<string,string> $values The values.
      */
     public function __construct(array $values) {
         $this->setValues($values);
@@ -103,6 +105,7 @@ class Processor implements ProcessorInterface {
 
     /**
      * {@inheritDoc}
+     * @return array<string,mixed> Returns this serialized instance.
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeProcessor($this);
@@ -111,7 +114,7 @@ class Processor implements ProcessorInterface {
     /**
      * Set the values.
      *
-     * @param string[] $values The values.
+     * @param array<string,string> $values The values.
      * @return ProcessorInterface Returns this processor.
      */
     protected function setValues(array $values): ProcessorInterface {

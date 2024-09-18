@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,28 +28,28 @@ interface AlertInterface extends JsonSerializable {
      *
      * @var string
      */
-    const ALERT_TYPE_DANGER = "danger";
+    public const ALERT_TYPE_DANGER = "danger";
 
     /**
      * Alert type "info".
      *
      * @var string
      */
-    const ALERT_TYPE_INFO = "info";
+    public const ALERT_TYPE_INFO = "info";
 
     /**
      * Alert type "success".
      *
      * @var string
      */
-    const ALERT_TYPE_SUCCESS = "success";
+    public const ALERT_TYPE_SUCCESS = "success";
 
     /**
      * Alert type "warning".
      *
      * @var string
      */
-    const ALERT_TYPE_WARNING = "warning";
+    public const ALERT_TYPE_WARNING = "warning";
 
     /**
      * Get the content.

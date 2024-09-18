@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -39,6 +41,10 @@ class ColorHelper {
      * @return string|null Returns the rgba().
      */
     public static function hexToRgba(?string $color, float $alpha = 1.00): ?string {
+
+        if (null === $color) {
+            return null;
+        }
 
         if (0 === preg_match_all("/^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/", strtolower($color), $hex)) {
             return null;

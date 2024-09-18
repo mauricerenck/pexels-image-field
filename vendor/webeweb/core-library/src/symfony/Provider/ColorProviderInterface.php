@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,12 +26,12 @@ interface ColorProviderInterface extends ProviderInterface {
      *
      * @var string
      */
-    const COLOR_PROVIDER_TAG_NAME = "wbw.core.provider.color";
+    public const COLOR_PROVIDER_TAG_NAME = "wbw.core.provider.color";
 
     /**
      * Get the colors.
      *
-     * @return array Returns the colors.
+     * @return mixed[] Returns the colors.
      */
     public function getColors(): array;
 

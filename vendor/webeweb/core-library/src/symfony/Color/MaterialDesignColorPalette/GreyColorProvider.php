@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -28,7 +30,7 @@ class GreyColorProvider extends AbstractColorProvider implements GreyColorProvid
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.color.material_design_color_palette.grey";
+    public const SERVICE_NAME = "wbw.core.color.material_design_color_palette.grey";
 
     /**
      * Constructor.

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,12 +28,12 @@ interface TasksDropdownThemeProviderInterface extends ThemeProviderInterface {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.provider.theme.tasks_dropdown";
+    public const SERVICE_NAME = "wbw.core.provider.theme.tasks_dropdown";
 
     /**
      * Get the tasks.
      *
-     * @return array Returns the tasks.
+     * @return mixed[] Returns the tasks.
      */
     public function getTasks(): array;
 }

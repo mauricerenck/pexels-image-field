@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -116,7 +118,7 @@ abstract class AbstractParser implements ParserInterface {
         $output = null === $value ? "" : sprintf($format, $value);
 
         if ($length < strlen($output)) {
-            throw new TooLongDataException($value, $length);
+            throw new TooLongDataException((string) $value, $length);
         }
 
         return $output;

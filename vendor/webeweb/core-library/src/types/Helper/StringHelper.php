@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -44,7 +46,7 @@ class StringHelper {
      *
      * @param string $name The name.
      * @param string|null $value The value.
-     * @param array $attributes The attributes.
+     * @param array<string,mixed> $attributes The attributes.
      * @param bool $shortTag Short tag ?
      * @return string Returns the DOM node.
      */
@@ -172,7 +174,7 @@ class StringHelper {
     /**
      * Parse an array.
      *
-     * @param array $values The array.
+     * @param array<string,mixed> $values The array.
      * @return string Returns the array converted into key="value".
      */
     public static function parseArray(array $values): string {
@@ -314,6 +316,11 @@ class StringHelper {
      * @return string|null Returns the converted string.
      */
     public static function ucfirst(?string $string): ?string {
+
+        if (null === $string) {
+            return null;
+        }
+
         return ucfirst(strtolower($string));
     }
 
@@ -325,6 +332,9 @@ class StringHelper {
      * @return string|null Returns the converted string.
      */
     public static function ucwords(?string $string, string $separators = " \t\r\n\f\v-"): ?string {
+
+        $string = ObjectHelper::coalesce($string, "");
+
         return ucwords(strtolower($string), $separators);
     }
 
@@ -337,6 +347,9 @@ class StringHelper {
     public static function usortCallback(bool $asc = true): callable {
 
         return function(?string $string1, ?string $string2) use ($asc): int {
+
+            $string1 = ObjectHelper::coalesce($string1, "");
+            $string2 = ObjectHelper::coalesce($string2, "");
 
             $result = strcmp($string1, $string2);
 
@@ -363,7 +376,7 @@ class StringHelper {
         $words  = explode($needle, $string);
         $count  = count($words);
 
-        if (-1 === $length || mb_strlen($string) < $length || 0 === $count) {
+        if (-1 === $length || mb_strlen($string) < $length) {
             return $string;
         }
 

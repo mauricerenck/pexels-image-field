@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -61,7 +63,7 @@ class XmlDeserializerHelper extends SerializerHelper {
      * Get a DOM node by name.
      *
      * @param string $nodeName The node name.
-     * @param DOMNodeList|null $domNodeList The DOM node list.
+     * @param DOMNodeList<DOMNode>|null $domNodeList The DOM node list.
      * @return DOMNode|null Returns the DOM node in case of success, null otherwise.
      */
     public static function getDomNodeByName(string $nodeName, DOMNodeList $domNodeList = null): ?DOMNode {
@@ -78,7 +80,7 @@ class XmlDeserializerHelper extends SerializerHelper {
      * Get the DOM nodes by name.
      *
      * @param string $nodeName The node name.
-     * @param DOMNodeList|null $domNodeList The DOM node list.
+     * @param DOMNodeList<DOMNode>|null $domNodeList The DOM node list.
      * @return DOMNode[] Returns the DOM nodes.
      */
     public static function getDomNodesByName(string $nodeName, DOMNodeList $domNodeList = null): array {

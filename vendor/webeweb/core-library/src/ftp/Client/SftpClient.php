@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -142,7 +144,7 @@ class SftpClient extends AbstractClient {
         $username = $this->getAuthenticator()->getPasswordAuthentication()->getUsername();
         $password = $this->getAuthenticator()->getPasswordAuthentication()->getPassword();
 
-        if (false === @ssh2_auth_password($this->getConnection(), $username, $password)) {
+        if (null === $username || null === $password || false === @ssh2_auth_password($this->getConnection(), $username, $password)) {
             throw $this->newFtpException("ssh2_auth_password failed: [$username]");
         }
 

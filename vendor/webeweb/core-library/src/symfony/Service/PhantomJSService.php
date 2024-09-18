@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,7 +28,7 @@ class PhantomJSService {
      *
      * @avr string
      */
-    const SERVICE_NAME = "wbw.core.service.phantomjs";
+    public const SERVICE_NAME = "wbw.core.service.phantomjs";
 
     /**
      * Binary path.

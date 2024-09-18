@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -28,7 +30,7 @@ class CyanColorProvider extends AbstractColorProvider implements CyanColorProvid
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.color.material_design_color_palette.cyan";
+    public const SERVICE_NAME = "wbw.core.color.material_design_color_palette.cyan";
 
     /**
      * Constructor.

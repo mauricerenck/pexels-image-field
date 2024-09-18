@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,96 +26,96 @@ interface PropertyInterface {
      *
      * @var string
      */
-    const FILE_SEPARATOR = "file.separator";
+    public const FILE_SEPARATOR = "file.separator";
 
     /**
      * Line separator.
      *
      * @var string
      */
-    const LINE_SEPARATOR = "line.separator";
+    public const LINE_SEPARATOR = "line.separator";
 
     /**
      * OS arch.
      *
      * @var string
      */
-    const OS_ARCH = "os.arch";
+    public const OS_ARCH = "os.arch";
 
     /**
      * OS name.
      *
      * @var string
      */
-    const OS_NAME = "os.name";
+    public const OS_NAME = "os.name";
 
     /**
      * OS version.
      *
      * @var string
      */
-    const OS_VERSION = "os.version";
+    public const OS_VERSION = "os.version";
 
     /**
      * Path separator.
      *
      * @var string
      */
-    const PATH_SEPARATOR = "path.separator";
+    public const PATH_SEPARATOR = "path.separator";
 
     /**
      * PHP class path.
      *
      * @var string
      */
-    const PHP_CLASS_PATH = "php.class.path";
+    public const PHP_CLASS_PATH = "php.class.path";
 
     /**
      * PHP home.
      *
      * @var string
      */
-    const PHP_HOME = "php.home";
+    public const PHP_HOME = "php.home";
 
     /**
      * PHP vendor.
      *
      * @var string
      */
-    const PHP_VENDOR = "php.vendor";
+    public const PHP_VENDOR = "php.vendor";
 
     /**
      * PHP vendor URL.
      *
      * @var string
      */
-    const PHP_VENDOR_URL = "php.vendor.url";
+    public const PHP_VENDOR_URL = "php.vendor.url";
 
     /**
      * PHP version.
      *
      * @var string
      */
-    const PHP_VERSION = "php.version";
+    public const PHP_VERSION = "php.version";
 
     /**
      * User dir.
      *
      * @var string
      */
-    const USER_DIR = "user.dir";
+    public const USER_DIR = "user.dir";
 
     /**
      * User home.
      *
      * @var string
      */
-    const USER_HOME = "user.home";
+    public const USER_HOME = "user.home";
 
     /**
      * User name.
      *
      * @var string
      */
-    const USER_NAME = "user.name";
+    public const USER_NAME = "user.name";
 }

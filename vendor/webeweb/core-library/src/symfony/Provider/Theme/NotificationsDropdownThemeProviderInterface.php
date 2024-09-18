@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,12 +28,12 @@ interface NotificationsDropdownThemeProviderInterface extends ThemeProviderInter
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.provider.theme.notifications_dropdown";
+    public const SERVICE_NAME = "wbw.core.provider.theme.notifications_dropdown";
 
     /**
      * Get the notifications.
      *
-     * @return array Returns the notifications.
+     * @return mixed[] Returns the notifications.
      */
     public function getNotifications(): array;
 }

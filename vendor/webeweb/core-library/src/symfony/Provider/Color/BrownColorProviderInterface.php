@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,75 +28,75 @@ interface BrownColorProviderInterface extends ColorProviderInterface {
      *
      * @var string
      */
-    const BROWN_COLOR_100 = "#D7CCC8";
+    public const BROWN_COLOR_100 = "#D7CCC8";
 
     /**
      * Brown color "200"
      *
      * @var string
      */
-    const BROWN_COLOR_200 = "#BCAAA4";
+    public const BROWN_COLOR_200 = "#BCAAA4";
 
     /**
      * Brown color "300"
      *
      * @var string
      */
-    const BROWN_COLOR_300 = "#A1887F";
+    public const BROWN_COLOR_300 = "#A1887F";
 
     /**
      * Brown color "400"
      *
      * @var string
      */
-    const BROWN_COLOR_400 = "#8D6E63";
+    public const BROWN_COLOR_400 = "#8D6E63";
 
     /**
      * Brown color "50"
      *
      * @var string
      */
-    const BROWN_COLOR_50 = "#EFEBE9";
+    public const BROWN_COLOR_50 = "#EFEBE9";
 
     /**
      * Brown color "500"
      *
      * @var string
      */
-    const BROWN_COLOR_500 = "#795548";
+    public const BROWN_COLOR_500 = "#795548";
 
     /**
      * Brown color "600"
      *
      * @var string
      */
-    const BROWN_COLOR_600 = "#6D4C41";
+    public const BROWN_COLOR_600 = "#6D4C41";
 
     /**
      * Brown color "700"
      *
      * @var string
      */
-    const BROWN_COLOR_700 = "#5D4037";
+    public const BROWN_COLOR_700 = "#5D4037";
 
     /**
      * Brown color "800"
      *
      * @var string
      */
-    const BROWN_COLOR_800 = "#4E342E";
+    public const BROWN_COLOR_800 = "#4E342E";
 
     /**
      * Brown color "900"
      *
      * @var string
      */
-    const BROWN_COLOR_900 = "#3E2723";
+    public const BROWN_COLOR_900 = "#3E2723";
 
     /**
      * Brown color name.
      *
      * @var string
      */
-    const BROWN_COLOR_NAME = "brown";
+    public const BROWN_COLOR_NAME = "brown";
 }

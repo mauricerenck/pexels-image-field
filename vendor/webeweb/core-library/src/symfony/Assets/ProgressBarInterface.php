@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,28 +28,28 @@ interface ProgressBarInterface extends JsonSerializable {
      *
      * @var string
      */
-    const PROGRESS_BAR_TYPE_DANGER = "danger";
+    public const PROGRESS_BAR_TYPE_DANGER = "danger";
 
     /**
      * Progress bar type "info".
      *
      * @var string
      */
-    const PROGRESS_BAR_TYPE_INFO = "info";
+    public const PROGRESS_BAR_TYPE_INFO = "info";
 
     /**
      * Progress bar type "success".
      *
      * @var string
      */
-    const PROGRESS_BAR_TYPE_SUCCESS = "success";
+    public const PROGRESS_BAR_TYPE_SUCCESS = "success";
 
     /**
      * Progress bar type "warning".
      *
      * @var string
      */
-    const PROGRESS_BAR_TYPE_WARNING = "warning";
+    public const PROGRESS_BAR_TYPE_WARNING = "warning";
 
     /**
      * Get the content.

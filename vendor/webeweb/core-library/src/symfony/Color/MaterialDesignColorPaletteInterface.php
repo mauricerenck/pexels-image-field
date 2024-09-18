@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,89 +26,89 @@ interface MaterialDesignColorPaletteInterface {
      *
      * @var string
      */
-    const COLOR_100 = "100";
+    public const COLOR_100 = "100";
 
     /**
      * Color "200".
      *
      * @var string
      */
-    const COLOR_200 = "200";
+    public const COLOR_200 = "200";
 
     /**
      * Color "300".
      *
      * @var string
      */
-    const COLOR_300 = "300";
+    public const COLOR_300 = "300";
 
     /**
      * Color "400".
      *
      * @var string
      */
-    const COLOR_400 = "400";
+    public const COLOR_400 = "400";
 
     /**
      * Color "50".
      *
      * @var string
      */
-    const COLOR_50 = "50";
+    public const COLOR_50 = "50";
 
     /**
      * Color "500".
      *
      * @var string
      */
-    const COLOR_500 = "500";
+    public const COLOR_500 = "500";
 
     /**
      * Color "600".
      *
      * @var string
      */
-    const COLOR_600 = "600";
+    public const COLOR_600 = "600";
 
     /**
      * Color "700".
      *
      * @var string
      */
-    const COLOR_700 = "700";
+    public const COLOR_700 = "700";
 
     /**
      * Color "A100".
      *
      * @var string
      */
-    const COLOR_A100 = "A100";
+    public const COLOR_A100 = "A100";
 
     /**
      * Color "A200".
      *
      * @var string
      */
-    const COLOR_A200 = "A200";
+    public const COLOR_A200 = "A200";
 
     /**
      * Color "A400".
      *
      * @var string
      */
-    const COLOR_A400 = "A400";
+    public const COLOR_A400 = "A400";
 
     /**
      * Color "A700".
      *
      * @var string
      */
-    const COLOR_A700 = "A700";
+    public const COLOR_A700 = "A700";
 
     /**
      * Color "domain".
      *
      * @var string
      */
-    const COLOR_DOMAIN = "MaterialDesignColorPalette";
+    public const COLOR_DOMAIN = "MaterialDesignColorPalette";
 }

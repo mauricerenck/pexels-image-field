@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -27,7 +29,7 @@ class JsonSerializer {
      * Serialize a registration certificate.
      *
      * @param RegistrationCertificateInterface $model The model.
-     * @return array Returns the serialized registration certificate.
+     * @return array<string,mixed> Returns the serialized registration certificate.
      */
     public static function serializeRegistrationCertificate(RegistrationCertificateInterface $model): array {
 
@@ -86,7 +88,7 @@ class JsonSerializer {
      * Serialize a vehicle brand.
      *
      * @param VehicleBrandInterface $model The model.
-     * @return array Returns the serialized model.
+     * @return array<string,mixed> Returns the serialized model.
      */
     public static function serializeVehicleBrand(VehicleBrandInterface $model): array {
 

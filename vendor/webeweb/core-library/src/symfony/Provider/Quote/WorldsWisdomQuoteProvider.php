@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,14 +26,14 @@ class WorldsWisdomQuoteProvider extends YamlQuoteProvider {
      *
      * @var string
      */
-    const RESOURCE_PATH = __DIR__ . "/../../Resources/assets/quote/WorldsWisdom.fr.yml";
+    public const RESOURCE_PATH = __DIR__ . "/../../Resources/assets/quote/WorldsWisdom.fr.yml";
 
     /**
      * Service name.
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.provider.quote.worlds_wisdom";
+    public const SERVICE_NAME = "wbw.core.provider.quote.worlds_wisdom";
 
     /**
      * Constructor.

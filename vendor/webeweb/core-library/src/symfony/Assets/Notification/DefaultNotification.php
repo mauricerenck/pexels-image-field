@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,8 +26,8 @@ class DefaultNotification extends AbstractNotification {
     /**
      * Constructor.
      *
-     * @param string|null $type The type.
-     * @param string|null $content The content.
+     * @param string $type The type.
+     * @param string $content The content.
      */
     public function __construct(string $type, string $content) {
         parent::__construct($type, $content);

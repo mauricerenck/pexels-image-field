@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,40 +26,40 @@ interface MaritalStatusInterface {
      *
      * @var int
      */
-    const MARITAL_STATUS_DIVORCED = 323;
+    public const MARITAL_STATUS_DIVORCED = 323;
 
     /**
      * Marital status "empty".
      *
      * @var int
      */
-    const MARITAL_STATUS_EMPTY = -1;
+    public const MARITAL_STATUS_EMPTY = -1;
 
     /**
      * Marital status "married".
      *
      * @var int
      */
-    const MARITAL_STATUS_MARRIED = 244;
+    public const MARITAL_STATUS_MARRIED = 244;
 
     /**
      * Marital status "pacs".
      *
      * @var int
      */
-    const MARITAL_STATUS_PACS = 103;
+    public const MARITAL_STATUS_PACS = 103;
 
     /**
      * Marital status "single".
      *
      * @var int
      */
-    const MARITAL_STATUS_SINGLE = 197;
+    public const MARITAL_STATUS_SINGLE = 197;
 
     /**
      * Marital status "widower".
      *
      * @var int
      */
-    const MARITAL_STATUS_WIDOWER = 384;
+    public const MARITAL_STATUS_WIDOWER = 384;
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -27,52 +29,52 @@ interface RequestInterface {
      *
      * @var string
      */
-    const METHOD_DELETE = "DELETE";
+    public const METHOD_DELETE = "DELETE";
 
     /**
      * Method "GET".
      *
      * @var string
      */
-    const METHOD_GET = "GET";
+    public const METHOD_GET = "GET";
 
     /**
      * Method "HEAD".
      *
      * @var string
      */
-    const METHOD_HEAD = "HEAD";
+    public const METHOD_HEAD = "HEAD";
 
     /**
      * Method "OPTIONS".
      *
      * @var string
      */
-    const METHOD_OPTIONS = "OPTIONS";
+    public const METHOD_OPTIONS = "OPTIONS";
 
     /**
      * Method "PATCH".
      *
      * @var string
      */
-    const METHOD_PATCH = "PATCH";
+    public const METHOD_PATCH = "PATCH";
 
     /**
      * Method "POST".
      *
      * @var string
      */
-    const METHOD_POST = "POST";
+    public const METHOD_POST = "POST";
 
     /**
      * Method "PUT".
      *
      * @var string
      */
-    const METHOD_PUT = "PUT";
+    public const METHOD_PUT = "PUT";
 
     /**
-     * Add an header.
+     * Add a header.
      *
      * @param string $name The header name.
      * @param string $value The header value.
@@ -137,7 +139,7 @@ interface RequestInterface {
     /**
      * Get the headers.
      *
-     * @return array Returns the headers.
+     * @return array<string,string> Returns the headers.
      */
     public function getHeaders(): array;
 
@@ -151,14 +153,14 @@ interface RequestInterface {
     /**
      * Get the POST data.
      *
-     * @return array Returns the POST data.
+     * @return array<string,string> Returns the POST data.
      */
     public function getPostData(): array;
 
     /**
      * Get the query data.
      *
-     * @return array Returns the query data.
+     * @return array<string,string> Returns the query data.
      */
     public function getQueryData(): array;
 

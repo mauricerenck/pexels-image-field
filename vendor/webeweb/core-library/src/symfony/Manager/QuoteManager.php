@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -29,7 +31,7 @@ class QuoteManager extends AbstractManager implements QuoteManagerInterface {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.manager.quote";
+    public const SERVICE_NAME = "wbw.core.manager.quote";
 
     /**
      * {@inheritDoc}

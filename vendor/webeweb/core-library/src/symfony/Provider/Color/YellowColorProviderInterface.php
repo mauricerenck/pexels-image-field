@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,103 +28,103 @@ interface YellowColorProviderInterface extends ColorProviderInterface {
      *
      * @var string
      */
-    const YELLOW_COLOR_100 = "#FFF9C4";
+    public const YELLOW_COLOR_100 = "#FFF9C4";
 
     /**
      * Yellow color "200"
      *
      * @var string
      */
-    const YELLOW_COLOR_200 = "#FFF59D";
+    public const YELLOW_COLOR_200 = "#FFF59D";
 
     /**
      * Yellow color "300"
      *
      * @var string
      */
-    const YELLOW_COLOR_300 = "#FFF176";
+    public const YELLOW_COLOR_300 = "#FFF176";
 
     /**
      * Yellow color "400"
      *
      * @var string
      */
-    const YELLOW_COLOR_400 = "#FFEE58";
+    public const YELLOW_COLOR_400 = "#FFEE58";
 
     /**
      * Yellow color "50"
      *
      * @var string
      */
-    const YELLOW_COLOR_50 = "#FFFDE7";
+    public const YELLOW_COLOR_50 = "#FFFDE7";
 
     /**
      * Yellow color "500"
      *
      * @var string
      */
-    const YELLOW_COLOR_500 = "#FFEB3B";
+    public const YELLOW_COLOR_500 = "#FFEB3B";
 
     /**
      * Yellow color "600"
      *
      * @var string
      */
-    const YELLOW_COLOR_600 = "#FDD835";
+    public const YELLOW_COLOR_600 = "#FDD835";
 
     /**
      * Yellow color "700"
      *
      * @var string
      */
-    const YELLOW_COLOR_700 = "#FBC02D";
+    public const YELLOW_COLOR_700 = "#FBC02D";
 
     /**
      * Yellow color "800"
      *
      * @var string
      */
-    const YELLOW_COLOR_800 = "#F9A825";
+    public const YELLOW_COLOR_800 = "#F9A825";
 
     /**
      * Yellow color "900"
      *
      * @var string
      */
-    const YELLOW_COLOR_900 = "#F57F17";
+    public const YELLOW_COLOR_900 = "#F57F17";
 
     /**
      * Yellow color "A100"
      *
      * @var string
      */
-    const YELLOW_COLOR_A100 = "#FFFF8D";
+    public const YELLOW_COLOR_A100 = "#FFFF8D";
 
     /**
      * Yellow color "A200"
      *
      * @var string
      */
-    const YELLOW_COLOR_A200 = "#FFFF00";
+    public const YELLOW_COLOR_A200 = "#FFFF00";
 
     /**
      * Yellow color "A400"
      *
      * @var string
      */
-    const YELLOW_COLOR_A400 = "#FFEA00";
+    public const YELLOW_COLOR_A400 = "#FFEA00";
 
     /**
      * Yellow color "A700"
      *
      * @var string
      */
-    const YELLOW_COLOR_A700 = "#FFD600";
+    public const YELLOW_COLOR_A700 = "#FFD600";
 
     /**
      * Yellow color name.
      *
      * @var string
      */
-    const YELLOW_COLOR_NAME = "yellow";
+    public const YELLOW_COLOR_NAME = "yellow";
 }

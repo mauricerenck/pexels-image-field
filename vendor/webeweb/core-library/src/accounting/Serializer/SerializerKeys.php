@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,75 +26,75 @@ interface SerializerKeys {
      *
      * @var string
      */
-    const ACCOUNT_NUMBER = "accountNumber";
+    public const ACCOUNT_NUMBER = "accountNumber";
 
     /**
      * Serializer key "bank code".
      *
      * @var string
      */
-    const BANK_CODE = "bankCode";
+    public const BANK_CODE = "bankCode";
 
     /**
      * Serializer key "bank domiciliation".
      *
      * @var string
      */
-    const BANK_DOMICILIATION = "bankDomiciliation";
+    public const BANK_DOMICILIATION = "bankDomiciliation";
 
     /**
      * Serializer key "bank name".
      *
      * @var string
      */
-    const BANK_NAME = "bankName";
+    public const BANK_NAME = "bankName";
 
     /**
      * Serializer key "BIC".
      *
      * @var string
      */
-    const BIC = "bic";
+    public const BIC = "bic";
 
     /**
      * Serializer key "branch code".
      *
      * @var string
      */
-    const BRANCH_CODE = "branchCode";
+    public const BRANCH_CODE = "branchCode";
 
     /**
      * Serializer key "IBAN".
      *
      * @var string
      */
-    const IBAN = "iban";
+    public const IBAN = "iban";
 
     /**
      * Serializer key "owner".
      *
      * @var string
      */
-    const OWNER = "owner";
+    public const OWNER = "owner";
 
     /**
      * Serializer key "purchases accounting account".
      *
      * @var string
      */
-    const PURCHASES_ACCOUNTING_ACCOUNT = "purchasesAccountingAccount";
+    public const PURCHASES_ACCOUNTING_ACCOUNT = "purchasesAccountingAccount";
 
     /**
      * Serializer key "RIB key".
      *
      * @var string
      */
-    const RIB_KEY = "ribKey";
+    public const RIB_KEY = "ribKey";
 
     /**
      * Serializer key "sales accounting account".
      *
      * @var string
      */
-    const SALES_ACCOUNTING_ACCOUNT = "salesAccountingAccount";
+    public const SALES_ACCOUNTING_ACCOUNT = "salesAccountingAccount";
 }

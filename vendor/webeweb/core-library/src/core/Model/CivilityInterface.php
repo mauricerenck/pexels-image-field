@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,26 +26,26 @@ interface CivilityInterface {
      *
      * @var int
      */
-    const CIVILITY_EMPTY = -1;
+    public const CIVILITY_EMPTY = -1;
 
     /**
      * Civility "miss".
      *
      * @var int
      */
-    const CIVILITY_MISS = 164;
+    public const CIVILITY_MISS = 164;
 
     /**
      * Civility "mister".
      *
      * @var int
      */
-    const CIVILITY_MISTER = 301;
+    public const CIVILITY_MISTER = 301;
 
     /**
      * Civility "mrs".
      *
      * @var int
      */
-    const CIVILITY_MRS = 106;
+    public const CIVILITY_MRS = 106;
 }

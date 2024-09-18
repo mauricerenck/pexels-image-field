@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -92,7 +94,7 @@ class AbstractManager implements ManagerInterface {
      * Log an info.
      *
      * @param string $message The message.
-     * @param array $context The context.
+     * @param mixed[] $context The context.
      * @return ManagerInterface Returns this manager.
      */
     protected function logInfo(string $message, array $context): ManagerInterface {

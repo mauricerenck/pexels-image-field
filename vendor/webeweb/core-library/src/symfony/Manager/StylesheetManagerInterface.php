@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -22,7 +24,7 @@ interface StylesheetManagerInterface extends ManagerInterface {
     /**
      * Get the stylesheets.
      *
-     * @return array Returns the stylesheets.
+     * @return mixed[] Returns the stylesheets.
      */
     public function getStylesheets(): array;
 }

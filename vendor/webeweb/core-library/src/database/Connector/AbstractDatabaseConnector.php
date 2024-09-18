@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -97,8 +99,8 @@ abstract class AbstractDatabaseConnector {
     /**
      * Prepare a binding.
      *
-     * @param array $fields The fields.
-     * @return array Returns the binding as key => :key.
+     * @param string[] $fields The fields.
+     * @return array<string,string> Returns the binding as key => :key.
      */
     public function prepareBinding(array $fields): array {
 
@@ -115,7 +117,7 @@ abstract class AbstractDatabaseConnector {
      * Prepare an INSERT SQL query.
      *
      * @param string $table The table.
-     * @param array $values The values [field => value].
+     * @param array<string,string> $values The values [field => value].
      * @return string Returns the INSERT SQL query.
      */
     public function prepareInsert(string $table, array $values): string {
@@ -137,7 +139,7 @@ abstract class AbstractDatabaseConnector {
      * Prepare an UPDATE SQL query.
      *
      * @param string $table The table.
-     * @param array $values The values [field => value]
+     * @param array<string,string> $values The values [field => value]
      * @return string Returns the UPDATE SQL query.
      */
     public function prepareUpdate(string $table, array $values): string {

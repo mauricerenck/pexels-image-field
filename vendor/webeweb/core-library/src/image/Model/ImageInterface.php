@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,26 +26,26 @@ interface ImageInterface {
      *
      * @var string
      */
-    const MIME_TYPE_JPEG = "image/jpeg";
+    public const MIME_TYPE_JPEG = "image/jpeg";
 
     /**
      * Mime type "png".
      *
      * @var string
      */
-    const MIME_TYPE_PNG = "image/png";
+    public const MIME_TYPE_PNG = "image/png";
 
     /**
      * Orientation "horizontal".
      *
      * @var string
      */
-    const ORIENTATION_HORIZONTAL = "horizontal";
+    public const ORIENTATION_HORIZONTAL = "horizontal";
 
     /**
      * Orientation "vertical".
      *
      * @var string
      */
-    const ORIENTATION_VERTICAL = "vertical";
+    public const ORIENTATION_VERTICAL = "vertical";
 }

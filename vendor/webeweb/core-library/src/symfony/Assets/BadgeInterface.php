@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,28 +28,28 @@ interface BadgeInterface extends JsonSerializable {
      *
      * @var string
      */
-    const BADGE_TYPE_DANGER = "danger";
+    public const BADGE_TYPE_DANGER = "danger";
 
     /**
      * Badge type "info".
      *
      * @var string
      */
-    const BADGE_TYPE_INFO = "info";
+    public const BADGE_TYPE_INFO = "info";
 
     /**
      * Badge type "success".
      *
      * @var string
      */
-    const BADGE_TYPE_SUCCESS = "success";
+    public const BADGE_TYPE_SUCCESS = "success";
 
     /**
      * Badge type "warning".
      *
      * @var string
      */
-    const BADGE_TYPE_WARNING = "warning";
+    public const BADGE_TYPE_WARNING = "warning";
 
     /**
      * Get the content.

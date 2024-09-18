@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -44,7 +46,7 @@ class ApiProvider extends AbstractProvider implements ApiProviderInterface {
      * Call API.
      *
      * @param string $resourcePath The resource path.
-     * @param array $postData The post data.
+     * @param array<string,mixed> $postData The post data.
      * @return string Returns the response.
      * @throws ApiException Throws an API exception if an error occurs.
      */

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,152 +26,152 @@ interface SerializerKeys {
      *
      * @var string
      */
-    const AVAILABLE = "available";
+    public const AVAILABLE = "available";
 
     /**
      * Serializer key "codename".
      *
      * @var string
      */
-    const CODENAME = "codename";
+    public const CODENAME = "codename";
 
     /**
      * Serializer key "dns".
      *
      * @var string
      */
-    const DNS = "dns";
+    public const DNS = "dns";
 
     /**
      * Serializer key "duplex".
      *
      * @var string
      */
-    const DUPLEX = "duplex";
+    public const DUPLEX = "duplex";
 
     /**
      * Serializer key "fileSystem".
      *
      * @var string
      */
-    const FILE_SYSTEM = "fileSystem";
+    public const FILE_SYSTEM = "fileSystem";
 
     /**
      * Serializer key "gateway".
      *
      * @var string
      */
-    const GATEWAY = "gateway";
+    public const GATEWAY = "gateway";
 
     /**
      * Serializer key "hi".
      *
      * @var string
      */
-    const HI = "hi";
+    public const HI = "hi";
 
     /**
      * Serializer key "ipv4".
      *
      * @var string
      */
-    const IPV4 = "ipv4";
+    public const IPV4 = "ipv4";
 
     /**
      * Serializer key "ipv6".
      *
      * @var string
      */
-    const IPV6 = "ipv6";
+    public const IPV6 = "ipv6";
 
     /**
      * Serializer key "mac".
      *
      * @var string
      */
-    const MAC = "mac";
+    public const MAC = "mac";
 
     /**
      * Serializer key "mounted on".
      *
      * @var string
      */
-    const MOUNTED_ON = "mountedOn";
+    public const MOUNTED_ON = "mountedOn";
 
     /**
      * Serializer key "ni".
      *
      * @var string
      */
-    const NI = "ni";
+    public const NI = "ni";
 
     /**
      * Serializer key "release".
      *
      * @var string
      */
-    const RELEASE = "release";
+    public const RELEASE = "release";
 
     /**
      * Serializer key "si".
      *
      * @var string
      */
-    const SI = "si";
+    public const SI = "si";
 
     /**
      * Serializer key "speed".
      *
      * @var string
      */
-    const SPEED = "speed";
+    public const SPEED = "speed";
 
     /**
      * Serializer key "st".
      *
      * @var string
      */
-    const ST = "st";
+    public const ST = "st";
 
     /**
      * Serializer key "status".
      *
      * @var string
      */
-    const STATUS = "status";
+    public const STATUS = "status";
 
     /**
      * Serializer key "sy".
      *
      * @var string
      */
-    const SY = "sy";
+    public const SY = "sy";
 
     /**
      * Serializer key "us".
      *
      * @var string
      */
-    const US = "us";
+    public const US = "us";
 
     /**
      * Serializer key "used".
      *
      * @var string
      */
-    const USED = "used";
+    public const USED = "used";
 
     /**
      * Serializer key "usePercent".
      *
      * @var string
      */
-    const USE_PERCENT = "usePercent";
+    public const USE_PERCENT = "usePercent";
 
     /**
      * Serializer key "wa".
      *
      * @var string
      */
-    const WA = "wa";
+    public const WA = "wa";
 }

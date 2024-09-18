@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -22,14 +24,14 @@ trait ArrayDataTrait {
     /**
      * Data.
      *
-     * @var array|null
+     * @var mixed[]|null
      */
     protected $data;
 
     /**
      * Get the data.
      *
-     * @return array|null Returns the data.
+     * @return mixed[]|null Returns the data.
      */
     public function getData(): ?array {
         return $this->data;
@@ -38,7 +40,7 @@ trait ArrayDataTrait {
     /**
      * Set the data.
      *
-     * @param array|null $data The data.
+     * @param mixed[]|null $data The data.
      * @return self Returns this instance.
      */
     public function setData(?array $data): self {

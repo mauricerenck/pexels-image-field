@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,7 +28,7 @@ class AlphabeticalTreeNodeHelper {
      * Create the choices.
      *
      * @param AlphabeticalTreeNodeInterface[] $choices The choices.
-     * @return array Returns the choices.
+     * @return array<string,AlphabeticalTreeNodeInterface[]> Returns the choices.
      */
     public static function createChoices(array $choices): array {
 
@@ -65,7 +67,7 @@ class AlphabeticalTreeNodeHelper {
      * Get the path.
      *
      * @param AlphabeticalTreeNodeInterface $node The node.
-     * @return array Returns the path.
+     * @return AlphabeticalTreeNodeInterface[] Returns the path.
      */
     public static function getPath(AlphabeticalTreeNodeInterface $node): array {
 
@@ -106,8 +108,8 @@ class AlphabeticalTreeNodeHelper {
     /**
      * Sort.
      *
-     * @param array $nodes The nodes.
-     * @return array Returns the sorted nodes.
+     * @param AlphabeticalTreeNodeInterface[] $nodes The nodes.
+     * @return AlphabeticalTreeNodeInterface[] Returns the sorted nodes.
      */
     public static function sort(array $nodes): array {
 

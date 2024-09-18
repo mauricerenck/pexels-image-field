@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -24,12 +26,12 @@ interface ApiProviderInterface {
      *
      * @avr string
      */
-    const ENDPOINT_PATH = "http://ws.adoria.com";
+    public const ENDPOINT_PATH = "http://ws.adoria.com";
 
     /**
      * Request data resource path.
      *
      * @var string
      */
-    const REQUEST_DATA_RESOURCE_PATH = "/MdbProcurement.adoria.ExternalsServices/EProcurement/Buying/V10.svc/rest/AcountingInterface";
+    public const REQUEST_DATA_RESOURCE_PATH = "/MdbProcurement.adoria.ExternalsServices/EProcurement/Buying/V10.svc/rest/AcountingInterface";
 }

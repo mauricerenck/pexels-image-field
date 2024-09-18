@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -22,7 +24,7 @@ interface JavascriptManagerInterface extends ManagerInterface {
     /**
      * Get the javascripts.
      *
-     * @return array Returns the javascripts.
+     * @return mixed[] Returns the javascripts.
      */
     public function getJavascripts(): array;
 }

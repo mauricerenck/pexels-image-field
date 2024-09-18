@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,28 +28,28 @@ interface NotificationInterface extends JsonSerializable {
      *
      * @var string
      */
-    const NOTIFICATION_TYPE_DANGER = "danger";
+    public const NOTIFICATION_TYPE_DANGER = "danger";
 
     /**
      * Notification type "info".
      *
      * @var string
      */
-    const NOTIFICATION_TYPE_INFO = "info";
+    public const NOTIFICATION_TYPE_INFO = "info";
 
     /**
      * Notification type "success".
      *
      * @var string
      */
-    const NOTIFICATION_TYPE_SUCCESS = "success";
+    public const NOTIFICATION_TYPE_SUCCESS = "success";
 
     /**
      * Notification type "warning".
      *
      * @var string
      */
-    const NOTIFICATION_TYPE_WARNING = "warning";
+    public const NOTIFICATION_TYPE_WARNING = "warning";
 
     /**
      * Get the content.

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,12 +28,12 @@ interface BlackColorProviderInterface extends ColorProviderInterface {
      *
      * @var string
      */
-    const BLACK_COLOR_500 = "#000000";
+    public const BLACK_COLOR_500 = "#000000";
 
     /**
      * Black color name.
      *
      * @var string
      */
-    const BLACK_COLOR_NAME = "black";
+    public const BLACK_COLOR_NAME = "black";
 }

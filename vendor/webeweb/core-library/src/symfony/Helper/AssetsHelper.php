@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -27,7 +29,7 @@ class AssetsHelper {
      * List all assets.
      *
      * @param string $directory The directory.
-     * @return array Returns the assets.
+     * @return string[] Returns the assets.
      * @throws InvalidArgumentException Throw an invalid argument exception if the directory is not a directory.
      */
     public static function listAssets(string $directory): array {

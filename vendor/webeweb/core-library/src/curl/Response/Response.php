@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -31,7 +33,7 @@ class Response implements ResponseInterface {
     /**
      * Request header.
      *
-     * @var array
+     * @var string[]
      */
     private $requestHeader;
 
@@ -52,14 +54,14 @@ class Response implements ResponseInterface {
     /**
      * Response header.
      *
-     * @var array
+     * @var string[]
      */
     private $responseHeader;
 
     /**
      * Response info.
      *
-     * @var array
+     * @var array<string,string>
      */
     private $responseInfo;
 
@@ -128,7 +130,7 @@ class Response implements ResponseInterface {
     /**
      * Set the request header.
      *
-     * @param array $requestHeader The request header.
+     * @param string[] $requestHeader The request header.
      * @return Response Returns this response.
      */
     public function setRequestHeader(array $requestHeader): Response {
@@ -161,7 +163,7 @@ class Response implements ResponseInterface {
     /**
      * Set the response header.
      *
-     * @param array $responseHeader The response header.
+     * @param string[] $responseHeader The response header.
      * @return Response Returns this response.
      */
     public function setResponseHeader(array $responseHeader): Response {
@@ -172,7 +174,7 @@ class Response implements ResponseInterface {
     /**
      * Set the response info.
      *
-     * @param array $responseInfo The response info.
+     * @param array<string,string> $responseInfo The response info.
      * @return Response Returns this response.
      */
     public function setResponseInfo(array $responseInfo): Response {

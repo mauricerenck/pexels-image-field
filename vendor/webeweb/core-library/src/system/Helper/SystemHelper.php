@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -239,12 +241,12 @@ class SystemHelper {
 
         $model = new NetworkCard();
         $model->setName($name);
-        $model->setDuplex(trim($duplex));
-        $model->setIpv4(trim($ipv4));
-        $model->setIpv6(trim($ipv6));
-        $model->setMac(trim($mac));
-        $model->setSpeed(trim($speed));
-        $model->setStatus(trim($status));
+        $model->setDuplex(null !== $duplex ? trim($duplex) : "");
+        $model->setIpv4(null !== $ipv4 ? trim($ipv4) : "");
+        $model->setIpv6(null !== $ipv6 ? trim($ipv6) : "");
+        $model->setMac(null !== $mac ? trim($mac) : "");
+        $model->setSpeed(null !== $speed ? trim($speed) : "");
+        $model->setStatus(null !== $status ? trim($status) : "");
 
         return $model;
     }
@@ -343,7 +345,7 @@ class SystemHelper {
     /**
      * Retrieve the properties.
      *
-     * @return string[] Returns the properties.
+     * @return array<string,mixed> Returns the properties.
      */
     public static function retrieveProperties(): array {
 

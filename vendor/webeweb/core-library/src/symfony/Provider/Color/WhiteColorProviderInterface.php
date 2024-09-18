@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,12 +28,12 @@ interface WhiteColorProviderInterface extends ColorProviderInterface {
      *
      * @var string
      */
-    const WHITE_COLOR_500 = "#FFFFFF";
+    public const WHITE_COLOR_500 = "#FFFFFF";
 
     /**
      * White color name.
      *
      * @var string
      */
-    const WHITE_COLOR_NAME = "white";
+    public const WHITE_COLOR_NAME = "white";
 }

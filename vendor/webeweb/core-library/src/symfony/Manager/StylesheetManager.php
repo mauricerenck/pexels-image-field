@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -29,7 +31,7 @@ class StylesheetManager extends AbstractManager implements StylesheetManagerInte
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.manager.stylesheet";
+    public const SERVICE_NAME = "wbw.core.manager.stylesheet";
 
     /**
      * {@inheritDoc}

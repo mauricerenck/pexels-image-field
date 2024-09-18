@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,28 +28,28 @@ interface ToastInterface extends JsonSerializable {
      *
      * @var string
      */
-    const TOAST_TYPE_DANGER = "danger";
+    public const TOAST_TYPE_DANGER = "danger";
 
     /**
      * Toast type "info".
      *
      * @var string
      */
-    const TOAST_TYPE_INFO = "info";
+    public const TOAST_TYPE_INFO = "info";
 
     /**
      * Toast type "success".
      *
      * @var string
      */
-    const TOAST_TYPE_SUCCESS = "success";
+    public const TOAST_TYPE_SUCCESS = "success";
 
     /**
      * Toast type "warning".
      *
      * @var string
      */
-    const TOAST_TYPE_WARNING = "warning";
+    public const TOAST_TYPE_WARNING = "warning";
 
     /**
      * Get the content.

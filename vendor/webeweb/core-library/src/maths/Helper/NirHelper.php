@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -52,10 +54,10 @@ class NirHelper {
      */
     public static function key(?string $nbr): ?string {
 
-        if (13 !== strlen($nbr)) {
+        if (null === $nbr || 13 !== strlen($nbr)) {
             return null;
         }
 
-        return 97 - intval($nbr) % 97;
+        return (string) (97 - intval($nbr) % 97);
     }
 }

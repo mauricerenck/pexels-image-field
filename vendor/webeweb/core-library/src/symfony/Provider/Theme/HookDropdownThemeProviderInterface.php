@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,12 +28,12 @@ interface HookDropdownThemeProviderInterface extends ThemeProviderInterface {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.provider.theme.hook_dropdown";
+    public const SERVICE_NAME = "wbw.core.provider.theme.hook_dropdown";
 
     /**
      * Get the items.
      *
-     * @return array Returns the items.
+     * @return mixed[] Returns the items.
      */
     public function getItems(): array;
 }

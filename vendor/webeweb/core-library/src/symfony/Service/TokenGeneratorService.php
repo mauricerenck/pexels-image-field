@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,5 +28,5 @@ class TokenGeneratorService extends TokenGenerator implements TokenGeneratorServ
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.service.token_generator";
+    public const SERVICE_NAME = "wbw.core.service.token_generator";
 }

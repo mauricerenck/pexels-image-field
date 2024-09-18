@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -33,14 +35,14 @@ class UploadedFileService implements UploadedFileServiceInterface {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.service.uploaded_file";
+    public const SERVICE_NAME = "wbw.core.service.uploaded_file";
 
     /**
      * Upload directory.
      *
      * @var string
      */
-    const UPLOAD_DIRECTORY = "/uploads";
+    public const UPLOAD_DIRECTORY = "/uploads";
 
     /**
      * Constructor.
@@ -83,6 +85,7 @@ class UploadedFileService implements UploadedFileServiceInterface {
      * @return string Returns the path.
      */
     public function path(string $filename): string {
+
         return implode(DIRECTORY_SEPARATOR, [
             $this->getDirectory(),
             $filename,
@@ -95,7 +98,7 @@ class UploadedFileService implements UploadedFileServiceInterface {
      * @param SplFileInfo $uploadedFile The uploaded file.
      * @param string $subdirectory The subdirectory.
      * @param string|null $filename The filename.
-     * @param int|null $permissions The permissions.
+     * @param int $permissions The permissions.
      * @return string|null Returns the uploaded file path.
      */
     public function save(SplFileInfo $uploadedFile, string $subdirectory, string $filename = null, int $permissions = 0600): ?string {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -26,7 +28,7 @@ interface ApplicationThemeProviderInterface extends ThemeProviderInterface {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.core.provider.theme.application";
+    public const SERVICE_NAME = "wbw.core.provider.theme.application";
 
     /**
      * Get the description.

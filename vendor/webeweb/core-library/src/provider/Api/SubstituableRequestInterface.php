@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the core-library package.
  *
@@ -22,7 +24,7 @@ interface SubstituableRequestInterface {
     /**
      * Get the substituables.
      *
-     * @return array Returns the substituables.
+     * @return array<string,mixed> Returns the substituables.
      */
     public function getSubstituables(): array;
 }
