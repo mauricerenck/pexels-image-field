@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -27,7 +29,10 @@ class VideoResponse extends AbstractMediaResponse {
      * @return Video|null Returns the video.
      */
     public function getVideo(): ?Video {
+
+        /** @var Video[] $medias */
         $medias = $this->getMedias();
+
         return 1 === count($medias) ? $medias[0] : null;
     }
 

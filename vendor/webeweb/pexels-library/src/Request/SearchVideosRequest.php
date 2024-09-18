@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -11,6 +13,9 @@
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Pexels\Response\AbstractResponse;
+use WBW\Library\Pexels\Serializer\RequestSerializer;
+use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Traits\Integers\IntegerPageTrait;
 use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 use WBW\Library\Traits\Strings\StringLocaleTrait;
@@ -38,7 +43,7 @@ class SearchVideosRequest extends AbstractRequest {
      *
      * @var string
      */
-    const SEARCH_VIDEOS_RESOURCE_PATH = "/videos/search";
+    public const SEARCH_VIDEOS_RESOURCE_PATH = "/videos/search";
 
     /**
      * Constructor.
@@ -51,9 +56,23 @@ class SearchVideosRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeVideosResponse($rawResponse);
+    }
+
+    /**
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::SEARCH_VIDEOS_RESOURCE_PATH;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function serializeRequest(): array {
+        return RequestSerializer::serializeSearchVideosRequest($this);
     }
 }

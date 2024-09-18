@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -11,6 +13,9 @@
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Pexels\Response\AbstractResponse;
+use WBW\Library\Pexels\Serializer\RequestSerializer;
+use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Traits\Integers\IntegerPageTrait;
 use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 
@@ -30,7 +35,7 @@ class CollectionsRequest extends AbstractRequest {
      *
      * @var string
      */
-    const COLLECTIONS_RESOURCE_PATH = "/v1/collections";
+    public const COLLECTIONS_RESOURCE_PATH = "/v1/collections";
 
     /**
      * Constructor.
@@ -43,9 +48,23 @@ class CollectionsRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeCollectionsResponse($rawResponse);
+    }
+
+    /**
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::COLLECTIONS_RESOURCE_PATH;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function serializeRequest(): array {
+        return RequestSerializer::serializeCollectionsRequest($this);
     }
 }

@@ -12,6 +12,7 @@ require_once __DIR__ . "/../vendor/autoload.php";
 
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\PopularVideosRequest;
+use WBW\Library\Pexels\Response\VideosResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 // Create the API provider.
@@ -20,8 +21,8 @@ $provider = new ApiProvider(AbstractTestCase::getToken());
 // Create a Popular videos request.
 $request = new PopularVideosRequest();
 
-// Call the API and get the response.
-$response = $provider->popularVideos($request);
+/** @var VideosResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response (same as search videos).
 // ...

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32c5faf2b1980f07f0118545f18f206c",
+    "content-hash": "504d12c803a7535899017ca0833af928",
     "packages": [
         {
             "name": "doctrine/collections",
@@ -673,30 +673,30 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.4",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
+                "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
-                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
+                "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=8.0.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "3.x-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Psr\\Log\\": "Psr/Log/"
+                    "Psr\\Log\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -717,9 +717,9 @@
                 "psr-3"
             ],
             "support": {
-                "source": "https://github.com/php-fig/log/tree/1.1.4"
+                "source": "https://github.com/php-fig/log/tree/3.0.2"
             },
-            "time": "2021-05-03T11:20:27+00:00"
+            "time": "2024-09-11T13:17:53+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -1104,32 +1104,35 @@
         },
         {
             "name": "webeweb/pexels-library",
-            "version": "v2.11.0",
+            "version": "v3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webeweb/pexels-library.git",
-                "reference": "12fc6589071d97a84a70cd4dfbe1f1290d913f63"
+                "reference": "257c0c891a9d22455df3874b8b120a77a0b7a917"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webeweb/pexels-library/zipball/12fc6589071d97a84a70cd4dfbe1f1290d913f63",
-                "reference": "12fc6589071d97a84a70cd4dfbe1f1290d913f63",
+                "url": "https://api.github.com/repos/webeweb/pexels-library/zipball/257c0c891a9d22455df3874b8b120a77a0b7a917",
+                "reference": "257c0c891a9d22455df3874b8b120a77a0b7a917",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/guzzle": "^6.0|^7.0",
                 "php": "^7.1|^8.0",
-                "psr/log": "^1.0",
-                "webeweb/core-library": "^8.45"
+                "psr/log": "^1.0|^2.0|^3.0",
+                "webeweb/core-library": "^8.69"
             },
             "require-dev": {
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "^1.4",
+                "phpstan/phpstan-phpunit": "^1.0",
                 "phpunit/phpunit": "^7.0|^9.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev"
+                    "dev-master": "3.x-dev"
                 }
             },
             "autoload": {
@@ -1150,18 +1153,15 @@
             "description": "Integrate Pexels API with your projects",
             "homepage": "https://github.com/webeweb/pexels-library",
             "keywords": [
-                "api",
                 "library",
                 "pexels",
-                "photo",
-                "video",
                 "webeweb"
             ],
             "support": {
                 "issues": "https://github.com/webeweb/pexels-library/issues",
-                "source": "https://github.com/webeweb/pexels-library/tree/v2.11.0"
+                "source": "https://github.com/webeweb/pexels-library/tree/v3.6.0"
             },
-            "time": "2023-01-02T11:00:45+00:00"
+            "time": "2024-03-18T16:46:21+00:00"
         }
     ],
     "packages-dev": [

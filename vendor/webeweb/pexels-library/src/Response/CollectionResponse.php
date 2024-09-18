@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -12,9 +14,9 @@
 namespace WBW\Library\Pexels\Response;
 
 use WBW\Library\Pexels\Model\AbstractMedia;
-use WBW\Library\Pexels\Model\Attribute\IntegerTotalResultsTrait;
-use WBW\Library\Pexels\Model\Attribute\StringNextPageTrait;
-use WBW\Library\Pexels\Model\Attribute\StringPrevPageTrait;
+use WBW\Library\Pexels\Traits\Integers\IntegerTotalResultsTrait;
+use WBW\Library\Pexels\Traits\Strings\StringNextPageTrait;
+use WBW\Library\Pexels\Traits\Strings\StringPrevPageTrait;
 use WBW\Library\Traits\Integers\IntegerPageTrait;
 use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 use WBW\Library\Traits\Strings\StringIdTrait;
@@ -42,14 +44,14 @@ class CollectionResponse extends AbstractMediaResponse {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addMedia(AbstractMedia $media): AbstractMediaResponse {
         return parent::addMedia($media);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMedias(): array {
         return parent::getMedias();

@@ -77,7 +77,7 @@ return [
                 // $request->setLocale('en-US'); // Optional
 
                 // Call the API and get the response.
-                $response = $provider->searchPhotos($request);
+                $response = $provider->sendRequest($request);
 
                 // Handle the response.
                 $response->getLimit();

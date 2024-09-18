@@ -16,6 +16,7 @@ use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Model\Source;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\SearchPhotosRequest;
+use WBW\Library\Pexels\Response\PhotosResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 // Create the API provider.
@@ -28,8 +29,8 @@ $request->setOrientation(RequestInterface::ORIENTATION_LANDSCAPE); // Optional
 $request->setSize(RequestInterface::SIZE_LARGE); // Optional
 $request->setLocale(RequestInterface::LOCALE_EN_US); // Optional
 
-// Call the API and get the response.
-$response = $provider->searchPhotos($request);
+/** @var PhotosResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $format = "%-20s: %s\n";

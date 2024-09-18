@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -11,6 +13,9 @@
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Pexels\Response\AbstractResponse;
+use WBW\Library\Pexels\Serializer\RequestSerializer;
+use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Traits\Integers\IntegerMaxDurationTrait;
 use WBW\Library\Traits\Integers\IntegerMinDurationTrait;
 use WBW\Library\Traits\Integers\IntegerMinHeightTrait;
@@ -38,7 +43,7 @@ class PopularVideosRequest extends AbstractRequest {
      *
      * @var string
      */
-    const POPULAR_VIDEOS_RESOURCE_PATH = "/videos/popular";
+    public const POPULAR_VIDEOS_RESOURCE_PATH = "/videos/popular";
 
     /**
      * Constructor.
@@ -51,9 +56,23 @@ class PopularVideosRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeVideosResponse($rawResponse);
+    }
+
+    /**
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::POPULAR_VIDEOS_RESOURCE_PATH;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function serializeRequest(): array {
+        return RequestSerializer::serializePopularVideosRequest($this);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -12,7 +14,6 @@
 namespace WBW\Library\Pexels\Provider;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Throwable;
@@ -38,7 +39,7 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @var string
      */
-    const ENDPOINT_PATH = "https://api.pexels.com";
+    public const ENDPOINT_PATH = "https://api.pexels.com";
 
     /**
      * Authorization.
@@ -62,7 +63,7 @@ abstract class AbstractProvider extends BaseProvider {
     /**
      * Build the configuration.
      *
-     * @return array Returns the configuration.
+     * @return array<string,mixed> Returns the configuration.
      */
     private function buildConfiguration(): array {
 
@@ -81,22 +82,20 @@ abstract class AbstractProvider extends BaseProvider {
      * Call the API.
      *
      * @param string $uri The URI.
-     * @param array $queryData The query data.
+     * @param array<string,mixed> $queryData The query data.
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     private function callApi(string $uri, array $queryData): string {
 
         if (null === $this->getAuthorization()) {
-            throw new InvalidArgumentException('The mandatory parameter "authorization" is missing');
+            throw $this->newMandatoryParameterException("authorization");
         }
 
         try {
 
             $config = $this->buildConfiguration();
-
             $client = new Client($config);
 
             $method  = "GET";
@@ -117,52 +116,38 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
-     * Call the API.
+     * Call the API with a request.
      *
      * @param AbstractRequest $request The request.
-     * @param array $queryData The query data.
+     * @param array<string,mixed> $queryData The query data.
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     protected function callApiWithRequest(AbstractRequest $request, array $queryData): string {
 
-        try {
+        $uri = self::ENDPOINT_PATH . $this->buildResourcePath($request);
 
-            $uri = self::ENDPOINT_PATH . $this->buildResourcePath($request);
-
-            return $this->callApi($uri, $queryData);
-        } catch (InvalidArgumentException $ex) {
-
-            throw $ex;
-        }
+        return $this->callApi($uri, $queryData);
     }
 
     /**
-     * Call the API.
+     * Call the API with a response.
      *
      * @param PaginateResponseInterface $response The request.
-     * @param bool $nextPage Next page ?.
+     * @param bool $nextPage Next page ?
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    protected function callApiWithResponse(PaginateResponseInterface $response, bool $nextPage): string {
+    protected function callApiWithResponse(PaginateResponseInterface $response, bool $nextPage = true): string {
 
-        try {
-
-            $uri = false === $nextPage ? $response->getPrevPage() : $response->getNextPage();
-            if (null === $uri) {
-                return "";
-            }
-
-            return $this->callApi($uri, []);
-        } catch (InvalidArgumentException $ex) {
-
-            throw $ex;
+        $uri = true === $nextPage ? $response->getNextPage() : $response->getPrevPage();
+        if (null === $uri) {
+            return "";
         }
+
+        return $this->callApi($uri, []);
     }
 
     /**

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -54,7 +56,7 @@ class Photo extends AbstractMedia {
     /**
      * Photographer id.
      *
-     * @var string|null
+     * @var int|null
      */
     private $photographerId;
 
@@ -111,9 +113,9 @@ class Photo extends AbstractMedia {
     /**
      * Get the photographer id.
      *
-     * @return string|null Returns the photographer id.
+     * @return int|null Returns the photographer id.
      */
-    public function getPhotographerId(): ?string {
+    public function getPhotographerId(): ?int {
         return $this->photographerId;
     }
 
@@ -182,10 +184,10 @@ class Photo extends AbstractMedia {
     /**
      * Set the photographer id.
      *
-     * @param string|null $photographerId The photographer id.
+     * @param int|null $photographerId The photographer id.
      * @return Photo Returns this photo.
      */
-    public function setPhotographerId(?string $photographerId): Photo {
+    public function setPhotographerId(?int $photographerId): Photo {
         $this->photographerId = $photographerId;
         return $this;
     }

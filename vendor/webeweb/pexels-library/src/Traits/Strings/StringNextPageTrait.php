@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -9,13 +11,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Model\Attribute;
+namespace WBW\Library\Pexels\Traits\Strings;
 
 /**
  * String next page trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Pexels\Model\Attribute
+ * @package WBW\Library\Pexels\Traits\Strings
  */
 trait StringNextPageTrait {
 

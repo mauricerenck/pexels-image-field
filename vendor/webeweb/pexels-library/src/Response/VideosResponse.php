@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -12,10 +14,11 @@
 namespace WBW\Library\Pexels\Response;
 
 use WBW\Library\Pexels\Api\PaginateResponseInterface;
-use WBW\Library\Pexels\Model\Attribute\IntegerTotalResultsTrait;
-use WBW\Library\Pexels\Model\Attribute\StringNextPageTrait;
-use WBW\Library\Pexels\Model\Attribute\StringPrevPageTrait;
 use WBW\Library\Pexels\Model\Video;
+use WBW\Library\Pexels\Serializer\ResponseDeserializer;
+use WBW\Library\Pexels\Traits\Integers\IntegerTotalResultsTrait;
+use WBW\Library\Pexels\Traits\Strings\StringNextPageTrait;
+use WBW\Library\Pexels\Traits\Strings\StringPrevPageTrait;
 use WBW\Library\Traits\Integers\IntegerPageTrait;
 use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 use WBW\Library\Traits\Strings\StringUrlTrait;
@@ -53,11 +56,20 @@ class VideosResponse extends AbstractMediaResponse implements PaginateResponseIn
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeVideosResponse($rawResponse);
+    }
+
+    /**
      * Get the videos.
      *
      * @return Video[] Returns the videos.
      */
     public function getVideos(): array {
+
+        /** @var Video[] */
         return $this->getMedias();
     }
 }

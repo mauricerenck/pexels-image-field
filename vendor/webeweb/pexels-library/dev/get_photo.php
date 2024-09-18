@@ -14,6 +14,7 @@ use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Model\Source;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\GetPhotoRequest;
+use WBW\Library\Pexels\Response\PhotoResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 // Create the API provider.
@@ -23,8 +24,8 @@ $provider = new ApiProvider(AbstractTestCase::getToken());
 $request = new GetPhotoRequest();
 $request->setId(1234);
 
-// Call the API and get the response.
-$response = $provider->getPhoto($request);
+/** @var PhotoResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $format = "%-20s: %s\n";

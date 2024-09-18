@@ -35,7 +35,7 @@ return array(
     'WBW\\Library\\Accounting\\' => array($vendorDir . '/webeweb/core-library/src/accounting'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
-    'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-factory/src', $vendorDir . '/psr/http-message/src'),
     'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
     'Kirby\\' => array($vendorDir . '/getkirby/composer-installer/src'),

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -11,6 +13,9 @@
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Pexels\Response\AbstractResponse;
+use WBW\Library\Pexels\Serializer\RequestSerializer;
+use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Traits\Integers\IntegerPageTrait;
 use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 use WBW\Library\Traits\Strings\StringLocaleTrait;
@@ -38,7 +43,7 @@ class SearchPhotosRequest extends AbstractRequest {
      *
      * @var string
      */
-    const SEARCH_PHOTOS_RESOURCE_PATH = "/v1/search";
+    public const SEARCH_PHOTOS_RESOURCE_PATH = "/v1/search";
 
     /**
      * Color.
@@ -58,6 +63,13 @@ class SearchPhotosRequest extends AbstractRequest {
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializePhotosResponse($rawResponse);
+    }
+
+    /**
      * Get the color.
      *
      * @return string|null Returns the color.
@@ -67,10 +79,17 @@ class SearchPhotosRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::SEARCH_PHOTOS_RESOURCE_PATH;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function serializeRequest(): array {
+        return RequestSerializer::serializeSearchPhotosRequest($this);
     }
 
     /**

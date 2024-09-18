@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -28,7 +30,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class ResponseDeserializer {
 
     /**
-     * Deserializes a collection response.
+     * Deserialize a collection response.
      *
      * @param string $rawResponse The raw response.
      * @return CollectionResponse Returns the collection response.
@@ -65,7 +67,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a collections response.
+     * Deserialize a collections response.
      *
      * @param string $rawResponse The raw response.
      * @return CollectionsResponse Returns the collections response.
@@ -95,7 +97,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a photo response.
+     * Deserialize a photo response.
      *
      * @param string $rawResponse The raw response.
      * @return PhotoResponse Returns the photo response.
@@ -117,7 +119,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a photos response.
+     * Deserialize a photos response.
      *
      * @param string $rawResponse The raw response.
      * @return PhotosResponse Returns the photos response.
@@ -148,7 +150,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a video response.
+     * Deserialize a video response.
      *
      * @param string $rawResponse The raw response.
      * @return VideoResponse Returns the video response.
@@ -170,7 +172,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a videos response.
+     * Deserialize a videos response.
      *
      * @param string $rawResponse The raw response.
      * @return VideosResponse Returns the photos response.

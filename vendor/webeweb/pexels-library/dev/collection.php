@@ -16,6 +16,7 @@ use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\CollectionRequest;
+use WBW\Library\Pexels\Response\CollectionResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 // Create the API provider.
@@ -25,8 +26,8 @@ $provider = new ApiProvider(AbstractTestCase::getToken());
 $request = new CollectionRequest();
 $request->setId("id");
 
-// Call the API and get the response.
-$response = $provider->collection($request);
+/** @var CollectionResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $format = "%-20s: %s\n";

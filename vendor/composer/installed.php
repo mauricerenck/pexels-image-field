@@ -1,8 +1,8 @@
 <?php return array(
     'root' => array(
         'name' => 'mauricerenck/pexelsimagefield',
-        'pretty_version' => '2.0.0',
-        'version' => '2.0.0.0',
+        'pretty_version' => '2.0.1',
+        'version' => '2.0.1.0',
         'reference' => NULL,
         'type' => 'kirby-plugin',
         'install_path' => __DIR__ . '/../../',
@@ -65,8 +65,8 @@
             'dev_requirement' => false,
         ),
         'mauricerenck/pexelsimagefield' => array(
-            'pretty_version' => '2.0.0',
-            'version' => '2.0.0.0',
+            'pretty_version' => '2.0.1',
+            'version' => '2.0.1.0',
             'reference' => NULL,
             'type' => 'kirby-plugin',
             'install_path' => __DIR__ . '/../../',
@@ -119,9 +119,9 @@
             ),
         ),
         'psr/log' => array(
-            'pretty_version' => '1.1.4',
-            'version' => '1.1.4.0',
-            'reference' => 'd49695b909c3b7628b6289db5479a1c204601f11',
+            'pretty_version' => '3.0.2',
+            'version' => '3.0.2.0',
+            'reference' => 'f16e1d5863e37f8d8c2a01719f5b34baa2b714d3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../psr/log',
             'aliases' => array(),
@@ -173,9 +173,9 @@
             'dev_requirement' => false,
         ),
         'webeweb/pexels-library' => array(
-            'pretty_version' => 'v2.11.0',
-            'version' => '2.11.0.0',
-            'reference' => '12fc6589071d97a84a70cd4dfbe1f1290d913f63',
+            'pretty_version' => 'v3.6.0',
+            'version' => '3.6.0.0',
+            'reference' => '257c0c891a9d22455df3874b8b120a77a0b7a917',
             'type' => 'library',
             'install_path' => __DIR__ . '/../webeweb/pexels-library',
             'aliases' => array(),

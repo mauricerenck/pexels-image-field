@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -27,7 +29,10 @@ class PhotoResponse extends AbstractMediaResponse {
      * @return Photo|null Returns the photo.
      */
     public function getPhoto(): ?Photo {
+
+        /** @var Photo[] $medias */
         $medias = $this->getMedias();
+
         return 1 === count($medias) ? $medias[0] : null;
     }
 

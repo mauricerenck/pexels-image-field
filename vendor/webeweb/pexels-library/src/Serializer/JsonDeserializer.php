@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -29,9 +31,9 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class JsonDeserializer {
 
     /**
-     * Deserializes a collection.
+     * Deserialize a collection.
      *
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return Collection Returns a collection.
      */
     public static function deserializeCollection(array $data): Collection {
@@ -50,9 +52,9 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes a photo.
+     * Deserialize a photo.
      *
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return Photo Returns a photo.
      */
     public static function deserializePhoto(array $data): Photo {
@@ -75,9 +77,9 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes a source.
+     * Deserialize a source.
      *
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return Source Returns a source.
      */
     public static function deserializeSource(array $data): Source {
@@ -85,8 +87,8 @@ class JsonDeserializer {
         $model = new Source();
         $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
         $model->setOriginal(ArrayHelper::get($data, "original"));
-        $model->setLarge(ArrayHelper::get($data, "large"));
         $model->setLarge2x(ArrayHelper::get($data, "large2x"));
+        $model->setLarge(ArrayHelper::get($data, "large"));
         $model->setMedium(ArrayHelper::get($data, "medium"));
         $model->setSmall(ArrayHelper::get($data, "small"));
         $model->setPortrait(ArrayHelper::get($data, "portrait"));
@@ -97,9 +99,9 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes an user.
+     * Deserialize an user.
      *
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return User Returns an user.
      */
     public static function deserializeUser(array $data): User {
@@ -114,9 +116,9 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes a video.
+     * Deserialize a video.
      *
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return Video Returns a video.
      */
     public static function deserializeVideo(array $data): Video {
@@ -144,9 +146,9 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes a video file.
+     * Deserialize a video file.
      *
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return VideoFile Returns a video file.
      */
     public static function deserializeVideoFile(array $data): VideoFile {
@@ -164,9 +166,9 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes a video picture.
+     * Deserialize a video picture.
      *
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return VideoPicture Returns a video picture.
      */
     public static function deserializeVideoPicture(array $data): VideoPicture {

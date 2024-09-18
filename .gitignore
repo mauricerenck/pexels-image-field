@@ -38,3 +38,5 @@
 /.sqlite
 /site/config/config.pexels.test.php
 /site/cache
+/.ddev
+/site/config/config.pexels-image-field.ddev.site.php

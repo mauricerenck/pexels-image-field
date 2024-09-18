@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -40,7 +42,7 @@ abstract class AbstractMediaResponse extends AbstractResponse {
      * Add a media.
      *
      * @param AbstractMedia $media The media.
-     * @return AbstractMediaResponse Returns this media response.
+     * @return $this Returns this media response.
      */
     protected function addMedia(AbstractMedia $media): AbstractMediaResponse {
         $this->medias[] = $media;
@@ -60,7 +62,7 @@ abstract class AbstractMediaResponse extends AbstractResponse {
      * Set the medias.
      *
      * @param AbstractMedia[] $medias The medias.
-     * @return AbstractMediaResponse Returns this media response.
+     * @return $this Returns this media response.
      */
     protected function setMedias(array $medias): AbstractMediaResponse {
         $this->medias = $medias;

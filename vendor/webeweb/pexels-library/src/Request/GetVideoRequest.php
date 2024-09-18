@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the pexels-library package.
  *
@@ -11,6 +13,8 @@
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Pexels\Response\AbstractResponse;
+use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Provider\Api\SubstituableRequestInterface;
 use WBW\Library\Traits\Integers\IntegerIdTrait;
 
@@ -31,22 +35,36 @@ class GetVideoRequest extends AbstractRequest implements SubstituableRequestInte
      *
      * @var string
      */
-    const GET_VIDEO_RESOURCE_PATH = "/v1/videos/videos/:id";
+    public const GET_VIDEO_RESOURCE_PATH = "/v1/videos/videos/:id";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeVideoResponse($rawResponse);
+    }
+
+    /**
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::GET_VIDEO_RESOURCE_PATH;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getSubstituables(): array {
 
         return [
             ":id" => $this->getId(),
         ];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function serializeRequest(): array {
+        return [];
     }
 }

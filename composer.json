@@ -21,7 +21,7 @@
     "require": {
         "getkirby/composer-installer": "^1.1",
         "php": ">=8.1.0",
-        "webeweb/pexels-library": "^2.9"
+        "webeweb/pexels-library": "^3"
     },
     "require-dev": {
         "getkirby/cms": "^4",
