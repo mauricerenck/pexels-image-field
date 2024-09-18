@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/mauricerenck/pexels-image-field/compare/v2.0.2...v2.1.0) (2024-09-18)
+
+
+### Features
+
+* new pexels api sdk ([56b44ca](https://github.com/mauricerenck/pexels-image-field/commit/56b44ca71d769902f305e89bd233ca903e662c91))
+
 ## [2.0.2](https://github.com/mauricerenck/pexels-image-field/compare/v2.0.1...v2.0.2) (2024-09-18)
 
 
