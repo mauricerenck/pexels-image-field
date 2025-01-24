@@ -1,15 +1,7 @@
 <template>
     <div class="k-pexels-field">
         <k-field :label="label">
-            <k-input
-                theme="field"
-                icon="search"
-                @input="onInput"
-                @keyup="onSubmit"
-                type="text"
-                name="textfield"
-                :value="value"
-            />
+            <k-input theme="field" icon="search" @input="onSubmit" type="text" name="textfield" :value="this.keyword" />
         </k-field>
 
         <div>
@@ -35,6 +27,7 @@ export default {
         label: String,
         value: String,
         downloadSize: String,
+        pageId: String,
     },
 
     data: function () {
@@ -51,29 +44,24 @@ export default {
         }
     },
     computed: {
-        pageId() {
-            return this.$store.getters['content/id']()
-        },
         pages() {
             return Math.round(this.totalResults / this.perPage, 10)
         },
     },
-    methods: {
-        onInput(value) {
-            this.keyword = value
-        },
 
+    methods: {
         onSubmit(value) {
+            this.keyword = value
             if (this.timer !== null) {
                 clearTimeout(this.timer)
             }
 
-            if (this.keyword.length < 3) {
+            if (value.length < 3) {
                 return
             }
 
             this.timer = setTimeout(() => {
-                this.search(this.keyword)
+                this.search(value)
             }, 250)
         },
 
@@ -143,7 +131,7 @@ export default {
             const currentText = selectedPhoto.text
             selectedPhoto.text = 'Downloading…'
 
-            panel.api
+            this.$api
                 .post('pexels/download', {
                     imageId: id,
                     pageId: this.pageId.split('?')[0],
@@ -154,12 +142,12 @@ export default {
                 .then(() => {
                     this.downloaded = false
                     panel.view.reload()
-                    window.panel.notification.success('Image downloaded');
+                    window.panel.notification.success('Image downloaded')
                     selectedPhoto.text = currentText
                 })
                 .catch(() => {
                     this.downloaded = false
-                    window.panel.notification.error('Image download failed');
+                    window.panel.notification.error('Image download failed')
                     selectedPhoto.text = currentText
                 })
         },
