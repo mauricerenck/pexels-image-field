@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/mauricerenck/pexels-image-field/compare/v2.1.0...v2.2.0) (2025-01-24)
+
+
+### Features
+
+* kirby 5 compatibility ([4f5985c](https://github.com/mauricerenck/pexels-image-field/commit/4f5985cf636d53237b96844c59ff123f9a0ef97a))
+
 # [2.1.0](https://github.com/mauricerenck/pexels-image-field/compare/v2.0.2...v2.1.0) (2024-09-18)
 
 
