@@ -24,7 +24,7 @@
         "webeweb/pexels-library": "^3"
     },
     "require-dev": {
-        "getkirby/cms": "^4",
+        "getkirby/cms": "^5",
         "phpunit/phpunit": "9.5"
     },
     "replace": {},

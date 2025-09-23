@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the pexels-library package.
  *
@@ -11,12 +9,14 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
+declare(strict_types = 1);
+
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Traits\Integers\IntegerHeightTrait;
-use WBW\Library\Traits\Integers\IntegerIdTrait;
-use WBW\Library\Traits\Integers\IntegerWidthTrait;
-use WBW\Library\Traits\Strings\StringUrlTrait;
+use WBW\Library\Common\Traits\Integers\IntegerHeightTrait;
+use WBW\Library\Common\Traits\Integers\IntegerIdTrait;
+use WBW\Library\Common\Traits\Integers\IntegerWidthTrait;
+use WBW\Library\Common\Traits\Strings\StringUrlTrait;
 
 /**
  * Abstract media.

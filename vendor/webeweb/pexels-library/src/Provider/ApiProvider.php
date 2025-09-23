@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the pexels-library package.
  *
@@ -11,15 +9,17 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
+declare(strict_types = 1);
+
 namespace WBW\Library\Pexels\Provider;
 
 use InvalidArgumentException;
+use WBW\Library\Common\Provider\ProviderException;
 use WBW\Library\Pexels\Api\PaginateResponseInterface;
 use WBW\Library\Pexels\Request\AbstractRequest;
 use WBW\Library\Pexels\Response\AbstractResponse;
 use WBW\Library\Pexels\Response\PhotosResponse;
 use WBW\Library\Pexels\Response\VideosResponse;
-use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * API provider.
@@ -50,7 +50,7 @@ class ApiProvider extends AbstractProvider {
      * @param PaginateResponseInterface $response The response.
      * @return PhotosResponse|VideosResponse Returns the response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ApiException Throws an API exception if an error occurs.
+     * @throws ProviderException Throws a provider exception if an error occurs.
      */
     public function requestNextPage(PaginateResponseInterface $response): AbstractResponse {
 
@@ -66,7 +66,7 @@ class ApiProvider extends AbstractProvider {
      * @param PaginateResponseInterface $response The response.
      * @return PhotosResponse|VideosResponse Returns the response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ApiException Throws an API exception if an error occurs.
+     * @throws ProviderException Throws a provider exception if an error occurs.
      */
     public function requestPrevPage(PaginateResponseInterface $response): AbstractResponse {
 
@@ -82,7 +82,7 @@ class ApiProvider extends AbstractProvider {
      * @param AbstractRequest $request The request.
      * @return AbstractResponse Returns the response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ApiException Throws an API exception if an error occurs.
+     * @throws ProviderException Throws a provider exception if an error occurs.
      */
     public function sendRequest(AbstractRequest $request): AbstractResponse {
 

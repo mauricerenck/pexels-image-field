@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the core-library package.
  *
@@ -11,20 +9,20 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Provider;
+declare(strict_types = 1);
+
+namespace WBW\Library\Common\Provider;
 
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use WBW\Library\Logger\LoggerTrait;
-use WBW\Library\Provider\Api\SubstituableRequestInterface;
-use WBW\Library\Provider\Request\AbstractRequest;
-use WBW\Library\Traits\Booleans\BooleanDebugTrait;
+use WBW\Library\Common\Logger\LoggerTrait;
+use WBW\Library\Common\Traits\Booleans\BooleanDebugTrait;
 
 /**
  * Abstract provider.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Provider
+ * @package WBW\Library\Common\Provider
  * @abstract
  */
 abstract class AbstractProvider {
@@ -45,10 +43,10 @@ abstract class AbstractProvider {
     /**
      * Build a resource path.
      *
-     * @param AbstractRequest $request The request.
+     * @param RequestInterface $request The request.
      * @return string Returns the resource path.
      */
-    protected function buildResourcePath(AbstractRequest $request): string {
+    protected function buildResourcePath(RequestInterface $request): string {
 
         if (false === ($request instanceof SubstituableRequestInterface)) {
             return $request->getResourcePath();

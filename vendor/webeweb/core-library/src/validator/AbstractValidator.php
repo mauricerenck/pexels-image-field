@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the core-library package.
  *
@@ -11,16 +9,15 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Validator;
+declare(strict_types = 1);
 
-use WBW\Library\Validator\Api\RuleSetInterface;
-use WBW\Library\Validator\Api\ValidatorInterface;
+namespace WBW\Library\Common\Validator;
 
 /**
  * Abstract validator.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Validator
+ * @package WBW\Library\Common\Validator
  * @abstract
  */
 abstract class AbstractValidator implements ValidatorInterface {
@@ -28,7 +25,7 @@ abstract class AbstractValidator implements ValidatorInterface {
     /**
      * Rule set.
      *
-     * @var RuleSetInterface
+     * @var RuleSetInterface|null
      */
     private $ruleSet;
 

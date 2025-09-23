@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the pexels-library package.
  *
@@ -11,9 +9,12 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
+declare(strict_types = 1);
+
 namespace WBW\Library\Pexels\Serializer;
 
 use InvalidArgumentException;
+use WBW\Library\Common\Helper\ArrayHelper;
 use WBW\Library\Pexels\Api\RequestInterface;
 use WBW\Library\Pexels\Request\CollectionRequest;
 use WBW\Library\Pexels\Request\CollectionsRequest;
@@ -21,7 +22,6 @@ use WBW\Library\Pexels\Request\CuratedPhotosRequest;
 use WBW\Library\Pexels\Request\PopularVideosRequest;
 use WBW\Library\Pexels\Request\SearchPhotosRequest;
 use WBW\Library\Pexels\Request\SearchVideosRequest;
-use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * Request serializer.

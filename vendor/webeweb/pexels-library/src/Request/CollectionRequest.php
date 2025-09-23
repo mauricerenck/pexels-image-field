@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the pexels-library package.
  *
@@ -11,13 +9,15 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
+declare(strict_types = 1);
+
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Common\Traits\Strings\StringIdTrait;
+use WBW\Library\Common\Traits\Strings\StringTypeTrait;
 use WBW\Library\Pexels\Response\AbstractResponse;
 use WBW\Library\Pexels\Serializer\RequestSerializer;
 use WBW\Library\Pexels\Serializer\ResponseDeserializer;
-use WBW\Library\Traits\Strings\StringIdTrait;
-use WBW\Library\Traits\Strings\StringTypeTrait;
 
 /**
  * Collection request.

@@ -9,10 +9,12 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types = 1);
+
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use WBW\Library\Traits\Strings\StringDirectoryTrait;
-use WBW\Library\Types\Helper\DateTimeHelper;
+use WBW\Library\Common\Helper\DateTimeHelper;
+use WBW\Library\Common\Traits\Strings\StringDirectoryTrait;
 
 /**
  * Workspace.

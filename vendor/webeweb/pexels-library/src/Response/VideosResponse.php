@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the pexels-library package.
  *
@@ -11,17 +9,19 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
+declare(strict_types = 1);
+
 namespace WBW\Library\Pexels\Response;
 
+use WBW\Library\Common\Traits\Integers\IntegerPageTrait;
+use WBW\Library\Common\Traits\Integers\IntegerPerPageTrait;
+use WBW\Library\Common\Traits\Strings\StringUrlTrait;
 use WBW\Library\Pexels\Api\PaginateResponseInterface;
 use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Pexels\Traits\Integers\IntegerTotalResultsTrait;
 use WBW\Library\Pexels\Traits\Strings\StringNextPageTrait;
 use WBW\Library\Pexels\Traits\Strings\StringPrevPageTrait;
-use WBW\Library\Traits\Integers\IntegerPageTrait;
-use WBW\Library\Traits\Integers\IntegerPerPageTrait;
-use WBW\Library\Traits\Strings\StringUrlTrait;
 
 /**
  * Videos response.

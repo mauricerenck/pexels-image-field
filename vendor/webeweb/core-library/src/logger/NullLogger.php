@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the core-library package.
  *
@@ -11,7 +9,9 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Logger;
+declare(strict_types = 1);
+
+namespace WBW\Library\Common\Logger;
 
 use Psr\Log\AbstractLogger;
 
@@ -19,7 +19,7 @@ use Psr\Log\AbstractLogger;
  * Null logger.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Logger
+ * @package WBW\Library\Common\Logger
  */
 class NullLogger extends AbstractLogger {
 

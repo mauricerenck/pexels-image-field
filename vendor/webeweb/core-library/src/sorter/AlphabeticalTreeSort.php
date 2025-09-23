@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the core-library package.
  *
@@ -11,30 +9,29 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Sorter;
+declare(strict_types = 1);
 
-use WBW\Library\Sorter\Helper\AlphabeticalTreeNodeHelper;
-use WBW\Library\Sorter\Model\AlphabeticalTreeNodeInterface;
+namespace WBW\Library\Common\Sorter;
 
 /**
  * Alphabetical tree sort.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Sorter
+ * @package WBW\Library\Common\Sorter
  */
 class AlphabeticalTreeSort {
 
     /**
      * Nodes.
      *
-     * @var AlphabeticalTreeNodeInterface[]
+     * @var AlphabeticalNodeInterface[]|null
      */
     private $nodes;
 
     /**
      * Constructor.
      *
-     * @param AlphabeticalTreeNodeInterface[] $nodes The nodes.
+     * @param AlphabeticalNodeInterface[] $nodes The nodes.
      */
     public function __construct(array $nodes) {
         $this->setNodes($nodes);
@@ -43,17 +40,17 @@ class AlphabeticalTreeSort {
     /**
      * Compare two nodes.
      *
-     * @param AlphabeticalTreeNodeInterface $a The node A.
-     * @param AlphabeticalTreeNodeInterface $b The node B.
+     * @param AlphabeticalNodeInterface $a The node A.
+     * @param AlphabeticalNodeInterface $b The node B.
      * @return int Returns
      *  < O if the node A is lesser than node B
      *  > 0 if the node A is greater than node B
      *  = 0 if the two nodes are equals
      */
-    protected function compare(AlphabeticalTreeNodeInterface $a, AlphabeticalTreeNodeInterface $b): int {
+    protected function compare(AlphabeticalNodeInterface $a, AlphabeticalNodeInterface $b): int {
 
-        $pathA = AlphabeticalTreeNodeHelper::getPath($a);
-        $pathB = AlphabeticalTreeNodeHelper::getPath($b);
+        $pathA = AlphabeticalNodeHelper::getPath($a);
+        $pathB = AlphabeticalNodeHelper::getPath($b);
 
         $count = count($pathA);
 
@@ -63,7 +60,7 @@ class AlphabeticalTreeSort {
             $itemB = true === isset($pathB[$i]) ? $pathB[$i] : null;
 
             if ($itemA !== $itemB) {
-                return null !== $itemB ? strcasecmp($itemA->getAlphabeticalTreeNodeLabel(), $itemB->getAlphabeticalTreeNodeLabel()) : 1;
+                return null !== $itemB ? strcasecmp($itemA->getAlphabeticalNodeLabel(), $itemB->getAlphabeticalNodeLabel()) : 1;
             }
         }
 
@@ -73,7 +70,7 @@ class AlphabeticalTreeSort {
     /**
      * Get the nodes.
      *
-     * @return AlphabeticalTreeNodeInterface[] Returns the nodes.
+     * @return AlphabeticalNodeInterface[] Returns the nodes.
      */
     public function getNodes(): array {
         return $this->nodes;
@@ -82,7 +79,7 @@ class AlphabeticalTreeSort {
     /**
      * Set the nodes.
      *
-     * @param AlphabeticalTreeNodeInterface[] $nodes The nodes.
+     * @param AlphabeticalNodeInterface[] $nodes The nodes.
      * @return AlphabeticalTreeSort Returns this alphabetical tree sort.
      */
     protected function setNodes(array $nodes): AlphabeticalTreeSort {

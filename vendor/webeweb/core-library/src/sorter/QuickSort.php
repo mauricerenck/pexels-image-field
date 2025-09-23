@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the core-library package.
  *
@@ -11,13 +9,15 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Sorter;
+declare(strict_types = 1);
+
+namespace WBW\Library\Common\Sorter;
 
 /**
  * Quick sort.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Sorter
+ * @package WBW\Library\Common\Sorter
  */
 class QuickSort {
 

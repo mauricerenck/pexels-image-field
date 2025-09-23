@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the core-library package.
  *
@@ -11,7 +9,9 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Security;
+declare(strict_types = 1);
+
+namespace WBW\Library\Common\Security;
 
 use Throwable;
 
@@ -19,7 +19,7 @@ use Throwable;
  * Token generator.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Security
+ * @package WBW\Library\Common\Security
  */
 class TokenGenerator {
 

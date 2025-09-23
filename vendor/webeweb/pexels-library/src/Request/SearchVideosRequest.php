@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the pexels-library package.
  *
@@ -11,17 +9,19 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
+declare(strict_types = 1);
+
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Common\Traits\Integers\IntegerPageTrait;
+use WBW\Library\Common\Traits\Integers\IntegerPerPageTrait;
+use WBW\Library\Common\Traits\Strings\StringLocaleTrait;
+use WBW\Library\Common\Traits\Strings\StringOrientationTrait;
+use WBW\Library\Common\Traits\Strings\StringQueryTrait;
+use WBW\Library\Common\Traits\Strings\StringSizeTrait;
 use WBW\Library\Pexels\Response\AbstractResponse;
 use WBW\Library\Pexels\Serializer\RequestSerializer;
 use WBW\Library\Pexels\Serializer\ResponseDeserializer;
-use WBW\Library\Traits\Integers\IntegerPageTrait;
-use WBW\Library\Traits\Integers\IntegerPerPageTrait;
-use WBW\Library\Traits\Strings\StringLocaleTrait;
-use WBW\Library\Traits\Strings\StringOrientationTrait;
-use WBW\Library\Traits\Strings\StringQueryTrait;
-use WBW\Library\Traits\Strings\StringSizeTrait;
 
 /**
  * Search videos request.

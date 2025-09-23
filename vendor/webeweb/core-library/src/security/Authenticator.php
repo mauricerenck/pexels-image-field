@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the core-library package.
  *
@@ -11,16 +9,18 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Security;
+declare(strict_types = 1);
 
-use WBW\Library\Traits\Integers\IntegerPortTrait;
-use WBW\Library\Traits\Strings\StringHostnameTrait;
+namespace WBW\Library\Common\Security;
+
+use WBW\Library\Common\Traits\Integers\IntegerPortTrait;
+use WBW\Library\Common\Traits\Strings\StringHostnameTrait;
 
 /**
  * Authenticator.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Security
+ * @package WBW\Library\Common\Security
  */
 class Authenticator {
 

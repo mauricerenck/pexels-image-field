@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the core-library package.
  *
@@ -11,16 +9,18 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Traits\Compounds;
+declare(strict_types = 1);
 
-use WBW\Library\Traits\Floats\FloatXTrait;
-use WBW\Library\Traits\Floats\FloatYTrait;
+namespace WBW\Library\Common\Traits\Compounds;
+
+use WBW\Library\Common\Traits\Floats\FloatXTrait;
+use WBW\Library\Common\Traits\Floats\FloatYTrait;
 
 /**
  * Compound point trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Traits\Compounds
+ * @package WBW\Library\Common\Traits\Compounds
  */
 trait CompoundPointTrait {
 

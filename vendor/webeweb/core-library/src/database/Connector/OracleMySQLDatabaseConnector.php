@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the core-library package.
  *
@@ -11,16 +9,18 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Database\Connector;
+declare(strict_types = 1);
+
+namespace WBW\Library\Common\Database\Connector;
 
 use PDO;
-use WBW\Library\Security\Authenticator;
+use WBW\Library\Common\Security\Authenticator;
 
 /**
  * Oracle MySQL database connector.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Database\Connector
+ * @package WBW\Library\Common\Database\Connector
  */
 class OracleMySQLDatabaseConnector extends AbstractDatabaseConnector {
 

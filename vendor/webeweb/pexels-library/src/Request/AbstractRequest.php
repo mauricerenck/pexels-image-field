@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the pexels-library package.
  *
@@ -11,12 +9,14 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
+declare(strict_types = 1);
+
 namespace WBW\Library\Pexels\Request;
 
 use InvalidArgumentException;
+use WBW\Library\Common\Provider\AbstractRequest as BaseRequest;
 use WBW\Library\Pexels\Api\RequestInterface;
 use WBW\Library\Pexels\Response\AbstractResponse;
-use WBW\Library\Provider\Request\AbstractRequest as BaseRequest;
 
 /**
  * Abstract request.

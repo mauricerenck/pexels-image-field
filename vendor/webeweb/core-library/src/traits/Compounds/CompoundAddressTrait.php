@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the core-library package.
  *
@@ -11,20 +9,22 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Traits\Compounds;
+declare(strict_types = 1);
 
-use WBW\Library\Traits\Strings\StringAddresseeTrait;
-use WBW\Library\Traits\Strings\StringCountryTrait;
-use WBW\Library\Traits\Strings\StringHouseNumberTrait;
-use WBW\Library\Traits\Strings\StringLocationTrait;
-use WBW\Library\Traits\Strings\StringPostalCodeTrait;
-use WBW\Library\Traits\Strings\StringStreetNameTrait;
+namespace WBW\Library\Common\Traits\Compounds;
+
+use WBW\Library\Common\Traits\Strings\StringAddresseeTrait;
+use WBW\Library\Common\Traits\Strings\StringCountryTrait;
+use WBW\Library\Common\Traits\Strings\StringHouseNumberTrait;
+use WBW\Library\Common\Traits\Strings\StringLocationTrait;
+use WBW\Library\Common\Traits\Strings\StringPostalCodeTrait;
+use WBW\Library\Common\Traits\Strings\StringStreetNameTrait;
 
 /**
  * Compound address trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Traits\Compounds
+ * @package WBW\Library\Common\Traits\Compounds
  */
 trait CompoundAddressTrait {
 

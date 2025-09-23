@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the core-library package.
  *
@@ -11,7 +9,9 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Traits\DateTimes;
+declare(strict_types = 1);
+
+namespace WBW\Library\Common\Traits\DateTimes;
 
 use DateTime;
 
@@ -19,7 +19,7 @@ use DateTime;
  * Date/time begins on trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Traits\DateTimes
+ * @package WBW\Library\Common\Traits\DateTimes
  */
 trait DateTimeBeginsOnTrait {
 
