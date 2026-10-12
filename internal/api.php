@@ -72,7 +72,10 @@ return [
                 $request->setQuery($query);
                 $request->setPerPage(option('mauricerenck.PexelsImageField.images', 12));
                 $request->setPage($page);
-                // $request->setOrientation('landscape'); // Optional
+                // Querformat-Suche, wenn das Feld mit downloadSize: landscape konfiguriert ist
+                if ($downloadSize === 'landscape') {
+                    $request->setOrientation('landscape');
+                }
                 // $request->setSize('large'); // Optional
                 // $request->setLocale('en-US'); // Optional
 
