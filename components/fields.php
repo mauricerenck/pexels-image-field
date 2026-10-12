@@ -10,8 +10,9 @@ return [
             }
         ],
         'props' => [
-            'downloadSize' => function () {
-                return option('mauricerenck.PexelsImageField.downloadSize', 'large');
+            // Wert aus der Blueprint (downloadSize: landscape) hat Vorrang vor der Option in der config.php
+            'downloadSize' => function ($downloadSize = null) {
+                return $downloadSize ?: option('mauricerenck.PexelsImageField.downloadSize', 'large');
             },
         ]
     ]
