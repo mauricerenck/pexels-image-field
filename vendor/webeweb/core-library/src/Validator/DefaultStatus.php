@@ -27,7 +27,7 @@ class DefaultStatus extends AbstractStatus {
      * @param int|null $code The code.
      * @param string|null $message The message.
      */
-    public function __construct(int $code = null, string $message = null) {
+    public function __construct(?int $code = null, ?string $message = null) {
         parent::__construct($code, $message);
     }
 }

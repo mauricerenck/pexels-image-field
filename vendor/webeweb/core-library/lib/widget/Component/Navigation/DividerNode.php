@@ -30,7 +30,7 @@ class DividerNode extends AbstractNavigationNode {
      * @param string $label The label.
      * @param string|null $icon The icon.
      */
-    public function __construct(string $label, string $icon = null) {
+    public function __construct(string $label, ?string $icon = null) {
         parent::__construct($label, $icon, null, null);
 
         $this->setEnable(true);

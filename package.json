@@ -1,6 +1,6 @@
 {
     "name": "pexels-image-field",
-    "version": "0.0.0",
+    "version": "2.3.0",
     "description": "A Kirby Plugin Starterkit",
     "main": "index.js",
     "author": "Maurice Renck",

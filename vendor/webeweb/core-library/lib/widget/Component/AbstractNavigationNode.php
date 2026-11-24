@@ -82,7 +82,7 @@ abstract class AbstractNavigationNode implements NavigationNodeInterface {
      * @param string|null $uri The URI.
      * @param string|null $matcher The matcher.
      */
-    protected function __construct(string $label, string $icon = null, string $uri = null, ?string $matcher = self::MATCHER_URL) {
+    protected function __construct(string $label, ?string $icon = null, ?string $uri = null, ?string $matcher = self::MATCHER_URL) {
         $this->setActive(false);
         $this->setEnable(false);
         $this->setIcon($icon);

@@ -238,7 +238,7 @@ abstract class AbstractNode {
      * @param AbstractNode|null $parent The parent.
      * @return AbstractNode Returns this node.
      */
-    protected function setParent(AbstractNode $parent = null): AbstractNode {
+    protected function setParent(?AbstractNode $parent): AbstractNode {
         $this->parent = $parent;
         return $this;
     }

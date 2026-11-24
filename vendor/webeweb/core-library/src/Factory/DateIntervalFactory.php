@@ -36,7 +36,7 @@ class DateIntervalFactory {
      * @return DateInterval|null Returns the interval.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    public static function newDateInterval(int $year = null, int $month = null, int $day = null, int $hour = null, int $minute = null, int $second = null): ?DateInterval {
+    public static function newDateInterval(?int $year = null, ?int $month = null, ?int $day = null, ?int $hour = null, ?int $minute = null, ?int $second = null): ?DateInterval {
 
         $duration = static::newDuration($year, $month, $day, $hour, $minute, $second);
         if (null === $duration) {
@@ -58,7 +58,7 @@ class DateIntervalFactory {
      * @return string|null Returns the duration.
      * @return string|null Returns the duration.
      */
-    protected static function newDuration(int $year = null, int $month = null, int $day = null, int $hour = null, int $minute = null, int $second = null): ?string {
+    protected static function newDuration(?int $year = null, ?int $month = null, ?int $day = null, ?int $hour = null, ?int $minute = null, ?int $second = null): ?string {
 
         $f = "%d%s";
         $p = [];

@@ -47,7 +47,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @param string $accessToken The access token.
      * @param LoggerInterface|null $logger The logger.
      */
-    public function __construct(string $endpointPath, string $accessToken, LoggerInterface $logger = null) {
+    public function __construct(string $endpointPath, string $accessToken, ?LoggerInterface $logger = null) {
         parent::__construct($logger);
 
         $this->setAccessToken($accessToken);

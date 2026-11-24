@@ -24,14 +24,14 @@ class Line {
     /**
      * Point "A".
      *
-     * @var Point
+     * @var Point|null
      */
     private $a;
 
     /**
      * Point "B".
      *
-     * @var Point
+     * @var Point|null
      */
     private $b;
 
@@ -41,7 +41,7 @@ class Line {
      * @param Point|null $a The point "A".
      * @param Point|null $b The point "B".
      */
-    public function __construct(Point $a = null, Point $b = null) {
+    public function __construct(?Point $a = null, ?Point $b = null) {
         $this->setA($a);
         $this->setB($b);
     }
@@ -153,7 +153,7 @@ class Line {
      * @param Point|null $a The point "A".
      * @return Line Returns this line.
      */
-    public function setA(Point $a = null): Line {
+    public function setA(?Point $a): Line {
         $this->a = $a;
         return $this;
     }
@@ -164,7 +164,7 @@ class Line {
      * @param Point|null $b The point "B".
      * @return Line Returns this line.
      */
-    public function setB(Point $b = null): Line {
+    public function setB(?Point $b): Line {
         $this->b = $b;
         return $this;
     }

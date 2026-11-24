@@ -30,7 +30,7 @@ class NumberArgumentException extends InvalidArgumentException {
      * @param mixed $argument The argument.
      * @param Throwable|null $previous The previous exception.
      */
-    public function __construct($argument, Throwable $previous = null) {
+    public function __construct($argument, ?Throwable $previous = null) {
         parent::__construct(sprintf('The argument "%s" is not a number', print_r($argument, true)), 500, $previous);
     }
 }

@@ -172,7 +172,7 @@ class TypeHelper {
      * @return mixed Returns the value.
      * @throws InvalidArgumentException Throws an invalid type exception.
      */
-    public static function transform(?string $value, int $type, string $dateFormat = null) {
+    public static function transform(?string $value, int $type, ?string $dateFormat = null) {
 
         switch ($type) {
 

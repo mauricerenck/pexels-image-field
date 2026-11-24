@@ -88,7 +88,7 @@ class Statistics {
      * @param DOMNode|null $parent The parent DOM node.
      * @return Statistics Returns this statistics.
      */
-    public function parse(DOMNode $domNode, DOMNode $parent = null): Statistics {
+    public function parse(DOMNode $domNode, ?DOMNode $parent = null): Statistics {
 
         $key = null === $parent ? $domNode->nodeName : implode(">", [$parent->nodeName, $domNode->nodeName]);
 

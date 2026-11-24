@@ -66,7 +66,7 @@ class XmlDeserializer extends AbstractSerializer {
      * @param DOMNodeList<DOMNode>|null $domNodeList The DOM node list.
      * @return DOMNode|null Returns the DOM node in case of success, null otherwise.
      */
-    public static function getDomNodeByName(string $nodeName, DOMNodeList $domNodeList = null): ?DOMNode {
+    public static function getDomNodeByName(string $nodeName, ?DOMNodeList $domNodeList = null): ?DOMNode {
 
         $domNodes = static::getDomNodesByName($nodeName, $domNodeList);
         if (1 !== count($domNodes)) {
@@ -83,7 +83,7 @@ class XmlDeserializer extends AbstractSerializer {
      * @param DOMNodeList<DOMNode>|null $domNodeList The DOM node list.
      * @return DOMNode[] Returns the DOM nodes.
      */
-    public static function getDomNodesByName(string $nodeName, DOMNodeList $domNodeList = null): array {
+    public static function getDomNodesByName(string $nodeName, ?DOMNodeList $domNodeList = null): array {
 
         if (null === $domNodeList) {
             return [];

@@ -68,7 +68,7 @@ class DateTimeMethod {
      * @throws InvalidArgumentException Throws an invalid argument exception if an offset is less than zero.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    public static function addInterval(DateTime $dateTime, int $year = null, int $month = null, int $day = null, int $hour = null, int $minute = null, int $second = null): DateTime {
+    public static function addInterval(DateTime $dateTime, ?int $year = null, ?int $month = null, ?int $day = null, ?int $hour = null, ?int $minute = null, ?int $second = null): DateTime {
         static::toException($year, $month, $day, $hour, $minute, $second);
         return static::setInterval($dateTime, $year, $month, $day, $hour, $minute, $second);
     }
@@ -167,7 +167,7 @@ class DateTimeMethod {
      * @throws InvalidArgumentException Throws an invalid argument exception.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    public static function modInterval(DateTime $dateTime, int $year = null, int $month = null, int $day = null, int $hour = null, int $minute = null, int $second = null): DateTime {
+    public static function modInterval(DateTime $dateTime, ?int $year = null, ?int $month = null, ?int $day = null, int $hour = null, int $minute = null, int $second = null): DateTime {
 
         $operator = static::toOperator($year, $month, $day, $hour, $minute, $second);
         if (0 === $operator) {
@@ -238,7 +238,7 @@ class DateTimeMethod {
      * @return DateTime Returns the date/time.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected static function setInterval(DateTime $dateTime, int $year = null, int $month = null, int $day = null, int $hour = null, int $minute = null, int $second = null): DateTime {
+    protected static function setInterval(DateTime $dateTime, ?int $year = null, ?int $month = null, ?int $day = null, ?int $hour = null, ?int $minute = null, ?int $second = null): DateTime {
 
         $interval = DateIntervalFactory::newDateInterval($year, $month, $day, $hour, $minute, $second);
         if (null === $interval) {
@@ -300,7 +300,7 @@ class DateTimeMethod {
      * @throws InvalidArgumentException Throws an invalid argument exception if an offset is less than zero.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    public static function subInterval(DateTime $dateTime, int $year = null, int $month = null, int $day = null, int $hour = null, int $minute = null, int $second = null): DateTime {
+    public static function subInterval(DateTime $dateTime, ?int $year = null, ?int $month = null, ?int $day = null, ?int $hour = null, ?int $minute = null, ?int $second = null): DateTime {
         static::toException($year, $month, $day, $hour, $minute, $second);
         return static::setInterval($dateTime, -$year, -$month, -$day, -$hour, -$minute, -$second);
     }

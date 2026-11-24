@@ -50,7 +50,7 @@ class XmlProvider {
      * @return Tv Returns the TV.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    public static function getXml(string $url, string $filename, LoggerInterface $logger = null): Tv {
+    public static function getXml(string $url, string $filename, ?LoggerInterface $logger = null): Tv {
 
         $saveTo = GuzzleHelper::getStreamParameterName();
         $stream = fopen($filename, "w");
@@ -77,7 +77,7 @@ class XmlProvider {
      * @return Tv Returns the TV.
      * @throws RuntimeException Throws a runtime exception if an error occurs.
      */
-    public static function readXml(string $filename, LoggerInterface $logger = null): Tv {
+    public static function readXml(string $filename, ?LoggerInterface $logger = null): Tv {
 
         XmlDeserializer::setLogger($logger);
 
@@ -120,7 +120,7 @@ class XmlProvider {
      * @param LoggerInterface|null $logger The logger.
      * @return int Returns the number of bytes written.
      */
-    public static function writeXml(Tv $tv, string $filename, LoggerInterface $logger = null): int {
+    public static function writeXml(Tv $tv, string $filename, ?LoggerInterface $logger = null): int {
 
         $xml = [
             '<?xml version="1.0" encoding="utf-8"?>',

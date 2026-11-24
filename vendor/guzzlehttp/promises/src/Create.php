@@ -22,7 +22,15 @@ final class Create
             $wfn = method_exists($value, 'wait') ? [$value, 'wait'] : null;
             $cfn = method_exists($value, 'cancel') ? [$value, 'cancel'] : null;
             $promise = new Promise($wfn, $cfn);
-            $value->then([$promise, 'resolve'], [$promise, 'reject']);
+            try {
+                $value->then([$promise, 'resolve'], [$promise, 'reject']);
+            } catch (\Throwable $e) {
+                if (State::isPending($promise)) {
+                    // The thenable may still hold the callbacks.
+                    $promise = new Promise();
+                    $promise->reject($e);
+                }
+            }
 
             return $promise;
         }
@@ -72,6 +80,16 @@ final class Create
 
         if (is_array($value)) {
             return new \ArrayIterator($value);
+        }
+
+        if (!is_iterable($value)) {
+            \trigger_deprecation(
+                'guzzlehttp/promises',
+                '2.5',
+                'Passing a non-iterable to %s::%s() is deprecated; guzzlehttp/promises 3.0 will require an iterable.',
+                __CLASS__,
+                __FUNCTION__
+            );
         }
 
         return new \ArrayIterator([$value]);

@@ -106,7 +106,7 @@ class Page {
      * @param Document|null $parent The parent.
      * @return Page Returns this page.
      */
-    public function setParent(Document $parent = null): Page {
+    public function setParent(?Document $parent): Page {
         $this->parent = $parent;
         return $this;
     }

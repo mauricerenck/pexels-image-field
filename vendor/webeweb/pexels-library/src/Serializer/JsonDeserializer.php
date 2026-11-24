@@ -160,6 +160,7 @@ class JsonDeserializer {
         $model->setFileType(ArrayHelper::get($data, "file_type"));
         $model->setWidth(ArrayHelper::get($data, "width"));
         $model->setHeight(ArrayHelper::get($data, "height"));
+        $model->setFps(ArrayHelper::get($data, "fps"));
         $model->setLink(ArrayHelper::get($data, "link"));
 
         return $model;

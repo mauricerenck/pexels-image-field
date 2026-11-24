@@ -32,7 +32,7 @@ abstract class AbstractException extends BaseException {
      * @param int $code The code.
      * @param Throwable|null $previous The previous exception.
      */
-    public function __construct(string $message, int $code = 500, Throwable $previous = null) {
+    public function __construct(string $message, int $code = 500, ?Throwable $previous = null) {
         parent::__construct($message, $code, $previous);
     }
 }

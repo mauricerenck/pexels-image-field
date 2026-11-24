@@ -40,7 +40,7 @@ class ApiProvider extends AbstractProvider {
      * @return ApiProvider Returns the API provider.
      * @throws ProviderException Throws a provider exception if an error occurs.
      */
-    public static function login(string $endpoint, string $username, string $password, LoggerInterface $logger = null): ApiProvider {
+    public static function login(string $endpoint, string $username, string $password, ?LoggerInterface $logger = null): ApiProvider {
 
         $config = [
             "base_uri"    => $endpoint . "/",

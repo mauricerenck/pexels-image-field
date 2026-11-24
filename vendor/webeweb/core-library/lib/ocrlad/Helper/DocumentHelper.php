@@ -48,7 +48,7 @@ class DocumentHelper {
      * @param int|null $page The page.
      * @return Word Returns the word in case of success, null otherwise.
      */
-    public function findWordAt(Point $position, int $page = null): ?Word {
+    public function findWordAt(Point $position, ?int $page = null): ?Word {
 
         foreach ($this->getWords($page) as $current) {
 
@@ -71,7 +71,7 @@ class DocumentHelper {
      * @param int|null $page The page.
      * @return Word[] Returns the words.
      */
-    public function findWordsIn(Point $start, Point $end, int $page = null): array {
+    public function findWordsIn(Point $start, Point $end, ?int $page = null): array {
 
         $matches = [];
 
@@ -98,7 +98,7 @@ class DocumentHelper {
      * @param int|null $page The page.
      * @return Word[] Returns the words.
      */
-    public function findWordsStartAt(Point $start, int $page = null): array {
+    public function findWordsStartAt(Point $start, ?int $page = null): array {
 
         $matches = [];
 

@@ -33,7 +33,7 @@ class Point {
      * @param float|null $x The x.
      * @param float|null $y The y.
      */
-    public function __construct(float $x = null, float $y = null) {
+    public function __construct(?float $x = null, ?float $y = null) {
         $this->setX($x);
         $this->setY($y);
     }

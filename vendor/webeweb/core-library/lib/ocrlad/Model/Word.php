@@ -169,7 +169,7 @@ class Word {
      * @param Page|null $parent The parent.
      * @return Word Returns this word.
      */
-    public function setParent(Page $parent = null): Word {
+    public function setParent(?Page $parent): Word {
         $this->parent = $parent;
         return $this;
     }

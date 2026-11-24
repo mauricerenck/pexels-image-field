@@ -1,7 +1,7 @@
 <template>
     <div class="k-pexels-field">
         <k-field :label="label">
-            <k-input theme="field" icon="search" @input="onSubmit" type="text" name="textfield" :value="this.keyword" />
+            <k-input theme="field" icon="search" type="text" name="textfield" :value="keyword" @input="onSubmit" />
         </k-field>
 
         <div>
@@ -12,9 +12,13 @@
                 <k-collection layout="cards" :items="items" />
 
                 <div class="prev-next" v-if="pages > 0">
-                    <button class="k-link k-button" v-on:click="showPrev"><k-icon type="angle-left" /></button>
+                    <button class="k-link k-button" @click="showPrev">
+                        <k-icon type="angle-left" />
+                    </button>
                     <span>{{ pexelPage }} of {{ pages }}</span>
-                    <button class="k-link k-button" v-on:click="showNext"><k-icon type="angle-right" /></button>
+                    <button class="k-link k-button" @click="showNext">
+                        <k-icon type="angle-right" />
+                    </button>
                 </div>
             </div>
         </div>
@@ -23,6 +27,11 @@
 
 <script>
 export default {
+    // Verhindert, dass der @input-Listener des Panels als nativer
+    // DOM-Listener am Root-Element landet (Vue 3 Attribute Fallthrough)
+    inheritAttrs: false,
+    emits: ['input'],
+
     props: {
         label: String,
         value: String,
@@ -30,11 +39,12 @@ export default {
         pageId: String,
     },
 
-    data: function () {
+    data() {
         return {
             items: [],
             selectedPhoto: { id: '', photo: '', photographer: '', photographerUrl: '', downloadUrl: '' },
             keyword: '',
+            timer: null,
             pexelPage: 1,
             perPage: 1,
             remaining: 0,
@@ -43,15 +53,17 @@ export default {
             downloaded: false,
         }
     },
+
     computed: {
         pages() {
-            return Math.round(this.totalResults / this.perPage, 10)
+            return Math.round(this.totalResults / this.perPage)
         },
     },
 
     methods: {
         onSubmit(value) {
             this.keyword = value
+
             if (this.timer !== null) {
                 clearTimeout(this.timer)
             }
@@ -85,43 +97,49 @@ export default {
 
         search(query) {
             this.loading = true
-            this.$api.get(`pexels/search/${query}/${this.pexelPage}/${this.downloadSize}`).then((result) => {
-                this.page = result.page
-                this.perPage = result.perPage
-                this.remaining = result.remaining
-                this.totalResults = result.totalResults
-                this.loading = false
 
-                this.items = result.photos.map((photo) => {
-                    return {
-                        id: photo.id,
-                        downloadUrl: photo.downloadUrl,
-                        link: photo.downloadUrl,
-                        photographer: photo.photographer,
-                        photographerUrl: photo.photographerUrl,
-                        text: `${photo.photographer} <br /> ${photo.width} × ${photo.height}`,
-                        options: [
-                            {
-                                icon: 'open',
-                                text: 'View',
-                                link: photo.downloadUrl,
-                                target: '_blank',
-                            },
-                            {
-                                icon: 'download',
-                                text: 'Download',
-                                click: () => {
-                                    this.downloadImage(photo.id)
+            this.$api
+                .get(`pexels/search/${query}/${this.pexelPage}/${this.downloadSize}`)
+                .then((result) => {
+                    this.perPage = result.perPage
+                    this.remaining = result.remaining
+                    this.totalResults = result.totalResults
+                    this.loading = false
+
+                    this.items = result.photos.map((photo) => {
+                        return {
+                            id: photo.id,
+                            downloadUrl: photo.downloadUrl,
+                            link: photo.downloadUrl,
+                            photographer: photo.photographer,
+                            photographerUrl: photo.photographerUrl,
+                            text: this.$h(`${photo.photographer} <br> ${photo.width} × ${photo.height}`),
+                            options: [
+                                {
+                                    icon: 'open',
+                                    text: 'View',
+                                    link: photo.downloadUrl,
+                                    target: '_blank',
                                 },
+                                {
+                                    icon: 'download',
+                                    text: 'Download',
+                                    click: () => {
+                                        this.downloadImage(photo.id)
+                                    },
+                                },
+                            ],
+                            image: {
+                                src: photo.small,
+                                width: photo.width,
                             },
-                        ],
-                        image: {
-                            src: photo.small,
-                            width: photo.width,
-                        },
-                    }
+                        }
+                    })
                 })
-            })
+                .catch(() => {
+                    this.loading = false
+                    this.$panel.notification.error('Image search failed')
+                })
         },
 
         downloadImage(id) {
@@ -141,13 +159,13 @@ export default {
                 })
                 .then(() => {
                     this.downloaded = false
-                    panel.view.reload()
-                    window.panel.notification.success('Image downloaded')
+                    this.$panel.view.reload()
+                    this.$panel.notification.success('Image downloaded')
                     selectedPhoto.text = currentText
                 })
                 .catch(() => {
                     this.downloaded = false
-                    window.panel.notification.error('Image download failed')
+                    this.$panel.notification.error('Image download failed')
                     selectedPhoto.text = currentText
                 })
         },
@@ -155,7 +173,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="css">
 .k-pexels-field {
     .loader {
         display: flex;

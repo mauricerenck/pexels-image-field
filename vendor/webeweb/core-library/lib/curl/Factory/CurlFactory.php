@@ -42,7 +42,7 @@ class CurlFactory {
      * @param string|null $resourcePath The resource path.
      * @return RequestInterface Returns the request.
      */
-    public static function newCurlRequest(string $method, Configuration $configuration = null, string $resourcePath = null) {
+    public static function newCurlRequest(string $method, ?Configuration $configuration = null, ?string $resourcePath = null) {
 
         if (null === $configuration) {
             $configuration = new Configuration();

@@ -1,15 +1,20 @@
 {
     "name": "mauricerenck/pexelsimagefield",
-    "version": "2.2.1",
-    "description": "A Kirby Plugin Starterkit",
+    "version": "2.3.0",
+    "description": "Search for stockimages right within the panel",
     "type": "kirby-plugin",
     "license": "MIT",
     "authors": [
         {
             "name": "Maurice Renck",
-            "email": "hello@maurice-renck.de"
+            "email": "kirby@maurice-renck.de"
         }
     ],
+    "extra": {
+        "kirby": {
+            "compatible": "^5 || ^6.0"
+        }
+    },
     "autoload": {
         "psr-4": {
             "mauricerenck\\PexelsImageField\\": "utils/"
@@ -24,8 +29,8 @@
         "webeweb/pexels-library": "^3"
     },
     "require-dev": {
-        "getkirby/cms": "^5",
-        "phpunit/phpunit": "9.5"
+        "getkirby/cms": "^6",
+        "phpunit/phpunit": "^12"
     },
     "replace": {},
     "suggests": {},

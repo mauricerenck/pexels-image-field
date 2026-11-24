@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'mauricerenck\\PexelsImageField\\' => array($baseDir . '/utils'),
     'WBW\\Library\\XmlTv\\' => array($vendorDir . '/webeweb/core-library/lib/xmltv'),
+    'WBW\\Library\\Wsdl2Php\\' => array($vendorDir . '/webeweb/core-library/lib/wsdl2php'),
     'WBW\\Library\\Widget\\' => array($vendorDir . '/webeweb/core-library/lib/widget'),
     'WBW\\Library\\SkiData\\' => array($vendorDir . '/webeweb/core-library/lib/skidata'),
     'WBW\\Library\\QueryBuilder\\' => array($vendorDir . '/webeweb/core-library/lib/querybuilder'),
@@ -21,6 +22,7 @@ return array(
     'WBW\\Library\\Common\\' => array($vendorDir . '/webeweb/core-library/src'),
     'WBW\\Library\\Ciqual\\' => array($vendorDir . '/webeweb/core-library/lib/ciqual'),
     'WBW\\Library\\Adoria\\' => array($vendorDir . '/webeweb/core-library/lib/adoria'),
+    'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-factory/src', $vendorDir . '/psr/http-message/src'),
     'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),

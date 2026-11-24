@@ -43,7 +43,7 @@ class SimpleJsonResponseData implements SimpleJsonResponseDataInterface {
      * @param int|null $status The status.
      * @param string|null $notify The notify.
      */
-    public function __construct(int $status = null, string $notify = null) {
+    public function __construct(int $status = null, ?string $notify = null) {
         $this->setNotify($notify);
         $this->setStatus($status);
     }

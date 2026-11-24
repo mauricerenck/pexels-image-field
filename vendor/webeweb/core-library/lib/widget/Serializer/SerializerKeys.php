@@ -19,7 +19,7 @@ namespace WBW\Library\Widget\Serializer;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Widget\Serializer
  */
-class SerializerKeys {
+interface SerializerKeys {
 
     /**
      * Serializer key "by default".

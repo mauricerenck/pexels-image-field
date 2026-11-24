@@ -217,7 +217,7 @@ class ArrayHelper {
      * @param string|null $path The path.
      * @return mixed[] Returns the obfuscated array.
      */
-    public static function obfuscate(array $array, array $values, string $path = null): array {
+    public static function obfuscate(array $array, array $values, ?string $path = null): array {
 
         $result = $array;
         $paths  = array_keys($values);

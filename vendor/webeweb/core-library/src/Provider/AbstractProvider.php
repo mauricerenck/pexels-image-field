@@ -35,7 +35,7 @@ abstract class AbstractProvider {
      *
      * @param LoggerInterface|null $logger The logger.
      */
-    protected function __construct(LoggerInterface $logger = null) {
+    protected function __construct(?LoggerInterface $logger = null) {
         $this->setDebug(false);
         $this->setLogger($logger);
     }

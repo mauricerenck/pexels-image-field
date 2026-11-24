@@ -43,6 +43,13 @@ class VideoFile {
     private $fileType;
 
     /**
+     * FPS.
+     *
+     * @var float|null
+     */
+    private $fps;
+
+    /**
      * Quality.
      *
      * @var string|null
@@ -56,6 +63,15 @@ class VideoFile {
      */
     public function getFileType(): ?string {
         return $this->fileType;
+    }
+
+    /**
+     * Get the FPS.
+     *
+     * @return float|null Returns the FPS.
+     */
+    public function getFps(): ?float {
+        return $this->fps;
     }
 
     /**
@@ -75,6 +91,17 @@ class VideoFile {
      */
     public function setFileType(?string $fileType): VideoFile {
         $this->fileType = $fileType;
+        return $this;
+    }
+
+    /**
+     * Set the fps.
+     *
+     * @param float|null $fps The fps.
+     * @return VideoFile Returns this video file.
+     */
+    public function setFps(?float $fps): VideoFile {
+        $this->fps = $fps;
         return $this;
     }
 

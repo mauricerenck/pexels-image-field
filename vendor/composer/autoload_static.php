@@ -7,19 +7,21 @@ namespace Composer\Autoload;
 class ComposerStaticInitd6dab7feb2c0432282fb013bfa43cbe9
 {
     public static $files = array (
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'm' => 
+        'm' =>
         array (
             'mauricerenck\\PexelsImageField\\' => 30,
         ),
-        'W' => 
+        'W' =>
         array (
             'WBW\\Library\\XmlTv\\' => 18,
+            'WBW\\Library\\Wsdl2Php\\' => 21,
             'WBW\\Library\\Widget\\' => 19,
             'WBW\\Library\\SkiData\\' => 20,
             'WBW\\Library\\QueryBuilder\\' => 25,
@@ -34,17 +36,21 @@ class ComposerStaticInitd6dab7feb2c0432282fb013bfa43cbe9
             'WBW\\Library\\Ciqual\\' => 19,
             'WBW\\Library\\Adoria\\' => 19,
         ),
-        'P' => 
+        'S' =>
+        array (
+            'Symfony\\Polyfill\\Php80\\' => 23,
+        ),
+        'P' =>
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
         ),
-        'K' => 
+        'K' =>
         array (
             'Kirby\\' => 6,
         ),
-        'G' => 
+        'G' =>
         array (
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
@@ -53,98 +59,107 @@ class ComposerStaticInitd6dab7feb2c0432282fb013bfa43cbe9
     );
 
     public static $prefixDirsPsr4 = array (
-        'mauricerenck\\PexelsImageField\\' => 
+        'mauricerenck\\PexelsImageField\\' =>
         array (
             0 => __DIR__ . '/../..' . '/utils',
         ),
-        'WBW\\Library\\XmlTv\\' => 
+        'WBW\\Library\\XmlTv\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/lib/xmltv',
         ),
-        'WBW\\Library\\Widget\\' => 
+        'WBW\\Library\\Wsdl2Php\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php',
+        ),
+        'WBW\\Library\\Widget\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/lib/widget',
         ),
-        'WBW\\Library\\SkiData\\' => 
+        'WBW\\Library\\SkiData\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/lib/skidata',
         ),
-        'WBW\\Library\\QueryBuilder\\' => 
+        'WBW\\Library\\QueryBuilder\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/lib/querybuilder',
         ),
-        'WBW\\Library\\Quadratus\\' => 
+        'WBW\\Library\\Quadratus\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/lib/quadratus',
         ),
-        'WBW\\Library\\Pexels\\' => 
+        'WBW\\Library\\Pexels\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/pexels-library/src',
         ),
-        'WBW\\Library\\OcrLad\\' => 
+        'WBW\\Library\\OcrLad\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/lib/ocrlad',
         ),
-        'WBW\\Library\\Highcharts\\' => 
+        'WBW\\Library\\Highcharts\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/lib/highcharts',
         ),
-        'WBW\\Library\\Ftp\\' => 
+        'WBW\\Library\\Ftp\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/lib/ftp',
         ),
-        'WBW\\Library\\Easilys\\' => 
+        'WBW\\Library\\Easilys\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/lib/easilys',
         ),
-        'WBW\\Library\\Curl\\' => 
+        'WBW\\Library\\Curl\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/lib/curl',
         ),
-        'WBW\\Library\\Common\\' => 
+        'WBW\\Library\\Common\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/src',
         ),
-        'WBW\\Library\\Ciqual\\' => 
+        'WBW\\Library\\Ciqual\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/lib/ciqual',
         ),
-        'WBW\\Library\\Adoria\\' => 
+        'WBW\\Library\\Adoria\\' =>
         array (
             0 => __DIR__ . '/..' . '/webeweb/core-library/lib/adoria',
         ),
-        'Psr\\Log\\' => 
+        'Symfony\\Polyfill\\Php80\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
+        ),
+        'Psr\\Log\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
         ),
-        'Psr\\Http\\Message\\' => 
+        'Psr\\Http\\Message\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/http-factory/src',
             1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'Psr\\Http\\Client\\' => 
+        'Psr\\Http\\Client\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
-        'Kirby\\' => 
+        'Kirby\\' =>
         array (
             0 => __DIR__ . '/..' . '/getkirby/composer-installer/src',
         ),
-        'GuzzleHttp\\Psr7\\' => 
+        'GuzzleHttp\\Psr7\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
-        'GuzzleHttp\\Promise\\' => 
+        'GuzzleHttp\\Promise\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
         ),
-        'GuzzleHttp\\' => 
+        'GuzzleHttp\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
     );
 
     public static $classMap = array (
+        'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'GuzzleHttp\\BodySummarizer' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/BodySummarizer.php',
         'GuzzleHttp\\BodySummarizerInterface' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/BodySummarizerInterface.php',
@@ -170,14 +185,20 @@ class ComposerStaticInitd6dab7feb2c0432282fb013bfa43cbe9
         'GuzzleHttp\\Handler\\CurlFactoryInterface' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/CurlFactoryInterface.php',
         'GuzzleHttp\\Handler\\CurlHandler' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/CurlHandler.php',
         'GuzzleHttp\\Handler\\CurlMultiHandler' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/CurlMultiHandler.php',
+        'GuzzleHttp\\Handler\\CurlShareHandleState' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/CurlShareHandleState.php',
+        'GuzzleHttp\\Handler\\CurlVersion' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/CurlVersion.php',
         'GuzzleHttp\\Handler\\EasyHandle' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/EasyHandle.php',
         'GuzzleHttp\\Handler\\HeaderProcessor' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/HeaderProcessor.php',
+        'GuzzleHttp\\Handler\\HostValidator' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/HostValidator.php',
         'GuzzleHttp\\Handler\\MockHandler' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/MockHandler.php',
         'GuzzleHttp\\Handler\\Proxy' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/Proxy.php',
+        'GuzzleHttp\\Handler\\ProxyEnvironment' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/ProxyEnvironment.php',
         'GuzzleHttp\\Handler\\StreamHandler' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/StreamHandler.php',
+        'GuzzleHttp\\Handler\\TlsVersion' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Handler/TlsVersion.php',
         'GuzzleHttp\\MessageFormatter' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/MessageFormatter.php',
         'GuzzleHttp\\MessageFormatterInterface' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/MessageFormatterInterface.php',
         'GuzzleHttp\\Middleware' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Middleware.php',
+        'GuzzleHttp\\Multiplexing' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Multiplexing.php',
         'GuzzleHttp\\Pool' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Pool.php',
         'GuzzleHttp\\PrepareBodyMiddleware' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php',
         'GuzzleHttp\\Promise\\AggregateException' => __DIR__ . '/..' . '/guzzlehttp/promises/src/AggregateException.php',
@@ -193,6 +214,7 @@ class ComposerStaticInitd6dab7feb2c0432282fb013bfa43cbe9
         'GuzzleHttp\\Promise\\PromisorInterface' => __DIR__ . '/..' . '/guzzlehttp/promises/src/PromisorInterface.php',
         'GuzzleHttp\\Promise\\RejectedPromise' => __DIR__ . '/..' . '/guzzlehttp/promises/src/RejectedPromise.php',
         'GuzzleHttp\\Promise\\RejectionException' => __DIR__ . '/..' . '/guzzlehttp/promises/src/RejectionException.php',
+        'GuzzleHttp\\Promise\\State' => __DIR__ . '/..' . '/guzzlehttp/promises/src/State.php',
         'GuzzleHttp\\Promise\\TaskQueue' => __DIR__ . '/..' . '/guzzlehttp/promises/src/TaskQueue.php',
         'GuzzleHttp\\Promise\\TaskQueueInterface' => __DIR__ . '/..' . '/guzzlehttp/promises/src/TaskQueueInterface.php',
         'GuzzleHttp\\Promise\\Utils' => __DIR__ . '/..' . '/guzzlehttp/promises/src/Utils.php',
@@ -216,6 +238,7 @@ class ComposerStaticInitd6dab7feb2c0432282fb013bfa43cbe9
         'GuzzleHttp\\Psr7\\Query' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Query.php',
         'GuzzleHttp\\Psr7\\Request' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Request.php',
         'GuzzleHttp\\Psr7\\Response' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Response.php',
+        'GuzzleHttp\\Psr7\\Rfc3986' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Rfc3986.php',
         'GuzzleHttp\\Psr7\\Rfc7230' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Rfc7230.php',
         'GuzzleHttp\\Psr7\\ServerRequest' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/ServerRequest.php',
         'GuzzleHttp\\Psr7\\Stream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Stream.php',
@@ -231,11 +254,13 @@ class ComposerStaticInitd6dab7feb2c0432282fb013bfa43cbe9
         'GuzzleHttp\\RequestOptions' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/RequestOptions.php',
         'GuzzleHttp\\RetryMiddleware' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/RetryMiddleware.php',
         'GuzzleHttp\\TransferStats' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/TransferStats.php',
+        'GuzzleHttp\\TransportSharing' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/TransportSharing.php',
         'GuzzleHttp\\Utils' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Utils.php',
         'Kirby\\ComposerInstaller\\CmsInstaller' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/CmsInstaller.php',
         'Kirby\\ComposerInstaller\\Installer' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/Installer.php',
         'Kirby\\ComposerInstaller\\Plugin' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/Plugin.php',
         'Kirby\\ComposerInstaller\\PluginInstaller' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/PluginInstaller.php',
+        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'Psr\\Http\\Client\\ClientExceptionInterface' => __DIR__ . '/..' . '/psr/http-client/src/ClientExceptionInterface.php',
         'Psr\\Http\\Client\\ClientInterface' => __DIR__ . '/..' . '/psr/http-client/src/ClientInterface.php',
         'Psr\\Http\\Client\\NetworkExceptionInterface' => __DIR__ . '/..' . '/psr/http-client/src/NetworkExceptionInterface.php',
@@ -261,6 +286,11 @@ class ComposerStaticInitd6dab7feb2c0432282fb013bfa43cbe9
         'Psr\\Log\\LoggerInterface' => __DIR__ . '/..' . '/psr/log/src/LoggerInterface.php',
         'Psr\\Log\\LoggerTrait' => __DIR__ . '/..' . '/psr/log/src/LoggerTrait.php',
         'Psr\\Log\\NullLogger' => __DIR__ . '/..' . '/psr/log/src/NullLogger.php',
+        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
+        'Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
+        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'WBW\\Library\\Adoria\\Model\\Line' => __DIR__ . '/..' . '/webeweb/core-library/lib/adoria/Model/Line.php',
         'WBW\\Library\\Adoria\\Model\\RequestData' => __DIR__ . '/..' . '/webeweb/core-library/lib/adoria/Model/RequestData.php',
         'WBW\\Library\\Adoria\\Model\\Result' => __DIR__ . '/..' . '/webeweb/core-library/lib/adoria/Model/Result.php',
@@ -2369,6 +2399,44 @@ class ComposerStaticInitd6dab7feb2c0432282fb013bfa43cbe9
         'WBW\\Library\\Widget\\Serializer\\Component\\JsonSerializer' => __DIR__ . '/..' . '/webeweb/core-library/lib/widget/Serializer/Component/JsonSerializer.php',
         'WBW\\Library\\Widget\\Serializer\\SerializerKeys' => __DIR__ . '/..' . '/webeweb/core-library/lib/widget/Serializer/SerializerKeys.php',
         'WBW\\Library\\Widget\\Utility\\ImageUtility' => __DIR__ . '/..' . '/webeweb/core-library/lib/widget/Utility/ImageUtility.php',
+        'WBW\\Library\\Wsdl2Php\\Builder\\AbstractBuilder' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Builder/AbstractBuilder.php',
+        'WBW\\Library\\Wsdl2Php\\Builder\\ClassBuilder' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Builder/ClassBuilder.php',
+        'WBW\\Library\\Wsdl2Php\\Builder\\PackageBuilder' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Builder/PackageBuilder.php',
+        'WBW\\Library\\Wsdl2Php\\Factory\\ModelFactory' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Factory/ModelFactory.php',
+        'WBW\\Library\\Wsdl2Php\\Helper\\ClassBuilderHelper' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Helper/ClassBuilderHelper.php',
+        'WBW\\Library\\Wsdl2Php\\Helper\\ClientBuilderHelper' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Helper/ClientBuilderHelper.php',
+        'WBW\\Library\\Wsdl2Php\\Helper\\PackageBuilderHelper' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Helper/PackageBuilderHelper.php',
+        'WBW\\Library\\Wsdl2Php\\Helper\\TestClassBuilderHelper' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Helper/TestClassBuilderHelper.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\AbstractNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/AbstractNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\IndexedNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/IndexedNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\SComplexContentNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/SComplexContentNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\SComplexTypeNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/SComplexTypeNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\SElementNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/SElementNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\SExtensionNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/SExtensionNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\SSchemaNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/SSchemaNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\SSequenceNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/SSequenceNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\Soap12AddressNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/Soap12AddressNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\Soap12BodyNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/Soap12BodyNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\Soap12OperationNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/Soap12OperationNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\SoapAddressNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/SoapAddressNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\SoapBindingNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/SoapBindingNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\SoapBodyNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/SoapBodyNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\SoapOperationNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/SoapOperationNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\WsdlBindingNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/WsdlBindingNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\WsdlDefinitionsNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/WsdlDefinitionsNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\WsdlInputNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/WsdlInputNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\WsdlMessageNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/WsdlMessageNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\WsdlOperationNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/WsdlOperationNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\WsdlOutputNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/WsdlOutputNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\WsdlPartNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/WsdlPartNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\WsdlPortNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/WsdlPortNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\WsdlPortTypeNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/WsdlPortTypeNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\WsdlServiceNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/WsdlServiceNode.php',
+        'WBW\\Library\\Wsdl2Php\\Model\\WsdlTypesNode' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Model/WsdlTypesNode.php',
+        'WBW\\Library\\Wsdl2Php\\Provider\\WsdlProvider' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Provider/WsdlProvider.php',
+        'WBW\\Library\\Wsdl2Php\\Provider\\WsdlProviderTrait' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Provider/WsdlProviderTrait.php',
+        'WBW\\Library\\Wsdl2Php\\Traits\\Strings\\StringNamespaceTrait' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Traits/Strings/StringNamespaceTrait.php',
+        'WBW\\Library\\Wsdl2Php\\Traits\\Strings\\StringTargetNamespaceTrait' => __DIR__ . '/..' . '/webeweb/core-library/lib/wsdl2php/Traits/Strings/StringTargetNamespaceTrait.php',
         'WBW\\Library\\XmlTv\\Model\\AbstractCredit' => __DIR__ . '/..' . '/webeweb/core-library/lib/xmltv/Model/AbstractCredit.php',
         'WBW\\Library\\XmlTv\\Model\\AbstractModel' => __DIR__ . '/..' . '/webeweb/core-library/lib/xmltv/Model/AbstractModel.php',
         'WBW\\Library\\XmlTv\\Model\\Actor' => __DIR__ . '/..' . '/webeweb/core-library/lib/xmltv/Model/Actor.php',
@@ -2456,6 +2524,7 @@ class ComposerStaticInitd6dab7feb2c0432282fb013bfa43cbe9
         'WBW\\Library\\XmlTv\\Traits\\Strings\\StringStartTrait' => __DIR__ . '/..' . '/webeweb/core-library/lib/xmltv/Traits/Strings/StringStartTrait.php',
         'WBW\\Library\\XmlTv\\Traits\\Strings\\StringSystemTrait' => __DIR__ . '/..' . '/webeweb/core-library/lib/xmltv/Traits/Strings/StringSystemTrait.php',
         'mauricerenck\\PexelsImageField\\BaseUtils' => __DIR__ . '/../..' . '/utils/base.php',
+        'mauricerenck\\PexelsImageField\\PexelsField' => __DIR__ . '/../..' . '/utils/PexelsField.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

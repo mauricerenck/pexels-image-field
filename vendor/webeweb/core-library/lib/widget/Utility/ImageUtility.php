@@ -36,7 +36,7 @@ class ImageUtility {
      * @return string|null Returns the converted SVG.
      * @throws ImagickException Throws an imagick exception if an error occurs.
      */
-    public static function convertSvgToPng(string $filename, int $width = null, int $height = null): ?string {
+    public static function convertSvgToPng(string $filename, ?int $width = null, ?int $height = null): ?string {
 
         $image = new Imagick();
         $image->setBackgroundColor("transparent");
