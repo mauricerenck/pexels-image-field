@@ -12,7 +12,7 @@
     ],
     "extra": {
         "kirby": {
-            "compatible": "^5 || ^6.0"
+            "compatible": "^6.0"
         }
     },
     "autoload": {
